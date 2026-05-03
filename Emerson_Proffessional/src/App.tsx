@@ -12,7 +12,7 @@ function App() {
         <a href="http://localhost:5175">Learning</a>
       </nav>
        <h1 className="font-bold text-3xl underline">
-     Hello welcome to the summer Emerson_Agency
+     Hello welcome to the summer Professional Education
     </h1>
     </>
   )
