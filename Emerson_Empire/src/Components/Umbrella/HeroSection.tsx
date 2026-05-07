@@ -10,6 +10,9 @@ export default function Hero() {
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
           <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
             Welcome to Emerson
+          </span> <br />
+          <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+            Three Powerful Tools
           </span>
         </h1>
 
@@ -20,34 +23,13 @@ export default function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-lg font-bold rounded-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-            Get Started
+            Explore all Products
           </button>
           <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 text-lg font-bold rounded-lg hover:bg-purple-400/10 transition-all duration-300">
-            Learn More
+            Log in to Dashboard
           </button>
         </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-slate-700">
-          <div>
-            <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text">
-              500+
-            </div>
-            <p className="text-gray-400 mt-2">Happy Clients</p>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text">
-              10+
-            </div>
-            <p className="text-gray-400 mt-2">Years Experience</p>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text">
-              98%
-            </div>
-            <p className="text-gray-400 mt-2">Success Rate</p>
-          </div>
-        </div>
+        
       </div>
     </section>
   );

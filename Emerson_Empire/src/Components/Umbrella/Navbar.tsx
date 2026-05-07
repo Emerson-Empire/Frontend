@@ -19,10 +19,7 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <a href="#" className="text-gray-300 hover:text-white transition-colors">
-              Home
-            </a>
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">
-              Services
+              Products
             </a>
             <a href="#" className="text-gray-300 hover:text-white transition-colors">
               About
@@ -30,6 +27,10 @@ export default function Navbar() {
             <a href="#" className="text-gray-300 hover:text-white transition-colors">
               Contact
             </a>
+            <button className="px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all">
+              Login
+            </button>
+
             <button className="px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all">
               Get Started
             </button>
