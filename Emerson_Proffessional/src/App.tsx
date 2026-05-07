@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
+import Navbar from "./components/Navbar";
 
 // Example pages
 const Overview = () => <h1>Overview Page</h1>;
@@ -10,6 +11,7 @@ const Checkins = () => <h1>Check-ins Page</h1>;
 function App() {
   return (
     <Router>
+      <Navbar/>
       <Routes>
         {/* Public route */}
         <Route path="/" element={<Login />} />
