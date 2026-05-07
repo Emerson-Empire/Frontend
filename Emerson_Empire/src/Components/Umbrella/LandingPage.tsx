@@ -1,6 +1,5 @@
 import { useState } from "react";
-import "../styles/landingpage.css";
-
+import "../../landingpage.css";
 export default function LandingPage() {
   const [email, setEmail] = useState("");
   const [subscribeMessage, setSubscribeMessage] = useState("");
@@ -21,7 +20,7 @@ export default function LandingPage() {
         <div className="container">
           <div className="nav-content">
             <div className="nav-logo">
-              👑 The Emerson
+               The Emerson
             </div>
             <ul className="nav-menu">
               <li><a href="#home">Home</a></li>
