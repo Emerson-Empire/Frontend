@@ -1,13 +1,8 @@
- 
-import './App.css'
-import HomePage from './Components/Page/HomePage';
+
+import LandingPage from "./Components/Umbrella/LandingPage";
 
 function App() {
- 
-
-  return (
-  <HomePage/>
-  )
+  return <LandingPage />;
 }
 
-export default App
+export default App;
