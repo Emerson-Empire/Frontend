@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
           {[
             { label: 'Agency', href: '/agency' },
             { label: 'EPDG', href: '/epdg' },
-            { label: 'About', href: '/about' },
+            { label: 'About', href: '#About' },
             {label:"faq", href:"#faq"},
             {label:"Testimony", href:"#Testimony"}
           ].map((link) => (
@@ -87,7 +87,7 @@ const Navbar: React.FC = () => {
           {[
             { label: 'Agency', href: '/agency' },
             { label: 'EPDG', href: '/epdg' },
-            { label: 'About', href: '/about' },
+              { label: 'About', href: '#About' },
              {label:"faq", href:"#faq"},
              {label:"Testimony",href:"#Testimony"}
           ].map((link) => (

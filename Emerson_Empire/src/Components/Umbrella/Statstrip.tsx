@@ -75,6 +75,8 @@ const TrendBadge: React.FC<{ trend: NonNullable<Stat['trend']> }> = ({ trend }) 
 const StatCard: React.FC<{ stat: Stat }> = ({ stat }) => (
   <div className="flex flex-1 items-center gap-4 bg-[#4B1E91] px-5 py-4 border border-white/10 rounded-xl min-w-0">
     {/* ✅ Fix 2: Icon uses white/15 background and gold icon color — visible on dark card */}
+    
+     
     <div className="flex justify-center items-center bg-white/10 rounded-lg w-10 h-10 text-[#C9A84C]">
       {stat.icon}
     </div>
