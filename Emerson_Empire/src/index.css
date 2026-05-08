@@ -6,6 +6,10 @@
 :root {
   --color-primary: 91 95 240;
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; 
+}
 .heading{
   font-family: "Cormorant Garamond", serif;
   font-optical-sizing: auto;
@@ -16,5 +20,11 @@
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
+  font-style: normal;
+}
+.nav{
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
   font-style: normal;
 }

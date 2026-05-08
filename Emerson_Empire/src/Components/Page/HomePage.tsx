@@ -1,6 +1,7 @@
  import React from 'react'
-import {   Footer, Hero, Navbar,Team, TrustedBy, } from '../Umbrella';
+import {   Call, FAQ, Feature, Footer, Hero, Navbar,Team, Test, TrustedBy, Works} from '../Umbrella';
 import StatStrip from '../Umbrella/Statstrip';
+ 
  
  
  const HomePage:React.FC = () => {
@@ -11,6 +12,11 @@ import StatStrip from '../Umbrella/Statstrip';
         <TrustedBy/>
 <Team/>
 <StatStrip/>
+<Feature/>
+<Works/>
+<Test/>
+<FAQ/>
+<Call/>
   <Footer/> 
     
      </div>

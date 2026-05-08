@@ -22,7 +22,7 @@ const TEAM: TeamMember[] = [
     id: 2,
     name: 'Majembe Vincent',
     role: 'Head of Development Team',
-    department: '',
+    department: 'Web Development',
     image: undefined,
   },
   {
@@ -41,15 +41,15 @@ const TEAM: TeamMember[] = [
   },
   {
     id: 5,
-    name: 'Brian Otieno',
-    role: 'Strategy Lead',
+    name: 'Wiltod Kamdem',
+    role: ' Developer',
     department: 'Web Development',
     image: undefined,
   },
   {
     id: 6,
-    name: 'Nia Kamau',
-    role: 'Operations',
+    name: 'Jonatthan',
+    role: 'Developer',
     department: 'Web Development',
     image: undefined,
   },
