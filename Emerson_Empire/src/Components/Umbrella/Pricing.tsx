@@ -122,13 +122,13 @@ const CheckIcon = () => (
   </svg>
 );
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (i: number) => ({
-    opacity: 1, y: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
-  }),
-};
+// const fadeUp = {
+//   hidden: { opacity: 0, y: 24 },
+//   visible: (i: number) => ({
+//     opacity: 1, y: 0,
+//     transition: { duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
+//   }),
+// };
 
 const TierCard: React.FC<{ tier: PricingTier; index: number }> = ({ tier, index }) => (
   <motion.div
@@ -141,7 +141,7 @@ const TierCard: React.FC<{ tier: PricingTier; index: number }> = ({ tier, index 
     className={`relative flex flex-col rounded-xl p-7 border transition-all duration-300 ${
       tier.highlighted
         ? 'bg-[#4B1E91] border-[#C9A84C]/50 shadow-lg shadow-[#C9A84C]/10'
-        : 'bg-white/[0.03] border-white/8 hover:border-[#C9A84C]/20'
+        : '  border-white/8 hover:border-[#C9A84C]/20'
     }`}
   >
     {/* Highlighted badge */}
@@ -177,7 +177,7 @@ const TierCard: React.FC<{ tier: PricingTier; index: number }> = ({ tier, index 
     <ul className="flex flex-col flex-1 gap-3 mb-8">
       {tier.features.map((f) => (
         <li key={f} className="flex items-start gap-3">
-          <span className="flex-shrink-0 mt-0.5 text-[#C9A84C]">
+          <span className="mt-0.5 text-[#C9A84C]">
             <CheckIcon />
           </span>
           <span className="text-[#F5F0E8]/80 text-[13px] leading-[1.6] body">{f}</span>
