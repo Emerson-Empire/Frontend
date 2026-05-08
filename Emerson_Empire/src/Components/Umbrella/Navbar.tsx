@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
         >
           <span
             className={`block w-5 h-px bg-[#C9A84C] transition-transform duration-300 origin-center ${
-              menuOpen ? 'translate-y-[7px] rotate-45' : ''
+              menuOpen ? ' rotate-45' : ''
             }`}
           />
           <span
@@ -75,7 +75,7 @@ const Navbar: React.FC = () => {
           />
           <span
             className={`block w-5 h-px bg-[#C9A84C] transition-transform duration-300 origin-center ${
-              menuOpen ? '-translate-y-[7px] -rotate-45' : ''
+              menuOpen ? '  -rotate-45' : ''
             }`}
           />
         </button>

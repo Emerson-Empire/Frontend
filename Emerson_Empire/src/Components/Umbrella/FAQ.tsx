@@ -78,7 +78,7 @@ const FAQRow: React.FC<{ item: FAQItem; index: number }> = ({ item, index }) => 
       >
         <div className="flex items-start gap-3">
           <span
-            className="flex-shrink-0 mt-0.5 px-2 py-0.5 rounded-sm font-semibold text-[9px] uppercase tracking-[2px]"
+            className="mt-0.5 px-2 py-0.5 rounded-sm font-semibold text-[9px] uppercase tracking-[2px]"
             style={{
               background: item.division === 'Agency' ? '#C9A84C15' : item.division === 'EPDG' ? '#9B7FD415' : '#ffffff10',
               color: item.division === 'Agency' ? '#C9A84C' : item.division === 'EPDG' ? '#9B7FD4' : '#888',
@@ -92,7 +92,7 @@ const FAQRow: React.FC<{ item: FAQItem; index: number }> = ({ item, index }) => 
         </div>
 
         <span
-          className="flex flex-shrink-0 justify-center items-center mt-0.5 border rounded-sm w-7 h-7 transition-all duration-300"
+          className="flex justify-center items-center mt-0.5 border rounded-sm w-7 h-7 transition-all duration-300"
           style={{
             borderColor: open ? '#C9A84C50' : 'rgba(255,255,255,0.1)',
             color: open ? '#C9A84C' : '#9B7FD4',
@@ -171,7 +171,7 @@ const FAQ: React.FC = () => {
       </div>
 
       {/* FAQ list */}
-      <div className="bg-white/[0.02] mx-auto px-6 sm:px-8 border border-white/8 rounded-xl max-w-3xl">
+      <div className="mx-auto px-6 sm:px-8 border border-white/8 rounded-xl max-w-3xl">
         <AnimatePresence mode="wait">
           <motion.div
             key={filter}

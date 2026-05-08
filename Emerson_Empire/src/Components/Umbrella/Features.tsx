@@ -197,14 +197,14 @@ const DIVISIONS: Division[] = [
 ];
 
 // ── Animation variants ─────────────────────────────────────────────────────
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] },
-  }),
-};
+// const fadeUp = {
+//   hidden: { opacity: 0, y: 28 },
+//   visible: (i: number) => ({
+//     opacity: 1,
+//     y: 0,
+//     transition: { duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] },
+//   }),
+// };
 
 // ── Feature Card ───────────────────────────────────────────────────────────
 const FeatureCard: React.FC<{ feature: Feature; index: number; accent: string }> = ({
@@ -218,7 +218,7 @@ const FeatureCard: React.FC<{ feature: Feature; index: number; accent: string }>
     initial="hidden"
     whileInView="visible"
     viewport={{ once: true, margin: '-60px' }}
-    className="group relative flex flex-col gap-4 bg-white/[0.03] hover:bg-white/[0.07] p-6 border border-white/8 hover:border-[#C9A84C]/30 rounded-lg transition-all duration-300 cursor-default"
+    className="group relative flex flex-col gap-4 hover:bg-white/[0.07] p-6 border border-white/8 hover:border-[#C9A84C]/30 rounded-lg transition-all duration-300 cursor-default"
   >
     {/* Number watermark */}
     <span
@@ -230,7 +230,7 @@ const FeatureCard: React.FC<{ feature: Feature; index: number; accent: string }>
 
     {/* Icon */}
     <div
-      className="flex flex-shrink-0 justify-center items-center rounded-sm w-10 h-10 text-[#C9A84C] transition-colors duration-300"
+      className="flex justify-center items-center rounded-sm w-10 h-10 text-[#C9A84C] transition-colors duration-300"
       style={{
         background: `${accent}15`,
         color: accent,

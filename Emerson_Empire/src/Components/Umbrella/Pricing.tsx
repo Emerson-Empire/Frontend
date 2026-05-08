@@ -133,8 +133,9 @@ const fadeUp = {
 const TierCard: React.FC<{ tier: PricingTier; index: number }> = ({ tier, index }) => (
   <motion.div
     custom={index}
-    variants={fadeUp}
     initial="hidden"
+    // variants={fadeUp}
+
     whileInView="visible"
     viewport={{ once: true, margin: '-40px' }}
     className={`relative flex flex-col rounded-xl p-7 border transition-all duration-300 ${
@@ -145,41 +146,41 @@ const TierCard: React.FC<{ tier: PricingTier; index: number }> = ({ tier, index 
   >
     {/* Highlighted badge */}
     {tier.highlighted && (
-      <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-        <span className="bg-[#C9A84C] text-[#12022A] text-[9px] font-bold uppercase tracking-[3px] px-3 py-1 rounded-sm">
+      <div className="-top-3 left-1/2 absolute -translate-x-1/2">
+        <span className="bg-[#C9A84C] px-3 py-1 rounded-sm font-bold text-[#12022A] text-[9px] uppercase tracking-[3px]">
           Recommended
         </span>
       </div>
     )}
 
     {/* Tier name */}
-    <p className="text-[#C9A84C] text-[9px] font-semibold uppercase tracking-[3px] mb-3">
+    <p className="mb-3 font-semibold text-[#C9A84C] text-[9px] uppercase tracking-[3px]">
       {tier.name}
     </p>
 
     {/* Price */}
     <div className="flex items-baseline gap-1 mb-2">
-      <span className="heading text-[#F5F0E8] text-[38px] font-bold leading-none">
+      <span className="font-bold text-[#F5F0E8] text-[38px] leading-none heading">
         {tier.price}
       </span>
       {tier.period && (
-        <span className="body text-purple-400 text-[13px]">{tier.period}</span>
+        <span className="text-[13px] text-purple-400 body">{tier.period}</span>
       )}
     </div>
 
     {/* Description */}
-    <p className="body text-purple-300/70 text-[13px] leading-[1.7] mb-6 pb-6 border-b border-white/8">
+    <p className="mb-6 pb-6 border-white/8 border-b text-[13px] text-purple-300/70 leading-[1.7] body">
       {tier.description}
     </p>
 
     {/* Features */}
-    <ul className="flex flex-col gap-3 mb-8 flex-1">
+    <ul className="flex flex-col flex-1 gap-3 mb-8">
       {tier.features.map((f) => (
         <li key={f} className="flex items-start gap-3">
-          <span className="text-[#C9A84C] mt-0.5 flex-shrink-0">
+          <span className="flex-shrink-0 mt-0.5 text-[#C9A84C]">
             <CheckIcon />
           </span>
-          <span className="body text-[#F5F0E8]/80 text-[13px] leading-[1.6]">{f}</span>
+          <span className="text-[#F5F0E8]/80 text-[13px] leading-[1.6] body">{f}</span>
         </li>
       ))}
     </ul>
@@ -210,24 +211,24 @@ const Pricing: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-12"
+        className="mb-12 text-center"
       >
-        <p className="text-[#C9A84C] text-[9px] font-semibold uppercase tracking-[4px] mb-4">
+        <p className="mb-4 font-semibold text-[#C9A84C] text-[9px] uppercase tracking-[4px]">
           Pricing
         </p>
-        <h2 className="heading text-[#F5F0E8] text-[36px] sm:text-[44px] leading-[1.1] tracking-wide mb-4">
+        <h2 className="mb-4 text-[#F5F0E8] text-[36px] sm:text-[44px] leading-[1.1] tracking-wide heading">
           Simple, Transparent Plans
         </h2>
-        <p className="body text-purple-300 text-[15px] leading-[1.8] max-w-lg mx-auto">
+        <p className="mx-auto max-w-lg text-[15px] text-purple-300 leading-[1.8] body">
           No hidden fees. No surprises. Choose the plan that fits where you are
           today and scale as you grow.
         </p>
-        <div className="w-12 h-px bg-[#C9A84C]/40 mx-auto mt-6" />
+        <div className="bg-[#C9A84C]/40 mx-auto mt-6 w-12 h-px" />
       </motion.div>
 
       {/* Tab toggle */}
       <div className="flex justify-center mb-12">
-        <div className="flex bg-white/5 border border-white/10 rounded-sm p-1 gap-1">
+        <div className="flex gap-1 bg-white/5 p-1 border border-white/10 rounded-sm">
           {(['agency', 'epdg'] as Tab[]).map((t) => (
             <button
               key={t}
@@ -245,14 +246,14 @@ const Pricing: React.FC = () => {
       </div>
 
       {/* Tier cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+      <div className="gap-5 grid grid-cols-1 md:grid-cols-3 mx-auto max-w-5xl">
         {tiers.map((tier, i) => (
           <TierCard key={tier.name} tier={tier} index={i} />
         ))}
       </div>
 
       {/* Footer note */}
-      <p className="body text-center text-purple-400/60 text-[12px] mt-10 tracking-wide">
+      <p className="mt-10 text-[12px] text-purple-400/60 text-center tracking-wide body">
         All plans include a free initial consultation. Cancel or upgrade anytime.
       </p>
     </section>

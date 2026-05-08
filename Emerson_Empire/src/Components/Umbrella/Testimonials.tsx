@@ -121,7 +121,7 @@ const Testimonials: React.FC = () => {
             {/* Author */}
             <div className="flex items-center gap-4">
               <div
-                className="flex flex-shrink-0 justify-center items-center rounded-sm w-11 h-11 font-serif font-bold text-[13px]"
+                className="flex justify-center items-center rounded-sm w-11 h-11 font-serif font-bold text-[13px]"
                 style={{ background: '#C9A84C18', color: '#C9A84C', border: '1px solid #C9A84C35' }}
               >
                 {current.initials}

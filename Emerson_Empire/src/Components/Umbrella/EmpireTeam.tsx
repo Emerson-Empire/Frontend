@@ -64,9 +64,9 @@ const getInitials = (name: string) =>
     .slice(0, 2);
 
 const TeamCard: React.FC<{ member: TeamMember }> = ({ member }) => (
-  <div className="group flex flex-col bg-white/[0.002] hover:bg-[#C9A84C]/[0.05] p-7 border-[#C9A84C]/10 border-2 border-amber-500items-center hover:border-[#C9A84C]/30 rounded-sm w-full text-center transition-all duration-200">
+  <div className="group flex flex-col bg-white/[0.002] p-7 border-[#C9A84C]/10 border-2 border-amber-500items-center hover:border-[#C9A84C]/30 rounded-sm w-full text-center transition-all duration-200">
     {/* Avatar */}
-    <div className="flex flex-shrink-0 justify-center items-center bg-[#1e053e] mb-4 border border-[#C9A84C]/35 rounded-full w-24 h-24 overflow-hidden">
+    <div className="flex justify-center items-center bg-[#1e053e] mb-4 border border-[#C9A84C]/35 rounded-full w-24 h-24 overflow-hidden">
       {member.image ? (
         <img
           src={member.image}

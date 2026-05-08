@@ -58,7 +58,7 @@ const CTA: React.FC = () => {
 
       {/* Top glow */}
       <div
-        className="top-0 left-1/2 absolute w-[700px] h-[300px] -translate-x-1/2 pointer-events-none"
+        className="top-0 left-1/2 absolute -translate-x-1/2 pointer-events-none"
         style={{
           background: 'radial-gradient(ellipse at center top, rgba(201,168,76,0.12) 0%, transparent 70%)',
         }}
@@ -149,7 +149,7 @@ const CTA: React.FC = () => {
               ].map(item => (
                 <div key={item.label} className="flex items-start gap-4">
                   <div
-                    className="flex flex-shrink-0 justify-center items-center rounded-sm w-9 h-9"
+                    className="flex justify-center items-center rounded-sm w-9 h-9"
                     style={{ background: '#C9A84C15', color: '#C9A84C', border: '1px solid #C9A84C25' }}
                   >
                     {item.icon}

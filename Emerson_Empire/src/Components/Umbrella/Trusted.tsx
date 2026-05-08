@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Majvin } from '../../assets';
+ 
 
 // ✅ SVG placeholder logos for companies you don't have assets for yet
 const PlaceholderLogo: React.FC<{ name: string }> = ({ name }) => (
@@ -59,9 +59,9 @@ const TrustedBy: React.FC = () => {
       {/* ✅ Marquee track */}
       <div className="relative">
         {/* Left fade */}
-        <div className="left-0 z-10 absolute inset-y-0 bg-gradient-to-r from-[#12022A] to-transparent w-24 pointer-events-none" />
+        <div className="left-0 z-10 absolute inset-y-0 from-[#12022A] to-transparent w-24 pointer-events-none" />
         {/* Right fade */}
-        <div className="right-0 z-10 absolute inset-y-0 bg-gradient-to-l from-[#12022A] to-transparent w-24 pointer-events-none" />
+        <div className="right-0 z-10 absolute inset-y-0 from-[#12022A] to-transparent w-24 pointer-events-none" />
 
         <motion.div
           className="flex items-center gap-14"
@@ -77,7 +77,7 @@ const TrustedBy: React.FC = () => {
           {duplicated.map((logo, i) => (
             <div
               key={`${logo.name}-${i}`}
-              className="flex flex-shrink-0 justify-center items-center h-60 text-[#F5F0E8] cursor-default"
+              className="flex justify-center items-center h-60 text-[#F5F0E8] cursor-default"
             >
               {logo.src ? (
                 <img

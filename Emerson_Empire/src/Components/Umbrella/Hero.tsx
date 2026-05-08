@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-wrap justify-center items-center gap-4 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
           <a
             href="/agency"
             className="bg-[#C9A84C] hover:bg-[#E8C97A] px-7 py-3 border border-[#C9A84C] hover:border-[#E8C97A] rounded-sm font-semibold text-[#12022A] text-[13px] uppercase tracking-[3px] transition-all duration-200 body"
@@ -68,11 +68,11 @@ const Hero: React.FC = () => {
           ★ &nbsp; ★ &nbsp; ★
         </p>
       </div>
- <div className="w-full max-h-[500px] overflow-hidden">
-  <img src={Campaign} alt="Campaign" className="w-full h-auto object-cover" />
+ <div className="w-full overflow-hidden">
+  <img src={Campaign} alt="Campaign" className="object-cover w-full h-auto" />
 </div>
       {/* ── Feature cards ── */}
-      <div className="z-10 relative grid grid-cols-1 md:grid-cols-2 border-t">
+      <div className="relative z-10 grid grid-cols-1 border-t md:grid-cols-2">
 {/* border-[#C9A84C]/15 */}
 
         {/* Agency Card */}
