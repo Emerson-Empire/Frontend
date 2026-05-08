@@ -5,7 +5,8 @@ import Hero from "./Hero";
 import Navbar from "./Navbar";
 import Statstrip from "./Statstrip";
 import Team from "./EmpireTeam"
+import TrustedBy from "./Trusted";
 
 
 
-export{AppCard,Auth,Footer,Hero,Navbar,Statstrip,Team}
+export{AppCard,Auth,Footer,Hero,Navbar,Statstrip,Team,TrustedBy}

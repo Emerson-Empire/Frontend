@@ -5,29 +5,30 @@ const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-[#12022A] border-b border-[#C9A84C]/30 font-sans">
+    <nav className="bg-[#12022A] border-[#C9A84C]/30 border-b w-full font-sans">
       {/* Main bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+      <div className="flex justify-between items-center mx-auto px-4 sm:px-6 lg:px-8 w- h-30">
+        {/* max-w-7xl */}
 
         {/* Logo */}
-        <a href="/" className="flex items-center gap-3 flex-shrink-0">
+        <a href="/" className="flex flex-shrink-0 items-center gap-3">
           <img
             src={Emason}
             alt="Emerson Empire Logo"
-            className="h-12 w-12 object-contain"
+            className="w-12 h-12 object-contain"
           />
           <div className="flex flex-col leading-none">
-            <span className="text-[#E8C97A] text-lg font-semibold tracking-widest uppercase font-serif">
+            <span className="font-semibold text-[#E8C97A] text-lg uppercase tracking-widest body">
               Emerson
             </span>
-            <span className="text-white/50 text-[9px] tracking-[0.3em] uppercase mt-0.5">
+            <span className="mt-0.5 text-[12px] text-white uppercase tracking-[0.3em] body">
               Lead · Build · Expand
             </span>
           </div>
         </a>
 
         {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8 list-none m-0 p-0">
+        <ul className="hidden md:flex items-center gap-8 m-0 p-0 list-none">
           {[
             { label: 'Agency', href: '/agency' },
             { label: 'EPDG', href: '/epdg' },
@@ -36,7 +37,7 @@ const Navbar: React.FC = () => {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-white/60 hover:text-[#E8C97A] text-[11px] font-medium tracking-[0.2em] uppercase transition-colors duration-200"
+                className="font-medium text-[11px] text-white/60 hover:text-[#E8C97A] uppercase tracking-[0.2em] transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -45,7 +46,7 @@ const Navbar: React.FC = () => {
           <li>
             <a
               href="/contact"
-              className="text-[#E8C97A] text-[10px] font-medium tracking-[0.2em] uppercase border border-[#C9A84C]/50 hover:border-[#C9A84C] hover:bg-[#C9A84C]/10 px-5 py-2 rounded-sm transition-all duration-200"
+              className="hover:bg-[#C9A84C]/10 px-5 py-2 border border-[#C9A84C]/50 hover:border-[#C9A84C] rounded-sm font-medium text-[#E8C97A] text-[10px] uppercase tracking-[0.2em] transition-all duration-200"
             >
               Contact
             </a>
@@ -54,10 +55,11 @@ const Navbar: React.FC = () => {
 
         {/* Hamburger — mobile only */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2 focus:outline-none"
+          className="md:hidden flex flex-col gap-1.5 bg-[#451E91] p-2 rounded-b-full focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
+          
         >
           <span
             className={`block w-5 h-px bg-[#C9A84C] transition-transform duration-300 origin-center ${
@@ -79,7 +81,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#12022A] border-t border-[#C9A84C]/15 px-6 pb-6 pt-2 flex flex-col gap-0">
+        <div className="md:hidden flex flex-col gap-0 bg-[#12022A] px-6 pt-2 pb-6 border-[#C9A84C]/15 border-t">
           {[
             { label: 'Agency', href: '/agency' },
             { label: 'EPDG', href: '/epdg' },
@@ -88,14 +90,14 @@ const Navbar: React.FC = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-white/60 hover:text-[#E8C97A] text-[11px] font-medium tracking-[0.2em] uppercase py-4 border-b border-[#C9A84C]/10 transition-colors duration-200"
+              className="py-4 border-[#C9A84C]/10 border-b font-medium text-[11px] text-white/60 hover:text-[#E8C97A] uppercase tracking-[0.2em] transition-colors duration-200"
             >
               {link.href.replace('/', '· ')} {link.label}
             </a>
           ))}
           <a
             href="/contact"
-            className="mt-5 text-center text-[#E8C97A] text-[10px] font-medium tracking-[0.2em] uppercase border border-[#C9A84C]/50 hover:bg-[#C9A84C]/10 px-5 py-3 rounded-sm transition-all duration-200"
+            className="hover:bg-[#C9A84C]/10 mt-5 px-5 py-3 border border-[#C9A84C]/50 rounded-sm font-medium text-[#E8C97A] text-[10px] text-center uppercase tracking-[0.2em] transition-all duration-200"
           >
             Contact
           </a>

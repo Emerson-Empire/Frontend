@@ -7,7 +7,7 @@ interface Stat {
   suffix?: string;
   icon: React.ReactNode;
   trend?: {
-    value: number;   // e.g. 12 means +12%
+    value: number;
     positive?: boolean;
   };
 }
@@ -50,12 +50,13 @@ const STATS: Stat[] = [
   },
 ];
 
+// ✅ Fix 1: Trend badge uses gold for positive, light red for negative — readable on dark cards
 const TrendBadge: React.FC<{ trend: NonNullable<Stat['trend']> }> = ({ trend }) => (
   <span
     className={`inline-flex items-center gap-0.5 text-[10px] font-semibold tracking-wide px-1.5 py-0.5 rounded ${
       trend.positive
-        ? 'bg-emerald-50 text-emerald-600'
-        : 'bg-red-50 text-red-500'
+        ? 'bg-[#C9A84C]/20 text-[#F0C96B]'
+        : 'bg-red-400/20 text-red-300'
     }`}
   >
     {trend.positive ? (
@@ -72,19 +73,19 @@ const TrendBadge: React.FC<{ trend: NonNullable<Stat['trend']> }> = ({ trend }) 
 );
 
 const StatCard: React.FC<{ stat: Stat }> = ({ stat }) => (
-  <div className="flex flex-1 items-center gap-4 bg-white px-5 py-4 border border-gray-100 rounded-xl min-w-0">
-    {/* Icon */}
-    <div className="flex flex-shrink-0 justify-center items-center bg-[#12022A]/5 rounded-lg w-10 h-10 text-[#12022A]">
+  <div className="flex flex-1 items-center gap-4 bg-[#4B1E91] px-5 py-4 border border-white/10 rounded-xl min-w-0">
+    {/* ✅ Fix 2: Icon uses white/15 background and gold icon color — visible on dark card */}
+    <div className="flex flex-shrink-0 justify-center items-center bg-white/10 rounded-lg w-10 h-10 text-[#C9A84C]">
       {stat.icon}
     </div>
 
-    {/* Content */}
+    {/* ✅ Fix 3: Text colors corrected for dark background */}
     <div className="flex flex-col min-w-0">
-      <span className="mb-0.5 font-medium text-[11px] text-gray-400 uppercase tracking-widest">
+      <span className="mb-0.5 font-medium text-[11px] text-purple-300 uppercase tracking-widest">
         {stat.label}
       </span>
       <div className="flex items-baseline gap-2">
-        <span className="font-semibold text-gray-800 text-2xl leading-none">
+        <span className="font-semibold text-white text-2xl leading-none">
           {stat.prefix}{stat.value}{stat.suffix}
         </span>
         {stat.trend && <TrendBadge trend={stat.trend} />}
@@ -103,8 +104,10 @@ const StatStrip: React.FC<StatStripProps> = ({
   className = '',
 }) => {
   return (
-    <div  className="bg-[#12022A] px-6 sm:px-10 lg:px-16 py-20">
-        <section ></section>
+    // ✅ Fix 4: className prop is now actually applied
+    // ✅ Fix 5: Removed the empty <section> tag
+    <div className={`bg-[#12022A] px-6 sm:px-10 lg:px-16 py-20 ${className}`}>
+      
       <div className="flex sm:flex-row flex-col gap-3">
         {stats.map((stat) => (
           <StatCard key={stat.label} stat={stat} />

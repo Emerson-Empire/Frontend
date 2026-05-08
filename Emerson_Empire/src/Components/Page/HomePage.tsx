@@ -1,5 +1,5 @@
  import React from 'react'
-import { AppCard, Auth, Footer, Hero, Navbar, Statstrip, Team } from '../Umbrella';
+import {   Footer, Hero, Navbar,Team, TrustedBy, } from '../Umbrella';
 import StatStrip from '../Umbrella/Statstrip';
  
  
@@ -8,6 +8,7 @@ import StatStrip from '../Umbrella/Statstrip';
      <div> 
         <Navbar/>
         <Hero/>
+        <TrustedBy/>
 <Team/>
 <StatStrip/>
   <Footer/> 
