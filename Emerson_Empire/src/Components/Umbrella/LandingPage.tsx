@@ -1,257 +1,400 @@
-import { useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 import "../../landingpage.css";
-export default function LandingPage() {
-  const [email, setEmail] = useState("");
-  const [subscribeMessage, setSubscribeMessage] = useState("");
+
+interface Testimonial {
+  name: string;
+  title: string;
+  company: string;
+  location: string;
+  type: string;
+}
+
+interface Step {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface StoryCard {
+  label: string;
+  title: string;
+  detail: string;
+}
+
+const LandingPage: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
+
+  const navLinks = ['Our programs', 'Career fields', 'Destinations', 'Alumni stories'];
+  const partnerLogos = ['BBC', 'Bloomberg', 'CNN', 'Entrepreneur', 'FT', 'Forbes', 'TIME', 'WSJ'];
+  const duplicatedPartnerLogos = [...partnerLogos, ...partnerLogos];
+
+  const steps: Step[] = [
+    {
+      icon: '📝',
+      title: 'Aplica',
+      description: 'Aplica y programa tu entrevista.'
+    },
+    {
+      icon: '💬',
+      title: 'Entrevista',
+      description: 'Si tu entrevista es exitosa, confirma tu inscripción con un depósito de matrícula.'
+    },
+    {
+      icon: '🚀',
+      title: 'Desarrolla tu potencial',
+      description: 'Colabora en el proceso de selección de pasantía y acelera tu carrera.'
+    }
+  ];
+
+  const stats = [
+    { value: '+2,000', label: 'participantes talentosos desarrollan su potencial a través de nuestros programas cada año' },
+    { value: '+120', label: 'universidades asociadas de 6 continentes diferentes' },
+    { value: '+150', label: 'nacionalidades representadas por nuestro diverso grupo de participantes' },
+    { value: '+3,000', label: 'empresas asociadas en búsqueda de pasantes' }
+  ];
+
+  const storyCards: StoryCard[] = [
+    {
+      label: 'Meet the intern',
+      title: 'Karanpreet',
+      detail: 'Un vistazo a la experiencia internacional en acción.'
+    },
+    {
+      label: 'Career update',
+      title: 'Adeola',
+      detail: 'Historias reales de avance profesional desde Londres.'
+    },
+    {
+      label: 'Global team',
+      title: 'Agostina',
+      detail: 'Conexiones internacionales y oportunidades reales.'
+    },
+    {
+      label: 'Marketing insight',
+      title: 'Alayne',
+      detail: 'Una pasantía con impacto en la industria creativa.'
+    }
+  ];
+
+  const testimonials: Testimonial[] = [
+    {
+      name: 'Adelle Dechen Vincent',
+      title: 'Art testimonial',
+      company: 'School of Visual Arts',
+      location: 'Tokyo',
+      type: 'A'
+    },
+    {
+      name: 'Adeola Olatunji',
+      title: 'Social work testimonial',
+      company: 'University of London',
+      location: 'Remote',
+      type: 'S'
+    },
+    {
+      name: 'Agostina Laborde',
+      title: 'HR testimonial',
+      company: 'Universidad de Palermo',
+      location: 'New York',
+      type: 'H'
+    },
+    {
+      name: 'Alayne Bohlander',
+      title: 'Marketing testimonial',
+      company: 'Western Washington University',
+      location: 'Melbourne',
+      type: 'M'
+    }
+  ];
+
+  const partnerUniversities = [
+    'Penn', 'Sydney', 'Northwestern', 'LSE',
+    'Sorbonne', 'Erasmus', 'NUS', 'Carleton',
+    'Monterrey', 'Cornell', 'Western Sydney', 'University of York'
+  ];
+
+  const partnerLogosRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const container = partnerLogosRef.current;
+    if (!container) return;
+
+    let frameId = 0;
+    const step = () => {
+      if (!container) return;
+      container.scrollLeft += 0.6;
+      if (container.scrollLeft >= container.scrollWidth / 2) {
+        container.scrollLeft -= container.scrollWidth / 2;
+      }
+      frameId = window.requestAnimationFrame(step);
+    };
+
+    frameId = window.requestAnimationFrame(step);
+    return () => window.cancelAnimationFrame(frameId);
+  }, []);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      setSubscribeMessage("✓ Thank you for subscribing!");
-      setEmail("");
-      setTimeout(() => setSubscribeMessage(""), 3000);
+      setSubscribed(true);
+      setEmail('');
+      setTimeout(() => setSubscribed(false), 3000);
     }
   };
 
   return (
-    <div style={{ backgroundColor: "#0a0e27", minHeight: "100vh" }}>
-      {/* Navigation */}
+    <div className="landing-page">
       <nav className="navbar">
-        <div className="container">
-          <div className="nav-content">
-            <div className="nav-logo">
-               The Emerson
-            </div>
-            <ul className="nav-menu">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#features">Features</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
+        <div className="container navbar-container">
+          <div className="logo">THE EMERSON AGENCY</div>
+          <div className="nav-links">
+            {navLinks.map((link) => (
+              <a key={link} href="#" className="nav-link">{link}</a>
+            ))}
+          </div>
+          <div className="nav-buttons">
+            <button className="btn btn-outline">Login</button>
+            <button className="btn btn-primary">Aplica ya</button>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="container">
-          <div className="hero-content">
-            <h1>One Empire. Three Powerhouses.</h1>
-            <p>
-              The Emerson Empire LLC is the unified command center connecting The Emerson 
-              Agency LLC and the Emerson Professional Development Group — built for sustainable 
-              growth, accountability, and community impact.
+      <section className="hero-section">
+        <div className="container hero-grid">
+          <div className="hero-copy">
+            <h1 className="hero-title">Desarrolla tu potencial con una pasantía en el extranjero</h1>
+            <p className="hero-description">
+              Trabajo de forma remota o elige entre nuestros emocionantes destinos para hacer una pasantía internacional.
+              Podrías trabajar en empresas líderes o startups innovadoras en Londres, Nueva York, Madrid, Tokio y más.
             </p>
             <div className="hero-buttons">
-              <button className="btn btn-primary">
-                ⚡ Agency Ops →
-              </button>
-              <button className="btn btn-secondary">
-                📚 Dev Group →
-              </button>
-              <button className="btn btn-outline">
-                Learn More
-              </button>
+              <button className="btn btn-primary">Apply now</button>
+            </div>
+          </div>
+          <div className="hero-visual">
+            <div className="hero-image-card"></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="partner-logos-section">
+        <div className="container partner-logos-row" ref={partnerLogosRef}>
+          {duplicatedPartnerLogos.map((logo, index) => (
+            <div key={`${logo}-${index}`} className="partner-logo-item">{logo}</div>
+          ))}
+        </div>
+      </section>
+
+      <section className="featured-section">
+        <div className="container featured-grid">
+          <div className="featured-image-card">
+            <div className="featured-image-label">Business</div>
+          </div>
+          <div className="featured-copy">
+            <h2>Elige entre más de 20 carreras profesionales</h2>
+            <p>
+              Destaca tu currículum con uno de nuestros programas de pasantías internacionales en una amplia gama de áreas laborales.
+            </p>
+            <a href="#" className="text-link">Ver todas las carreras disponibles →</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="destination-highlight-section">
+        <div className="container destination-highlight-grid">
+          <div className="destination-copy">
+            <h2>Acelera tu carrera con experiencia global</h2>
+            <p>
+              Trabaja de forma remota o elige entre 9 emocionantes destinos distintos para tu pasantía internacional, con hasta 5 días en la oficina.
+              ¡Podrías hacer una pasantía en empresas líderes o startups innovadoras en Londres, Nueva York, Madrid, Tokio o en uno de nuestros otros increíbles destinos!
+            </p>
+            <a href="#" className="text-link">Ver todos los destinos disponibles →</a>
+          </div>
+          <div className="destination-image-card">
+            <div className="destination-image-label">London</div>
+          </div>
+        </div>
+      </section>
+
+      <section className="how-it-works-section">
+        <div className="container">
+          <div className="how-it-works-content">
+            <div className="how-it-works-left">
+              <h2>Cómo funciona</h2>
+              <p>
+                Obtén experiencia profesional invaluable, amplía tu red de contactos y haz que tu currículum brille.
+              </p>
+              <div className="how-it-works-actions">
+                <button className="btn btn-primary">Apply now</button>
+                <button className="btn btn-outline">Ver programas</button>
+              </div>
+            </div>
+            <div className="how-it-works-right">
+              <div className="process-steps">
+                {steps.map((step, index) => (
+                  <div key={index} className="process-step">
+                    <div className="step-icon">{step.icon}</div>
+                    <div>
+                      <h4>{step.title}</h4>
+                      <p>{step.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section style={{ backgroundColor: "#0f1629", borderTop: "1px solid #1e293b" }}>
+      <section className="statistics-section">
         <div className="container">
-          <h2 className="text-center" style={{ marginBottom: "3rem" }}>Command Center Metrics</h2>
-          <div className="grid grid-3">
-            <div className="stat-card">
-              <div className="stat-icon">👥</div>
-              <div className="stat-number">0</div>
-              <div className="stat-label">Total Members</div>
-              <p style={{ fontSize: "0.875rem", marginTop: "0.5rem" }}>↑ 12 this week</p>
-            </div>
-            <div className="stat-card">
-              <div className="stat-icon">✅</div>
-              <div className="stat-number">0</div>
-              <div className="stat-label">Active Tasks</div>
-              <p style={{ fontSize: "0.875rem", marginTop: "0.5rem" }}>8 in progress</p>
-            </div>
-            <div className="stat-card">
-              <div className="stat-icon">📚</div>
-              <div className="stat-number">0</div>
-              <div className="stat-label">Courses Live</div>
-              <p style={{ fontSize: "0.875rem", marginTop: "0.5rem" }}>100% published</p>
-            </div>
-            <div className="stat-card">
-              <div className="stat-icon">💰</div>
-              <div className="stat-number">$0</div>
-              <div className="stat-label">Revenue MTD</div>
-              <p style={{ fontSize: "0.875rem", marginTop: "0.5rem" }}>↑ 28% vs last month</p>
-            </div>
+          <h2>En números</h2>
+          <p className="stats-intro">
+            En The Intern Group, inspiramos y motivamos a las personas a crecer en sí mismas, descubrir su pasión y desarrollar su potencial.
+          </p>
+          <div className="stats-grid">
+            {stats.map((stat, index) => (
+              <div key={index} className="stat-card">
+                <div className="stat-value">{stat.value}</div>
+                <p className="stat-label">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Modules Section */}
-      <section style={{ backgroundColor: "#0a0e27" }}>
+      <section className="stories-section">
         <div className="container">
-          <h2 className="text-center">Our Modules</h2>
-          <div className="grid grid-2">
-            <div className="card">
-              <div style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>EA</div>
-              <h3>The Emerson Agency LLC</h3>
-              <p>Kanban task boards, project management, team assignments, and real-time status updates for field agents.</p>
-              <div style={{ marginTop: "1.5rem", display: "flex", gap: "1rem", fontSize: "0.875rem" }}>
-                <div>
-                  <div style={{ color: "#d4af37", fontWeight: "700" }}>84</div>
-                  <div style={{ color: "#a8b5d4" }}>Tasks</div>
-                </div>
-                <div>
-                  <div style={{ color: "#d4af37", fontWeight: "700" }}>12</div>
-                  <div style={{ color: "#a8b5d4" }}>Projects</div>
-                </div>
-                <div>
-                  <div style={{ color: "#d4af37", fontWeight: "700" }}>3</div>
-                  <div style={{ color: "#a8b5d4" }}>Members</div>
+          <h2>¿Quieres ver qué están haciendo nuestros pasantes?</h2>
+          <div className="story-cards">
+            {storyCards.map((story, index) => (
+              <div key={index} className={`story-card story-card-${index + 1}`}>
+                <div className="story-image"></div>
+                <div className="story-copy">
+                  <span>{story.label}</span>
+                  <h4>{story.title}</h4>
+                  <p>{story.detail}</p>
                 </div>
               </div>
-              <button className="btn btn-primary" style={{ marginTop: "1.5rem", width: "100%" }}>
-                Enter Module →
-              </button>
-            </div>
-
-            <div className="card">
-              <div style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>EDG</div>
-              <h3>Emerson Professional Development Group</h3>
-              <p>Courses, assignments, scoring system with quality & collaboration metrics, and a live global leaderboard.</p>
-              <div style={{ marginTop: "1.5rem", display: "flex", gap: "1rem", fontSize: "0.875rem" }}>
-                <div>
-                  <div style={{ color: "#d4af37", fontWeight: "700" }}>6</div>
-                  <div style={{ color: "#a8b5d4" }}>Courses</div>
-                </div>
-                <div>
-                  <div style={{ color: "#d4af37", fontWeight: "700" }}>2</div>
-                  <div style={{ color: "#a8b5d4" }}>Learners</div>
-                </div>
-                <div>
-                  <div style={{ color: "#d4af37", fontWeight: "700" }}>86%</div>
-                  <div style={{ color: "#a8b5d4" }}>Avg Score</div>
-                </div>
-              </div>
-              <button className="btn btn-primary" style={{ marginTop: "1.5rem", width: "100%" }}>
-                Enter Module →
-              </button>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section style={{ 
-        backgroundColor: "#0f1629", 
-        borderTop: "1px solid #1e293b",
-        padding: "4rem 1rem",
-        textAlign: "center"
-      }}>
+      <section className="partners-section">
         <div className="container">
-          <h2>Ready to Transform Your Empire?</h2>
-          <p style={{ fontSize: "1.125rem", marginBottom: "2rem" }}>
-            Join thousands of leaders building sustainable growth and community impact.
-          </p>
-          <button className="btn btn-primary" style={{ fontSize: "1.125rem", padding: "1rem 2rem" }}>
-            Get Started Today
-          </button>
+          <h2>Socios de 120+ de las mejores universidades de 6 continentes</h2>
+          <div className="partners-grid">
+            {partnerUniversities.map((uni) => (
+              <div key={uni} className="partner-logo-card">{uni}</div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <section style={{ backgroundColor: "#4db8a8", padding: "3rem 1rem" }}>
-        <div className="container" style={{ maxWidth: "600px" }}>
-          <h2 style={{ color: "white", textAlign: "center", marginBottom: "1rem" }}>
-            Stay Updated
-          </h2>
-          <p style={{ color: "white", textAlign: "center", marginBottom: "2rem" }}>
-            Get the latest insights and updates delivered to your inbox.
-          </p>
-          <form 
-            onSubmit={handleSubscribe}
-            style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}
-          >
-            <input
-              type="email"
-              placeholder="your@email.com"
+      <section className="testimonials-section testimonials-gallery-section">
+        <div className="container">
+          <h2>Únete a nuestra red global de +15,000 ex participantes</h2>
+          <div className="testimonials-gallery">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="testimonial-card gallery-card">
+                <div className={`testimonial-image testimonial-image-${index + 1}`} />
+                <div className="testimonial-quote">
+                  “Esta pasantía me ayudó a consolidar una experiencia profesional única y global.”
+                </div>
+                <div className="testimonial-meta">
+                  <strong>{testimonial.name}</strong>
+                  <span>{testimonial.company} · {testimonial.location}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="testimonial-cta-copy">
+            <h3>¿Listo para destacar con una pasantía en el extranjero?</h3>
+          </div>
+          <button className="btn btn-primary">Apply now</button>
+        </div>
+      </section>
+
+      <section className="newsletter-section newsletter-cta-section">
+        <div className="container newsletter-row">
+          <div>
+            <h3>Subscribe via email</h3>
+            <p>Subscribe to get insights sent directly to your inbox.</p>
+          </div>
+          <form className="newsletter-form" onSubmit={handleSubscribe}>
+            <input 
+              type="email" 
+              placeholder="name@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="form-input"
+              className="newsletter-input"
               required
-              style={{ flex: 1, minWidth: "200px" }}
             />
-            <button
-              type="submit"
-              className="btn btn-primary"
-            >
-              Subscribe
-            </button>
+            <button type="submit" className="btn btn-subscribe">Subscribe</button>
           </form>
-          {subscribeMessage && (
-            <p style={{ color: "white", textAlign: "center", marginTop: "1rem", fontWeight: "600" }}>
-              {subscribeMessage}
-            </p>
-          )}
+          {subscribed && <p className="success-message">✓ Thank you for subscribing!</p>}
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="footer">
+      <footer className="footer-section">
         <div className="container">
+          <div className="footer-top">
+            <div className="footer-logo">THE EMERSON AGENCY</div>
+          </div>
           <div className="footer-grid">
-            <div className="footer-section">
-              <h4>👑 The Emerson</h4>
-              <p style={{ fontSize: "0.875rem", color: "#a8b5d4" }}>
-                Building sustainable growth and community impact through unified leadership.
-              </p>
-            </div>
-
-            <div className="footer-section">
-              <h4>Products</h4>
+            <div className="footer-col">
+              <h4>SERVICES</h4>
               <ul>
-                <li><a href="#">Empire Hub</a></li>
-                <li><a href="#">Agency Ops</a></li>
-                <li><a href="#">Dev Group</a></li>
-                <li><a href="#">Leaderboard</a></li>
+                <li><a href="#">Strategic Advisory</a></li>
+                <li><a href="#">Brand Communications</a></li>
+                <li><a href="#">Regulatory Strategy</a></li>
+                <li><a href="#">Growth Enablement</a></li>
               </ul>
             </div>
-
-            <div className="footer-section">
-              <h4>Company</h4>
+            <div className="footer-col">
+              <h4>INSIGHTS</h4>
               <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Case Studies</a></li>
+                <li><a href="#">Thought Leadership</a></li>
+                <li><a href="#">Client Stories</a></li>
+                <li><a href="#">News</a></li>
               </ul>
             </div>
-
-            <div className="footer-section">
-              <h4>Legal</h4>
+            <div className="footer-col">
+              <h4>CONTACT</h4>
               <ul>
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Terms</a></li>
-                <li><a href="#">Security</a></li>
-                <li><a href="#">Cookies</a></li>
+                <li>US: +1 (800) 555-0123</li>
+                <li>UK: +44 20 7000 0000</li>
+                <li>APAC: +61 2 8000 0000</li>
+                <li><a href="mailto:hello@emersonagency.com">hello@emersonagency.com</a></li>
               </ul>
             </div>
           </div>
-
+          <div className="footer-divider"></div>
           <div className="footer-bottom">
-            <p>© 2026 The Emerson Empire LLC. All Rights Reserved.</p>
-            <div className="social-links">
-              <a href="#" className="social-icon" title="Facebook">f</a>
-              <a href="#" className="social-icon" title="Twitter">𝕏</a>
-              <a href="#" className="social-icon" title="LinkedIn">in</a>
-              <a href="#" className="social-icon" title="Instagram">Ins</a>
+            <div className="footer-links">
+              <a href="#">Terms & Conditions</a>
+              <span>·</span>
+              <a href="#">Privacy Policy</a>
+              <span>·</span>
+              <a href="#">Cookie Policy</a>
             </div>
+            <div className="social-links">
+              <a href="#" aria-label="LinkedIn">in</a>
+              <a href="#" aria-label="X">𝕏</a>
+              <a href="#" aria-label="Instagram">ins</a>
+            </div>
+          </div>
+          <div className="footer-copyright">
+            <p>©2026 The Emerson Agency LLC. All rights reserved.</p>
           </div>
         </div>
       </footer>
     </div>
   );
-}
+};
+
+export default LandingPage;
+
