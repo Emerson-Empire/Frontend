@@ -1,13 +1,15 @@
-import { Outlet } from 'react-router-dom';
-import { Navbar } from './index';
+import { Outlet } from "react-router-dom";
+import { Navbar } from "./index";
 
 const Dashboard: React.FC = () => {
   return (
-    <div className="app-container">
-      <Navbar /> {/* persistent UI */}
+    <div className="flex min-h-screen bg-[#F5F5F5] overflow-hidden">
+      {/* Sidebar/Navbar */}
+      <Navbar />
 
-      <main>
-        <Outlet /> {/* dynamic route content */}
+      {/* Main Content */}
+      <main className="flex-1 p-6 overflow-y-auto">
+        <Outlet />
       </main>
     </div>
   );
