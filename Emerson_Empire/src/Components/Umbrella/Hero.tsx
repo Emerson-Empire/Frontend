@@ -1,8 +1,9 @@
 import React from 'react';
+import { Campaign } from '../../assets';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative bg-[#12022A] overflow-hidden">
+    <section className="relative bg-[#1E0A4A] overflow-hidden">
 
       {/* Grid texture overlay */}
       <div
@@ -16,31 +17,32 @@ const Hero: React.FC = () => {
       />
 
       {/* ── Hero content ── */}
-      <div className="relative z-10 flex flex-col items-center text-center px-6 pt-20 pb-0">
+      <div className="z-10 relative flex flex-col items-center bg-[#4B1E91] px-6 pt-20 pb-0 text-center">
 
         {/* Eyebrow */}
         <div className="flex items-center gap-3 mb-6">
-          <span className="block w-8 h-px bg-[#C9A84C] opacity-50" />
-          <p className="text-[10px] font-semibold tracking-[4px] uppercase text-[#C9A84C]">
+          <span className="block bg-[#C9A84C] opacity-50 w-8 h-px" />
+          <p className="font-semibold text-[#C9A84C] text-[10px] uppercase tracking-[4px]">
             The Emerson Empire
           </p>
-          <span className="block w-8 h-px bg-[#C9A84C] opacity-50" />
+          <span className="block bg-[#C9A84C] opacity-50 w-8 h-px" />
         </div>
 
         {/* Headline */}
         <h1
-          className="font-serif text-[#F5F0E8] leading-[1.1] tracking-wide mb-4"
-          style={{ fontSize: 'clamp(36px, 6vw, 64px)' }}
+          className="bg-[#4B1E91] mb-4 text-[#F5F0E8] text-[48px] sm:text-[56px] leading-[1.1] tracking-wide heading"
+       
         >
           Emerson Empire —{' '}
-          <em className="italic text-[#E8C97A]">Agency & EPDG</em>
+          <em className="text-[#E8C97A] italic">Agency & EPDG</em>
         </h1>
 
         {/* Gold rule */}
-        <div className="w-12 h-px bg-[#C9A84C] opacity-40 my-5" />
+        <div className="bg-[#C9A84C] opacity-40 my-5 w-12 h-px" />
 
         {/* Subtitle */}
-        <p className="text-[13px] text-[#F5F0E8]/50 tracking-[1.5px] leading-[1.9] max-w-lg mb-10">
+        <p className="mb-10 max-w-lg text-[16px] text-white leading-[1.9] tracking-[1.5px] body"
+        >
           Two pillars. One mission. We build brands, lead movements, and expand
           empires — through world-class agency services and the power of EPDG.
         </p>
@@ -49,46 +51,49 @@ const Hero: React.FC = () => {
         <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
           <a
             href="/agency"
-            className="text-[10px] font-semibold tracking-[3px] uppercase text-[#12022A] bg-[#C9A84C] border border-[#C9A84C] px-7 py-3 rounded-sm hover:bg-[#E8C97A] hover:border-[#E8C97A] transition-all duration-200"
+            className="bg-[#C9A84C] hover:bg-[#E8C97A] px-7 py-3 border border-[#C9A84C] hover:border-[#E8C97A] rounded-sm font-semibold text-[#12022A] text-[13px] uppercase tracking-[3px] transition-all duration-200 body"
           >
             Explore Agency
           </a>
           <a
             href="/epdg"
-            className="text-[10px] font-medium tracking-[3px] uppercase text-[#E8C97A] bg-transparent border border-[#C9A84C]/40 px-7 py-3 rounded-sm hover:border-[#C9A84C] hover:bg-[#C9A84C]/10 transition-all duration-200"
+            className="bg-transparent hover:bg-[#C9A84C]/10 px-7 py-3 border border-[#C9A84C]/40 hover:border-[#C9A84C] rounded-sm font-medium text-[#E8C97A] text-[13px] uppercase tracking-[3px] transition-all duration-200 body"
           >
             Explore EPDG
           </a>
         </div>
 
         {/* Stars */}
-        <p className="text-[#C9A84C] text-[10px] tracking-[6px] opacity-50 mb-12">
+        <p className="opacity-50 mb-12 text-[#C9A84C] text-[10px] tracking-[6px]">
           ★ &nbsp; ★ &nbsp; ★
         </p>
       </div>
-
+ <div className="w-full overflow-hidden">
+  <img src={Campaign} alt="Campaign" className="object-cover w-full h-auto" />
+</div>
       {/* ── Feature cards ── */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 border-t border-[#C9A84C]/15">
+      <div className="relative z-10 grid grid-cols-1 border-t md:grid-cols-2">
+{/* border-[#C9A84C]/15 */}
 
         {/* Agency Card */}
-        <div className="group px-8 py-10 border-b md:border-b-0 md:border-r border-[#C9A84C]/10 hover:bg-[#C9A84C]/[0.03] transition-colors duration-200">
-          <div className="w-10 h-10 border border-[#C9A84C]/25 rounded-sm flex items-center justify-center text-[#C9A84C] mb-5">
+        <div className="group hover:bg-[#C9A84C]/[0.103] px-8 py-10 border md:border-r border-b md:border-b-0 transition-colors duration-200 -[#]">
+          <div className="flex justify-center items-center mb-5 border border-[#C9A84C]/25 rounded-sm w-10 h-10 text-[#C9A84C]">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <rect x="3" y="3" width="18" height="18" rx="1" />
               <path d="M3 9h18M9 21V9" />
             </svg>
           </div>
 
-          <p className="flex items-center gap-2 text-[9px] font-semibold tracking-[3px] uppercase text-[#C9A84C] mb-4">
-            <span className="w-5 h-px bg-[#C9A84C] opacity-60 block" />
+          <p className="flex items-center gap-2 mb-4 font-semibold text-[#C9A84C] text-[9px] uppercase tracking-[3px]">
+            <span className="block bg-[#C9A84C] opacity-60 w-5 h-px" />
             Division 01
           </p>
 
-          <h2 className="font-serif text-[28px] font-semibold text-[#F5F0E8] leading-[1.15] mb-3">
+          <h2 className="mb-3 font-semibold text-[#F5F0E8] text-[32px] hover:text-[#1E0A4A] leading-[1.15] heading">
             Emerson Agency
           </h2>
 
-          <p className="text-[12px] text-[#F5F0E8]/50 leading-[1.9] tracking-wide mb-7">
+          <p className="mb-7 text-[#C9A84C] text-[16px] leading-[1.9] tracking-wide body">
             A full-service creative and strategic agency built to elevate brands,
             drive growth, and craft campaigns that leave a lasting mark. We partner
             with visionaries to turn ambition into impact.
@@ -96,7 +101,7 @@ const Hero: React.FC = () => {
 
           <a
             href="/agency"
-            className="inline-flex items-center gap-2 text-[10px] font-semibold tracking-[2.5px] uppercase text-[#C9A84C] hover:gap-3 transition-all duration-200"
+            className="inline-flex items-center gap-2 hover:gap-3 bg-[#A07010] p-3 rounded-md font-semibold text-[#C9A84C] text-[13px] uppercase tracking-[2.5px] transition-all duration-200 body 4B1E91"
           >
             Explore Agency
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -106,24 +111,24 @@ const Hero: React.FC = () => {
         </div>
 
         {/* EPDG Card */}
-        <div className="group px-8 py-10 hover:bg-[#C9A84C]/[0.03] transition-colors duration-200">
-          <div className="w-10 h-10 border border-[#C9A84C]/25 rounded-sm flex items-center justify-center text-[#C9A84C] mb-5">
+        <div className="group hover:bg-[#C9A84C]/[0.103] px-8 py-10 transition-colors duration-200">
+          <div className="flex justify-center items-center mb-5 border border-[#C9A84C]/25 rounded-sm w-10 h-10 text-[#C9A84C]">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
               <polyline points="16 7 22 7 22 13" />
             </svg>
           </div>
 
-          <p className="flex items-center gap-2 text-[9px] font-semibold tracking-[3px] uppercase text-[#C9A84C] mb-4">
-            <span className="w-5 h-px bg-[#C9A84C] opacity-60 block" />
+          <p className="flex items-center gap-2 mb-4 font-semibold text-[#C9A84C] text-[9px] uppercase tracking-[3px]">
+            <span className="block bg-[#C9A84C] opacity-60 w-5 h-px" />
             Division 02
           </p>
 
-          <h2 className="font-serif text-[28px] font-semibold text-[#F5F0E8] leading-[1.15] mb-3">
+          <h2 className="mb-3 font-semibold text-[#F5F0E8] text-[32px] leading-[1.15] heading">
             Emerson EPDG
           </h2>
 
-          <p className="text-[12px] text-[#F5F0E8]/50 leading-[1.9] tracking-wide mb-7">
+          <p className="mb-7 text-[#C9A84C] text-[16px] leading-[1.9] tracking-wide">
             EPDG — our entrepreneurial and professional development group — equips
             leaders with the tools, training, and community to scale businesses and
             build lasting legacies.
@@ -131,7 +136,7 @@ const Hero: React.FC = () => {
 
           <a
             href="/epdg"
-            className="inline-flex items-center gap-2 text-[10px] font-semibold tracking-[2.5px] uppercase text-[#C9A84C] hover:gap-3 transition-all duration-200"
+            className="inline-flex items-center gap-2 hover:gap-3 bg-[#A07010] p-3 rounded-md font-semibold text-[#C9A84C] text-[13px] uppercase tracking-[2.5px] transition-all duration-200"
           >
             Explore EPDG
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -139,7 +144,9 @@ const Hero: React.FC = () => {
             </svg>
           </a>
         </div>
+         
       </div>
+   
     </section>
   );
 };
