@@ -57,37 +57,34 @@ const EmpireTeamTrusted: React.FC = () => {
   return (
     <section className="bg-[#12022A] px-6 sm:px-10 lg:px-16 py-20">
 
-      {/* Header */}
-    
-
-      {/* Main layout: stacks on mobile, side-by-side on lg+ */}
+      {/* Main layout */}
       <div className="flex lg:flex-row flex-col items-center gap-12">
 
-        {/* Left — scrolling logos */}
+        {/* Left — header + scrolling logos */}
         <div className="w-full lg:w-1/2">
-            <div className="mb-14 text-center">
-        <div className="inline-flex items-center gap-3 mb-5">
-          <span className="block bg-[#C9A84C] opacity-50 w-7 h-px" />
-          <p className="font-semibold text-[#C9A84C] text-[10px] uppercase tracking-[4px] body">
-            Our People & Partners
-          </p>
-          <span className="block bg-[#C9A84C] opacity-50 w-7 h-px" />
-        </div>
-        <h2 className="text-[#F5F0E8] text-[40px] leading-[1.1] tracking-wide heading">
-          The <em className="text-[#E8C97A] italic">Empire</em> Team
-        </h2>
-        <div className="bg-[#C9A84C] opacity-35 mx-auto mt-5 w-10 h-px" />
-      </div>
 
+          {/* Header */}
+          <div className="mb-14 text-center">
+            <div className="inline-flex items-center gap-3 mb-5">
+              <span className="block bg-[#C9A84C] opacity-50 w-7 h-px" />
+              <p className="font-semibold text-[#C9A84C] text-[10px] uppercase tracking-[4px] body">
+                Our People & Partners
+              </p>
+              <span className="block bg-[#C9A84C] opacity-50 w-7 h-px" />
+            </div>
+            <h2 className="text-[#F5F0E8] text-[40px] leading-[1.1] tracking-wide heading">
+              The <em className="text-[#E8C97A] italic">Empire</em> Team
+            </h2>
+            <div className="bg-[#C9A84C] opacity-35 mx-auto mt-5 w-10 h-px" />
+          </div>
+
+          {/* Trusted by */}
           <p className="mb-8 text-[#C9A84C] text-[10px] text-center uppercase tracking-[4px]">
             Trusted by
           </p>
           <div className="relative overflow-hidden">
-            {/* Fade left */}
             <div className="left-0 z-10 absolute inset-y-0 bg-linear-to-r from-[#12022A] to-transparent w-16 pointer-events-none" />
-            {/* Fade right */}
             <div className="right-0 z-10 absolute inset-y-0 bg-linear-to-l from-[#12022A] to-transparent w-16 pointer-events-none" />
-
             <motion.div
               className="flex items-center gap-14"
               animate={{ x: ['0%', '-50%'] }}
@@ -106,61 +103,84 @@ const EmpireTeamTrusted: React.FC = () => {
         </div>
 
         {/* Right — team carousel */}
-        <div className="flex flex-col items-center w-full lg:w-1/2">
+        <div className="flex flex-col items-center bg-[#4B1E91] p-3 border-2 rounded-2xl w-full lg:w-1/2">
 
-          {/* Sliding card */}
-          <div className="relative w-full overflow-hidden">
-            <AnimatePresence mode="wait" custom={direction}>
-              <motion.div
-                key={member.id}
-                custom={direction}
-                initial={{ x: direction * 80, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: direction * -80, opacity: 0 }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="flex flex-col items-center bg-white/2 p-8 border border-[#C9A84C]/20 rounded-sm w-full text-center"
-              >
-                {/* Avatar */}
-                <div className="flex justify-center items-center bg-[#1e053e] mb-5 border border-[#C9A84C]/35 rounded-full w-28 h-28 overflow-hidden">
-                  {member.image ? (
-                    <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
-                  ) : (
-                    <span className="font-serif font-semibold text-[#C9A84C] text-[28px]">
-                      {getInitials(member.name)}
-                    </span>
-                  )}
-                </div>
+          {/* Image + side buttons (lg only) */}
+          <div className="flex items-center gap-4 w-full">
 
-                <p className="font-serif font-semibold text-[#F5F0E8] text-[22px] leading-tight">
-                  {member.name}
-                </p>
-                <p className="mt-2 font-semibold text-[#C9A84C] text-[10px] uppercase tracking-[2px]">
-                  {member.role}
-                </p>
-                <p className="mt-1 text-[#F5F0E8]/30 text-[9px] uppercase tracking-[1.5px]">
-                  {member.department}
-                </p>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Prev / Next */}
-          <div className="flex items-center gap-6 mt-6">
             <button
               onClick={() => go(-1)}
-              className="flex justify-center items-center border border-[#C9A84C]/30 hover:border-[#C9A84C] rounded-sm w-10 h-10 text-[#C9A84C] transition-colors duration-200"
+              className="hidden lg:flex justify-center items-center border border-[#C9A84C]/30 hover:border-[#C9A84C] rounded-sm w-16 h-16 font-bold text-[#C9A84C] text-2xl transition-colors duration-200 shrink-0"
             >
               ←
             </button>
-            <span className="text-[#C9A84C]/50 text-[11px] tracking-[2px]">
+
+            <div className="relative flex-1 overflow-hidden">
+              <AnimatePresence mode="wait" custom={direction}>
+                <motion.div
+                  key={member.id}
+                  custom={direction}
+                  initial={{ x: direction * 80, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: direction * -80, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  className="flex justify-center items-center bg-[#1e053e] border border-[#C9A84C]/20 rounded-xl w-full h-80 sm:h-105 overflow-hidden"
+                >
+                  {member.image ? (
+                    <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="font-serif font-semibold text-[#C9A84C] text-[64px]">
+                      {getInitials(member.name)}
+                    </span>
+                  )}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            <button
+              onClick={() => go(1)}
+              className="hidden lg:flex justify-center items-center border border-[#C9A84C]/30 hover:border-[#C9A84C] rounded-sm w-16 h-16 font-bold text-[#C9A84C] text-2xl transition-colors duration-200 shrink-0"
+            >
+              →
+            </button>
+          </div>
+
+          {/* Buttons below image (mobile only) */}
+          <div className="lg:hidden flex items-center gap-6 mt-4">
+            <button
+              onClick={() => go(-1)}
+              className="flex justify-center items-center border border-[#C9A84C]/30 hover:border-[#C9A84C] rounded-sm w-16 h-16 font-bold text-[#C9A84C] text-2xl transition-colors duration-200"
+            >
+              ←
+            </button>
+            <span className="text-[#C9A84C]/40 text-[11px] tracking-[2px]">
               {index + 1} / {TEAM.length}
             </span>
             <button
               onClick={() => go(1)}
-              className="flex justify-center items-center border border-[#C9A84C]/30 hover:border-[#C9A84C] rounded-sm w-10 h-10 text-[#C9A84C] transition-colors duration-200"
+              className="flex justify-center items-center border border-[#C9A84C]/30 hover:border-[#C9A84C] rounded-sm w-16 h-16 font-bold text-[#C9A84C] text-2xl transition-colors duration-200"
             >
               →
             </button>
+          </div>
+
+          {/* Member info */}
+          <div className="flex items-center gap-4 bg-[#C9A84C] mt-6 px-4 py-3 border border-[#C9A84C]/20 rounded-sm w-full hover:scale-103">
+            <div className="flex justify-center items-center bg-[#1e053e] border border-[#C9A84C]/25 rounded-full w-32 h-32 overflow-hidden hover:scale-103 shrink-0">
+              {member.image ? (
+                <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+              ) : (
+                <span className="font-serif text-[#C9A84C] text-[13px]">{getInitials(member.name)}</span>
+              )}
+            </div>
+            <div className="text-left">
+              <p className="font-semibold text-[#F5F0E8] text-[13px] leading-tight">{member.name}</p>
+              <p className="text-[#1e053e] text-[13px] uppercase tracking-[1.5px]">{member.role}</p>
+              <p className="text-[#1e053e] text-[13px] uppercase tracking-[1px]">{member.department}</p>
+            </div>
+            <span className="ml-auto text-[#1e053e] text-[13px] tracking-[2px]">
+              {index + 1} / {TEAM.length}
+            </span>
           </div>
 
         </div>
