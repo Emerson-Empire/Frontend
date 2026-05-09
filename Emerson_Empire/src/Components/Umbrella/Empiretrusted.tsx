@@ -166,7 +166,7 @@ const EmpireTeamTrusted: React.FC = () => {
 
           {/* Member info */}
           <div className="flex items-center gap-4 bg-[#C9A84C] mt-6 px-4 py-3 border border-[#C9A84C]/20 rounded-sm w-full hover:scale-103">
-            <div className="flex justify-center items-center bg-[#1e053e] border border-[#C9A84C]/25 rounded-full w-32 h-32 overflow-hidden hover:scale-103 shrink-0">
+            <div className="flex justify-center items-center bg-[#1e053e] border border-[#C9A84C]/25 rounded-full w-28 sm:w-32 sm:h-32 overflow-hidden hover:scale-103 h:28 shrink-0">
               {member.image ? (
                 <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
               ) : (
@@ -178,7 +178,7 @@ const EmpireTeamTrusted: React.FC = () => {
               <p className="text-[#1e053e] text-[13px] uppercase tracking-[1.5px]">{member.role}</p>
               <p className="text-[#1e053e] text-[13px] uppercase tracking-[1px]">{member.department}</p>
             </div>
-            <span className="ml-auto text-[#1e053e] text-[13px] tracking-[2px]">
+            <span className="m-2 text-[#1e053e] text-[13px] tracking-[2px]">
               {index + 1} / {TEAM.length}
             </span>
           </div>
