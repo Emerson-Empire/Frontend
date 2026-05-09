@@ -72,12 +72,12 @@ const Hero: React.FC = () => {
 
       {/* Image */}
 
-        <div className="w-full overflow-hidden">
-  <img src={Helena2} alt="Campaign" className="rounded-xl w-full h-auto object-cover" />
+        <div className="w-full h-full overflow-hidden">
+  <img src={Helena2} alt="Campaign" className="rounded-xl w-full h-full object-cover" />
 </div>
  </div>
       {/* ── Feature cards ── */}
-      <div className="flex-col bg-white text-center">
+      <div className="flex-col justify-center bg-white m-3 rounded-md text-center">
       <h2 className="mb-3 font-semibold text-[[#1E0A4A] text-[32px] hover:text-[#1E0A4A] leading-[1.15] heading">
         YOU <em className="">CHOOSE YOUR</em> PATH</h2>
         <p></p>
@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
           
           <div className="mb-6 rounded-xl w-full h-70 overflow-hidden">
               <img src={Agency} alt="Agency" 
-              className="w-full h-full object-contain hover:scale-105 transition-transform duration-300" />
+              className="m-2 w-full h-full object-contain hover:scale-105 transition-transform duration-300" />
             </div>
             <div className="flex justify-center items-center mb-5 border border-[#C9A84C]/25 rounded-sm w-10 h-10 text-[#C9A84C] hover:scale-110">
             <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -106,26 +106,26 @@ const Hero: React.FC = () => {
             <span className="block bg-[#C9A84C] opacity-60 w-5 h-px" />
             Division 01
           </p>
-<div className="bg-[#C9A84C] p-2 border-2 rounded-md w-full text-center hover:scale-105">
+<div className="flex flex-col items-center bg-[#C9A84C] p-2 border-2 rounded-md w-full h-auto sm:h-60 text-center hover:scale-105">
           <h2 className="mb-3 font-semibold text--[#1E0A4A] text-[#1E0A4A] text-[32px] leading-[1.15] heading">
             Emerson Agency
           </h2>
 
           <p className="mb-7 text-[#1E0A4A] text-[16px] text-center leading-[1.9] tracking-wide body">
-            A full-service creative and strategic agency built to elevate brands,
-            drive growth, and craft campaigns that leave a lasting mark. We partner
-            with visionaries to turn ambition into impact.
+            The Emerson Agency is beign Developed as a community-centered business and finacial services agency supporting
+            individuals, families, and small businesses through practical guidance, finacial education,tax preparation support,
+            insurance-related services ,and business development resources.
           </p>
 
-          <a
-            href="/agency"
-            className="inline-flex items-center gap-2 hover:gap-3 bg-[#4B1E91] p-3 rounded-md font-semibold text-[#C9A84C] text-[13px] uppercase tracking-[2.5px] transition-all duration-200 body 4B1E91"
-          >
-            Explore Agency
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
+   <a   
+  href="/agency"
+  className="inline-flex items-center gap-2 hover:gap-3 bg-[#4B1E91] mt-auto p-3 rounded-md font-semibold text-[#C9A84C] text-[13px] uppercase tracking-[2.5px] transition-all duration-200"
+>
+  Explore Agency
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M5 12h14M12 5l7 7-7 7" />
+  </svg>
+</a>
         </div>
  </div>
 
@@ -153,22 +153,23 @@ const Hero: React.FC = () => {
             <span className="block bg-[#C9A84C] opacity-60 w-5 h-px" />
             Division 02
           </p>
- <div className="bg-[#C9A84C] p-2 border-2 rounded-md w-full text-center hover:scale-105">
+ <div className="flex flex-col items-center bg-[#C9A84C] p-2 border-2 rounded-md w-full h-auto sm:h-60 text-center hover:scale-105">
           <h2 className="mb-3 font-semibold text-[#1E0A4A] text-[32px] leading-[1.15] heading">
             Emerson Professional Development
           </h2>
 
        
           <p className="mb-7 text-[#1E0A4A] text-[16px] text-center leading-[1.9] tracking-wide body">
-            EPDG — our entrepreneurial and professional development group — equips
-            leaders with the tools, training, and community to scale businesses and
-            build lasting legacies.
+            Emerson professional development group  equips emerging professionals intern,entrepreneurs, and leaders with Training
+            , structure , metorship, and practical tools for long-term growth.
+             
+        
           </p>
 
-          <a
-            href="/epdg"
-            className="inline-flex items-center gap-2 hover:gap-3 bg-[#4B1E91] p-3 rounded-md font-semibold text-[#C9A84C] text-[13px] uppercase tracking-[2.5px] transition-all duration-200"
-          >
+         <a   
+  href="/agency"
+  className="inline-flex items-center gap-2 hover:gap-3 bg-[#4B1E91] mt-auto p-3 rounded-md font-semibold text-[#C9A84C] text-[13px] uppercase tracking-[2.5px] transition-all duration-200"
+>
             Explore EPDG
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />

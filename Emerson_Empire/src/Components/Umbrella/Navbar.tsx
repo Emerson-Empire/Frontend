@@ -5,7 +5,7 @@ const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-  <nav className="top-0 z-50 fixed bg-[#12022A]/80 shadow-white shadow-xl backdrop-blur-md border-[#C9A84C]/30 border-b w-full">
+  <nav className="top-0 z-50 fixed bg-[#12022A]/80 shadow-md shadow-white backdrop-blur-md border-[#C9A84C]/30 border-b w-full">
       {/* Main bar */}
       <div className="flex justify-between items-center mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-7xl h-30">
         {/* max-w-7xl */}

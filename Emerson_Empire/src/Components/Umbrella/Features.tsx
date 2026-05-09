@@ -108,51 +108,51 @@ const DIVISIONS: Division[] = [
     tag: 'Division 01',
     number: '01',
     heading: 'Emerson Agency',
-    subheading: 'Insurance & Tax Solutions Built for Growth',
+    subheading: 'Practical insurance ,Tax and Business Support Built for Stability and Growth',
     accent: '#C9A84C',
     features: [
       {
         icon: <ShieldIcon />,
         title: 'Personal Insurance',
         description:
-          'Life, health, auto and home coverage tailored to protect what matters most — with plans that fit every stage of life.',
+          'Life, health, auto and home coverage guidance designed to help individuals and families protect what matter most.',
       },
      {
   icon: <BriefcaseIcon />,
   title: 'Business Insurance',
   description:
-    "Comprehensive commercial coverage including liability, property, and workers' compensation to keep your business secure.",
+     "Commercial coverage guidance for small business, including liability, property, and workers compensation considarations",
 },
       {
         icon: <FileTextIcon />,
         title: 'Individual Tax Filing',
         description:
-          'Accurate, stress-free personal tax preparation. We maximise your refund and ensure full compliance every year.',
+          'Personal tax preparation support focused on accuracy, organization, and Compliance.',
       },
       {
         icon: <CalculatorIcon />,
         title: 'Business Tax & Accounting',
         description:
-          'End-to-end corporate tax filing, bookkeeping, and financial reporting so you can focus on running your business.',
+          ' Business tax preparation bookkeeping support, and finacial organization designed to help business owners stay focused and prepared.',
       },
       {
         icon: <ClipboardIcon />,
         title: 'Tax Planning & Advisory',
         description:
-          'Proactive tax strategy throughout the year — not just at filing season — to minimise liability and build financial clarity.',
+          ' Year-round planning support to help individuals and businesses approach tax season with clarity and preparation',
       },
       {
         icon: <GlobeIcon />,
         title: 'Compliance & Regulation',
         description:
-          'Stay ahead of changing tax laws and insurance regulations with expert guidance that protects you from costly penalties.',
+          '  Practical guidance to help clients stay informed, organized, and aligned with changing tax and insurance requrements.',
       },
     ],
   },
   {
     tag: 'Division 02',
     number: '02',
-    heading: 'Emerson EPDG',
+    heading: 'Emerson Professional Development Group',
     subheading: 'A Development Program That Builds Leaders',
     accent: '#9B7FD4',
     features: [
