@@ -186,11 +186,11 @@ const EmpireTeamTrusted: React.FC = () => {
             <div className="text-left">
               <p className="font-bold text-[#F5F0E8] text-[16px] leading-tight">Name:&nbsp;{member.name}</p>
               <p className="font-semibold text-[#1e053e] text-[13px] underline uppercase tracking-[1.5px]">Title:&nbsp{member.Title}</p>
-              <p className="shadow-[#4B1E91] shadow-md p-2 border border-[#4B1E91] rounded-md text-[#1e053e] text-[13px] uppercase tracking-[1px]">***:{member.description}</p>
+              <p className="shadow-[#4B1E91] shadow-md p-1 border border-[#4B1E91] rounded-md text-[#1e053e] text-[13px] uppercase tracking-[1px]">***:{member.description}</p>
             </div>
-            <span className="m-2 text-[#1e053e] text-[13px] tracking-[2px]">
+            {/* <span className="m-2 text-[#1e053e] text-[13px] tracking-[2px]">
               {index + 1} / {TEAM.length}
-            </span>
+            </span> */}
           </div>
 
         </div>
