@@ -59,21 +59,25 @@ const About: React.FC = () => {
   const Icon = value.icon  // ← capital I, this is the fix
 
   return (
-    <div
-      key={index}
-      className="bg-white/5 hover:bg-white/10 backdrop-blur-sm p-8 border border-[#C9A84C]/20 hover:border-[#C9A84C] rounded-2xl transition-all duration-300"
-    >
-      <div className="flex justify-center items-center bg-[#C9A84C]/10 mb-5 border border-[#C9A84C]/20 rounded-xl w-12 h-12">
-        <Icon size={22} className="text-[#C9A84C]" />
-      </div>
+   <div
+  key={index}
+  className="flex items-start gap-5 bg-white/5 hover:bg-white/10 backdrop-blur-sm m-2 p-8 border border-[#C9A84C]/20 hover:border-[#C9A84C] rounded-2xl transition-all duration-300"
+>
+  {/* Icon */}
+  <div className="flex justify-center items-center bg-[#C9A84C]/10 border border-[#C9A84C]/20 rounded-xl w-12 h-12 hover:scale-105 shrink-0">
+    <Icon size={22} className="text-[#C9A84C]" />
+  </div>
 
-      <h3 className="mb-4 font-semibold text-white text-2xl italic body">
-        {value.title}
-      </h3>
-      <p className="text-[16px] text-gray-300 leading-7 body">
-        {value.description}
-      </p>
-    </div>
+  {/* Text */}
+  <div>
+    <h3 className="mb-2 font-semibold text-white text-xl italic body">
+      {value.title}
+    </h3>
+    <p className="text-[15px] text-gray-300 leading-7 body">
+      {value.description}
+    </p>
+  </div>
+</div>
   )
 })}
 </div>
