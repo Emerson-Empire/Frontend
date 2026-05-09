@@ -1,23 +1,21 @@
 import React, { useState } from 'react';
-import { bruno, Helena, Malik, Matheous, Vincent } from '../../assets';
+import { bruno, Helena, Malik,Vincent } from '../../assets';
 import { motion, AnimatePresence } from 'framer-motion';
-bruno
+
 interface TeamMember {
   id: number;
   name: string;
   Title: string;
- description: string;
+  description: string;
   image?: string;
 }
-Matheous
 
 const TEAM: TeamMember[] = [
-  { id: 1, name: 'Lyric Helena Emerson', Title: 'Founder & CEO',  description: '  Emerson is the founder and visionary behind The Emerson Empire. He drives the strategic direction, culture, and long-term growth of the organization, ensuring every division operates with purpose, excellence, and a commitment to empowering the communities they serve.', image: Helena },
-  { id: 2, name: 'Majembe Vincent', Title: 'Head of Web Development', description:  'Vincent leads the overall website development process, coordinates technical direction across the web development teams, and helps translate The Emerson Empire\'s brand vision into a functional digital presence.', image: Vincent },
-  { id: 3, name: 'Mohamed Malik ', Title: 'Web Development Team Lead',  description: 'Mohamed Malik supports team organization, assignment coordination, and development progress across the web development group. His work helps keep the building process structured, collaborative, and moving forward.', image: Malik },
-  { id: 5, name: ' Bruno Gutierrez Marin', Title: ' UX/UI & Web Design Lead',  description: 'Bruno support the visual design , user experience, and layout direction of website . His contributions help ensure the site is polished , accessible, and aligned with The Emersom Empire\'s professional brand identity', image:bruno },
-  // { id: 4, name: 'Mathius', Title: 'Full Stack',  description: 'Web Development', image:Matheous },
-  
+  { id: 1, name: 'Lyric Helena Emerson', Title: 'Founder & CEO', description: 'Lyric Helena Emerson is the founder and visionary behind The Emerson Empire. She drives the strategic direction, culture, and long-term growth of the organization, ensuring every division operates with purpose, excellence, and a commitment to empowering the communities they serve.', image: Helena },
+  { id: 2, name: 'Majembe Vincent', Title: 'Head of Web Development', description: 'Vincent leads the overall website development process, coordinates technical direction across the web development teams, and helps translate The Emerson Empire\'s brand vision into a functional digital presence.', image: Vincent },
+  { id: 3, name: 'Mohamed Malik', Title: 'Web Development Team Lead', description: 'Mohamed Malik supports team organization, assignment coordination, and development progress across the web development group. His work helps keep the building process structured, collaborative, and moving forward.', image: Malik },
+  { id: 5, name: 'Bruno Gutierrez Marin', Title: 'UX/UI & Web Design Lead', description: 'Bruno supports the visual design, user experience, and layout direction of the website. His contributions help ensure the site is polished, accessible, and aligned with The Emerson Empire\'s professional brand identity.', image: bruno },
+  // { id: 4, name: 'Mathius', Title: 'Full Stack', description: 'Web Development', image: Matheous },
   // { id: 6, name: 'Jonathan', role: 'Developer', department: 'Web Development', image: undefined },
 ];
 
@@ -109,7 +107,6 @@ const EmpireTeamTrusted: React.FC = () => {
 
           {/* Image + side buttons (lg only) */}
           <div className="flex items-center gap-4 w-full">
-
             <button
               onClick={() => go(-1)}
               className="hidden lg:flex justify-center items-center border border-[#C9A84C]/30 hover:border-[#C9A84C] rounded-sm w-16 h-16 font-bold text-[#C9A84C] text-2xl transition-colors duration-200 shrink-0"
@@ -117,6 +114,7 @@ const EmpireTeamTrusted: React.FC = () => {
               ←
             </button>
 
+            {/* Image animates horizontally (x axis) */}
             <div className="relative flex-1 overflow-hidden">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
@@ -166,32 +164,46 @@ const EmpireTeamTrusted: React.FC = () => {
             </button>
           </div>
 
-          {/* Member info */}
-          <div className="flex items-center gap-4 bg-[#C9A84C] mt-6 px-4 py-3 border border-[#C9A84C]/20 rounded-sm w-full hover:scale-103">
-           <div className="flex justify-center items-center border border-[#C9A84C]/25 rounded-full w-28 sm:w-32 h-28 sm:h-32 overflow-hidden hover:scale-105 transition-transform duration-200 shrink-0">
-  {member.image ? (
-    <img
-      src={member.image}
-      alt={member.name}
-      className="w-full h-full object-cover"
-    />
-  ) : (
-    <div className="flex justify-center items-center bg-[#12022A] border-[#C9A84C]/40 border-2 w-full h-full">
-      <span className="font-serif font-semibold text-[#C9A84C] text-[28px] tracking-wide">
-        {getInitials(member.name)}
-      </span>
-    </div>
-  )}
-</div>
-            <div className="text-left">
-              <p className="font-bold text-[#F5F0E8] text-[16px] leading-tight">Name:&nbsp;{member.name}</p>
-              <p className="font-semibold text-[#1e053e] text-[13px] underline uppercase tracking-[1.5px]">Title:&nbsp{member.Title}</p>
-              <p className="shadow-[#4B1E91] shadow-md p-1 border border-[#4B1E91] rounded-md text-[#1e053e] text-[13px] uppercase tracking-[1px]">***:{member.description}</p>
-            </div>
-            {/* <span className="m-2 text-[#1e053e] text-[13px] tracking-[2px]">
-              {index + 1} / {TEAM.length}
-            </span> */}
-          </div>
+          {/* Member info — animates vertically (y axis) */}
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={`info-${member.id}`}
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -40, opacity: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut', delay: 0.1 }}
+              className="flex items-start gap-4 bg-[#C9A84C] mt-6 px-4 py-3 border border-[#C9A84C]/20 rounded-sm w-full hover:scale-103"
+            >
+              {/* Avatar */}
+              <div className="flex justify-center items-center border border-[#C9A84C]/25 rounded-full w-28 sm:w-32 h-28 sm:h-32 overflow-hidden hover:scale-105 transition-transform duration-200 shrink-0">
+                {member.image ? (
+                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                ) : (
+                  <div className="flex justify-center items-center bg-[#12022A] border-[#C9A84C]/40 border-2 w-full h-full">
+                    <span className="font-serif font-semibold text-[#C9A84C] text-[28px] tracking-wide">
+                      {getInitials(member.name)}
+                    </span>
+                  </div>
+                )}
+              </div>
+
+              {/* Text */}
+              <div className="overflow-hidden text-left">
+                <p className="font-bold text-[#1e053e] text-[16px] leading-tight">
+                  Name:&nbsp;{member.name}
+                </p>
+                <p className="font-semibold text-[#1e053e] text-[13px] underline uppercase tracking-[1.5px]">
+                  Title:&nbsp;{member.Title}
+                </p>
+                {/* Scrollable description */}
+                <div className="shadow-[#4B1E91] shadow-md mt-1 p-1 border border-[#4B1E91] rounded-md max-h-20 overflow-y-auto">
+                  <p className="text-[#1e053e] text-[12px] leading-relaxed tracking-[0.5px]">
+                    {member.description}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
         </div>
       </div>
