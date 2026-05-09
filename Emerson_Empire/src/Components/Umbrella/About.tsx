@@ -65,17 +65,14 @@ const About: React.FC = () => {
         </h1>
 
         <p className="mx-auto max-w-3xl text-gray-300 text-lg leading-8">
-          At The Emerson Empire, our mission is to educate, empower, and create
-          meaningful opportunities for growth. We believe professionalism should
-          still feel human — grounded in service, integrity, leadership, and
-          long-term impact.
+       At The Emerson Empire, our mission is to educate, empower, and create meaningful opportunities for growth. We believe professional development should remain human, practical, 
+       and service-centered — grounded in integrity, leadership, and long-term impact.
         </p>
 
         <p className="mx-auto mt-6 max-w-3xl text-gray-400 text-base leading-8">
-          Across every division, we are committed to building systems,
-          experiences, and opportunities that help people grow with confidence,
-          dignity, and practical support.
-        </p>
+        Across every division, we are building systems, services, and learning experiences that help individuals, teams,
+         and small businesses grow with confidence, dignity, and practical support.
+          </p>
       </div>
 
       {/* Values Section */}
