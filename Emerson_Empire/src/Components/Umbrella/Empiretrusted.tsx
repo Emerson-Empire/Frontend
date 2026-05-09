@@ -12,11 +12,11 @@ interface TeamMember {
 Matheous
 
 const TEAM: TeamMember[] = [
-  { id: 1, name: 'Lyric Helena Emason', Title: 'Founder & CEO',  description: 'Leadership', image: Helena },
+  { id: 1, name: 'Lyric Helena Emerson', Title: 'Founder & CEO',  description: '  Emerson is the founder and visionary behind The Emerson Empire. He drives the strategic direction, culture, and long-term growth of the organization, ensuring every division operates with purpose, excellence, and a commitment to empowering the communities they serve.', image: Helena },
   { id: 2, name: 'Majembe Vincent', Title: 'Head of Web Development', description:  'Vincent leads the overall website development process, coordinates technical direction across the web development teams, and helps translate The Emerson Empire\'s brand vision into a functional digital presence.', image: Vincent },
   { id: 3, name: 'Mohamed Malik ', Title: 'Web Development Team Lead',  description: 'Mohamed Malik supports team organization, assignment coordination, and development progress across the web development group. His work helps keep the building process structured, collaborative, and moving forward.', image: Malik },
   { id: 5, name: ' Bruno Gutierrez Marin', Title: ' UX/UI & Web Design Lead',  description: 'Bruno support the visual design , user experience, and layout direction of website . His contributions help ensure the site is polished , accessible, and aligned with The Emersom Empire\'s professional brand identity', image:bruno },
-  { id: 4, name: 'Mathius', Title: 'Full Stack',  description: 'Web Development', image:Matheous },
+  // { id: 4, name: 'Mathius', Title: 'Full Stack',  description: 'Web Development', image:Matheous },
   
   // { id: 6, name: 'Jonathan', role: 'Developer', department: 'Web Development', image: undefined },
 ];
@@ -126,7 +126,7 @@ const EmpireTeamTrusted: React.FC = () => {
                   animate={{ x: 0, opacity: 1 }}
                   exit={{ x: direction * -80, opacity: 0 }}
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
-                  className="flex justify-center items-center bg-[#1e053e] border border-[#C9A84C]/20 rounded-xl w-full h-80 sm:h-105 overflow-hidden"
+                  className="flex justify-center items-center bg-[#1e053e] border border-[#C9A84C]/20 rounded-xl w-full h-100 sm:h-105 overflow-hidden"
                 >
                   {member.image ? (
                     <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
@@ -184,9 +184,9 @@ const EmpireTeamTrusted: React.FC = () => {
   )}
 </div>
             <div className="text-left">
-              <p className="font-semibold text-[#F5F0E8] text-[13px] leading-tight">{member.name}</p>
-              <p className="text-[#1e053e] text-[13px] uppercase tracking-[1.5px]">{member.Title}</p>
-              <p className="text-[#1e053e] text-[13px] uppercase tracking-[1px]">{member.description}</p>
+              <p className="font-bold text-[#F5F0E8] text-[16px] leading-tight">Name:&nbsp;{member.name}</p>
+              <p className="font-semibold text-[#1e053e] text-[13px] underline uppercase tracking-[1.5px]">Title:&nbsp{member.Title}</p>
+              <p className="shadow-[#4B1E91] shadow-md p-2 border border-[#4B1E91] rounded-md text-[#1e053e] text-[13px] uppercase tracking-[1px]">***:{member.description}</p>
             </div>
             <span className="m-2 text-[#1e053e] text-[13px] tracking-[2px]">
               {index + 1} / {TEAM.length}
