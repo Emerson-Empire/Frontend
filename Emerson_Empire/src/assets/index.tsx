@@ -5,8 +5,9 @@ import Campaign from "./wide.png"
 import Helena2 from"./campaign.jpeg"
 import EPDG from "./Professional.png"
 import Agency from"./Agency .png"
+import Vincent from "./vincent.jpeg"
 
 
 
 
-export{Emason,Helena,Majvin,Campaign ,Helena2,EPDG,Agency}
+export{Emason,Helena,Majvin,Campaign ,Helena2,EPDG,Agency,Vincent}

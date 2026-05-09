@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Helena } from '../../assets';
+import { Helena, Vincent } from '../../assets';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface TeamMember {
@@ -12,7 +12,7 @@ interface TeamMember {
 
 const TEAM: TeamMember[] = [
   { id: 1, name: 'Lyric Helena Emason', role: 'Founder & CEO', department: 'Leadership', image: Helena },
-  { id: 2, name: 'Majembe Vincent', role: 'Head of Development', department: 'Web Development', image: undefined },
+  { id: 2, name: 'Majembe Vincent', role: 'Head of Development', department: 'Web Development', image: Vincent },
   { id: 3, name: 'Malik', role: 'Team Lead', department: 'Web Development', image: undefined },
   { id: 4, name: 'Mathius', role: 'Full Stack', department: 'Web Development', image: undefined },
   { id: 5, name: 'Wiltod Kamdem', role: 'Developer', department: 'Web Development', image: undefined },
@@ -170,7 +170,7 @@ const EmpireTeamTrusted: React.FC = () => {
               {member.image ? (
                 <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
               ) : (
-                <span className="font-serif text-[#C9A84C] text-[13px]">{getInitials(member.name)}</span>
+                <span className="w-full h-full object-cover font-serif text-[#C9A84C] text-[13px]">{getInitials(member.name)}</span>
               )}
             </div>
             <div className="text-left">
