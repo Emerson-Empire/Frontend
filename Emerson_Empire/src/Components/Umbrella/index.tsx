@@ -12,9 +12,10 @@ import Test from "./Testimonials"
 import Price from "./Pricing"
 import Call from "./CTA"
 import FAQ from "./FAQ";
-import About from "./About"
+import About from "./About";
+import EmpireTeamTrusted from './Empiretrusted';
 
 
 
 export{AppCard,Auth,Footer,Hero,Works,Price,Test,Call,FAQ,
-    Navbar,Statstrip,Team,TrustedBy,Feature,About} 
+    Navbar,Statstrip,Team,TrustedBy,Feature,About,EmpireTeamTrusted} 

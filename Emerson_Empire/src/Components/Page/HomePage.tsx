@@ -1,5 +1,5 @@
  import React from 'react'
-import {   About, Call, FAQ, Feature, Footer, Hero, Navbar,Price,Team, Test, TrustedBy, Works} from '../Umbrella';
+import {   About, Call, EmpireTeamTrusted, FAQ, Feature, Footer, Hero, Navbar,Price,Test,Works} from '../Umbrella';
 import StatStrip from '../Umbrella/Statstrip';
  
  
@@ -9,8 +9,8 @@ import StatStrip from '../Umbrella/Statstrip';
      <div> 
         <Navbar/>
         <Hero/>
-        <TrustedBy/>
-<Team/>
+        <EmpireTeamTrusted/>
+       
 <About/>
 <StatStrip/>
 <Feature/>

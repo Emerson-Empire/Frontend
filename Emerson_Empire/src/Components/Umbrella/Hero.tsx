@@ -88,7 +88,7 @@ const Hero: React.FC = () => {
         {/* Agency Card */}
         {/* <div className="group hover:bg-[#C9A84C]/[0.103] px-8 py-10 border md:border-r border-b md:border-b-0 transition-colors duration-200 -[#]">
           */}
-         <div className="group px-8 py-10 transition-colors duration-200">
+         <div className="group m-1 px-8 py-10 border-[#C9A84C] border-4 rounded-xl transition-colors duration-200 hover:scale:105">
           
           
           <div className="mb-6 rounded-xl w-full h-70 overflow-hidden">
@@ -131,7 +131,7 @@ const Hero: React.FC = () => {
 
 
         {/* EPDG Card */}
-        <div className="group px-8 py-10 transition-colors duration-200">
+        <div className="group m-1 px-8 py-10 border-[#C9A84C] border-4 rounded-xl transition-colors duration-200 hover:scale:105">
        
        
        
