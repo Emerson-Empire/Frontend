@@ -16,8 +16,9 @@ import AgencyFAQ from "./AgencyFAQ";
 import EPDGFAQ from "./EPDGFAQ";
 import About from "./About";
 import EmpireTeamTrusted from './Empiretrusted';
+import CookieConsent from "./CookieConsent";
 
 
 
 export{AppCard,Auth,Footer,Hero,Works,Price,Test,Call,FAQ,AgencyFAQ,EPDGFAQ,
-    Navbar,Statstrip,Team,TrustedBy,Feature,About,EmpireTeamTrusted}
+    Navbar,Statstrip,Team,TrustedBy,Feature,About,EmpireTeamTrusted,CookieConsent}

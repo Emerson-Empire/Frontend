@@ -1,5 +1,5 @@
  import React from 'react'
-import {   About, Call, FAQ, EmpireTeamTrusted, Feature, Footer, Hero, Navbar,Test,Works} from '../Umbrella';
+import { About, Call, CookieConsent, FAQ, EmpireTeamTrusted, Feature, Footer, Hero, Navbar, Test, Works } from '../Umbrella';
 // import StatStrip from '../Umbrella/Statstrip';
  
  
@@ -21,8 +21,8 @@ import {   About, Call, FAQ, EmpireTeamTrusted, Feature, Footer, Hero, Navbar,Te
 
 <Price/> */}
 <Call/>
-  <Footer/>  
-    
+  <Footer/>
+  <CookieConsent />
      </div>
    )
  }
