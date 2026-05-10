@@ -12,10 +12,12 @@ import Test from "./Testimonials"
 import Price from "./Pricing"
 import Call from "./CTA"
 import FAQ from "./FAQ";
+import AgencyFAQ from "./AgencyFAQ";
+import EPDGFAQ from "./EPDGFAQ";
 import About from "./About";
 import EmpireTeamTrusted from './Empiretrusted';
 
 
 
-export{AppCard,Auth,Footer,Hero,Works,Price,Test,Call,FAQ,
-    Navbar,Statstrip,Team,TrustedBy,Feature,About,EmpireTeamTrusted} 
+export{AppCard,Auth,Footer,Hero,Works,Price,Test,Call,FAQ,AgencyFAQ,EPDGFAQ,
+    Navbar,Statstrip,Team,TrustedBy,Feature,About,EmpireTeamTrusted}

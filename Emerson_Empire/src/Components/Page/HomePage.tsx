@@ -1,6 +1,6 @@
  import React from 'react'
-import {   About, Call, EmpireTeamTrusted, Feature, Footer, Hero, Navbar,Test,Works} from '../Umbrella';
-import StatStrip from '../Umbrella/Statstrip';
+import {   About, Call, FAQ, EmpireTeamTrusted, Feature, Footer, Hero, Navbar,Test,Works} from '../Umbrella';
+// import StatStrip from '../Umbrella/Statstrip';
  
  
  
@@ -11,14 +11,14 @@ import StatStrip from '../Umbrella/Statstrip';
         <Hero/>
         <EmpireTeamTrusted/>
        
-<About/>
-<StatStrip/>
+ <About/>
+{/* <StatStrip/>  */}
 <Feature/>
 <Works/>
 <Test/>
-
-{/*
  <FAQ/>
+{/*
+
 <Price/> */}
 <Call/>
   <Footer/>  

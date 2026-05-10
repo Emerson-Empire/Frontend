@@ -1,31 +1,36 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const FAQS = [
+const AGENCY_FAQS = [
   {
-    question: 'What exactly is Emerson Empire?',
+    question: 'What types of insurance do you offer?',
     answer:
-      'Emerson Empire is a dual-division company. The Agency division provides professional insurance and tax filing services for individuals and businesses. EPDG — our Entrepreneurial and Professional Development Group — runs internship placements and training programs for people looking to grow their careers or launch businesses.',
+      'We provide guidance on a range of personal and commercial insurance options including life insurance, health insurance, auto insurance, home and property insurance, business liability, and workers compensation. Our team assesses your specific situation and helps identify the most appropriate coverage for your needs.',
   },
   {
-    question: 'What are the two divisions?',
+    question: 'Can you help if I have not filed taxes in multiple years?',
     answer:
-      'The Emerson Agency focuses on financial services including insurance guidance and tax support. The Emerson Professional Development Group (EPDG) is a career and business development program designed for students, early-career professionals, and emerging leaders.',
+      'Yes — this is one of the most common situations we help with. We support clients in organizing back tax filings, understanding their options for penalty relief where applicable, and setting up a clearer system going forward. There is no judgment here; our goal is to help you move forward with clarity.',
   },
   {
-    question: 'How do I know which division is right for me?',
+    question: 'Do you handle business tax filing as well as personal?',
     answer:
-      'If you are looking for support with insurance, tax filing, or business financial planning, the Emerson Agency is for you. If you are looking to grow your career, gain professional experience, or develop leadership and business skills, EPDG is the right fit. Not sure? Reach out and we will help point you in the right direction.',
+      'We support both individual and business tax filing, including for sole proprietors, LLCs, partnerships, and incorporated businesses. We also provide bookkeeping support and financial organization assistance for businesses that need year-round help.',
   },
   {
-    question: 'How do I get started?',
+    question: 'How do I submit an inquiry for Agency services?',
     answer:
-      'Simply submit an inquiry through our website. For Agency enquiries, one of our team members will reach out within 24 hours. For EPDG, you will be directed to our program application form. Either way, you will have a real conversation with a real person — no automated funnels.',
+      'You can submit an inquiry through our contact form on this site. A member of our team will follow up within 24 hours to learn more about your needs and help determine the right next step.',
   },
   {
-    question: 'Is The Emerson Empire a fully established company?',
+    question: 'Are your services currently available?',
     answer:
-      'The Emerson Empire is in its early development stage, actively building its professional ecosystem through founder leadership, team collaboration, and its summer internship program. Our services and systems are growing, and we are committed to communicating clearly about what is available at each stage.',
+      'The Emerson Agency is in its development stage and actively building out its service offerings. We encourage you to submit an inquiry so we can understand your needs, communicate what is currently available, and keep you informed as new services become accessible.',
+  },
+  {
+    question: 'Will I work with a dedicated team member?',
+    answer:
+      'Our goal is to ensure every client has a clear point of contact throughout the process. As our team grows, we are building systems to provide organized, personalized support for each client we work with.',
   },
 ];
 
@@ -42,7 +47,7 @@ const FAQRow: React.FC<{ question: string; answer: string; index: number }> = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-30px' }}
       transition={{ duration: 0.45, delay: index * 0.06 }}
-      className="border-white/8 last:border-0 border-b"
+      className="border-b border-white/8 last:border-0"
     >
       <button
         onClick={() => setOpen(o => !o)}
@@ -52,10 +57,10 @@ const FAQRow: React.FC<{ question: string; answer: string; index: number }> = ({
           {question}
         </span>
         <span
-          className="flex justify-center items-center mt-0.5 border rounded-sm w-7 h-7 transition-all duration-300 shrink-0"
+          className="flex justify-center items-center mt-0.5 border rounded-sm w-7 h-7 shrink-0 transition-all duration-300"
           style={{
             borderColor: open ? '#C9A84C50' : 'rgba(255,255,255,0.1)',
-            color: open ? '#C9A84C' : '#9B7FD4',
+            color: open ? '#C9A84C' : '#C9A84C80',
             transform: open ? 'rotate(45deg)' : 'rotate(0deg)',
           }}
         >
@@ -85,36 +90,36 @@ const FAQRow: React.FC<{ question: string; answer: string; index: number }> = ({
   );
 };
 
-const FAQ: React.FC = () => (
-  <section id="faq" className="bg-[#12022A] px-6 sm:px-10 lg:px-16 py-20">
+const AgencyFAQ: React.FC = () => (
+  <section id="agency-faq" className="bg-[#12022A] px-6 sm:px-10 lg:px-16 py-20">
     {/* Header */}
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="bg-[#4B1E91] shadow-md shadow-white mb-12 rounded-md text-center"
+      className="mb-12 text-center"
     >
       <p className="mb-4 font-semibold text-[#C9A84C] text-[9px] uppercase tracking-[4px]">
-        FAQs
+        Emerson Agency — FAQs
       </p>
       <h2 className="mb-4 text-[#F5F0E8] text-[36px] sm:text-[44px] leading-[1.1] tracking-wide heading">
-        Common Questions
+        Agency Questions
       </h2>
       <p className="mx-auto max-w-lg text-[15px] text-purple-300 leading-[1.8] body">
-        Everything you need to know before taking the next step with Emerson Empire.
+        Common questions about insurance guidance, tax support, and Agency services.
       </p>
       <div className="bg-[#C9A84C]/40 mx-auto mt-6 w-12 h-px" />
     </motion.div>
 
     {/* FAQ list */}
-    <div className="bg-[#4B1E91] shadow-md shadow-white mx-auto px-6 sm:px-8 border border-white/8 rounded-xl max-w-3xl">
-      {FAQS.map((item, i) => (
+    <div className="mx-auto px-6 sm:px-8 border border-white/8 rounded-xl max-w-3xl">
+      {AGENCY_FAQS.map((item, i) => (
         <FAQRow key={item.question} question={item.question} answer={item.answer} index={i} />
       ))}
     </div>
 
-    {/* Still have questions */}
+    {/* CTA */}
     <motion.p
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -122,12 +127,12 @@ const FAQ: React.FC = () => (
       transition={{ delay: 0.3 }}
       className="mt-10 text-[13px] text-purple-400 text-center body"
     >
-      Still have questions?{' '}
+      Have a specific question?{' '}
       <a href="#contact" className="text-[#C9A84C] hover:underline underline-offset-4 transition-all">
-        Reach out to us directly
+        Submit an inquiry
       </a>
     </motion.p>
   </section>
 );
 
-export default FAQ;
+export default AgencyFAQ;

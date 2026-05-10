@@ -58,13 +58,13 @@ const EmpireTeamTrusted: React.FC = () => {
     <section className="bg-[#12022A] px-6 sm:px-10 lg:px-16 py-20">
 
       {/* Main layout */}
-      <div className="flex lg:flex-row flex-col items-center gap-12">
+      <div className="flex flex-col items-center gap-12 lg:flex-row">
 
         {/* Left — header + scrolling logos */}
         <div className="w-full lg:w-1/2">
 
           {/* Header */}
-          <div className="mb-14 text-center">
+          <div className="text-center mb-14">
             <div className="inline-flex items-center gap-3 mb-5">
               <span className="block bg-[#C9A84C] opacity-50 w-7 h-px" />
               <p className="font-semibold text-[#C9A84C] text-[10px] uppercase tracking-[4px] body">
@@ -106,7 +106,7 @@ const EmpireTeamTrusted: React.FC = () => {
         <div className="flex flex-col items-center bg-[#4B1E91] p-3 border-2 rounded-2xl w-full lg:w-1/2">
 
           {/* Image + side buttons (lg only) */}
-          <div className="flex items-center gap-4 w-full">
+          <div className="flex items-center w-full gap-4">
             <button
               onClick={() => go(-1)}
               className="hidden lg:flex justify-center items-center border border-[#C9A84C]/30 hover:border-[#C9A84C] rounded-sm w-16 h-16 font-bold text-[#C9A84C] text-2xl transition-colors duration-200 shrink-0"
@@ -127,7 +127,7 @@ const EmpireTeamTrusted: React.FC = () => {
                   className="flex justify-center items-center bg-[#1e053e] border border-[#C9A84C]/20 rounded-xl w-full h-100 sm:h-105 overflow-hidden"
                 >
                   {member.image ? (
-                    <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                    <img src={member.image} alt={member.name} className="object-cover w-full h-full" />
                   ) : (
                     <span className="font-serif font-semibold text-[#C9A84C] text-[64px]">
                       {getInitials(member.name)}
@@ -146,7 +146,7 @@ const EmpireTeamTrusted: React.FC = () => {
           </div>
 
           {/* Buttons below image (mobile only) */}
-          <div className="lg:hidden flex items-center gap-6 mt-4">
+          <div className="flex items-center gap-6 mt-4 lg:hidden">
             <button
               onClick={() => go(-1)}
               className="flex justify-center items-center border border-[#C9A84C]/30 hover:border-[#C9A84C] rounded-sm w-16 h-16 font-bold text-[#C9A84C] text-2xl transition-colors duration-200"
@@ -177,7 +177,7 @@ const EmpireTeamTrusted: React.FC = () => {
               {/* Avatar */}
               <div className="flex justify-center items-center border border-[#C9A84C]/25 rounded-full w-28 sm:w-32 h-28 sm:h-32 overflow-hidden hover:scale-105 transition-transform duration-200 shrink-0">
                 {member.image ? (
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                  <img src={member.image} alt={member.name} className="object-cover w-full h-full" />
                 ) : (
                   <div className="flex justify-center items-center bg-[#12022A] border-[#C9A84C]/40 border-2 w-full h-full">
                     <span className="font-serif font-semibold text-[#C9A84C] text-[28px] tracking-wide">
@@ -196,7 +196,7 @@ const EmpireTeamTrusted: React.FC = () => {
                   Title:&nbsp;{member.Title}
                 </p>
                 {/* Scrollable description */}
-                <div className="shadow-[#4B1E91] shadow-md mt-1 p-1 border border-[#4B1E91] rounded-md max-h-20 overflow-y-auto">
+                <div className="shadow-[#4B1E91] shadow-2xl mt-1 p-1 border border-[#4B1E91] rounded-md max-h-20 overflow-y-auto">
                   <p className="text-[#1e053e] text-[12px] leading-relaxed tracking-[0.5px]">
                     {member.description}
                   </p>
