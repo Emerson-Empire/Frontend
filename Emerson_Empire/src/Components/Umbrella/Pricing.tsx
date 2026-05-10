@@ -16,103 +16,99 @@ interface PricingTier {
 
 const AGENCY_TIERS: PricingTier[] = [
   {
-    name: 'Essential',
-    price: '$49',
-    period: '/ month',
-    description: 'Perfect for individuals needing basic insurance and personal tax filing.',
+    name: 'Individual Support',
+    price: 'Coming Soon',
+    period: '',
+    description: 'Personal insurance guidance and tax filing support for individuals and families.',
     features: [
       'Personal insurance consultation',
-      'Annual personal tax filing',
+      'Individual tax filing support',
       'Basic tax advisory',
-      'Email support',
-      'Compliance checklist',
+      'Email correspondence',
+      'Compliance guidance',
     ],
-    cta: 'Get Started',
-    href: '/agency/essential',
+    cta: 'Submit an Inquiry',
+    href: '#contact',
   },
   {
-    name: 'Professional',
-    price: '$129',
-    period: '/ month',
-    description: 'Ideal for freelancers and small business owners who need more coverage.',
+    name: 'Professional Support',
+    price: 'Coming Soon',
+    period: '',
+    description: 'Broader support for freelancers and small business owners navigating insurance and tax needs.',
     features: [
-      'Personal + business insurance',
-      'Quarterly tax filing & review',
-      'Proactive tax planning',
-      'Dedicated account manager',
-      'Priority support',
-      'Regulatory compliance monitoring',
+      'Personal and business insurance guidance',
+      'Business tax filing support',
+      'Tax planning assistance',
+      'Dedicated point of contact',
+      'Regulatory compliance guidance',
     ],
-    cta: 'Most Popular',
-    href: '/agency/professional',
+    cta: 'Submit an Inquiry',
+    href: '#contact',
     highlighted: true,
   },
   {
-    name: 'Enterprise',
-    price: 'Custom',
+    name: 'Business & Enterprise',
+    price: 'Custom Inquiry',
     period: '',
-    description: 'Full-service insurance and tax management for growing businesses.',
+    description: 'Tailored support for growing businesses with more complex financial and insurance needs.',
     features: [
-      'Full commercial insurance portfolio',
-      'Monthly tax & accounting',
-      'Annual financial strategy sessions',
-      'Multi-entity tax management',
-      'Dedicated team',
-      '24/7 priority support',
+      'Commercial insurance portfolio guidance',
+      'Business tax and accounting support',
+      'Financial organization assistance',
+      'Multi-entity considerations',
+      'Dedicated support team',
     ],
     cta: 'Contact Us',
-    href: '/agency/enterprise',
+    href: '#contact',
   },
 ];
 
 const EPDG_TIERS: PricingTier[] = [
   {
-    name: 'Starter',
-    price: '$0',
+    name: 'Internship Program',
+    price: 'Coming Soon',
     period: '',
-    description: 'Free access to community resources, events, and introductory workshops.',
+    description: 'Structured internship experience with guided projects, mentorship, and portfolio-building opportunities.',
     features: [
-      'Community membership',
-      'Monthly networking events',
-      'Access to introductory workshops',
-      'Career resources library',
-      'Alumni newsletter',
+      'Real project contributions',
+      'Mentor guidance and feedback',
+      'Portfolio-ready work',
+      'Resume and LinkedIn support',
+      'Program documentation',
     ],
-    cta: 'Join Free',
-    href: '/epdg/starter',
-  },
-  {
-    name: 'Internship Track',
-    price: '$199',
-    period: '/ programme',
-    description: 'Structured 3-month internship placement with mentorship and job support.',
-    features: [
-      '3-month live internship placement',
-      'Bi-weekly mentor sessions',
-      'Portfolio project reviews',
-      'Resume & LinkedIn coaching',
-      'Employer partner introductions',
-      'Programme certificate',
-    ],
-    cta: 'Apply Now',
-    href: '/epdg/internship',
+    cta: 'Submit an Application',
+    href: '#contact',
     highlighted: true,
   },
   {
     name: 'Leadership Track',
-    price: '$499',
-    period: '/ programme',
-    description: 'Full entrepreneurship and leadership development for serious builders.',
+    price: 'Coming Soon',
+    period: '',
+    description: 'Extended professional development focused on entrepreneurship, leadership, and business readiness.',
     features: [
-      'Everything in Internship Track',
-      '6-month entrepreneur programme',
-      'Business plan development',
-      'Investor pitch coaching',
-      '1-on-1 executive coaching',
-      'Lifetime alumni network access',
+      'Business planning guidance',
+      'Leadership development workshops',
+      'Communication and strategy training',
+      'Professional portfolio support',
+      'Long-term network access',
     ],
-    cta: 'Apply Now',
-    href: '/epdg/leadership',
+    cta: 'Submit an Application',
+    href: '#contact',
+  },
+  {
+    name: 'Custom / Enterprise',
+    price: 'Custom Inquiry',
+    period: '',
+    description: 'Custom program structures for organizations, institutions, or groups seeking tailored professional development.',
+    features: [
+      'Custom program design',
+      'Team or cohort onboarding',
+      'Dedicated program coordinator',
+      'Flexible scheduling and tracks',
+      'Organization-level reporting',
+    ],
+    cta: 'Contact Us',
+    href: '#contact',
   },
 ];
 
@@ -217,11 +213,10 @@ const Pricing: React.FC = () => {
           Pricing
         </p>
         <h2 className="mb-4 text-[#F5F0E8] text-[36px] sm:text-[44px] leading-[1.1] tracking-wide heading">
-          Simple, Transparent Plans
+          Service Options Coming Soon
         </h2>
         <p className="mx-auto max-w-lg text-[15px] text-purple-300 leading-[1.8] body">
-          No hidden fees. No surprises. Choose the plan that fits where you are
-          today and scale as you grow.
+          We are currently developing clear service options for individuals, families, small businesses, and professional development clients.
         </p>
         <div className="bg-[#C9A84C]/40 mx-auto mt-6 w-12 h-px" />
       </motion.div>
@@ -254,7 +249,7 @@ const Pricing: React.FC = () => {
 
       {/* Footer note */}
       <p className="mt-10 text-[12px] text-purple-400/60 text-center tracking-wide body">
-        All plans include a free initial consultation. Cancel or upgrade anytime.
+        Service details and availability will be communicated directly. Submit an inquiry to learn more.
       </p>
     </section>
   );

@@ -4,54 +4,54 @@ import { motion } from 'framer-motion';
 const AGENCY_STEPS = [
   {
     number: '01',
-    title: 'Book a Free Consultation',
+    title: 'Submit an Inquiry',
     description:
-      "Start with a no-obligation call. We learn about your situation — whether it's insurance needs or tax filing — and map out the best path forward.",
+      'Start by submitting an inquiry so we can better understand your needs, goals, and the type of support you are looking for.',
   },
   {
     number: '02',
-    title: 'We Build Your Plan',
+    title: 'We Identify the Right Support',
     description:
-      'Our team crafts a personalised insurance or tax strategy tailored to your life or business goals, with full transparency on costs and coverage.',
+      'Our team helps identify the services, resources, or next steps that may best support your personal, professional, or business goals.',
   },
   {
     number: '03',
-    title: 'We Handle Everything',
+    title: 'We Support the Process',
     description:
-      'From paperwork to filing to renewals, we manage the process end-to-end so you never have to chase deadlines or decode complex jargon.',
+      'As services become available, our goal is to provide organized, practical support that helps clients move through paperwork, planning, preparation, and follow-up with greater clarity.',
   },
   {
     number: '04',
-    title: 'You Stay Protected & Compliant',
+    title: 'You Stay Informed and Prepared',
     description:
-      'Enjoy ongoing support, annual reviews, and proactive advice that keeps you covered and compliant all year round — not just at tax season.',
+      'Our goal is to help clients stay organized, informed, and prepared through practical education, service support, and clear communication.',
   },
 ];
 
 const EPDG_STEPS = [
   {
     number: '01',
-    title: 'Apply to the Programme',
+    title: 'Apply to the Program',
     description:
-      'Submit a short application outlining your goals and background. We accept driven individuals at all stages — students, graduates, and career-changers.',
+      'Submit an application outlining your goals, background, and area of interest. The program is designed for students, early-career professionals, career changers, and emerging leaders seeking practical experience.',
   },
   {
     number: '02',
     title: 'Get Matched & Onboarded',
     description:
-      'We match you to the right track — internship, mentorship, or training — and onboard you into the Emerson ecosystem with a dedicated guide.',
+      'Selected participants are matched with a track or team based on program needs, skills, availability, and professional goals.',
   },
   {
     number: '03',
     title: 'Learn, Build & Execute',
     description:
-      'Work on real projects, attend workshops, and receive coaching that challenges you to apply skills immediately in professional environments.',
+      'Participants work on guided projects, attend meetings or workshops, and build skills through practical assignments, collaboration, and leadership development.',
   },
   {
     number: '04',
-    title: 'Graduate & Get Placed',
+    title: 'Complete the Program & Build Your Portfolio',
     description:
-      'Complete your programme with a verified portfolio, a strong network, and direct access to our employer partner pipeline for placement opportunities.',
+      'Participants who complete the program may leave with portfolio-ready work, stronger professional skills, leadership experience, and documentation of their contributions.',
   },
 ];
 
@@ -123,8 +123,7 @@ const HowItWorks: React.FC = () => {
           How It Works
         </h2>
         <p className="mx-auto max-w-xl text-[15px] text-purple-300 leading-[1.8] body">
-          Two divisions. One streamlined experience. Here is exactly what happens
-          when you partner with Emerson Empire.
+          Two developing divisions. One connected ecosystem. Here is how The Emerson Empire is building pathways for support, training, and professional growth.
         </p>
         <div className="bg-[#C9A84C]/40 mx-auto mt-6 w-12 h-px" />
       </motion.div>

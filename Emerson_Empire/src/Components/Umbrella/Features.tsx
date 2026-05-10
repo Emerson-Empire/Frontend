@@ -153,44 +153,44 @@ const DIVISIONS: Division[] = [
     tag: 'Division 02',
     number: '02',
     heading: 'Emerson Professional Development Group',
-    subheading: 'A Development Program That Builds Leaders',
+    subheading: 'Professional Development, Internship Training, and Career Readiness',
     accent: '#9B7FD4',
     features: [
       {
         icon: <UsersIcon />,
-        title: 'Internship Programme',
+        title: 'Internship Program',
         description:
-          'Hands-on placements inside real business divisions. Interns work on live projects and leave with portfolio-ready experience.',
+          'Hands-on learning opportunities where interns contribute to real projects, strengthen professional skills, and build portfolio-ready experience.',
       },
       {
         icon: <TrendingUpIcon />,
         title: 'Entrepreneurship Training',
         description:
-          'Structured workshops covering business planning, financial literacy, and go-to-market strategy for aspiring founders.',
+          'Structured learning focused on business planning, financial literacy, leadership, communication, and practical strategy for aspiring professionals and entrepreneurs.',
       },
       {
         icon: <AwardIcon />,
         title: 'Mentorship & Coaching',
         description:
-          'One-on-one sessions with seasoned professionals who guide your growth, sharpen your vision, and accelerate your path.',
+          'Guidance, feedback, and leadership support designed to help participants develop confidence, communication skills, and professional direction.',
       },
       {
         icon: <BookIcon />,
         title: 'Professional Development',
         description:
-          'Soft-skills bootcamps, leadership intensives, and career readiness programmes designed for the modern professional.',
+          'Career readiness, leadership development, communication practice, resume support, and workplace preparation for emerging professionals.',
       },
       {
         icon: <BriefcaseIcon />,
-        title: 'Job Placement Support',
+        title: 'Career Preparation Support',
         description:
-          'Resume reviews, interview coaching, and a direct pipeline to employer partners actively looking for EPDG graduates.',
+          'Resume review, interview preparation, LinkedIn support, portfolio development, and guidance for future job or internship opportunities.',
       },
       {
         icon: <GlobeIcon />,
         title: 'Community & Network',
         description:
-          'Lifetime access to the Emerson alumni network — events, collaborations, and a community of builders across industries.',
+          'A developing professional network built through collaboration, shared learning, team projects, and long-term connection across industries.',
       },
     ],
   },

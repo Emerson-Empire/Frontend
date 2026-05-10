@@ -12,7 +12,7 @@ const FAQS: FAQItem[] = [
     division: 'General',
     question: 'What exactly is Emerson Empire?',
     answer:
-      "Emerson Empire is a dual-division company. The Agency division provides professional insurance and tax filing services for individuals and businesses. EPDG — our Entrepreneurial and Professional Development Group — runs internship placements and training programmes for people looking to grow their careers or launch businesses.",
+      "Emerson Empire is a dual-division company. The Agency division provides professional insurance and tax filing services for individuals and businesses. EPDG — our Entrepreneurial and Professional Development Group — runs internship placements and training programs for people looking to grow their careers or launch businesses.",
   },
   {
     division: 'Agency',
@@ -34,27 +34,27 @@ const FAQS: FAQItem[] = [
   },
   {
     division: 'EPDG',
-    question: 'Who can apply to the EPDG internship programme?',
+    question: 'Who can apply to the EPDG internship program?',
     answer:
-      "We welcome applications from students, recent graduates, and career-changers at any stage. There is no strict academic requirement — we look for drive, curiosity, and a genuine desire to learn. If you are willing to work hard and grow, we want to hear from you.",
+      "Students, early-career professionals, career changers, and emerging leaders may apply. Selection depends on program needs, communication, availability, experience level, and alignment with the current team structure.",
   },
   {
     division: 'EPDG',
     question: 'Is the internship paid or unpaid?',
     answer:
-      "Our internship structure varies by placement. Some positions are stipend-based and others are unpaid but carry significant value through mentorship, certification, and direct employer introductions at completion. All details are clearly outlined before you commit to a track.",
+      "The Summer Internship Program is primarily an educational and professional development experience. Some leadership or performance-based stipend opportunities may become available depending on role, contribution, program needs, and available funding. Any stipend or paid opportunity will be communicated clearly and separately.",
   },
   {
     division: 'EPDG',
-    question: 'How long does the programme take?',
+    question: 'How long does the program take?',
     answer:
-      "The Internship Track runs for three months. The Leadership and Entrepreneurship Track is a six-month programme. Both are structured around your existing schedule — we work with you whether you are studying full-time, working, or in transition.",
+      "The current summer internship structure is designed as a multi-week professional development experience, with team assignments, guided projects, meetings, and portfolio-building opportunities.",
   },
   {
     division: 'General',
     question: 'How do I get started?',
     answer:
-      "Simply book a free consultation through our website. For Agency enquiries, one of our insurance or tax advisors will reach out within 24 hours. For EPDG, you will be directed to our programme application form. Either way, you will have a real conversation with a real person — no automated funnels.",
+      "Simply submit an inquiry through our website. For Agency enquiries, one of our team members will reach out within 24 hours. For EPDG, you will be directed to our program application form. Either way, you will have a real conversation with a real person — no automated funnels.",
   },
 ];
 

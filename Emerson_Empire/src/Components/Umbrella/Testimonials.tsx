@@ -1,179 +1,157 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
+import MatheusImg from '../../assets/Matheus.jpeg';
+import { EPDG as EpdgLogo, Agency as AgencyLogo } from '../../assets';
 
-interface Testimonial {
-  name: string;
-  role: string;
-  division: 'Agency' | 'EPDG';
-  quote: string;
-  initials: string;
-}
-
-const TESTIMONIALS: Testimonial[] = [
-  {
-    name: 'Amara Osei',
-    role: 'Small Business Owner',
-    division: 'Agency',
-    quote:
-      "Emerson Agency completely transformed how I look at my business finances. They handled our corporate tax filing, found deductions I had missed for years, and set up an insurance plan that actually makes sense for our size. I no longer dread tax season.",
-    initials: 'AO',
-  },
-  {
-    name: 'Tendai Moyo',
-    role: 'Family Client',
-    division: 'Agency',
-    quote:
-      "I came in overwhelmed — I had not filed taxes in two years and had no life insurance plan. The team at Emerson Agency sorted everything without judgement. Clean, professional, and genuinely caring. They have a client for life.",
-    initials: 'TM',
-  },
-  {
-    name: 'Lerato Dlamini',
-    role: 'EPDG Graduate, Now Marketing Associate',
-    division: 'EPDG',
-    quote:
-      "The internship programme placed me inside a real company from week one. I built campaigns, sat in client meetings, and had a mentor who pushed me every step. Six months later I had a full-time offer. EPDG changed the trajectory of my career.",
-    initials: 'LD',
-  },
-  {
-    name: 'Kwame Asante',
-    role: 'Entrepreneur & EPDG Alumnus',
-    division: 'EPDG',
-    quote:
-      "Before EPDG I had an idea and no roadmap. The entrepreneurship workshops gave me a business plan, financial model, and the confidence to pitch investors. I launched my company three months after graduating from the programme.",
-    initials: 'KA',
-  },
-  {
-    name: 'Zanele Khumalo',
-    role: 'HR Manager, Corporate Client',
-    division: 'Agency',
-    quote:
-      "We switched our company insurance portfolio to Emerson Agency and the difference was immediate. Better coverage, lower premiums, and a team that actually explains what you are paying for. Highly recommend to any growing business.",
-    initials: 'ZK',
-  },
+const EPDG_STATS = [
+  { value: '+100', label: 'Young professionals engaged in the program' },
+  { value: '+50', label: 'Participants in entrepreneurship development' },
+  { value: '+200', label: 'Students reached across all tracks' },
 ];
 
-const QuoteIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-    <path
-      d="M6 20c0-5.333 2.667-9.333 8-12l2 3c-3.333 1.667-5 4-5 7h4v8H6v-6zm16 0c0-5.333 2.667-9.333 8-12l2 3c-3.333 1.667-5 4-5 7h4v8h-9v-6z"
-      fill="currentColor"
-      opacity="0.3"
-    />
-  </svg>
+const AGENCY_STATS = [
+  { value: '+150', label: 'Individuals and families supported' },
+  { value: '+300', label: 'Inquiries and consultations handled' },
+  { value: '+80', label: 'Clients guided through service planning' },
+];
+
+const StatCard = ({
+  value,
+  label,
+  index,
+  delay = 0,
+}: {
+  value: string;
+  label: string;
+  index: number;
+  delay?: number;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 16 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5, delay: delay + index * 0.1 }}
+    className="bg-white/5 p-4 border border-white/10 rounded-lg"
+  >
+    <p className="mb-1 font-bold text-[#C9A84C] text-[22px] leading-none">{value}</p>
+    <p className="text-[#F5F0E8]/65 text-[12px] leading-snug">{label}</p>
+  </motion.div>
+);
+
+const LogoBox = ({ src, alt, side }: { src: string; alt: string; side: 'left' | 'right' }) => (
+  <motion.div
+    initial={{ opacity: 0, x: side === 'left' ? -20 : 20 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+    className={`flex ${side === 'right' ? 'lg:justify-end' : 'lg:justify-start'} justify-center`}
+  >
+    <img src={src} alt={alt} className="w-28 h-28 object-contain drop-shadow-lg" />
+  </motion.div>
 );
 
 const Testimonials: React.FC = () => {
-  const [active, setActive] = useState(0);
-  const current = TESTIMONIALS[active];
-
   return (
-    <section id="Testimony" className="bg-[#12022A] px-6 sm:px-10 lg:px-16 py-20 overflow-hidden">
-      {/* Header */}
+    <section
+      id="Testimony"
+      className="bg-[#12022A] px-6 sm:px-10 lg:px-16 py-20 overflow-hidden"
+    >
+      {/* ── Title ── */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mb-14 text-center"
+        className="mb-12 text-center"
       >
         <p className="mb-4 font-semibold text-[#C9A84C] text-[9px] uppercase tracking-[4px]">
-          Client Stories
+          Our Journey
         </p>
-        <h2 className="text-[#F5F0E8] text-[36px] sm:text-[44px] leading-[1.1] tracking-wide heading">
-          What People Say
+        <h2 className="font-bold text-[#F5F0E8] text-[24px] sm:text-[32px] lg:text-[40px] uppercase tracking-[0.15em] heading">
+          Early Impact
         </h2>
-        <div className="bg-[#C9A84C]/40 mx-auto mt-5 w-12 h-px" />
+        <div className="bg-[#C9A84C]/40 mx-auto mt-4 w-16 h-px" />
       </motion.div>
 
-      {/* Main testimonial */}
-      <div className="mx-auto max-w-3xl">
-        <AnimatePresence mode="wait">
+      {/* ── 3-column grid ── */}
+      {/*
+        Mobile  : single col — center image first (order-1), EPDG second (order-2), Agency third (order-3)
+        Desktop : left | center | right  (220px · 1fr · 220px)
+      */}
+      <div className="items-start gap-8 grid grid-cols-1 lg:grid-cols-[220px_1fr_220px] mx-auto max-w-6xl">
+
+        {/* ── LEFT: EPDG ── */}
+        <motion.div
+          initial={{ opacity: 0, x: -24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col gap-4 order-2 lg:order-1"
+        >
+          <LogoBox src={EpdgLogo} alt="EPDG logo" side="left" />
+          <div className="gap-3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1">
+            {EPDG_STATS.map((stat, i) => (
+              <StatCard key={i} {...stat} index={i} delay={0.1} />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* ── CENTER: Image + Impact Statement ── */}
+        <div className="flex flex-col gap-5 order-1 lg:order-2">
           <motion.div
-            key={active}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="relative bg-[#4B1E91]/30 p-8 sm:p-10 border border-white/8 rounded-xl"
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="bg-white/5 border border-white/10 rounded-xl aspect-4/3 overflow-hidden"
           >
-            {/* Division badge */}
-            <span
-              className="top-6 right-6 absolute px-2.5 py-1 rounded-sm font-semibold text-[9px] uppercase tracking-[3px]"
-              style={{
-                background: current.division === 'Agency' ? '#C9A84C18' : '#9B7FD418',
-                color: current.division === 'Agency' ? '#C9A84C' : '#9B7FD4',
-                border: `1px solid ${current.division === 'Agency' ? '#C9A84C30' : '#9B7FD430'}`,
-              }}
-            >
-              {current.division}
-            </span>
-
-            {/* Quote icon */}
-            <div className="mb-6 text-[#C9A84C]">
-              <QuoteIcon />
-            </div>
-
-            {/* Quote text */}
-            <p className="mb-8 text-[#F5F0E8]/90 text-[16px] sm:text-[18px] italic leading-[1.9] body">
-              "{current.quote}"
-            </p>
-
-            {/* Author */}
-            <div className="flex items-center gap-4">
-              <div
-                className="flex justify-center items-center rounded-sm w-11 h-11 font-serif font-bold text-[13px]"
-                style={{ background: '#C9A84C18', color: '#C9A84C', border: '1px solid #C9A84C35' }}
-              >
-                {current.initials}
-              </div>
-              <div>
-                <p className="font-semibold text-[#F5F0E8] text-[14px] tracking-wide heading">
-                  {current.name}
-                </p>
-                <p className="mt-0.5 text-[12px] text-purple-400 tracking-wide body">
-                  {current.role}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Navigation dots */}
-        <div className="flex justify-center items-center gap-3 mt-8">
-          {TESTIMONIALS.map((t, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              className="rounded-sm transition-all duration-300"
-              style={{
-                width: i === active ? '28px' : '8px',
-                height: '8px',
-                background: i === active ? '#C9A84C' : '#C9A84C30',
-              }}
-              aria-label={`View testimonial from ${t.name}`}
+            <img
+              src={MatheusImg}
+              alt="The Emerson Empire team"
+              className="w-full h-full object-cover object-center"
             />
-          ))}
+          </motion.div>
+
+          {/* Impact statement */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <p className="mb-3 font-semibold text-[#C9A84C] text-[9px] uppercase tracking-[4px]">
+              Where We Are Now
+            </p>
+            <p className="text-[#F5F0E8]/80 text-[14px] sm:text-[15px] leading-[1.9] body">
+              The Emerson Empire is currently building its public-facing ecosystem
+              through the work of its founder, team leads, and summer internship
+              program. This landing page represents the beginning of a larger effort
+              to create professional systems, business services, career development
+              resources, and real-world learning opportunities.
+            </p>
+            <p className="mt-4 text-[#F5F0E8]/50 text-[13px] leading-[1.85] body">
+              The Emerson Empire is in its early development stage, building a
+              professional ecosystem rooted in service, education, business support,
+              and opportunity.
+            </p>
+          </motion.div>
         </div>
 
-        {/* Prev / Next */}
-        <div className="flex justify-center gap-3 mt-6">
-          <button
-            onClick={() => setActive(i => (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
-            className="flex justify-center items-center border border-white/10 hover:border-[#C9A84C]/50 rounded-sm w-9 h-9 text-purple-400 hover:text-[#C9A84C] transition-all duration-200"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M19 12H5M12 5l-7 7 7 7" />
-            </svg>
-          </button>
-          <button
-            onClick={() => setActive(i => (i + 1) % TESTIMONIALS.length)}
-            className="flex justify-center items-center border border-white/10 hover:border-[#C9A84C]/50 rounded-sm w-9 h-9 text-purple-400 hover:text-[#C9A84C] transition-all duration-200"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
+        {/* ── RIGHT: Emerson Agency ── */}
+        <motion.div
+          initial={{ opacity: 0, x: 24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col gap-4 order-3"
+        >
+          <LogoBox src={AgencyLogo} alt="Emerson Agency logo" side="right" />
+          <div className="gap-3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1">
+            {AGENCY_STATS.map((stat, i) => (
+              <StatCard key={i} {...stat} index={i} delay={0.2} />
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

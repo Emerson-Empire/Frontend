@@ -83,14 +83,14 @@ const CTA: React.FC = () => {
           </div>
 
           <h2 className="mb-5 text-[#F5F0E8] text-[38px] sm:text-[52px] leading-[1.1] tracking-wide heading">
-            Ready to Build Your{' '}
-            <em className="text-[#E8C97A] italic">Empire?</em>
+            Ready to Connect With{' '}
+            <em className="text-[#E8C97A] italic">The Emerson Empire?</em>
           </h2>
 
           <p className="mx-auto max-w-xl text-[15px] text-purple-200/80 sm:text-[16px] leading-[1.9] body">
-            Whether you need expert insurance and tax guidance, or a development
-            programme that launches your career — your first consultation is free.
-            Fill in the form and we will be in touch within 24 hours.
+            Whether you are interested in business services, professional development,
+            internship opportunities, or collaboration, we welcome your inquiry and
+            will help direct you to the right next step.
           </p>
 
           <div className="bg-[#C9A84C]/40 mx-auto mt-7 w-12 h-px" />
@@ -110,7 +110,7 @@ const CTA: React.FC = () => {
               Get in Touch
             </h3>
             <p className="mb-10 text-[14px] text-purple-300/80 leading-[1.9] body">
-              Not sure which division is right for you? Just reach out and we will
+              Not sure which division is right for you? Just reach out, and we will
               point you in the right direction.
             </p>
 
@@ -119,7 +119,7 @@ const CTA: React.FC = () => {
               {[
                 {
                   label: 'Email',
-                  value: 'hello@emersonempire.com',
+                  value: 'admin@theemersonempire.info',
                   icon: (
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -129,7 +129,7 @@ const CTA: React.FC = () => {
                 },
                 {
                   label: 'Phone',
-                  value: '+1 (800) 000-0000',
+                  value: 'Available by appointment',
                   icon: (
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.27-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -138,7 +138,7 @@ const CTA: React.FC = () => {
                 },
                 {
                   label: 'Office',
-                  value: '123 Empire Avenue, Suite 400',
+                  value: 'Remote-first operations',
                   icon: (
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -179,7 +179,7 @@ const CTA: React.FC = () => {
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-                Book Agency Consultation
+                Contact The Emerson Agency
               </a>
               <a
                 href="/epdg"
@@ -188,7 +188,7 @@ const CTA: React.FC = () => {
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-                Apply to EPDG Programme
+                Explore Professional Development
               </a>
             </div>
           </motion.div>
@@ -258,7 +258,7 @@ const CTA: React.FC = () => {
                       type="email"
                       value={form.email}
                       onChange={handleChange}
-                      placeholder="jane@example.com"
+                      placeholder="your@email.com"
                       className={inputClass}
                     />
                   </div>
@@ -350,7 +350,7 @@ const CTA: React.FC = () => {
           transition={{ delay: 0.4 }}
           className="mt-20 text-[11px] text-purple-300/40 text-center tracking-wide body"
         >
-          Trusted by 48+ clients &nbsp;·&nbsp; 124 programme graduates &nbsp;·&nbsp; 3.2K app downloads
+          Founder-led &nbsp;·&nbsp; Intern-built &nbsp;·&nbsp; Developing a global professional ecosystem
         </motion.p>
       </div>
     </section>

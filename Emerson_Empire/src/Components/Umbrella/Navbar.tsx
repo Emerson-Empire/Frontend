@@ -31,10 +31,10 @@ const Navbar: React.FC = () => {
         <ul className="hidden md:flex items-center gap-8 m-0 p-0 list-none">
           {[
             { label: 'The Emerson Agency', href: '/agency' },
-            { label: 'Proffesional Development', href: '/epdg' },
+            { label: 'Professional Development', href: '/epdg' },
             { label: 'About', href: '#About' },
-            {label:"faq", href:"#faq"},
-            {label:"Testimony", href:"#Testimony"}
+            { label: 'FAQs', href: '#faq' },
+            { label: 'Testimonials', href: '#Testimony' }
           ].map((link) => (
             <li key={link.href}>
               <a
@@ -88,8 +88,8 @@ const Navbar: React.FC = () => {
             { label: 'Agency', href: '/agency' },
             { label: 'EPDG', href: '/epdg' },
               { label: 'About', href: '#About' },
-             {label:"faq", href:"#faq"},
-             {label:"Testimony",href:"#Testimony"}
+             { label: 'FAQs', href: '#faq' },
+             { label: 'Testimonials', href: '#Testimony' }
           ].map((link) => (
             <a
               key={link.href}
