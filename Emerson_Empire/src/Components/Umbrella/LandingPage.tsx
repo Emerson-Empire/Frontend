@@ -27,7 +27,7 @@ interface Step {
 const LandingPage: React.FC = () => {
   const [currentTeamIndex, setCurrentTeamIndex] = useState(0);
 
-  const navLinks = ['THE EMERSON AGENCY', 'PROFESSIONAL DEVELOPMENT', 'ABOUT', 'FAQS', 'TESTIMONIALS'];
+  const navLinks = ['THE EMERSON AGENCY', 'EPDG', 'ABOUT', 'FAQS', 'TESTIMONIALS'];
   const trustedLogos = ['NEXORA', 'VELDT', 'AUREUM', 'STRATUM', 'CRESTIO'];
 
   const divisions = [
