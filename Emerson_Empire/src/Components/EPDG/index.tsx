@@ -6,11 +6,11 @@ import BusinessSupport from "./BusinessSupport";
 import Reviews from "./Reviews";
 import About from "./About";
 import FinancialEducation from "./FinancialEducation";
-import AgencyFAQ from "./AgencyFAQ";
+import AgencyFAQ from "./EPDGFAQ";
 import Contact from "./Contact";
 import Footer from "./Footer";
 
-const Agency: FC = () => {
+const EPDGLanding: FC = () => {
   return (
     <div className="font-sans text-gray-800 bg-white">
       <Navbar />
@@ -27,4 +27,4 @@ const Agency: FC = () => {
   );
 };
 
-export default Agency;
+export default EPDGLanding;
