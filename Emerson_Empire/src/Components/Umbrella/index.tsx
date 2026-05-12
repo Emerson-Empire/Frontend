@@ -12,8 +12,8 @@ import Test from "./Testimonials"
 import Price from "./Pricing"
 import Call from "./CTA"
 import FAQ from "./FAQ";
-import AgencyFAQ from "./AgencyFAQ";
-import EPDGFAQ from "./EPDGFAQ";
+import AgencyFAQ from "../Agency/AgencyFAQ";
+import EPDGFAQ from "../Professional/EPDGFAQ";
 import About from "./About";
 import EmpireTeamTrusted from './Empiretrusted';
 import CookieConsent from "./CookieConsent";
