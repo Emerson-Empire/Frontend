@@ -1,9 +1,8 @@
-import React from 'react'
+import type { FC } from 'react'
+import EPDGLanding from '../EPDG'
 
-const ProffeionalDevelopment: React.FC = () => {
-  return (
-    <div>ProffeionalDevelopment</div>
-  )
+const ProfessionalDevelopment: FC = () => {
+  return <EPDGLanding />
 }
 
-export default ProffeionalDevelopment
+export default ProfessionalDevelopment
