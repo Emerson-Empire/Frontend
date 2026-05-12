@@ -50,7 +50,7 @@ const Footer: FC = () => {
       <div className="border-t border-gray-300">
         <div className="max-w-screen-lg mx-auto px-6 py-3 flex items-center justify-between">
           <p className="text-[10px] text-gray-700">
-            2024® Emerson Professional Development Group
+            2026® Emerson Professional Development Group
           </p>
           <div className="flex gap-5">
             {["Policy 1", "Policy 2", "Policy 3", "Policy 4"].map((p) => (
