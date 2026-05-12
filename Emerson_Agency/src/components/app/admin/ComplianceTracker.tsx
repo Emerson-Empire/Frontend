@@ -1,12 +1,11 @@
 import React from 'react'
 
-const Login = () => {
+const ComplianceTracker = () => {
   return (
     <div>
-      Login
       
     </div>
   )
 }
 
-export default Login
+export default ComplianceTracker
