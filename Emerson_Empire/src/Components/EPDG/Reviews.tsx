@@ -68,4 +68,4 @@ const Reviews: FC = () => {
 };
 
 export default Reviews;
-ws;
+

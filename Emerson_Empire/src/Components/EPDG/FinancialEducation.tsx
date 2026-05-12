@@ -49,4 +49,4 @@ const FinancialEducation: FC = () => {
 };
 
 export default FinancialEducation;
-on;
+
