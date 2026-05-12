@@ -1,4 +1,5 @@
-import { FC, useState } from "react";
+import { useState } from "react";
+import type { FC } from "react";
 import { darkBtn } from "./Navbar";
 
 const Contact: FC = () => {
@@ -102,5 +103,8 @@ const Contact: FC = () => {
     </>
   );
 };
+
+export default Contact;
+;
 
 export default Contact;

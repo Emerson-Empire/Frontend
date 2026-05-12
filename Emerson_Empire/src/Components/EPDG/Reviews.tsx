@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { darkBtn } from "./Navbar";
 
 const Reviews: FC = () => {
@@ -68,3 +68,4 @@ const Reviews: FC = () => {
 };
 
 export default Reviews;
+ws;

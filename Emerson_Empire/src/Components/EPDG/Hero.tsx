@@ -1,4 +1,4 @@
-import { FC, CSSProperties } from "react";
+import type { FC, CSSProperties } from "react";
 import { darkBtn } from "./Navbar";
 
 interface ImgPHProps {
@@ -77,3 +77,4 @@ const Hero: FC = () => {
 };
 
 export default Hero;
+ro;

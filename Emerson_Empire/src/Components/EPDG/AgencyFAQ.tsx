@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { ImgPH } from "./Hero";
 import { darkBtn } from "./Navbar";
 
@@ -86,3 +86,4 @@ const AgencyFAQ: FC = () => {
 };
 
 export default AgencyFAQ;
+AQ;

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { ImgPH } from "./Hero";
 
 const FinancialEducation: FC = () => {
@@ -49,3 +49,4 @@ const FinancialEducation: FC = () => {
 };
 
 export default FinancialEducation;
+on;

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { BrandLogo } from "./Navbar";
 
 interface FooterCol {
@@ -66,3 +66,4 @@ const Footer: FC = () => {
 };
 
 export default Footer;
+er;

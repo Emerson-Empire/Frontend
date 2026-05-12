@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { ImgPH } from "./Hero";
 import { darkBtn, BrandLogo } from "./Navbar";
 
@@ -178,3 +178,4 @@ const About: FC = () => {
 };
 
 export default About;
+

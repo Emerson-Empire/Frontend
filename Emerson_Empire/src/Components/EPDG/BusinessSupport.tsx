@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { ImgPH } from "./Hero";
 import { darkBtn } from "./Navbar";
 
@@ -38,3 +38,4 @@ const BusinessSupport: FC = () => {
 };
 
 export default BusinessSupport;
+rt;

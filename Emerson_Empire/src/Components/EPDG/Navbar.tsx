@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 
 /* Shared dark button class — exported for reuse across sections */
 export const darkBtn =
@@ -50,3 +50,4 @@ const Navbar: FC = () => {
 };
 
 export default Navbar;
+ar;

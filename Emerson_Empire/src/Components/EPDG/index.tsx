@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
 import WhoWeHelp from "./WhoWeHelp";
