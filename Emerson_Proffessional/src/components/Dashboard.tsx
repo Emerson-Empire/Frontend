@@ -1,9 +1,9 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from  "react-router-dom"
 import { Navbar } from "./index";
 
 const Dashboard: React.FC = () => {
   return (
-    <div className="flex min-h-screen bg-[#F5F5F5] overflow-hidden">
+    <div className="flex bg-[#F5F5F5] min-h-screen overflow-hidden">
       {/* Sidebar/Navbar */}
       <Navbar />
 
