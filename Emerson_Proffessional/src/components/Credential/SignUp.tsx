@@ -73,7 +73,7 @@ const SignUp: React.FC = () => {
       case "Intern":
         return (
           <form onSubmit={SignupFunction}>
-            <h2>Intern Signup</h2>
+            <h1>Intern Signup</h1>
 
             <input
               type="text"
@@ -119,7 +119,7 @@ const SignUp: React.FC = () => {
       case "Company":
         return (
           <form onSubmit={SignupFunction}>
-            <h2>Company Signup</h2>
+            <h1>Company Signup</h1>
 
             <input
               type="text"
@@ -158,7 +158,7 @@ const SignUp: React.FC = () => {
       case "Admin":
         return (
           <form onSubmit={SignupFunction}>
-            <h2>Admin Signup</h2>
+            <h1>Admin Signup</h1>
 
             <input
               type="email"

@@ -280,10 +280,11 @@ const CTA: React.FC = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label className="font-semibold text-[#C9A84C] text-[9px] uppercase tracking-[3px]">
+                    <label htmlFor="division" className="font-semibold text-[#C9A84C] text-[9px] uppercase tracking-[3px]">
                       Division <span className="text-red-400">*</span>
                     </label>
                     <select
+                      id="division"
                       name="division"
                       value={form.division}
                       onChange={handleChange}

@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Agency, EPDG, Helena2 } from '../../assets';
+import { Agency, AgencyWebp, AgencyAvif, EPDG, EPDGWebp, EPDGAvif, Helena2, Helena2Webp, Helena2Avif } from '../../assets';
 
 const Hero: React.FC = () => {
   return (
@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
         {/* Headline */}
         <h1
           className="bg-[#4B1E91] mb-4 text-[#F5F0E8] text-[48px] sm:text-[56px] leading-[1.1] tracking-wide heading"
-       
+
         >
          The  Emerson Empire —{' '}
           <em className="text-[#E8C97A] italic">Agency & Professional Development</em>
@@ -67,34 +67,48 @@ const Hero: React.FC = () => {
         <p className="opacity-50 mb-12 text-[#C9A84C] text-[10px] tracking-[6px]">
           ★ &nbsp; ★ &nbsp; ★
         </p>
-      
+
       </div>
 
-      {/* Image */}
+      {/* LCP hero image */}
+      <div className="w-full h-full overflow-hidden">
+        <picture>
+          <source srcSet={Helena2Avif} type="image/avif" />
+          <source srcSet={Helena2Webp} type="image/webp" />
+          <img
+            src={Helena2}
+            alt="Emerson Empire campaign"
+            width={800}
+            height={600}
+            fetchPriority="high"
+            className="rounded-xl w-full h-full object-cover"
+          />
+        </picture>
+      </div>
+     </div>
 
-        <div className="w-full h-full overflow-hidden">
-  <img src={Helena2} alt="Campaign" className="rounded-xl w-full h-full object-cover" />
-</div>
- </div>
       {/* ── Feature cards ── */}
       <div className="flex-col justify-center bg-white m-3 rounded-md text-center">
       <h2 className="mb-3 font-semibold text-[[#1E0A4A] text-[32px] hover:text-[#1E0A4A] leading-[1.15] heading">
         YOU <em className="">CHOOSE YOUR</em> PATH</h2>
         <p></p>
       <div className="z-10 relative flex-col grid grid-cols-1 md:grid-cols-2 bg-[#1E0A4A] opacity-90 border-t">
-{/* border-[#C9A84C]/15 */}
 
-       
         {/* Agency Card */}
-        {/* <div className="group hover:bg-[#C9A84C]/[0.103] px-8 py-10 border md:border-r border-b md:border-b-0 transition-colors duration-200 -[#]">
-          */}
          <div className="group m-1 px-8 py-10 border-[#C9A84C] border-4 rounded-xl transition-colors duration-200 hover:scale:105">
-          
-          
           <div className="mb-6 rounded-xl w-full h-70 overflow-hidden">
-              <img src={Agency} alt="Agency" 
-              className="m-2 w-full h-full object-contain hover:scale-105 transition-transform duration-300" />
-            </div>
+            <picture>
+              <source srcSet={AgencyAvif} type="image/avif" />
+              <source srcSet={AgencyWebp} type="image/webp" />
+              <img
+                src={Agency}
+                alt="Emerson Agency"
+                width={600}
+                height={280}
+                className="m-2 w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+              />
+            </picture>
+          </div>
             <div className="flex justify-center items-center mb-5 border border-[#C9A84C]/25 rounded-sm w-10 h-10 text-[#C9A84C] hover:scale-110">
             <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <rect x="3" y="3" width="18" height="18" rx="1" />
@@ -117,7 +131,7 @@ const Hero: React.FC = () => {
             insurance-related services ,and business development resources.
           </p>
 
-   <a   
+   <a
   href="/agency"
   className="inline-flex items-center gap-2 hover:gap-3 bg-[#4B1E91] mt-auto p-3 rounded-md font-semibold text-[#C9A84C] text-[13px] uppercase tracking-[2.5px] transition-all duration-200"
 >
@@ -132,16 +146,19 @@ const Hero: React.FC = () => {
 
         {/* EPDG Card */}
         <div className="group m-1 px-8 py-10 border-[#C9A84C] border-4 rounded-xl transition-colors duration-200 hover:scale:105">
-       
-       
-       
        <div className="mb-6 rounded-xl w-full h-70 overflow-hidden">
-  <img
-    src={EPDG}
-    alt="Agency"
-    className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
-  />
-</div>
+          <picture>
+            <source srcSet={EPDGAvif} type="image/avif" />
+            <source srcSet={EPDGWebp} type="image/webp" />
+            <img
+              src={EPDG}
+              alt="Emerson Professional Development"
+              width={600}
+              height={280}
+              className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+            />
+          </picture>
+        </div>
           <div className="flex justify-center items-center mb-5 border border-[#C9A84C]/25 rounded-sm w-10 h-10 text-[#C9A84C] hover:scale-110">
             <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
@@ -158,15 +175,15 @@ const Hero: React.FC = () => {
             Emerson Professional Development
           </h2>
 
-       
+
           <p className="mb-7 text-[#1E0A4A] text-[16px] text-center leading-[1.9] tracking-wide body">
             Emerson professional development group  equips emerging professionals intern,entrepreneurs, and leaders with Training
             , structure , metorship, and practical tools for long-term growth.
-             
-        
+
+
           </p>
 
-         <a   
+         <a
   href="/agency"
   className="inline-flex items-center gap-2 hover:gap-3 bg-[#4B1E91] mt-auto p-3 rounded-md font-semibold text-[#C9A84C] text-[13px] uppercase tracking-[2.5px] transition-all duration-200"
 >
@@ -178,7 +195,7 @@ const Hero: React.FC = () => {
         </div></div>
          </div>
       </div>
-   
+
     </section>
   );
 };

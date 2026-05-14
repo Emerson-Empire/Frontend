@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 type UserType = "Intern" | "Company" | "Admin";
 
@@ -32,7 +33,7 @@ const Login: React.FC = () => {
       case "Intern":
         return (
           <form onSubmit={handleLogin}>
-            <h2>Intern Login</h2>
+            <h1>Intern Login</h1>
 
             <input
               type="email"
@@ -61,7 +62,7 @@ const Login: React.FC = () => {
       case "Company":
         return (
           <form onSubmit={handleLogin}>
-            <h2>Company Login</h2>
+            <h1>Company Login</h1>
 
             <input
               type="email"
@@ -90,7 +91,7 @@ const Login: React.FC = () => {
       case "Admin":
         return (
           <form onSubmit={handleLogin}>
-            <h2>Admin Login</h2>
+            <h1>Admin Login</h1>
 
             <input
               type="email"
@@ -123,6 +124,12 @@ const Login: React.FC = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Login | InternHub</title>
+        <meta name="description" content="Sign in to InternHub as an Intern, Company or Admin." />
+        <meta property="og:title" content="Login | InternHub" />
+        <meta property="og:description" content="Sign in to InternHub as an Intern, Company or Admin." />
+      </Helmet>
       {/* User Type Switch */}
       <div
         style={{

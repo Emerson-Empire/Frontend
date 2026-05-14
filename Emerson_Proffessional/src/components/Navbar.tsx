@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
             </div>
 
             <div>
-              <h1
+              <p
                 className="text-white leading-none"
                 style={{
                   fontFamily: "DM Sans",
@@ -70,10 +70,10 @@ const Navbar: React.FC = () => {
                 }}
               >
                 InternHub
-              </h1>
+              </p>
 
               <p
-                className="text-[#4B1E91] mt-1"
+                className="text-[#A78BCC] mt-1"
                 style={{
                   fontFamily: "DM Sans",
                   fontWeight: 300,
