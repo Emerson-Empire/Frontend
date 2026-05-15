@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import Statstrip from "./Statstrip";
-import Team from "./EmpireTeam"
+ 
 import TrustedBy from "./Trusted";
 import Feature from "./Features"
 import Works from "./HowItWorks"
@@ -19,8 +19,9 @@ import CookieConsent from "./CookieConsent";
 import Divisions from "./Divisions";
 import StatsSlider from "./StatsSlider";
 import SuccessStories from "./SuccessStories";
-
+import Testimonials from "./Testimonials"
 
 
 export{AppCard,Auth,Footer,Hero,Works,Test,Call,FAQ,AgencyFAQ,EPDGFAQ,
-    Navbar,Statstrip,Team,TrustedBy,Feature,About,EmpireTeamTrusted,CookieConsent,Divisions,StatsSlider,SuccessStories}
+    Navbar,Statstrip,TrustedBy,Feature,About,EmpireTeamTrusted,CookieConsent,Testimonials,
+    Divisions,StatsSlider,SuccessStories}

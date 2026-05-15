@@ -104,7 +104,7 @@ const Testimonials: React.FC = () => {
                 key={i}
                 onClick={() => setCurrent(i)}
                 aria-label={`Slide ${i + 1}`}
-                className="flex items-center justify-center w-5 h-5"
+                className="flex justify-center items-center w-5 h-5"
               >
                 <span className={`block h-2 w-5 rounded-full origin-left [transition:transform_0.3s_ease-in-out,background-color_0.3s_ease-in-out] ${
                   i === current ? 'bg-[#C9A84C]' : 'scale-x-[0.4] bg-white/50'

@@ -1,20 +1,13 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../Umbrella/Navbar';
 import Hero from '../Umbrella/Hero';
-import Divisions from '../Umbrella/Divisions';
-import EmpireTeamTrusted from '../Umbrella/Empiretrusted';
-import About from '../Umbrella/About';
-import Testimonials from '../Umbrella/Testimonials';
-import SuccessStories from '../Umbrella/SuccessStories';
-import Call from '../Umbrella/CTA';
-import Footer from '../Umbrella/Footer';
-import CookieConsent from '../Umbrella/CookieConsent';
 
-// framer-motion lives in its own manualChunk ('framer') and is modulepreloaded,
-// so it downloads in parallel and does NOT block Hero or Navbar from rendering.
-// Keeping all sections eager here ensures they all render in one batch, which
-// keeps Speed Index close to FCP instead of accumulating across lazy waterfalls.
+// All below-fold sections are split into one single lazy chunk (BelowFold).
+// This keeps the initial bundle tiny (Hero + Navbar only) for fast FCP/LCP,
+// while all sections render in one batch — no progressive visual stacking
+// that inflates Speed Index.
+const BelowFold = lazy(() => import('./BelowFold'));
 
 const HomePage: React.FC = () => {
   return (
@@ -37,16 +30,11 @@ const HomePage: React.FC = () => {
 
       <main id="main-content">
         <Hero />
-        <Divisions />
-        <EmpireTeamTrusted />
-        <About />
-        <Testimonials />
-        <SuccessStories />
-        <Call />
+        {/* Heavy content delayed */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <BelowFold />
+      </Suspense>
       </main>
-
-      <Footer />
-      <CookieConsent />
     </div>
   );
 };
