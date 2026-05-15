@@ -84,7 +84,7 @@ const StoryCard: React.FC<{ story: Story; active: boolean; onClick: () => void }
     onClick={onClick}
     animate={{ scale: active ? 1 : 0.96, opacity: active ? 1 : 0.75 }}
     transition={{ duration: 0.35, ease: 'easeInOut' }}
-    className={`flex flex-col flex-shrink-0 w-[300px] sm:w-[340px] p-6 rounded-2xl cursor-pointer select-none transition-shadow duration-300 ${
+    className={`flex flex-col shrink-0 w-75 sm:w-85 p-6 rounded-2xl cursor-pointer select-none transition-shadow duration-300 ${
       active ? 'bg-[#4B1E91] shadow-2xl' : 'bg-[#12022A] hover:opacity-90'
     }`}
   >
@@ -144,8 +144,8 @@ const SuccessStories: React.FC = () => {
       {/* Slider track */}
       <div className="relative">
         {/* Fade edges */}
-        <div className="left-0 z-10 absolute inset-y-0 bg-gradient-to-r from-white to-transparent w-16 pointer-events-none" />
-        <div className="right-0 z-10 absolute inset-y-0 bg-gradient-to-l from-white to-transparent w-16 pointer-events-none" />
+        <div className="left-0 z-10 absolute inset-y-0 bg-linear-to-r from-white to-transparent w-16 pointer-events-none" />
+        <div className="right-0 z-10 absolute inset-y-0 bg-linear-to-l from-white to-transparent w-16 pointer-events-none" />
 
         <motion.div
           className="flex gap-5 px-6 sm:px-10 lg:px-16"

@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2 focus:outline-none"
+          className="md:hidden flex flex-col gap-1.5 shadow-md shadow-white p-2 rounded-b-3xl focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
