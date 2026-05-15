@@ -65,7 +65,7 @@ const Testimonials: React.FC = () => {
           <picture>
             <source srcSet={EpdgLogoAvif} type="image/avif" />
             <source srcSet={EpdgLogoWebp} type="image/webp" />
-            <img src={EpdgLogo} alt="EPDG" width={96} height={96} className="drop-shadow w-24 h-24 object-contain" />
+            <img src={EpdgLogo} alt="EPDG" width={96} height={96} loading="lazy" decoding="async" className="drop-shadow w-24 h-24 object-contain" />
           </picture>
           <div className="flex flex-col gap-3 w-full">
             {EPDG_STATS.map(s => <StatBox key={s.value + s.label} {...s} />)}
@@ -92,7 +92,7 @@ const Testimonials: React.FC = () => {
               <picture>
                 {slide.srcAvif && <source srcSet={slide.srcAvif} type="image/avif" />}
                 {slide.srcWebp && <source srcSet={slide.srcWebp} type="image/webp" />}
-                <img src={slide.src} alt={slide.alt} className="w-full h-full object-cover object-top" />
+                <img src={slide.src} alt={slide.alt} loading="lazy" decoding="async" className="w-full h-full object-cover object-top" />
               </picture>
             </motion.div>
           </AnimatePresence>
@@ -117,7 +117,7 @@ const Testimonials: React.FC = () => {
           <picture>
             <source srcSet={AgencyLogoAvif} type="image/avif" />
             <source srcSet={AgencyLogoWebp} type="image/webp" />
-            <img src={AgencyLogo} alt="Emerson Agency" width={96} height={96} className="drop-shadow w-24 h-24 object-contain" />
+            <img src={AgencyLogo} alt="Emerson Agency" width={96} height={96} loading="lazy" decoding="async" className="drop-shadow w-24 h-24 object-contain" />
           </picture>
           <div className="flex flex-col gap-3 w-full">
             {AGENCY_STATS.map(s => <StatBox key={s.value + s.label} {...s} />)}

@@ -103,7 +103,7 @@ const About: React.FC = () => (
             <picture>
               <source srcSet={EmasonAvif} type="image/avif" />
               <source srcSet={EmasonWebp} type="image/webp" />
-              <img src={Emason} alt="Emerson Empire" width={80} height={80} className="opacity-80 w-20 h-20 object-contain shrink-0" />
+              <img src={Emason} alt="Emerson Empire" width={80} height={80} loading="lazy" decoding="async" className="opacity-80 w-20 h-20 object-contain shrink-0" />
             </picture>
 
             {/* PLACEHOLDER — add image: about-meeting.jpg (2-person consultation/business meeting) */}

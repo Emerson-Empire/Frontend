@@ -66,7 +66,7 @@ const CTA: React.FC = () => {
             <picture>
               <source srcSet={EmasonAvif} type="image/avif" />
               <source srcSet={EmasonWebp} type="image/webp" />
-              <img src={Emason} alt="EPDG" width={48} height={48} className="w-12 h-12 object-contain shrink-0" />
+              <img src={Emason} alt="EPDG" width={48} height={48} loading="lazy" decoding="async" className="w-12 h-12 object-contain shrink-0" />
             </picture>
             <p className="font-bold text-[#12022A] text-[11px] uppercase tracking-[0.5px] leading-snug">
               The Emerson Professional<br />Development Group
@@ -82,7 +82,7 @@ const CTA: React.FC = () => {
                 : 'border-gray-200 hover:border-gray-400'
             }`}
           >
-            <img src={EmersonAgency} alt="Emerson Agency" width={48} height={48} className="w-12 h-12 object-contain shrink-0" />
+            <img src={EmersonAgency} alt="Emerson Agency" width={48} height={48} loading="lazy" decoding="async" className="w-12 h-12 object-contain shrink-0" />
             <p className="font-bold text-[#12022A] text-[11px] uppercase tracking-[0.5px] leading-snug">
               The Emerson<br />Agency
             </p>

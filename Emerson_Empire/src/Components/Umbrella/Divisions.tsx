@@ -49,7 +49,7 @@ const DivisionCard: React.FC<DivisionCardProps> = ({
     <div className="w-full">
       <picture>
         {bgSrcWebp && <source srcSet={bgSrcWebp} type="image/webp" />}
-        <img src={bgSrc} alt="" aria-hidden="true" className="w-full h-auto block" />
+        <img src={bgSrc} alt="" aria-hidden="true" loading="lazy" decoding="async" className="w-full h-auto block" />
       </picture>
     </div>
 

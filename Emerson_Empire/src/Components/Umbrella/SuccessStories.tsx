@@ -94,7 +94,7 @@ const StoryCard: React.FC<{ story: Story; active: boolean; onClick: () => void }
         <picture>
           {story.srcAvif && <source srcSet={story.srcAvif} type="image/avif" />}
           {story.srcWebp && <source srcSet={story.srcWebp} type="image/webp" />}
-          <img src={story.src} alt={story.name} width={48} height={48} className="w-full h-full object-cover object-top" />
+          <img src={story.src} alt={story.name} width={48} height={48} loading="lazy" decoding="async" className="w-full h-full object-cover object-top" />
         </picture>
       </div>
       <div className="min-w-0">

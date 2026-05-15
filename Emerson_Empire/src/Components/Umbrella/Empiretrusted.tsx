@@ -163,6 +163,8 @@ const EmpireTeamTrusted: React.FC = () => {
                       alt={member.name}
                       width={600}
                       height={400}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover object-top"
                     />
                   </picture>
@@ -201,7 +203,7 @@ const EmpireTeamTrusted: React.FC = () => {
                   <picture>
                     {member.imageAvif && <source srcSet={member.imageAvif} type="image/avif" />}
                     {member.imageWebp && <source srcSet={member.imageWebp} type="image/webp" />}
-                    <img src={member.image} alt={member.name} width={56} height={56} className="w-full h-full object-cover object-top" />
+                    <img src={member.image} alt={member.name} width={56} height={56} loading="lazy" decoding="async" className="w-full h-full object-cover object-top" />
                   </picture>
                 ) : (
                   <div className="flex justify-center items-center bg-[#1E0A4A] w-full h-full">
