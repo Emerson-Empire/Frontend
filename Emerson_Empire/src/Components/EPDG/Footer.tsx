@@ -1,63 +1,57 @@
 import type { FC } from "react";
 import { BrandLogo } from "./Navbar";
 
-interface FooterCol {
-  heading: string;
-  items: string[];
-}
-
-const FOOTER_COLS: FooterCol[] = [
-  {
-    heading: "SECTIONS",
-    items: ["Sections", "Sections", "Sections", "Sections", "Sections", "Sections"],
-  },
-  { heading: "ABOUT", items: ["Sections", "Sections", "Sections"] },
-  { heading: "CONTAC US", items: ["Sections", "Sections", "Sections"] },
-  { heading: "EMERSON EMPIRE", items: ["CFOS", "EMERSON AGENCY LLC"] },
-];
+const NAV = ["Home", "Program", "How it works", "Reviews", "About Us", "Contact"];
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-gray-200">
-      <div className="max-w-screen-lg mx-auto px-6 py-10">
-        <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-4">
+    <footer className="bg-[#081331] text-slate-200">
+      <div className="max-w-screen-xl mx-auto px-6 sm:px-8 py-12">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-start">
+          <div className="space-y-6">
             <BrandLogo size="lg" />
-            <p className="text-[10px] text-gray-700 leading-relaxed max-w-[220px] mt-4">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
+            <p className="max-w-xl text-sm leading-relaxed text-slate-400">
+              Stop applying, start executing. Build your global portfolio today. Your talent deserves more. Unlock global leadership opportunities today.
             </p>
+            <div className="flex flex-wrap gap-3">
+              <button className="bg-white text-[#081331] text-[11px] font-semibold uppercase tracking-[0.18em] px-5 py-3 rounded-full shadow-lg shadow-black/10">
+                Get My Portfolio Started
+              </button>
+              <button className="border border-slate-500 text-slate-200 text-[11px] font-semibold uppercase tracking-[0.18em] px-5 py-3 rounded-full hover:bg-slate-900 transition">
+                Scale to Leadership
+              </button>
+            </div>
           </div>
 
-          {FOOTER_COLS.map((col) => (
-            <div key={col.heading} className="col-span-2">
-              <h4 className="text-[10px] font-extrabold text-gray-900 uppercase tracking-wider mb-3">
-                {col.heading}
-              </h4>
-              <ul className="space-y-1.5">
-                {col.items.map((item, i) => (
-                  <li key={i}>
-                    <a href="#" className="text-[10px] text-gray-700 hover:text-gray-900">
+          <div className="grid gap-6 sm:grid-cols-2">
+            <div>
+              <h4 className="text-[11px] uppercase tracking-[0.24em] text-slate-400 mb-4">Navigation</h4>
+              <ul className="space-y-3 text-sm text-slate-300">
+                {NAV.map((item) => (
+                  <li key={item}>
+                    <a href={`#${item.toLowerCase().replace(/\s+/g, "-")}`} className="hover:text-white transition">
                       {item}
                     </a>
                   </li>
                 ))}
               </ul>
             </div>
-          ))}
+            <div>
+              <h4 className="text-[11px] uppercase tracking-[0.24em] text-slate-400 mb-4">Contact</h4>
+              <p className="text-sm text-slate-300">mail@emersonempire.com</p>
+              <p className="text-sm text-slate-300 mt-2">+1 (123) 456-7890</p>
+              <p className="text-sm text-slate-300 mt-2">United States</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="border-t border-gray-300">
-        <div className="max-w-screen-lg mx-auto px-6 py-3 flex items-center justify-between">
-          <p className="text-[10px] text-gray-700">
-            2026® Emerson Professional Development Group
-          </p>
-          <div className="flex gap-5">
-            {["Policy 1", "Policy 2", "Policy 3", "Policy 4"].map((p) => (
-              <a key={p} href="#" className="text-[10px] text-gray-700 hover:text-gray-900">
-                {p}
-              </a>
-            ))}
+      <div className="border-t border-slate-700">
+        <div className="max-w-screen-xl mx-auto px-6 sm:px-8 py-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-[11px] text-slate-500">
+          <p>© 2026 The Emerson Empire. All rights reserved.</p>
+          <div className="flex flex-wrap gap-4">
+            <a href="#" className="hover:text-white transition">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition">Terms of Use</a>
           </div>
         </div>
       </div>
