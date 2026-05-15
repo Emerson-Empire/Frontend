@@ -57,7 +57,6 @@ export {
   EPDG, EPDGWebp, EPDGAvif,
   Agency, AgencyWebp, AgencyAvif,
   Step1, Step2, Step3,
-  Vincent, empire, Malik, Matheous, Hosea, wiltord, bruno,
   Vincent, VincentWebp, VincentAvif,
   empire, empireWebp, empireAvif,
   Malik, MalikWebp, MalikAvif,
