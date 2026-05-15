@@ -1,8 +1,10 @@
 import './App.css'
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './Components/MainRender/EmpireLanding';
 
-const HomePage = lazy(() => import('./Components/MainRender/EmpireLanding'));
+// Other pages are lazy — they benefit from code splitting since they're never
+// visited on the same session as the home page.
 const Agency = lazy(() => import('./Components/MainRender/Agency'));
 const ProfessionalDevelopment = lazy(() => import('./Components/MainRender/ProffeionalDevelopment'));
 

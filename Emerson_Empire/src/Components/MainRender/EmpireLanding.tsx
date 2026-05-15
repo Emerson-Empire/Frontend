@@ -1,18 +1,20 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../Umbrella/Navbar';
 import Hero from '../Umbrella/Hero';
+import Divisions from '../Umbrella/Divisions';
+import EmpireTeamTrusted from '../Umbrella/Empiretrusted';
+import About from '../Umbrella/About';
+import Testimonials from '../Umbrella/Testimonials';
+import SuccessStories from '../Umbrella/SuccessStories';
+import Call from '../Umbrella/CTA';
+import Footer from '../Umbrella/Footer';
+import CookieConsent from '../Umbrella/CookieConsent';
 
-// Below-fold sections: lazy-loaded so framer-motion (132 kB) is NOT in the critical path.
-// Hero + Navbar are eager because they contain the LCP image.
-const Divisions        = lazy(() => import('../Umbrella/Divisions'));
-const EmpireTeamTrusted = lazy(() => import('../Umbrella/Empiretrusted'));
-const About            = lazy(() => import('../Umbrella/About'));
-const Testimonials     = lazy(() => import('../Umbrella/Testimonials'));
-const SuccessStories   = lazy(() => import('../Umbrella/SuccessStories'));
-const Call             = lazy(() => import('../Umbrella/CTA'));
-const Footer           = lazy(() => import('../Umbrella/Footer'));
-const CookieConsent    = lazy(() => import('../Umbrella/CookieConsent'));
+// framer-motion lives in its own manualChunk ('framer') and is modulepreloaded,
+// so it downloads in parallel and does NOT block Hero or Navbar from rendering.
+// Keeping all sections eager here ensures they all render in one batch, which
+// keeps Speed Index close to FCP instead of accumulating across lazy waterfalls.
 
 const HomePage: React.FC = () => {
   return (
@@ -35,16 +37,16 @@ const HomePage: React.FC = () => {
 
       <main id="main-content">
         <Hero />
-        <Suspense fallback={null}><Divisions /></Suspense>
-        <Suspense fallback={null}><EmpireTeamTrusted /></Suspense>
-        <Suspense fallback={null}><About /></Suspense>
-        <Suspense fallback={null}><Testimonials /></Suspense>
-        <Suspense fallback={null}><SuccessStories /></Suspense>
-        <Suspense fallback={null}><Call /></Suspense>
+        <Divisions />
+        <EmpireTeamTrusted />
+        <About />
+        <Testimonials />
+        <SuccessStories />
+        <Call />
       </main>
 
-      <Suspense fallback={null}><Footer /></Suspense>
-      <Suspense fallback={null}><CookieConsent /></Suspense>
+      <Footer />
+      <CookieConsent />
     </div>
   );
 };
