@@ -1,78 +1,82 @@
-import type { FC, CSSProperties } from "react";
+import type { FC } from "react";
+import { EPDG, EPDGAvif, EPDGWebp } from "../../assets";
 import { darkBtn } from "./Navbar";
-
-interface ImgPHProps {
-  className?: string;
-  style?: CSSProperties;
-}
-
-/* Image placeholder — exported because most sections need it */
-export const ImgPH: FC<ImgPHProps> = ({ className = "", style = {} }) => {
-  return (
-    <div
-      className={`bg-gray-300 flex items-center justify-center ${className}`}
-      style={style}
-    >
-      <svg viewBox="0 0 60 44" fill="none" className="w-1/3 max-w-[80px] min-w-[24px]">
-        <rect width="60" height="44" rx="2" fill="#9ca3af" />
-        <path d="M5 38L18 18L28 28L38 14L55 38Z" fill="#d1d5db" />
-        <circle cx="44" cy="11" r="5" fill="#d1d5db" />
-      </svg>
-    </div>
-  );
-};
 
 const Hero: FC = () => {
   return (
-    <div className="bg-white pt-6 pb-6">
-      <section className="max-w-screen-lg mx-auto px-6">
-        <div className="bg-gray-200 rounded-lg px-8 py-12 relative">
-          <div className="relative flex items-start gap-4 min-h-[230px]">
-            {/* Image positioned absolutely in middle area, ON TOP of text */}
-            <div
-              className="absolute z-10 pointer-events-none"
-              style={{ left: "44%", top: "18%" }}
-            >
-              <ImgPH className="rounded" style={{ width: 180, height: 145 }} />
-            </div>
+    <section
+      id="program"
+      className="relative overflow-hidden bg-slate-950 text-white"
+    >
+      <div className="absolute inset-0">
+        <picture>
+          <source srcSet={EPDGAvif} type="image/avif" />
+          <source srcSet={EPDGWebp} type="image/webp" />
+          <img
+            src={EPDG}
+            alt="Remote internship leadership"
+            className="h-full w-full object-cover opacity-40 brightness-75"
+          />
+        </picture>
+      </div>
 
-            {/* Left: text content */}
-            <div className="flex-1 relative z-0 max-w-md">
-              <div className="flex gap-2 mb-4">
-                <span className="text-[10px] bg-gray-300 text-gray-700 rounded-full px-3 py-1 font-medium">
-                  TEXT 1
-                </span>
-                <span className="text-[10px] bg-gray-300 text-gray-700 rounded-full px-3 py-1 font-medium">
-                  TEXT 2
-                </span>
-              </div>
-              <h1 className="text-2xl font-bold leading-tight mb-3">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
-              </h1>
-              <p className="text-[11px] text-gray-700 mb-6 max-w-xs leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
-              </p>
-              <div className="flex gap-3 relative z-20">
-                <button className={darkBtn}>CTA USER PERSONA 1</button>
-                <button className={darkBtn}>CTA USER PERSONA 2</button>
-              </div>
-            </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#020814]/90 via-[#071331]/80 to-[#0b1d3c]/85" />
 
-            {/* Right: stat cards */}
-            <div className="relative z-20 flex flex-col gap-3 w-32 shrink-0">
-              {[0, 1].map((i) => (
-                <div key={i} className="bg-white rounded shadow-sm p-3 text-center">
-                  <p className="text-lg font-bold text-gray-900">+100</p>
-                  <p className="text-[9px] text-gray-600 leading-tight mt-1">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
-                  </p>
-                </div>
+      <div className="relative z-10 max-w-screen-xl mx-auto px-6 sm:px-8 lg:px-10 py-20">
+        <div className="grid gap-10 xl:grid-cols-[1.5fr_0.9fr] items-start">
+          <div className="space-y-8">
+            <div className="flex flex-wrap gap-3">
+              {['Entry-Level Growth', 'Executive Scaling'].map((label) => (
+                <span
+                  key={label}
+                  className="text-[11px] font-semibold uppercase tracking-[0.24em] bg-white/10 border border-white/20 text-white rounded-full px-4 py-2"
+                >
+                  {label}
+                </span>
               ))}
+            </div>
+
+            <div className="max-w-3xl space-y-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.04em]">
+                Secure Your Future with a Global Remote Internship and leadership development programs
+              </h1>
+              <p className="text-sm sm:text-base max-w-2xl leading-relaxed text-slate-100/90">
+                Whether you are launching your career via a remote internship with portfolio building to secure global experience, or seeking leadership development for remote professionals to break the income ceiling and command executive status, our ecosystem delivers the frameworks to win.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-4">
+              <button className={darkBtn}>Build My Global Portfolio</button>
+              <button className="border border-white/30 text-white text-[11px] font-semibold uppercase tracking-[0.18em] px-5 py-3 rounded-full hover:bg-white/10 transition">
+                Claim Management Authority
+              </button>
+            </div>
+          </div>
+
+          <div className="grid gap-5">
+            <div className="grid gap-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-[32px] p-6 shadow-2xl shadow-slate-950/20">
+              <div className="text-xs uppercase tracking-[0.24em] text-slate-200">
+                Remote Internship
+              </div>
+              <div className="text-5xl font-black text-white">+100</div>
+              <p className="text-[12px] text-slate-100 leading-relaxed">
+                Remote internship with global certification of success
+              </p>
+            </div>
+
+            <div className="grid gap-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-[32px] p-6 shadow-2xl shadow-slate-950/20">
+              <div className="text-xs uppercase tracking-[0.24em] text-slate-200">
+                Advisory Tracks
+              </div>
+              <div className="text-5xl font-black text-white">+20</div>
+              <p className="text-[12px] text-slate-100 leading-relaxed">
+                Tools and advisory tracks to scale your leadership to achieve international salaries
+              </p>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

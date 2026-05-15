@@ -3,107 +3,77 @@ import type { FC } from "react";
 import { darkBtn } from "./Navbar";
 
 const Contact: FC = () => {
-  const [num, setNum] = useState("");
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
-  const [user, setUser] = useState("");
-  const [f1, setF1] = useState("");
-  const [f2, setF2] = useState("");
-  const [f3, setF3] = useState("");
-  const [f4, setF4] = useState("");
+  const [phone, setPhone] = useState("");
+  const [program, setProgram] = useState("Entry-Level Growth");
+  const [message, setMessage] = useState("");
 
   return (
-    <>
-      {/* ═══════════ WE WANT TO TALK TO YOU ═══════════ */}
-      <section className="max-w-screen-lg mx-auto px-6 py-10 text-center">
-        <p className="text-[10px] text-gray-500 mb-2">
-          Lorem ipsum dolor sit amet consectetur
-        </p>
-        <h2 className="text-xl font-extrabold mb-8">WE WANT TO TALK TO YOU</h2>
-        <div className="flex justify-center gap-4 max-w-2xl mx-auto">
-          <input
-            type="text"
-            placeholder="Number"
-            value={num}
-            onChange={(e) => setNum(e.target.value)}
-            className="flex-1 min-w-0 bg-white border border-gray-200 rounded-lg px-4 py-4 text-xs text-center placeholder-gray-500 shadow-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="flex-1 min-w-0 bg-white border border-gray-200 rounded-lg px-4 py-4 text-xs text-center placeholder-gray-500 shadow-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
-          />
-          <input
-            type="text"
-            placeholder="Username"
-            value={user}
-            onChange={(e) => setUser(e.target.value)}
-            className="flex-1 min-w-0 bg-white border border-gray-200 rounded-lg px-4 py-4 text-xs text-center placeholder-gray-500 shadow-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
-          />
-        </div>
-      </section>
+    <section id="contact" className="bg-white py-16">
+      <div className="max-w-screen-xl mx-auto px-6 sm:px-8 grid gap-12 lg:grid-cols-[0.95fr_1.05fr] items-start">
+        <div>
+          <p className="text-sm text-slate-500 mb-3">Get the clarity you need to scale. Contact us today for a 1-on-1 assessment and discover how The Emerson Empire can transform your potential into verifiable professional authority.</p>
+          <h2 className="text-5xl font-black tracking-tight text-slate-950 mb-8">Your Global Seat is Waiting.</h2>
 
-      {/* ═══════════ BOTTOM HERO + FORM ═══════════ */}
-      <section className="max-w-screen-lg mx-auto px-6 py-12">
-        <div className="grid grid-cols-2 gap-12 items-start">
-          <div>
-            <span className="inline-block text-[10px] bg-gray-300 text-gray-700 rounded-full px-3 py-1 font-medium mb-4">
-              TEST 1
-            </span>
-            <h2 className="text-2xl font-bold leading-tight mb-4">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
-            </h2>
-            <p className="text-[11px] text-gray-600 mb-6 max-w-xs leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
-            </p>
-            <div className="flex gap-3">
-              <button className={darkBtn}>CTA USER PERSONA 1</button>
-              <button className={darkBtn}>CTA USER PERSONA 2</button>
-            </div>
-          </div>
+          <p className="text-sm text-slate-600 leading-relaxed mb-8">
+            With these three simple steps you can start the best global internship programs focused on you and also develop leadership skills for your professional career.
+          </p>
 
-          <div className="flex flex-col gap-3">
-            <div className="grid grid-cols-2 gap-3">
-              <input
-                type="text"
-                value={f1}
-                onChange={(e) => setF1(e.target.value)}
-                className="bg-gray-200 border-0 rounded-full px-4 py-2.5 text-xs focus:outline-none focus:ring-1 focus:ring-gray-400"
-              />
-              <input
-                type="text"
-                value={f2}
-                onChange={(e) => setF2(e.target.value)}
-                className="bg-gray-200 border-0 rounded-full px-4 py-2.5 text-xs focus:outline-none focus:ring-1 focus:ring-gray-400"
-              />
-            </div>
-            <input
-              type="text"
-              value={f3}
-              onChange={(e) => setF3(e.target.value)}
-              className="bg-gray-200 border-0 rounded-full px-4 py-2.5 text-xs focus:outline-none focus:ring-1 focus:ring-gray-400"
-            />
-            <input
-              type="text"
-              value={f4}
-              onChange={(e) => setF4(e.target.value)}
-              className="bg-gray-200 border-0 rounded-full px-4 py-2.5 text-xs focus:outline-none focus:ring-1 focus:ring-gray-400"
-            />
-            <input
-              type="text"
-              className="bg-gray-200 border-0 rounded-full px-4 py-2.5 text-xs focus:outline-none focus:ring-1 focus:ring-gray-400"
-            />
-            <div className="flex justify-center mt-2">
-              <button className={darkBtn + " px-10"}>SUBMIT FORM</button>
-            </div>
+          <div className="flex flex-wrap gap-3">
+            {['Entry-Level Growth', 'Executive Scaling'].map((item) => (
+              <span key={item} className="rounded-full border border-slate-300 bg-slate-50 px-4 py-2 text-[11px] font-semibold text-slate-700">
+                {item}
+              </span>
+            ))}
           </div>
         </div>
-      </section>
-    </>
+
+        <div className="rounded-[32px] border border-slate-200 bg-slate-950 p-8 shadow-[0_40px_120px_-60px_rgba(15,32,73,0.25)]">
+          <div className="space-y-4">
+            <input
+              type="text"
+              placeholder="Full Name"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              className="w-full rounded-full border border-slate-700 bg-slate-900/90 px-5 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-500"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full rounded-full border border-slate-700 bg-slate-900/90 px-5 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-500"
+            />
+            <input
+              type="text"
+              placeholder="Number / Whatsapp"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="w-full rounded-full border border-slate-700 bg-slate-900/90 px-5 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-500"
+            />
+            <select
+              value={program}
+              onChange={(e) => setProgram(e.target.value)}
+              className="w-full rounded-full border border-slate-700 bg-slate-900/90 px-5 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-slate-500"
+            >
+              <option value="Entry-Level Growth">Entry-Level Growth</option>
+              <option value="Executive Scaling">Executive Scaling</option>
+            </select>
+            <textarea
+              placeholder="Send us a message:"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              rows={4}
+              className="w-full rounded-3xl border border-slate-700 bg-slate-900/90 px-5 py-4 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-500"
+            />
+            <button className={`${darkBtn} w-full rounded-full`}>Apply Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
 export default Contact;
-;
 

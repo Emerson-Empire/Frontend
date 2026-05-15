@@ -1,84 +1,102 @@
 import type { FC } from "react";
-import { ImgPH } from "./Hero";
-import { darkBtn } from "./Navbar";
+import { Helena2 } from "../../assets";
 
-const FAQS_BELOW = [
-  "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.",
-  "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.",
-  "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.",
-  "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.",
+const BLOGS = [
+  {
+    title: "Why Degrees are Failing",
+    description: "Titles have become background noise over prestige. At Emerson, we focus on verifiable work over prestige.",
+    date: "12/12/25",
+  },
+  {
+    title: "Beyond Borders: Mastering Executive Presence in the Remote Era.",
+    description: "The global market doesn’t just hire workers; it recruits leaders. Discover how our leadership development for remote professionals is redefining executive success.",
+    date: "12/12/25",
+  },
+  {
+    title: "The Experience Gap is a Myth: How to Build Verifiable Proof of Work.",
+    description: "Stop waiting for permission to grow. We break down how methodology uses a remote internship with portfolio building to bypass traditional gatekeepers.",
+    date: "12/12/25",
+  },
+];
+
+const QUESTIONS = [
+  "I have no prior experience. Can I really build a global portfolio?",
+  "How does EPDG accelerate my path to a six-figure leadership role?",
+  "Is EPDG a traditional school or a career accelerator?",
+  "Will I be able to earn in USD after completing the program?",
+  "What makes the EPDG network different from other mentorship programs?",
 ];
 
 const AgencyFAQ: FC = () => {
   return (
     <>
-      {/* ═══════════ BLOGS AND NEWS ═══════════ */}
-      <section className="py-12 overflow-hidden">
-        <div className="max-w-screen-lg mx-auto px-6 mb-8 text-center">
-          <h2 className="text-xl font-extrabold mb-2">BLOGS AND NEWS</h2>
-          <p className="text-[10px] text-gray-500 leading-relaxed">
-            Lorem ipsum dolor sit amet
-            <br />
-            consectetur adipiscing elit Ut et
-            <br />
-            massa mi.
+      <section className="bg-white py-16">
+        <div className="max-w-screen-xl mx-auto px-6 sm:px-8 text-center mb-12">
+          <h2 className="text-4xl font-extrabold tracking-tight text-slate-950 mb-4">Blogs and News</h2>
+          <p className="text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            Discover the latest news and opportunities regarding internship and professional development programs happening around the world today.
           </p>
         </div>
 
-        <div className="overflow-x-hidden">
-          <div
-            className="flex gap-5 px-6"
-            style={{ marginLeft: "-3rem", marginRight: "-3rem" }}
-          >
-            {[0, 1, 2, 3, 4].map((i) => (
-              <div key={i} className="shrink-0 w-48">
-                <ImgPH className="w-full rounded-lg mb-3 aspect-square" />
-                <p className="text-xs font-extrabold mb-1">Blog #</p>
-                <p className="text-[10px] text-gray-600 leading-snug mb-2">
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
-                </p>
-                <p className="text-[10px] text-gray-500">Date: 12/13/12</p>
+        <div className="max-w-screen-xl mx-auto px-6 sm:px-8 grid gap-6 lg:grid-cols-3">
+          {BLOGS.map((item) => (
+            <div key={item.title} className="overflow-hidden rounded-[32px] border border-slate-200 shadow-[0_30px_90px_-50px_rgba(15,32,73,0.12)] bg-white">
+              <div className="h-56 overflow-hidden">
+                <img src={Helena2} alt={item.title} className="h-full w-full object-cover" />
               </div>
-            ))}
-          </div>
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-slate-950 mb-3">{item.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed mb-5">{item.description}</p>
+                <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">Date: {item.date}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* ═══════════ FAQS ═══════════ */}
-      <section className="max-w-screen-lg mx-auto px-6 py-14">
-        <h2 className="text-center text-xl font-extrabold mb-2">FAQS</h2>
-        <p className="text-center text-[10px] text-gray-500 mb-8 leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur
-          <br />
-          adipiscing elit Ut et massa mi.
-        </p>
-
-        <div className="rounded-lg overflow-hidden bg-gray-200 border border-gray-300">
-          <div className="px-6 py-4 bg-gray-300">
-            <p className="text-xs text-gray-800 font-medium">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
-            </p>
-          </div>
-
-          <div className="px-6 py-6 bg-white grid grid-cols-2 gap-6 items-center">
-            <div>
-              <p className="text-[11px] text-gray-600 leading-relaxed mb-5">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Lorem ipsum
-                dolor sit amet consectetur adipiscing elit Ut et massa mi.
+      <section className="bg-slate-50 py-16">
+        <div className="max-w-screen-xl mx-auto px-6 sm:px-8 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-start">
+          <div className="rounded-[32px] overflow-hidden bg-white shadow-[0_30px_90px_-50px_rgba(15,32,73,0.15)] border border-slate-200">
+            <div className="p-8 border-b border-slate-200">
+              <h2 className="text-3xl font-black text-slate-950 mb-4">FAQs</h2>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Common questions in our education programs
               </p>
-              <button className={darkBtn}>LEARN MORE</button>
             </div>
-            <div className="flex gap-3">
-              <ImgPH className="flex-1 rounded" style={{ height: 100 }} />
-              <ImgPH className="flex-1 rounded" style={{ height: 100 }} />
+            <div className="grid gap-6 p-8 bg-slate-50">
+              <div className="rounded-[28px] bg-slate-950 text-white p-8 grid gap-5 lg:grid-cols-[1.2fr_0.8fr] items-center">
+                <div>
+                  <p className="text-sm uppercase tracking-[0.3em] text-slate-300 mb-4">I have no prior experience. Can I really build a global portfolio?</p>
+                  <p className="text-sm leading-relaxed text-slate-100">
+                    Absolutely. EPDG is designed to bridge the "experience gap." Through our remote internship with portfolio building, you will execute real-world projects that serve as verifiable proof of your talent, allowing you to bypass entry-level gatekeepers and secure your first global role.
+                  </p>
+                  <button className="mt-6 bg-white text-slate-950 text-[11px] font-semibold uppercase tracking-[0.18em] px-6 py-3 rounded-full shadow-lg shadow-slate-950/10">
+                    Learn More
+                  </button>
+                </div>
+                <div className="rounded-[24px] overflow-hidden border border-white/30 bg-white">
+                  <div className="h-48 bg-slate-200" />
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                {QUESTIONS.slice(1).map((question) => (
+                  <div key={question} className="rounded-[24px] bg-white p-5 border border-slate-200">
+                    <p className="text-sm font-semibold text-slate-950">{question}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {FAQS_BELOW.map((q, i) => (
-            <div key={i} className="px-6 py-4 border-t border-gray-300">
-              <p className="text-xs text-gray-800 font-medium">{q}</p>
+          <div className="rounded-[32px] overflow-hidden bg-white border border-slate-200 shadow-[0_30px_90px_-50px_rgba(15,32,73,0.12)]">
+            <div className="p-8">
+              <h3 className="text-xl font-bold text-slate-950 mb-4">We Want to talk to you!</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Build Your Future. Execute. Lead. Win. Command Your Value.
+              </p>
             </div>
-          ))}
+          </div>
         </div>
       </section>
     </>

@@ -18,6 +18,10 @@ import Agency from "./Agency .png";
 import AgencyWebp from "./Agency.webp";
 import AgencyAvif from "./Agency.avif";
 
+import Step1 from "./step-1.jpg";
+import Step2 from "./step-2.jpg";
+import Step3 from "./step-3.jpg";
+
 import Vincent from "./vincent.jpeg";
 import empire from "./empire.jpeg";
 import Malik from "./malik.jpeg";
@@ -32,5 +36,6 @@ export {
   Helena2, Helena2Webp, Helena2Avif,
   EPDG, EPDGWebp, EPDGAvif,
   Agency, AgencyWebp, AgencyAvif,
+  Step1, Step2, Step3,
   Vincent, empire, Malik, Matheous, Hosea, wiltord, bruno,
 };

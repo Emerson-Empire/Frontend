@@ -9,6 +9,7 @@ import FinancialEducation from "./FinancialEducation";
 import AgencyFAQ from "./EPDGFAQ";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import GlobalNetwork from "./GlobalNetwork";
 
 const EPDGLanding: FC = () => {
   return (
@@ -18,6 +19,7 @@ const EPDGLanding: FC = () => {
       <WhoWeHelp />
       <BusinessSupport />
       <Reviews />
+      <GlobalNetwork />
       <About />
       <FinancialEducation />
       <AgencyFAQ />
