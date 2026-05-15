@@ -12,6 +12,8 @@ interface DivisionCardProps {
   side: 'left' | 'right';
   bgSrc: string;
   bgSrcWebp?: string;
+  imgWidth: number;
+  imgHeight: number;
   title: string;
   tagline?: React.ReactNode;
   sectionLabel: string;
@@ -35,7 +37,7 @@ const Checkmark: React.FC = () => (
 );
 
 const DivisionCard: React.FC<DivisionCardProps> = ({
-  side, bgSrc, bgSrcWebp,
+  side, bgSrc, bgSrcWebp, imgWidth, imgHeight,
   title, tagline, sectionLabel, description, features, ctaLabel, ctaHref, ctaVariant, ctaFullWidth,
 }) => (
   <motion.div
@@ -49,7 +51,7 @@ const DivisionCard: React.FC<DivisionCardProps> = ({
     <div className="w-full">
       <picture>
         {bgSrcWebp && <source srcSet={bgSrcWebp} type="image/webp" />}
-        <img src={bgSrc} alt="" aria-hidden="true" loading="lazy" decoding="async" className="w-full h-auto block" />
+        <img src={bgSrc} alt="" aria-hidden="true" width={imgWidth} height={imgHeight} loading="lazy" decoding="async" className="w-full h-auto block" />
       </picture>
     </div>
 
@@ -144,6 +146,8 @@ const Divisions: React.FC = () => (
       <DivisionCard
         side="left"
         bgSrc={EmersonStudents}
+        imgWidth={509}
+        imgHeight={338}
         title="Emerson Professional Development Group"
         tagline={
           <>
@@ -164,6 +168,8 @@ const Divisions: React.FC = () => (
       <DivisionCard
         side="right"
         bgSrc={EmersonAgencyWeb}
+        imgWidth={359}
+        imgHeight={235}
         title="The Emerson Agency LLC"
         tagline={
           <>

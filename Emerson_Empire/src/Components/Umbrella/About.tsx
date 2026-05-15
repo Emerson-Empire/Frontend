@@ -36,6 +36,8 @@ const About: React.FC = () => (
           src={empire}
           alt=""
           aria-hidden="true"
+          width={1536}
+          height={1024}
           className="absolute inset-0 opacity-15 w-full h-full object-cover pointer-events-none select-none"
         />
       </picture>

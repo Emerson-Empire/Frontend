@@ -92,7 +92,7 @@ const Testimonials: React.FC = () => {
               <picture>
                 {slide.srcAvif && <source srcSet={slide.srcAvif} type="image/avif" />}
                 {slide.srcWebp && <source srcSet={slide.srcWebp} type="image/webp" />}
-                <img src={slide.src} alt={slide.alt} loading="lazy" decoding="async" className="w-full h-full object-cover object-top" />
+                <img src={slide.src} alt={slide.alt} width={600} height={800} loading="lazy" decoding="async" className="w-full h-full object-cover object-top" />
               </picture>
             </motion.div>
           </AnimatePresence>
@@ -104,10 +104,12 @@ const Testimonials: React.FC = () => {
                 key={i}
                 onClick={() => setCurrent(i)}
                 aria-label={`Slide ${i + 1}`}
-                className={`rounded-full transition-all duration-300 ${
-                  i === current ? 'w-5 h-2 bg-[#C9A84C]' : 'w-2 h-2 bg-white/50 hover:bg-white/80'
-                }`}
-              />
+                className="flex items-center justify-center w-5 h-5"
+              >
+                <span className={`block h-2 w-5 rounded-full origin-left [transition:transform_0.3s_ease-in-out,background-color_0.3s_ease-in-out] ${
+                  i === current ? 'bg-[#C9A84C]' : 'scale-x-[0.4] bg-white/50'
+                }`} />
+              </button>
             ))}
           </div>
         </div>

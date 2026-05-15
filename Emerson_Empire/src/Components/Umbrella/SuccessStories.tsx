@@ -184,8 +184,8 @@ const SuccessStories: React.FC = () => {
               aria-label={`Go to story ${i + 1}`}
               className="flex items-center justify-center w-8 h-8"
             >
-              <span className={`rounded-full transition-all duration-300 block ${
-                i === active ? 'w-6 h-2.5 bg-[#4B1E91]' : 'w-2.5 h-2.5 bg-[#12022A]/20 hover:bg-[#4B1E91]/40'
+              <span className={`rounded-full block h-2.5 w-6 origin-left [transition:transform_0.3s_ease-in-out,background-color_0.3s_ease-in-out] ${
+                i === active ? 'bg-[#4B1E91]' : 'scale-x-[0.417] bg-[#12022A]/20'
               }`} />
             </button>
           ))}
