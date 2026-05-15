@@ -139,7 +139,7 @@ const EmpireTeamTrusted: React.FC = () => {
             <button
               onClick={() => go(-1)}
               aria-label="Previous member"
-              className="left-3 z-10 absolute flex justify-center items-center bg-[#12022A]/70 hover:bg-[#C9A84C]/20 border border-[#C9A84C]/30 rounded-sm w-10 h-10 text-[#C9A84C] transition-colors duration-200"
+              className="left-3 z-10 absolute flex justify-center items-center bg-[#12022A]/70 hover:bg-[#C9A84C]/20 border border-[#C9A84C]/30 rounded-sm w-11 h-11 text-[#C9A84C] transition-colors duration-200"
             >
               ←
             </button>
@@ -181,7 +181,7 @@ const EmpireTeamTrusted: React.FC = () => {
             <button
               onClick={() => go(1)}
               aria-label="Next member"
-              className="right-3 z-10 absolute flex justify-center items-center bg-[#12022A]/70 hover:bg-[#C9A84C]/20 border border-[#C9A84C]/30 rounded-sm w-10 h-10 text-[#C9A84C] transition-colors duration-200"
+              className="right-3 z-10 absolute flex justify-center items-center bg-[#12022A]/70 hover:bg-[#C9A84C]/20 border border-[#C9A84C]/30 rounded-sm w-11 h-11 text-[#C9A84C] transition-colors duration-200"
             >
               →
             </button>

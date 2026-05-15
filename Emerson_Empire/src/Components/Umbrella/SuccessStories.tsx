@@ -169,7 +169,7 @@ const SuccessStories: React.FC = () => {
         <button
           onClick={() => go(-1)}
           aria-label="Previous story"
-          className="flex justify-center items-center hover:bg-[#4B1E91]/8 border border-[#12022A]/20 hover:border-[#4B1E91] rounded-full w-9 h-9 text-[#12022A] transition-colors duration-200"
+          className="flex justify-center items-center hover:bg-[#4B1E91]/8 border border-[#12022A]/20 hover:border-[#4B1E91] rounded-full w-11 h-11 text-[#12022A] transition-colors duration-200"
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="15 18 9 12 15 6" />
@@ -182,17 +182,19 @@ const SuccessStories: React.FC = () => {
               key={i}
               onClick={() => setActive(i)}
               aria-label={`Go to story ${i + 1}`}
-              className={`rounded-full transition-all duration-300 ${
+              className="flex items-center justify-center w-8 h-8"
+            >
+              <span className={`rounded-full transition-all duration-300 block ${
                 i === active ? 'w-6 h-2.5 bg-[#4B1E91]' : 'w-2.5 h-2.5 bg-[#12022A]/20 hover:bg-[#4B1E91]/40'
-              }`}
-            />
+              }`} />
+            </button>
           ))}
         </div>
 
         <button
           onClick={() => go(1)}
           aria-label="Next story"
-          className="flex justify-center items-center hover:bg-[#4B1E91]/8 border border-[#12022A]/20 hover:border-[#4B1E91] rounded-full w-9 h-9 text-[#12022A] transition-colors duration-200"
+          className="flex justify-center items-center hover:bg-[#4B1E91]/8 border border-[#12022A]/20 hover:border-[#4B1E91] rounded-full w-11 h-11 text-[#12022A] transition-colors duration-200"
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="9 18 15 12 9 6" />

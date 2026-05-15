@@ -64,14 +64,15 @@ const Hero: React.FC = () => {
 
             {/* Campaign image */}
             <picture>
-              <source srcSet={Helena2Avif} type="image/avif" />
-              <source srcSet={Helena2Webp} type="image/webp" />
+              <source srcSet={Helena2Avif} type="image/avif" sizes="(max-width: 768px) 100vw, 50vw" />
+              <source srcSet={Helena2Webp} type="image/webp" sizes="(max-width: 768px) 100vw, 50vw" />
               <img
                 src={Helena2}
-                alt="Emerson Empire"
+                alt="Emerson Empire founder"
                 width={600}
                 height={480}
                 fetchPriority="high"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="w-full h-full object-cover object-top"
                 style={{ minHeight: '480px' }}
               />
