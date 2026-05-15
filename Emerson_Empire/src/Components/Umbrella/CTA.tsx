@@ -56,8 +56,11 @@ const CTA: React.FC = () => {
         <div className="flex flex-col sm:flex-row gap-4 mb-14">
           {/* EPDG */}
           <button
+            type="button"
             onClick={() => setDivision('epdg')}
-            className={`flex-1 flex items-center gap-4 px-5 py-4 border-2 rounded-xl text-left transition-all duration-200 ${
+            aria-pressed={division === 'epdg'}
+            aria-label="Select Emerson Professional Development Group"
+            className={`flex-1 flex items-center gap-4 px-5 py-4 border-2 rounded-xl text-left transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#12022A] ${
               division === 'epdg'
                 ? 'border-[#12022A] bg-[#12022A]/5'
                 : 'border-gray-200 hover:border-gray-400'
@@ -75,8 +78,11 @@ const CTA: React.FC = () => {
 
           {/* Agency */}
           <button
+            type="button"
             onClick={() => setDivision('agency')}
-            className={`flex-1 flex items-center gap-4 px-5 py-4 border-2 rounded-xl text-left transition-all duration-200 ${
+            aria-pressed={division === 'agency'}
+            aria-label="Select The Emerson Agency"
+            className={`flex-1 flex items-center gap-4 px-5 py-4 border-2 rounded-xl text-left transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#12022A] ${
               division === 'agency'
                 ? 'border-[#12022A] bg-[#12022A]/5'
                 : 'border-gray-200 hover:border-gray-400'
@@ -131,25 +137,27 @@ const CTA: React.FC = () => {
           ) : (
             <div className="flex flex-col gap-4">
               <div className="flex flex-col">
-                <label className={labelClass}>First Name:</label>
-                <input name="firstName" value={form.firstName} onChange={handleChange} className={fieldClass} />
+                <label htmlFor="firstName" className={labelClass}>First Name: <span aria-hidden="true">*</span></label>
+                <input id="firstName" name="firstName" autoComplete="given-name" required aria-required="true" value={form.firstName} onChange={handleChange} className={fieldClass} />
               </div>
               <div className="flex flex-col">
-                <label className={labelClass}>Email:</label>
-                <input name="email" type="email" value={form.email} onChange={handleChange} className={fieldClass} />
+                <label htmlFor="email" className={labelClass}>Email: <span aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" autoComplete="email" required aria-required="true" value={form.email} onChange={handleChange} className={fieldClass} />
               </div>
               <div className="flex flex-col">
-                <label className={labelClass}>Phone Number:</label>
-                <input name="phone" type="tel" value={form.phone} onChange={handleChange} className={fieldClass} />
+                <label htmlFor="phone" className={labelClass}>Phone Number:</label>
+                <input id="phone" name="phone" type="tel" autoComplete="tel" value={form.phone} onChange={handleChange} className={fieldClass} />
               </div>
               <div className="flex flex-col">
-                <label className={labelClass}>Send us a message:</label>
-                <textarea name="message" value={form.message} onChange={handleChange} rows={4} className={`${fieldClass} resize-none`} />
+                <label htmlFor="message" className={labelClass}>Send us a message:</label>
+                <textarea id="message" name="message" value={form.message} onChange={handleChange} rows={4} className={`${fieldClass} resize-none`} />
               </div>
               <button
+                type="submit"
                 onClick={handleSubmit}
                 disabled={loading || !form.firstName || !form.email}
-                className="w-full mt-1 bg-[#12022A] hover:bg-[#1E0A4A] disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold text-[12px] uppercase tracking-[3px] py-4 rounded-md transition-colors duration-200"
+                aria-disabled={loading || !form.firstName || !form.email}
+                className="w-full mt-1 bg-[#12022A] hover:bg-[#1E0A4A] disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold text-[12px] uppercase tracking-[3px] py-4 rounded-md transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#12022A]"
               >
                 {loading ? 'Sending…' : 'Apply Now'}
               </button>
