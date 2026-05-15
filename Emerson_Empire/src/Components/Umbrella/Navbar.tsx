@@ -1,109 +1,87 @@
 import React, { useState } from 'react';
-import { Emason } from '../../assets';
+import { Emason, EmasonWebp, EmasonAvif } from '../../assets';
+
+const NAV_LINKS = [
+  { label: 'HOME',     href: '/' },
+  { label: 'Your Path', href: '/agency' },
+  { label: 'Our Team', href: '#team' },
+  { label: 'About Us', href: '#About' },
+  { label: 'Reviews',  href: '#Testimony' },
+];
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-  <nav className="top-0 z-50 fixed bg-[#12022A]/80 shadow-md shadow-white backdrop-blur-md border-[#C9A84C]/30 border-b w-full">
-      {/* Main bar */}
-      <div className="flex justify-between items-center mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-7xl h-30">
-        {/* max-w-7xl */}
+    <nav className="top-0 z-50 fixed bg-[#12022A] border-[#C9A84C]/20 border-b w-full">
+      <div className="flex justify-between items-center mx-auto px-6 sm:px-10 lg:px-16 w-full max-w-7xl h-16">
 
         {/* Logo */}
-        <a href="/" className="flex items-center gap-3">
-          <img
-            src={Emason}
-            alt="Emerson Empire Logo"
-            className="w-12 h-12 object-contain"
-          />
-          <div className="flex flex-col leading-none">
-            <span className="font-semibold text-[#E8C97A] text-lg uppercase tracking-widest body">
-              Emerson
-            </span>
-            <span className="mt-0.5 text-[12px] text-white uppercase tracking-[0.3em] body">
-              Lead · Build · Expand
-            </span>
-          </div>
+        <a href="/" className="flex items-center shrink-0">
+          <picture>
+            <source srcSet={EmasonAvif} type="image/avif" />
+            <source srcSet={EmasonWebp} type="image/webp" />
+            <img src={Emason} alt="Emerson Empire Logo" width={48} height={48} className="w-12 h-12 object-contain" />
+          </picture>
         </a>
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8 m-0 p-0 list-none">
-          {[
-            { label: 'The Emerson Agency', href: '/agency' },
-            { label: 'Professional Development', href: '/epdg' },
-            { label: 'About', href: '#About' },
-            { label: 'FAQs', href: '#faq' },
-            { label: 'Testimonials', href: '#Testimony' }
-          ].map((link) => (
-            <li key={link.href}>
+          {NAV_LINKS.map((link) => (
+            <li key={link.label}>
               <a
                 href={link.href}
-                className="font-medium text-[11px] text-white/60 hover:text-[#E8C97A] uppercase tracking-[0.2em] transition-colors duration-200"
+                className={`text-[11px] font-semibold uppercase tracking-[0.15em] transition-colors duration-200 ${
+                  link.label === 'HOME'
+                    ? 'text-[#C9A84C]'
+                    : 'text-white/60 hover:text-white'
+                }`}
               >
                 {link.label}
               </a>
             </li>
           ))}
-          <li>
-            <a        
-         href="#contact"   
-              className="hover:bg-[#C9A84C]/10 px-5 py-2 border border-[#C9A84C]/50 hover:border-[#C9A84C] rounded-sm font-medium text-[#E8C97A] text-[10px] uppercase tracking-[0.2em] transition-all duration-200"
-            >
-              Contact
-            </a>
-          </li>
         </ul>
 
-        {/* Hamburger — mobile only */}
+        {/* Contact button */}
+        <a
+          href="#contact"
+          className="hidden md:inline-flex items-center bg-[#C9A84C] hover:bg-[#E8C97A] px-5 py-2 rounded-sm font-bold text-[#12022A] text-[11px] uppercase tracking-[0.2em] transition-colors duration-200 shrink-0"
+        >
+          Contact Us
+        </a>
+
+        {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 bg-[#451E91] shadow-md shadow-white p-2 rounded-b-full focus:outline-none"
+          className="md:hidden flex flex-col gap-1.5 shadow-md shadow-white p-2 rounded-b-3xl focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
-          
         >
-          <span
-            className={`block w-5 h-px bg-[#C9A84C] transition-transform duration-300 origin-center ${
-              menuOpen ? ' rotate-45' : ''
-            }`}
-          />
-          <span
-            className={`block w-5 h-px bg-[#C9A84C] transition-opacity duration-300 ${
-              menuOpen ? 'opacity-0' : ''
-            }`}
-          />
-          <span
-            className={`block w-5 h-px bg-[#C9A84C] transition-transform duration-300 origin-center ${
-              menuOpen ? '  -rotate-45' : ''
-            }`}
-          />
+          <span className={`block w-5 h-px bg-[#C9A84C] transition-transform duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`block w-5 h-px bg-[#C9A84C] transition-opacity duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+          <span className={`block w-5 h-px bg-[#C9A84C] transition-transform duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
       </div>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden flex flex-col gap-0 bg-[#12022A] px-6 pt-2 pb-6 border-[#C9A84C]/15 border-t">
-          {[
-            { label: 'Agency', href: '/agency' },
-            { label: 'EPDG', href: '/epdg' },
-              { label: 'About', href: '#About' },
-             { label: 'FAQs', href: '#faq' },
-             { label: 'Testimonials', href: '#Testimony' }
-          ].map((link) => (
+        <div className="md:hidden flex flex-col bg-[#12022A] px-6 pb-6 border-[#C9A84C]/15 border-t">
+          {NAV_LINKS.map((link) => (
             <a
-              key={link.href}
+              key={link.label}
               href={link.href}
-              className="py-4 border-[#C9A84C]/10 border-b font-medium text-[11px] text-white/60 hover:text-[#E8C97A] uppercase tracking-[0.2em] transition-colors duration-200"
+              onClick={() => setMenuOpen(false)}
+              className="py-3 border-[#C9A84C]/10 border-b font-medium text-[11px] text-white/60 hover:text-[#C9A84C] uppercase tracking-[0.2em] transition-colors duration-200"
             >
-            {link.label}
+              {link.label}
             </a>
           ))}
           <a
-          href="#contact"   
-            className="hover:bg-[#C9A84C]/10 mt-5 px-5 py-3 border border-[#C9A84C]/50 rounded-sm font-medium text-[#E8C97A] text-[10px] text-center uppercase tracking-[0.2em] transition-all duration-200"
+            href="#contact"
+            className="inline-flex justify-center bg-[#C9A84C] hover:bg-[#E8C97A] mt-5 px-5 py-3 rounded-sm font-bold text-[#12022A] text-[11px] uppercase tracking-[0.2em] transition-colors duration-200"
           >
-            Contact
+            Contact Us
           </a>
         </div>
       )}

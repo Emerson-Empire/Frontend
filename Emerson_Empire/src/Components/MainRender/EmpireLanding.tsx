@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
-import { About, Call, CookieConsent, FAQ, EmpireTeamTrusted, Feature, Footer, Hero, Navbar, Test, Works } from '../Umbrella';
-// import StatStrip from '../Umbrella/Statstrip';
+import { About, Call, CookieConsent, Divisions, EmpireTeamTrusted, Footer, Hero, Navbar, SuccessStories } from '../Umbrella';
+import Testimonials from '../Umbrella/Testimonials';
  
  
  
@@ -17,14 +17,14 @@ const HomePage:React.FC = () => {
        </Helmet>
         <Navbar/>
         <Hero/>
+        <Divisions/>
+      
+
         <EmpireTeamTrusted/>
-       
- <About/>
-{/* <StatStrip/>  */}
-<Feature/>
-<Works/>
-<Test/>
- <FAQ/>
+        <About/>
+ <Testimonials/>
+<SuccessStories/>
+
 {/*
 
 <Price/> */}

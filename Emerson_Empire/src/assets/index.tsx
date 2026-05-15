@@ -3,6 +3,9 @@ import EmasonWebp from "./EmersonEmpire_logo.webp";
 import EmasonAvif from "./EmersonEmpire_logo.avif";
 
 import Helena from "./Helena.jpeg";
+import HelenaWebp from "./Helena.webp";
+import HelenaAvif from "./Helena.avif";
+
 import Majvin from "./majvin.png";
 import Campaign from "./wide.png";
 
@@ -23,19 +26,42 @@ import Step2 from "./step-2.jpg";
 import Step3 from "./step-3.jpg";
 
 import Vincent from "./vincent.jpeg";
+import VincentWebp from "./vincent.webp";
+import VincentAvif from "./vincent.avif";
+
 import empire from "./empire.jpeg";
+import empireWebp from "./empire.webp";
+import empireAvif from "./empire.avif";
+
 import Malik from "./malik.jpeg";
+import MalikWebp from "./malik.webp";
+import MalikAvif from "./malik.avif";
+
 import Matheous from "./Matheus.jpeg";
+import MatheousWebp from "./Matheus.webp";
+import MatheousAvif from "./Matheus.avif";
+
 import Hosea from "./Hosea.jpeg";
 import wiltord from "./Wiltord.jpeg";
+import EmersonAgency from "./EmersonAgency.png";
+
 import bruno from "./bruno.png";
+import brunoWebp from "./bruno.webp";
+import brunoAvif from "./bruno.avif";
 
 export {
   Emason, EmasonWebp, EmasonAvif,
-  Helena, Majvin, Campaign,
+  Helena, HelenaWebp, HelenaAvif,
+  Majvin, Campaign,
   Helena2, Helena2Webp, Helena2Avif,
   EPDG, EPDGWebp, EPDGAvif,
   Agency, AgencyWebp, AgencyAvif,
   Step1, Step2, Step3,
   Vincent, empire, Malik, Matheous, Hosea, wiltord, bruno,
+  Vincent, VincentWebp, VincentAvif,
+  empire, empireWebp, empireAvif,
+  Malik, MalikWebp, MalikAvif,
+  Matheous, MatheousWebp, MatheousAvif,
+  Hosea, wiltord, EmersonAgency,
+  bruno, brunoWebp, brunoAvif,
 };
