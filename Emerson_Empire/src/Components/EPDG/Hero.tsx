@@ -39,7 +39,7 @@ const Hero: FC = () => {
                 Secure Your Future with a Global Remote Internship and leadership development programs
               </h1>
               <p className="text-sm sm:text-base max-w-2xl leading-relaxed text-slate-100/90">
-                Whether you are launching your career via a remote internship with portfolio building to secure global experience, or seeking leadership development for remote professionals to break the income ceiling and command executive status, our ecosystem delivers the frameworks to win.
+                Whether you are launching your career via a <strong>remote internship</strong> with portfolio building to secure global experience, or seeking leadership development for remote professionals to break the income ceiling and command executive status, our ecosystem delivers the frameworks to win.
               </p>
             </div>
 

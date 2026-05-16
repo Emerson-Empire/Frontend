@@ -53,7 +53,7 @@ const LogoBand: FC<{ reverse?: boolean }> = ({ reverse = false }) => (
       <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-white/0" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-white/0" />
       <div
-        className={`flex items-center gap-6 whitespace-nowrap px-4 ${
+        className={`flex items-center gap-6 whitespace-nowrap px-5 ${
           reverse ? "animate-marquee-reverse" : "animate-marquee"
         }`}
       >

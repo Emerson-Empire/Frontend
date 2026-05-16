@@ -1,5 +1,6 @@
 import type { FC } from "react";
-import { Campaign, Helena2 } from "../../assets";
+import img1 from "../../assets/Girl_Typing.webp";
+import img2 from "../../assets/Man_Point.png";
 import { darkBtn } from "./Navbar";
 
 const WhoWeHelp: FC = () => {
@@ -9,7 +10,7 @@ const WhoWeHelp: FC = () => {
         <div className="bg-white shadow-[0_22px_80px_rgba(15,32,73,0.12)] rounded-[32px] overflow-hidden border border-slate-200 transition hover:shadow-[0_30px_100px_rgba(15,32,73,0.15)]">
           <div className="relative h-72 overflow-hidden bg-slate-100">
             <img
-              src={Campaign}
+              src={img1}
               alt="Intern working remotely"
               className="h-full w-full object-cover"
             />
@@ -34,7 +35,7 @@ const WhoWeHelp: FC = () => {
         <div className="bg-slate-950 text-white rounded-[32px] overflow-hidden shadow-[0_22px_80px_rgba(15,32,73,0.2)] border border-white/15 transition hover:shadow-[0_30px_100px_rgba(15,32,73,0.25)]">
           <div className="relative h-72 overflow-hidden bg-slate-900">
             <img
-              src={Helena2}
+              src={img2}
               alt="Professional development" 
               className="h-full w-full object-cover opacity-85"
             />
@@ -52,7 +53,7 @@ const WhoWeHelp: FC = () => {
             <p className="text-sm text-slate-200 mb-8 leading-relaxed">
               Being good at your job isn't enough to lead. <strong>Our leadership development for remote professionals</strong> provides the executive presence and management frameworks you need to break your income ceiling and transition into high-impact global roles.
             </p>
-            <button className="bg-white text-slate-950 text-[11px] font-semibold uppercase tracking-[0.18em] px-6 py-3 rounded-full hover:bg-slate-100 transition shadow-lg">
+            <button className="bg-white text-slate-950 text-[11px] font-semibold uppercase tracking-[0.18em] px-6 py-3 rounded-full hover:bg-slate-100 transition shadow-lg cursor-pointer">
               Scale to Leadership
             </button>
           </div>
