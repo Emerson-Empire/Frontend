@@ -35,7 +35,7 @@ const SERVICES = [
 ];
 
 const About: React.FC = () => (
-  <section id="About">
+  <section id="about">
 
     {/* ── HERO ── */}
     <div className="relative bg-[#12022A] px-6 sm:px-10 lg:px-16 py-24 overflow-hidden">

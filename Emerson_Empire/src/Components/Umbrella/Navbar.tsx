@@ -3,10 +3,10 @@ import { Emason, EmasonWebp, EmasonAvif } from '../../assets';
 
 const NAV_LINKS = [
   { label: 'HOME',     href: '/' },
-  { label: 'Your Path', href: '/agency' },
+  { label: 'Your Path', href:'#choose' },
   { label: 'Our Team', href: '#team' },
-  { label: 'About Us', href: '#About' },
-  { label: 'Reviews',  href: '#Testimony' },
+  { label: 'About Us', href: '#about' },
+  { label: 'Reviews',  href: '#testimony' },
 ];
 
 const Navbar: React.FC = () => {
@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col justify-center items-center gap-1.5 shadow-md shadow-white p-2 rounded-b-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] w-11 h-11"
+          className="md:hidden flex flex-col justify-center items-center gap-1.5 shadow-md shadow-white p-2 rounded-b-3xl focus-visible:outline-none focus-visible:ring-[#C9A84C] focus-visible:ring-2 w-11 h-11"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}

@@ -59,7 +59,7 @@ const Testimonials: React.FC = () => {
   const slide = SLIDES[current];
 
   return (
-    <section className="bg-white px-6 sm:px-10 lg:px-16 py-20 overflow-hidden">
+    <section id="testimony" className="bg-white px-6 sm:px-10 lg:px-16 py-20 overflow-hidden">
 
       {/* TITLE */}
       <h2 className="mb-14 font-bold text-[#12022A] text-[26px] sm:text-[40px] text-center uppercase tracking-[0.15em]">
@@ -83,7 +83,7 @@ const Testimonials: React.FC = () => {
         </div>
 
         {/* CENTER SLIDER (FIXED HEIGHT → NO SHIFTING) */}
-        <div className="relative bg-[#12022A] rounded-2xl w-full h-105 sm:h-130 lg:h-150 overflow-hidden">
+        <div className="relative bg-[#12022A] shadow-[#4B1E91] shadow-md rounded-2xl w-full h-105 sm:h-130 lg:h-150 overflow-hidden">
 
           <AnimatePresence mode="wait">
             <motion.div

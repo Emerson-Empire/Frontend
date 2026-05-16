@@ -191,7 +191,7 @@ const CTA: React.FC = () => {
               </button>
             </motion.div>
           ) : (
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 shadow-[#4B1E91] shadow-md p-6 rounded-md">
               <div className="flex flex-col">
                 <label htmlFor="firstName" className={labelClass}>
                   First Name: <span aria-hidden="true">*</span>
@@ -253,7 +253,7 @@ const CTA: React.FC = () => {
 
               {/* Error banner */}
               {error && (
-                <p role="alert" className="text-red-600 text-[12px] leading-snug">
+                <p role="alert" className="text-[12px] text-red-600 leading-snug">
                   {error}
                 </p>
               )}

@@ -169,7 +169,7 @@ const SuccessStories: React.FC = () => {
         style={{ scrollbarWidth: 'none' }}
       >
         {STORIES.map((story, i) => (
-          <div key={story.id} onClick={() => setActive(i)}>
+          <div key={story.id} onClick={() => setActive(i)} className="shadow-black shadow-md rounded-md cursor-pointer">
             <StoryCard story={story} active={i === active} />
           </div>
         ))}
