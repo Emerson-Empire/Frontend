@@ -2,7 +2,7 @@ import type { FC } from "react";
 import logo from "../../assets/EPDG_LOGO.webp";
 
 export const darkBtn =
-  "bg-[#081331] text-white text-[11px] font-semibold px-5 py-3 rounded-full tracking-[0.18em] shadow-[0_12px_30px_-20px_rgba(0,0,0,0.8)] cursor-pointer transition hover:bg-[#0f2049]";
+  "bg-[#081331] text-white text-[11px] font-semibold px-5 py-3 rounded-[8px] tracking-[0.18em] shadow-[0_12px_30px_-20px_rgba(0,0,0,0.8)] cursor-pointer transition hover:bg-[#0f2049]";
 
 interface BrandLogoProps {
   size?: "md" | "lg";
