@@ -17,13 +17,22 @@ const Navbar: React.FC = () => {
       <div className="flex justify-between items-center mx-auto px-6 sm:px-10 lg:px-16 w-full max-w-7xl h-16">
 
         {/* Logo */}
-        <a href="/" className="flex items-center shrink-0">
-          <picture>
-            <source srcSet={EmasonAvif} type="image/avif" />
-            <source srcSet={EmasonWebp} type="image/webp" />
-            <img src={Emason} alt="Emerson Empire Logo" width={48} height={48} className="w-12 h-12 object-contain" />
-          </picture>
-        </a>
+       <a href="/" className="group flex items-center active:scale-95 transition-transform duration-200 shrink-0">
+  <picture>
+    <source srcSet={EmasonAvif} type="image/avif" />
+    <source srcSet={EmasonWebp} type="image/webp" />
+    <img
+      src={Emason}
+      alt="Emerson Empire Logo"
+      width={48}
+      height={48}
+      className="w-12 h-12 object-contain group-hover:scale-x-125 transition-transform duration-200"
+    />
+  </picture>
+  <p className="group-hover:opacity-80 ml-2 font-bold text-[#C9A84C] text-[18px] transition-opacity duration-200">
+    Emerson Empire
+  </p>
+</a>
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8 m-0 p-0 list-none">
