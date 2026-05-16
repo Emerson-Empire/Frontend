@@ -53,7 +53,7 @@ const Navbar: FC = () => {
           >
             Log in
           </a>
-          <button className="bg-[#0f2049] text-white text-[16px] font-semibold tracking-[0.22em] px-5 py-2 rounded-[8px] shadow-lg shadow-slate-900/10">
+          <button className="bg-[#0f2049] text-white text-[16px] font-semibold tracking-[0.22em] px-5 py-2 rounded-[8px] shadow-lg shadow-slate-900/10 cursor-pointer">
             Create an account
           </button>
         </div>
