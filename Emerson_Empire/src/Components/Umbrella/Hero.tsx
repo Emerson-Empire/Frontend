@@ -3,11 +3,11 @@ import { Helena2, Helena2Webp, Helena2Avif } from '../../assets';
 
 const Hero: React.FC = () => {
   return (
-    <section className="bg-white pt-16 min-h-screen">
-      <div className="flex lg:flex-row flex-col mx-auto px-6 sm:px-10 lg:px-16 py-16 max-w-7xl min-h-[calc(100vh-4rem)]">
+    <section className="bg-white pt-16 w-full min-h-screen">
+      <div className="flex lg:flex-row flex-col mx-auto mt-2 px-6 sm:px-10 lg:px-16 py-16 rounded-md w-[95%] min-h-[calc(100vh-4rem)]">
 
         {/* ── LEFT: Text content ── */}
-        <div className="flex flex-col justify-center pr-0 lg:pr-16 lg:w-1/2">
+        <div className="flex flex-col justify-center shadow-[#4B1E91] shadow-md m-1 p-2 pr-0 lg:pr-16 rounded-b-2xl lg:w-1/2">
 
           {/* Eyebrow */}
           <div className="relative flex items-center mb-6">
