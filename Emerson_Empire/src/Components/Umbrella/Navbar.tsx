@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
     />
   </picture>
   <p className="group-hover:opacity-80 ml-2 font-bold text-[#C9A84C] text-[18px] transition-opacity duration-200">
-    Emerson Empire
+    THE <br/><span className="text-[#E8C97A]">EMERSON</span> EMPIRE
   </p>
 </a>
 
