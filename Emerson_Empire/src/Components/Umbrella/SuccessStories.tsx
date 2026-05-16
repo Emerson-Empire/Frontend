@@ -89,7 +89,6 @@ const StoryCard = ({ story, active }: any) => (
     animate={{ scale: active ? 1 : 0.97, opacity: active ? 1 : 0.75 }}
     transition={{ duration: 0.3 }}
   >
-    {/* Avatar */}
     <div className="flex items-center gap-3 mb-4">
       <div className="border border-white/10 rounded-xl w-14 h-14 overflow-hidden">
         <picture>
@@ -115,7 +114,6 @@ const StoryCard = ({ story, active }: any) => (
       </div>
     </div>
 
-    {/* Quote */}
     <p className="text-white/70 text-sm leading-relaxed">
       "{story.quote}"
     </p>
@@ -126,32 +124,36 @@ const SuccessStories: React.FC = () => {
   const [active, setActive] = useState(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  // auto scroll
+  // Auto-advance
   useEffect(() => {
     const t = setInterval(() => {
-      setActive((p) => (p + 1) % STORIES.length);
+      setActive(p => (p + 1) % STORIES.length);
     }, 4000);
-
     return () => clearInterval(t);
   }, []);
 
-  // scroll into view (fix mobile clarity issue)
+  // Scroll only the carousel container — never the page
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
 
     const card = el.children[active] as HTMLElement;
-    card?.scrollIntoView({
+    if (!card) return;
+
+    // offsetLeft of the card minus half the gap needed to center it
+    const cardLeft = card.offsetLeft;
+    const cardWidth = card.offsetWidth;
+    const containerWidth = el.offsetWidth;
+
+    el.scrollTo({
+      left: cardLeft - (containerWidth - cardWidth) / 2,
       behavior: 'smooth',
-      inline: 'center',
-      block: 'nearest',
     });
   }, [active]);
 
   return (
     <section className="bg-white py-20">
 
-      {/* Heading */}
       <div className="mx-auto mb-10 px-6 sm:px-10 lg:px-16 max-w-7xl">
         <h2 className="font-bold text-[#12022A] text-[32px] sm:text-[42px]">
           Stories of real progress.
@@ -161,10 +163,10 @@ const SuccessStories: React.FC = () => {
         </p>
       </div>
 
-      {/* CAROUSEL */}
       <div
         ref={containerRef}
         className="flex gap-5 px-6 sm:px-10 lg:px-16 overflow-x-auto scroll-smooth snap-mandatory snap-x"
+        style={{ scrollbarWidth: 'none' }}
       >
         {STORIES.map((story, i) => (
           <div key={story.id} onClick={() => setActive(i)}>
@@ -173,7 +175,6 @@ const SuccessStories: React.FC = () => {
         ))}
       </div>
 
-      {/* DOTS */}
       <div className="flex justify-center gap-2 mt-8">
         {STORIES.map((_, i) => (
           <button
