@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import img1 from "../../assets/Girl_Typing.webp";
 import img2 from "../../assets/Man_Point.png";
-import { darkBtn } from "./Navbar";
+
 
 const WhoWeHelp: FC = () => {
   return (
@@ -28,7 +28,7 @@ const WhoWeHelp: FC = () => {
             <p className="text-sm text-slate-600 mb-8 leading-relaxed">
               Your degree is a start, but employers want proof. <strong>We offer a remote internship with portfolio building that replaces application fatigue with real-world results.</strong> Stop sending CVs into the void and start building your global track record today.
             </p>
-            <button className={darkBtn}>Get My Portfolio Started</button>
+            <button className="bg-[#081331] text-white hover:text-slate-950 text-[11px] font-semibold uppercase tracking-[0.18em] px-6 py-3 rounded-[8px] hover:bg-slate-100 transition shadow-lg cursor-pointer">Get My Portfolio Started</button>
           </div>
         </div>
 
@@ -53,7 +53,7 @@ const WhoWeHelp: FC = () => {
             <p className="text-sm text-slate-200 mb-8 leading-relaxed">
               Being good at your job isn't enough to lead. <strong>Our leadership development for remote professionals</strong> provides the executive presence and management frameworks you need to break your income ceiling and transition into high-impact global roles.
             </p>
-            <button className="bg-white text-slate-950 text-[11px] font-semibold uppercase tracking-[0.18em] px-6 py-3 rounded-full hover:bg-slate-100 transition shadow-lg cursor-pointer">
+            <button className="bg-white text-slate-950 text-[11px] font-semibold uppercase tracking-[0.18em] px-6 py-3 rounded-[8px] hover:bg-slate-100 transition shadow-lg cursor-pointer">
               Scale to Leadership
             </button>
           </div>
