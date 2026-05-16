@@ -90,10 +90,10 @@ const DivisionCard: React.FC<DivisionCardProps> = ({
     whileInView={{ opacity: 1, x: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.6 }}
-    className="flex flex-col bg-white shadow-xl rounded-2xl overflow-hidden"
+    className="flex flex-col bg-white shadow-black shadow-md rounded-2xl overflow-hidden"
   >
     {/* FIRST IMAGE */}
-    <div className="p-6 pb-4">
+    <div className="p-6 pb-4 w-full">
       <div className="shadow-[#4B1E91] shadow-md rounded-2xl overflow-hidden">
         <picture>
           {bgSrcWebp && (
@@ -111,7 +111,7 @@ const DivisionCard: React.FC<DivisionCardProps> = ({
             height={imgHeight}
             loading="lazy"
             decoding="async"
-            className="m-2 w-full h-60 object-cover"
+            className="m-2 rounded-md w-full h-auto object-cover"
           />
         </picture>
       </div>
