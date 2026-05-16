@@ -120,7 +120,7 @@ const DivisionCard: React.FC<DivisionCardProps> = ({
     {/* SECOND IMAGE */}
    {bottomImgSrc && (
  <div className="z-20 relative flex justify-center -mt-28 px-6 pb-6">
-    <div className="rounded-2xl w-[50%] sm:w-[30%] overflow-hidden">
+    <div className="rounded-2xl w-[35%] sm:w-[30%] overflow-hidden">
       <img
         src={bottomImgSrc}
         alt=""
