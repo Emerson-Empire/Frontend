@@ -5,7 +5,7 @@ import EmersonStudents from '../../assets/students_clear.webp';
 import EmersonAgencyWeb from '../../assets/D 1.webp';
 
 import EpdgBottom from '../../assets/LOG 3.webp';
-import AgencyBottom from '../../assets/LOG 3.webp';
+import AgencyBottom from '../../assets/LOG 1.webp';
 
 interface RichFeature {
   title: string;
@@ -120,7 +120,7 @@ const DivisionCard: React.FC<DivisionCardProps> = ({
     {/* SECOND IMAGE */}
    {bottomImgSrc && (
  <div className="z-20 relative flex justify-center -mt-28 px-6 pb-6">
-    <div className="shadow-lg rounded-2xl w-[30%] overflow-hidden">
+    <div className="rounded-2xl w-[50%] sm:w-[30%] overflow-hidden">
       <img
         src={bottomImgSrc}
         alt=""
