@@ -5,9 +5,9 @@ import {
   empire,
   empireWebp,
   empireAvif,
-  Emason,
-  EmasonWebp,
-  EmasonAvif,
+  // Emason,
+  // EmasonWebp,
+  // EmasonAvif,
 } from '../../assets';
 
 import { Settings2, Scale, GraduationCap, Coins, Users, BarChart2 } from 'lucide-react';
@@ -39,7 +39,7 @@ const About: React.FC = () => (
 
     {/* ── HERO ── */}
     <div className="relative bg-[#12022A] px-6 sm:px-10 lg:px-16 py-24 overflow-hidden">
-      <picture>
+      {/* <picture>
         <source srcSet={empireAvif} type="image/avif" />
         <source srcSet={empireWebp} type="image/webp" />
         <img
@@ -48,7 +48,7 @@ const About: React.FC = () => (
           aria-hidden="true"
           className="absolute inset-0 opacity-15 w-full h-full object-cover pointer-events-none select-none"
         />
-      </picture>
+      </picture> */}
 
       <div className="absolute inset-0 bg-[#12022A]/70 pointer-events-none" />
 
@@ -63,10 +63,10 @@ const About: React.FC = () => (
     </div>
 
     {/* ── TWO COLUMN SECTION ── */}
-    <div className="flex lg:flex-row flex-col bg-white">
+    <div className="flex lg:flex-row flex-col bg-white p-3">
 
       {/* LEFT */}
-      <div className="relative lg:w-1/2 h-72 lg:h-auto min-h-105 overflow-hidden">
+      <div className="relative shadow-[#4B1E91] shadow-md rounded-2xl lg:w-1/2 h-72 lg:h-auto min-h-105 overflow-hidden">
 
         {/* FRAME */}
         <img
@@ -121,19 +121,7 @@ const About: React.FC = () => (
           ))}
         </div>
 
-        <div className="flex items-center gap-4 mt-auto">
-          <picture>
-            <source srcSet={EmasonAvif} type="image/avif" />
-            <source srcSet={EmasonWebp} type="image/webp" />
-            <img
-              src={Emason}
-              alt="Logo"
-              className="opacity-80 w-20 h-20 object-contain"
-            />
-          </picture>
-
-          <div className="flex-1 bg-[#D1C4A8] rounded-lg h-20" />
-        </div>
+        
       </div>
     </div>
 

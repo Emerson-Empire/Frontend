@@ -44,13 +44,13 @@ const Hero: React.FC = () => {
           <div className="flex flex-wrap gap-3">
             <a
               href="/epdg"
-              className="inline-flex items-center gap-2 bg-[#12022A] hover:bg-[#1E0A4A] px-6 py-3 rounded-sm font-semibold text-[12px] text-white uppercase tracking-[2px] transition-colors duration-200"
+              className="inline-flex items-center gap-2 bg-[#12022A] hover:bg-[#1E0A4A] m-1 px-6 py-3 rounded-sm font-semibold text-[12px] text-white uppercase tracking-[2px] transition-colors duration-200"
             >
               Global Internships — EPDG
             </a>
             <a
               href="/agency"
-              className="inline-flex items-center gap-2 bg-[#4B1E91] hover:bg-[#5D2AAD] px-6 py-3 rounded-sm font-semibold text-[12px] text-white uppercase tracking-[2px] transition-colors duration-200"
+              className="inline-flex items-center gap-2 bg-[#4B1E91] hover:bg-[#5D2AAD] m-1 px-6 py-3 rounded-sm font-semibold text-[12px] text-white uppercase tracking-[2px] transition-colors duration-200"
             >
               Financial Solutions — Agency
             </a>
