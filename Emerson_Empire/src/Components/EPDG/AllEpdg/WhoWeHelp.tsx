@@ -5,9 +5,9 @@ import img2 from "../../../assets/Man_Point.png";
 
 const WhoWeHelp: FC = () => {
   return (
-    <section className="max-w-screen-xl px-6 py-16 mx-auto">
+    <section className="px-6 py-16 mx-auto max-w-screen-7xl">
       <div className="grid gap-8 xl:grid-cols-2">
-        <div className="bg-white shadow-[0_22px_80px_rgba(15,32,73,0.12)] hover:shadow-[0_30px_100px_rgba(15,32,73,0.15)] border border-slate-200 rounded-[32px] overflow-hidden transition">
+        <div className="bg-white shadow-[0_22px_80px_rgba(15,32,73,0.12)] hover:shadow-[0_30px_100px_rgba(15,32,73,0.15)] border border-slate-200 rounded-4xl overflow-hidden transition">
           <div className="relative overflow-hidden bg-slate-100 h-72">
             <img
               src={img1}
@@ -28,11 +28,11 @@ const WhoWeHelp: FC = () => {
             <p className="mb-8 text-sm leading-relaxed text-slate-600">
               Your degree is a start, but employers want proof. <strong>We offer a remote internship with portfolio building that replaces application fatigue with real-world results.</strong> Stop sending CVs into the void and start building your global track record today.
             </p>
-            <button className="bg-[#081331] hover:bg-slate-100 shadow-lg px-6 py-3 rounded-[8px] font-semibold text-[11px] text-white hover:text-slate-950 uppercase tracking-[0.18em] transition cursor-pointer">Get My Portfolio Started</button>
+            <button className="bg-[#081331] hover:bg-slate-100 shadow-lg px-6 py-3 rounded-lg font-semibold text-[11px] text-white hover:text-slate-950 uppercase tracking-[0.18em] transition cursor-pointer">Get My Portfolio Started</button>
           </div>
         </div>
 
-        <div className="bg-slate-950 shadow-[0_22px_80px_rgba(15,32,73,0.2)] hover:shadow-[0_30px_100px_rgba(15,32,73,0.25)] border border-white/15 rounded-[32px] overflow-hidden text-white transition">
+        <div className="bg-slate-950 shadow-[0_22px_80px_rgba(15,32,73,0.2)] hover:shadow-[0_30px_100px_rgba(15,32,73,0.25)] border border-white/15 rounded-4xl overflow-hidden text-white transition">
           <div className="relative overflow-hidden bg-slate-900 h-72">
             <img
               src={img2}
@@ -53,7 +53,7 @@ const WhoWeHelp: FC = () => {
             <p className="mb-8 text-sm leading-relaxed text-slate-200">
               Being good at your job isn't enough to lead. <strong>Our leadership development for remote professionals</strong> provides the executive presence and management frameworks you need to break your income ceiling and transition into high-impact global roles.
             </p>
-            <button className="bg-white hover:bg-slate-100 shadow-lg px-6 py-3 rounded-[8px] font-semibold text-[11px] text-slate-950 uppercase tracking-[0.18em] transition cursor-pointer">
+            <button className="bg-white hover:bg-slate-100 shadow-lg px-6 py-3 rounded-lg font-semibold text-[11px] text-slate-950 uppercase tracking-[0.18em] transition cursor-pointer">
               Scale to Leadership
             </button>
           </div>

@@ -11,7 +11,7 @@ const Contact: FC = () => {
 
   return (
     <section id="contact" className="py-16 bg-white">
-      <div className="items-start gap-12 grid lg:grid-cols-[0.95fr_1.05fr] mx-auto px-6 sm:px-8 max-w-screen-xl">
+      <div className="items-start gap-12 grid lg:grid-cols-[0.95fr_1.05fr] mx-auto px-6 sm:px-8 max-w-screen-7xl">
         <div>
           <p className="mb-3 text-sm text-slate-500">Get the clarity you need to scale. Contact us today for a 1-on-1 assessment and discover how The Emerson Empire can transform your potential into verifiable professional authority.</p>
           <h2 className="mb-8 text-5xl font-black tracking-tight text-slate-950">Your Global Seat is Waiting.</h2>
@@ -29,7 +29,7 @@ const Contact: FC = () => {
           </div>
         </div>
 
-        <div className="bg-slate-950 shadow-[0_40px_120px_-60px_rgba(15,32,73,0.25)] p-8 border border-slate-200 rounded-[32px]">
+        <div className="bg-slate-950 shadow-[0_40px_120px_-60px_rgba(15,32,73,0.25)] p-8 border border-slate-200 rounded-4xl">
           <div className="space-y-4">
             <input
               type="text"

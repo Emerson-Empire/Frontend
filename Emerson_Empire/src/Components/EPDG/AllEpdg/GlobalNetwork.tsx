@@ -42,7 +42,7 @@ type GlobalNetworkProps = {
 };
  
 const LogoChip: FC<{ label: string }> = ({ label }) => (
-  <div className="inline-flex justify-center items-center bg-white shadow-sm px-6 py-4 border border-slate-200 rounded-full min-w-[220px] font-semibold text-[13px] text-slate-950 uppercase tracking-[0.18em] whitespace-nowrap">
+  <div className="inline-flex justify-center items-center bg-white shadow-sm px-6 py-4 border border-slate-200 rounded-full min-w-55 font-semibold text-[13px] text-slate-950 uppercase tracking-[0.18em] whitespace-nowrap">
     {label}
   </div>
 );
@@ -50,8 +50,8 @@ const LogoChip: FC<{ label: string }> = ({ label }) => (
 const LogoBand: FC<{ reverse?: boolean }> = ({ reverse = false }) => (
   <div className="bg-white/85 shadow-[0_30px_80px_-50px_rgba(15,23,42,0.18)] backdrop-blur-md py-5 border border-slate-200 rounded-[28px] w-full overflow-hidden pointer-events-auto">
     <div className="relative px-2 overflow-hidden">
-      <div className="absolute inset-y-0 left-0 w-16 pointer-events-none bg-gradient-to-r from-white to-white/0" />
-      <div className="absolute inset-y-0 right-0 w-16 pointer-events-none bg-gradient-to-l from-white to-white/0" />
+      <div className="absolute inset-y-0 left-0 w-16 pointer-events-none bg-linear-to-r from-white to-white/0" />
+      <div className="absolute inset-y-0 right-0 w-16 pointer-events-none bg-linear-to-l from-white to-white/0" />
       <div
         className={`flex items-center gap-6 whitespace-nowrap px-5 ${
           reverse ? "animate-marquee-reverse" : "animate-marquee"

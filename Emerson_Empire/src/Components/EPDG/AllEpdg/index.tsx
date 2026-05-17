@@ -1,6 +1,6 @@
 import type { FC } from "react";
-import Navbar from "./Navbar";
-import Hero from "./Hero";
+import Navbar from "./EPDGNavbar";
+import Hero from "./EPDGHero";
 import WhoWeHelp from "./WhoWeHelp";
 import BusinessSupport from "./BusinessSupport";
 import Reviews from "./Reviews";

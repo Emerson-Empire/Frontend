@@ -5,7 +5,7 @@ const NAV = ["Home", "Program", "How it works", "Reviews", "About Us", "Contact"
 const Footer: FC = () => {
   return (
     <footer className="bg-[#081331] text-slate-200">
-      <div className="max-w-screen-xl px-6 py-12 mx-auto sm:px-8">
+      <div className="px-6 py-12 mx-auto sm:px-8 max-w-screen-7xl">
         <div className="items-start gap-10 grid lg:grid-cols-[1.2fr_0.8fr]">
           <div className="space-y-6">
             
@@ -46,7 +46,7 @@ const Footer: FC = () => {
       </div>
 
       <div className="border-t border-slate-700">
-        <div className="flex md:flex-row flex-col md:justify-between md:items-center gap-4 mx-auto px-6 sm:px-8 py-4 max-w-screen-xl text-[11px] text-slate-500">
+        <div className="flex md:flex-row flex-col md:justify-between md:items-center gap-4 mx-auto px-6 sm:px-8 py-4 max-w-screen-7xl text-[11px] text-slate-500">
           <p>© 2026 The Emerson Empire. All rights reserved.</p>
           <div className="flex flex-wrap gap-4">
             <a href="#" className="transition hover:text-white">Privacy Policy</a>

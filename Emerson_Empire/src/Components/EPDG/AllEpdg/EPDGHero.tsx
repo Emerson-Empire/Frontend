@@ -6,7 +6,7 @@ const Hero: FC = () => {
   return (
     <section
       id="program"
-      className="relative shadow-2xl shadow-slate-950/20 m-[25px] pt-[20px] border-2px border-white/20 rounded-[28px] overflow-hidden text-white"
+      className="relative shadow-2xl shadow-slate-950/20 m-6.25 pt-5 border-2px border-white/20 rounded-[28px] overflow-hidden text-white"
     >
       <div className="absolute inset-0">
         <picture>
@@ -20,7 +20,7 @@ const Hero: FC = () => {
 
       <div className="absolute"/>
 
-      <div className="relative z-10 max-w-screen-xl px-6 py-20 mx-auto sm:px-8 lg:px-10">
+      <div className="relative z-10 px-6 py-20 mx-auto sm:px-8 lg:px-10 max-w-screen-7xl">
         <div className="items-start gap-10 grid xl:grid-cols-[1.5fr_0.9fr]">
           <div className="space-y-8">
             <div className="flex flex-wrap gap-3">
@@ -44,8 +44,8 @@ const Hero: FC = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <button className="bg-[#0f2049] hover:bg-white/10 px-5 py-3 border border-white/30 rounded-[8px] font-semibold text-[11px] text-white uppercase tracking-[0.18em] transition cursor-pointer">Build My Global Portfolio</button>
-              <button className="bg-white hover:bg-white/10 px-5 py-3 border border-white/30 rounded-[8px] font-semibold text-[#0f2049] text-[11px] hover:text-white uppercase tracking-[0.18em] transition cursor-pointer">
+              <button className="bg-[#0f2049] hover:bg-white/10 px-5 py-3 border border-white/30 rounded-lg font-semibold text-[11px] text-white uppercase tracking-[0.18em] transition cursor-pointer">Build My Global Portfolio</button>
+              <button className="bg-white hover:bg-white/10 px-5 py-3 border border-white/30 rounded-lg font-semibold text-[#0f2049] text-[11px] hover:text-white uppercase tracking-[0.18em] transition cursor-pointer">
                 Claim Management Authority
               </button>
             </div>

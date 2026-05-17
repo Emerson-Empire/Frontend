@@ -53,25 +53,25 @@ const Reviews: FC = () => {
   const person = PEOPLE[active];
 
   return (
-    <section id="reviews" className="py-20 bg-gray-50 overflow-hidden">
-      <div className="max-w-screen-xl mx-auto px-6 sm:px-8">
+    <section id="reviews" className="py-20 overflow-hidden bg-gray-50">
+      <div className="px-6 mx-auto sm:px-8 max-w-screen-7xl">
 
         {/* Header */}
-        <div className="text-center mb-16 max-w-2xl mx-auto">
-          <h2 className="text-5xl sm:text-6xl font-extrabold leading-tight tracking-tight text-slate-950">
+        <div className="max-w-2xl mx-auto mb-16 text-center">
+          <h2 className="text-5xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-6xl">
             Our track record of success
           </h2>
-          <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-500">
+          <p className="mt-4 text-base leading-relaxed text-slate-500 sm:text-lg">
             From internship programs to global professional development
           </p>
         </div>
 
         {/* Carousel */}
         <div className="relative max-w-5xl mx-auto mb-10">
-          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[380px] bg-slate-200/40 blur-3xl rounded-full pointer-events-none" />
+          <div className="absolute inset-x-0 -translate-y-1/2 rounded-full pointer-events-none top-1/2 bg-slate-200/40 blur-3xl h-95" />
 
           {/* Cards — C-arc: active at far right, others curve left & down */}
-          <div className="relative flex justify-center items-end min-h-[420px]">
+          <div className="relative flex items-end justify-center min-h-95">
             {PEOPLE.map((p, idx) => {
               // slot 0 = active, slot 1,2,3 = next in sequence
               const slot = (idx - active + total) % total;
@@ -82,7 +82,7 @@ const Reviews: FC = () => {
                 <div
                   key={p.name}
                   onClick={() => setActive(idx)}
-                  className="absolute bottom-0 rounded-[24px] overflow-hidden w-[200px] h-[310px] transition-all duration-500 ease-out cursor-pointer"
+                  className="absolute bottom-0 overflow-hidden transition-all duration-500 ease-out cursor-pointer rounded-3xl w-50 h-95"
                   style={{
                     transform,
                     zIndex: ARC_SLOTS.length - slot,
@@ -92,24 +92,24 @@ const Reviews: FC = () => {
                       : "0 20px 50px -30px rgba(15,32,73,0.15)",
                   }}
                 >
-                  <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
+                  <img src={p.image} alt={p.name} className="object-cover w-full h-full" />
                 </div>
               );
             })}
           </div>
 
           {/* Arrows — below the arc */}
-          <div className="flex justify-center gap-4 mt-6 relative z-20">
+          <div className="relative z-20 flex justify-center gap-4 mt-6">
             <button
               onClick={prev}
-              className="w-12 h-12 rounded-full bg-slate-950 hover:bg-slate-700 text-white grid place-items-center shadow-lg transition"
+              className="grid w-12 h-12 text-white transition rounded-full shadow-lg place-items-center bg-slate-950 hover:bg-slate-700"
               type="button" aria-label="Previous"
             >
               &larr;
             </button>
             <button
               onClick={next}
-              className="w-12 h-12 rounded-full bg-slate-950 hover:bg-slate-700 text-white grid place-items-center shadow-lg transition"
+              className="grid w-12 h-12 text-white transition rounded-full shadow-lg place-items-center bg-slate-950 hover:bg-slate-700"
               type="button" aria-label="Next"
             >
               &rarr;
@@ -118,13 +118,13 @@ const Reviews: FC = () => {
         </div>
 
         {/* Name + title */}
-        <div className="text-center mb-4">
+        <div className="mb-4 text-center">
           <p className="text-2xl font-black text-slate-950">{person.name}</p>
-          <p className="text-sm text-slate-500 mt-1">{person.title}</p>
+          <p className="mt-1 text-sm text-slate-500">{person.title}</p>
         </div>
 
         {/* Quote */}
-        <p className="text-center text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto mb-10">
+        <p className="max-w-2xl mx-auto mb-10 text-sm leading-relaxed text-center text-slate-600 sm:text-base">
           {person.quote}
         </p>
 
@@ -132,13 +132,13 @@ const Reviews: FC = () => {
         <div className="flex flex-wrap justify-center gap-4">
           <a
             href="#contact"
-            className="inline-flex items-center justify-center bg-[#081331] hover:bg-[#0f2049] text-white text-[11px] font-bold uppercase tracking-[0.2em] px-8 py-4 rounded-[8px] transition-colors duration-200"
+            className="inline-flex justify-center items-center bg-[#081331] hover:bg-[#0f2049] px-8 py-4 rounded-lg font-bold text-[11px] text-white uppercase tracking-[0.2em] transition-colors duration-200"
           >
             Start Building My Portfolio
           </a>
           <a
             href="#program"
-            className="inline-flex items-center justify-center border-2 border-slate-300 hover:border-slate-400 text-slate-700 text-[11px] font-bold uppercase tracking-[0.2em] px-8 py-4 rounded-[8px] transition-colors duration-200"
+            className="inline-flex justify-center items-center px-8 py-4 border-2 border-slate-300 hover:border-slate-400 rounded-lg font-bold text-[11px] text-slate-700 uppercase tracking-[0.2em] transition-colors duration-200"
           >
             Scale to Global Leadership
           </a>

@@ -4,11 +4,11 @@ import logo from "../../../assets/EPDG_LOGO.webp";
 const About: FC = () => {
   return (
     <section id="about-us" className="py-16 text-white bg-slate-50">
-      <div className="items-start gap-12 grid xl:grid-cols-[1.1fr_0.9fr] mx-auto px-6 sm:px-8 max-w-screen-xl">
+      <div className="items-start gap-12 grid xl:grid-cols-[1.1fr_0.9fr] mx-auto px-6 sm:px-8 max-w-screen-7xl">
         <div className="bg-[#08142e] shadow-[0_40px_120px_-70px_rgba(0,0,0,0.7)] p-10 border border-white/10 rounded-[20px]">
           <p className="mb-6 font-bold text-slate-300 text-4xl tracking-[0.32em]">About Us</p>
           <div className="flex justify-center mb-6">
-            <img src={logo} alt="Brand Logo" className="w-28 h-28 object-contain" />
+            <img src={logo} alt="Brand Logo" className="object-contain w-28 h-28" />
           </div>
           <h2 className="mb-6 text-3xl font-black leading-tight text-white">
             Building the Next Generation of Global Leaders.
@@ -16,7 +16,7 @@ const About: FC = () => {
           <p className="mb-8 text-sm leading-relaxed text-slate-300">
             Part of the prestigious The Emerson Empire, EPDG is the definitive accelerator for ambitious talent. We specialize in elite leadership development for remote professionals and a specialized remote internship with portfolio building program. Our mission is clear: transforming academic knowledge into verifiable global success and six-figure career trajectories.
           </p>
-          <button className="flex justify-center bg-white hover:bg-slate-300 shadow-lg shadow-slate-950/10 mx-auto px-11 py-5 rounded-[8px] font-bold text-[#081331] text-[11px] uppercase tracking-[0.18em] transition cursor-pointer">
+          <button className="flex justify-center bg-white hover:bg-slate-300 shadow-lg shadow-slate-950/10 mx-auto px-11 py-5 rounded-lg font-bold text-[#081331] text-[11px] uppercase tracking-[0.18em] transition cursor-pointer">
             Learn More
           </button>
         </div>

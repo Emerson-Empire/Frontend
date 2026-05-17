@@ -31,16 +31,16 @@ const AgencyFAQ: FC = () => {
   return (
     <>
       <section className="py-16 bg-white">
-        <div className="max-w-screen-xl px-6 mx-auto mb-12 text-center sm:px-8">
+        <div className="px-6 mx-auto mb-12 text-center sm:px-8 max-w-screen-7xl">
           <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-slate-950">Blogs and News</h2>
           <p className="max-w-2xl mx-auto text-sm leading-relaxed text-slate-600">
             Discover the latest news and opportunities regarding internship and professional development programs happening around the world today.
           </p>
         </div>
 
-        <div className="grid max-w-screen-xl gap-6 px-6 mx-auto lg:grid-cols-3 sm:px-8">
+        <div className="grid gap-6 px-6 mx-auto lg:grid-cols-3 sm:px-8 max-w-screen-7xl">
           {BLOGS.map((item) => (
-            <div key={item.title} className="bg-white shadow-[0_30px_90px_-50px_rgba(15,32,73,0.12)] border border-slate-200 rounded-[32px] overflow-hidden">
+            <div key={item.title} className="bg-white shadow-[0_30px_90px_-50px_rgba(15,32,73,0.12)] border border-slate-200 rounded-4xl overflow-hidden">
               <div className="h-56 overflow-hidden">
                 <img src={Helena2} alt={item.title} className="object-cover w-full h-full" />
               </div>
@@ -55,8 +55,8 @@ const AgencyFAQ: FC = () => {
       </section>
 
       <section className="py-16 bg-slate-50">
-        <div className="items-start gap-10 grid lg:grid-cols-[1.2fr_0.8fr] mx-auto px-6 sm:px-8 max-w-screen-xl">
-          <div className="bg-white shadow-[0_30px_90px_-50px_rgba(15,32,73,0.15)] border border-slate-200 rounded-[32px] overflow-hidden">
+        <div className="items-start gap-10 grid lg:grid-cols-[1.2fr_0.8fr] mx-auto px-6 sm:px-8 max-w-screen-7xl">
+          <div className="bg-white shadow-[0_30px_90px_-50px_rgba(15,32,73,0.15)] border border-slate-200 rounded-4xl overflow-hidden">
             <div className="p-8 border-b border-slate-200">
               <h2 className="mb-4 text-3xl font-black text-slate-950">FAQs</h2>
               <p className="text-sm leading-relaxed text-slate-600">
@@ -74,14 +74,14 @@ const AgencyFAQ: FC = () => {
                     Learn More
                   </button>
                 </div>
-                <div className="bg-white border border-white/30 rounded-[24px] overflow-hidden">
+                <div className="overflow-hidden bg-white border border-white/30 rounded-3xl">
                   <div className="h-48 bg-slate-200" />
                 </div>
               </div>
 
               <div className="space-y-3">
                 {QUESTIONS.slice(1).map((question) => (
-                  <div key={question} className="bg-white p-5 border border-slate-200 rounded-[24px]">
+                  <div key={question} className="p-5 bg-white border border-slate-200 rounded-4xl">
                     <p className="text-sm font-semibold text-slate-950">{question}</p>
                   </div>
                 ))}
@@ -89,7 +89,7 @@ const AgencyFAQ: FC = () => {
             </div>
           </div>
 
-          <div className="bg-white shadow-[0_30px_90px_-50px_rgba(15,32,73,0.12)] border border-slate-200 rounded-[32px] overflow-hidden">
+          <div className="bg-white shadow-[0_30px_90px_-50px_rgba(15,32,73,0.12)] border border-slate-200 rounded-4xl overflow-hidden">
             <div className="p-8">
               <h3 className="mb-4 text-xl font-bold text-slate-950">We Want to talk to you!</h3>
               <p className="text-sm leading-relaxed text-slate-600">
