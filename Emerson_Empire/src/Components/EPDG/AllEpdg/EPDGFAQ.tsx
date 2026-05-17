@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { Helena2 } from "../../assets";
+import { Helena2 } from "../../../assets";
 
 const BLOGS = [
   {
@@ -30,58 +30,58 @@ const QUESTIONS = [
 const AgencyFAQ: FC = () => {
   return (
     <>
-      <section className="bg-white py-16">
-        <div className="max-w-screen-xl mx-auto px-6 sm:px-8 text-center mb-12">
-          <h2 className="text-4xl font-extrabold tracking-tight text-slate-950 mb-4">Blogs and News</h2>
-          <p className="text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed">
+      <section className="py-16 bg-white">
+        <div className="max-w-screen-xl px-6 mx-auto mb-12 text-center sm:px-8">
+          <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-slate-950">Blogs and News</h2>
+          <p className="max-w-2xl mx-auto text-sm leading-relaxed text-slate-600">
             Discover the latest news and opportunities regarding internship and professional development programs happening around the world today.
           </p>
         </div>
 
-        <div className="max-w-screen-xl mx-auto px-6 sm:px-8 grid gap-6 lg:grid-cols-3">
+        <div className="grid max-w-screen-xl gap-6 px-6 mx-auto lg:grid-cols-3 sm:px-8">
           {BLOGS.map((item) => (
-            <div key={item.title} className="overflow-hidden rounded-[32px] border border-slate-200 shadow-[0_30px_90px_-50px_rgba(15,32,73,0.12)] bg-white">
+            <div key={item.title} className="bg-white shadow-[0_30px_90px_-50px_rgba(15,32,73,0.12)] border border-slate-200 rounded-[32px] overflow-hidden">
               <div className="h-56 overflow-hidden">
-                <img src={Helena2} alt={item.title} className="h-full w-full object-cover" />
+                <img src={Helena2} alt={item.title} className="object-cover w-full h-full" />
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-slate-950 mb-3">{item.title}</h3>
-                <p className="text-sm text-slate-600 leading-relaxed mb-5">{item.description}</p>
-                <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">Date: {item.date}</p>
+                <h3 className="mb-3 text-lg font-bold text-slate-950">{item.title}</h3>
+                <p className="mb-5 text-sm leading-relaxed text-slate-600">{item.description}</p>
+                <p className="text-[11px] text-slate-400 uppercase tracking-[0.24em]">Date: {item.date}</p>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="bg-slate-50 py-16">
-        <div className="max-w-screen-xl mx-auto px-6 sm:px-8 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-start">
-          <div className="rounded-[32px] overflow-hidden bg-white shadow-[0_30px_90px_-50px_rgba(15,32,73,0.15)] border border-slate-200">
+      <section className="py-16 bg-slate-50">
+        <div className="items-start gap-10 grid lg:grid-cols-[1.2fr_0.8fr] mx-auto px-6 sm:px-8 max-w-screen-xl">
+          <div className="bg-white shadow-[0_30px_90px_-50px_rgba(15,32,73,0.15)] border border-slate-200 rounded-[32px] overflow-hidden">
             <div className="p-8 border-b border-slate-200">
-              <h2 className="text-3xl font-black text-slate-950 mb-4">FAQs</h2>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <h2 className="mb-4 text-3xl font-black text-slate-950">FAQs</h2>
+              <p className="text-sm leading-relaxed text-slate-600">
                 Common questions in our education programs
               </p>
             </div>
             <div className="grid gap-6 p-8 bg-slate-50">
-              <div className="rounded-[28px] bg-slate-950 text-white p-8 grid gap-5 lg:grid-cols-[1.2fr_0.8fr] items-center">
+              <div className="items-center gap-5 grid lg:grid-cols-[1.2fr_0.8fr] bg-slate-950 p-8 rounded-[28px] text-white">
                 <div>
-                  <p className="text-sm uppercase tracking-[0.3em] text-slate-300 mb-4">I have no prior experience. Can I really build a global portfolio?</p>
+                  <p className="mb-4 text-slate-300 text-sm uppercase tracking-[0.3em]">I have no prior experience. Can I really build a global portfolio?</p>
                   <p className="text-sm leading-relaxed text-slate-100">
                     Absolutely. EPDG is designed to bridge the "experience gap." Through our remote internship with portfolio building, you will execute real-world projects that serve as verifiable proof of your talent, allowing you to bypass entry-level gatekeepers and secure your first global role.
                   </p>
-                  <button className="mt-6 bg-white text-slate-950 text-[11px] font-semibold uppercase tracking-[0.18em] px-6 py-3 rounded-full shadow-lg shadow-slate-950/10">
+                  <button className="bg-white shadow-lg shadow-slate-950/10 mt-6 px-6 py-3 rounded-full font-semibold text-[11px] text-slate-950 uppercase tracking-[0.18em]">
                     Learn More
                   </button>
                 </div>
-                <div className="rounded-[24px] overflow-hidden border border-white/30 bg-white">
+                <div className="bg-white border border-white/30 rounded-[24px] overflow-hidden">
                   <div className="h-48 bg-slate-200" />
                 </div>
               </div>
 
               <div className="space-y-3">
                 {QUESTIONS.slice(1).map((question) => (
-                  <div key={question} className="rounded-[24px] bg-white p-5 border border-slate-200">
+                  <div key={question} className="bg-white p-5 border border-slate-200 rounded-[24px]">
                     <p className="text-sm font-semibold text-slate-950">{question}</p>
                   </div>
                 ))}
@@ -89,10 +89,10 @@ const AgencyFAQ: FC = () => {
             </div>
           </div>
 
-          <div className="rounded-[32px] overflow-hidden bg-white border border-slate-200 shadow-[0_30px_90px_-50px_rgba(15,32,73,0.12)]">
+          <div className="bg-white shadow-[0_30px_90px_-50px_rgba(15,32,73,0.12)] border border-slate-200 rounded-[32px] overflow-hidden">
             <div className="p-8">
-              <h3 className="text-xl font-bold text-slate-950 mb-4">We Want to talk to you!</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <h3 className="mb-4 text-xl font-bold text-slate-950">We Want to talk to you!</h3>
+              <p className="text-sm leading-relaxed text-slate-600">
                 Build Your Future. Execute. Lead. Win. Command Your Value.
               </p>
             </div>

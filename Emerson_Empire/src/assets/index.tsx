@@ -17,7 +17,7 @@ import EPDG from "./Professional.png";
 import EPDGWebp from "./Professional.webp";
 import EPDGAvif from "./Professional.avif";
 
-import Agency from "./Agency .png";
+import Agency from "./LogoAgency.png"
 import AgencyWebp from "./Agency.webp";
 import AgencyAvif from "./Agency.avif";
 
@@ -49,6 +49,9 @@ import bruno from "./bruno.png";
 import brunoWebp from "./bruno.webp";
 import brunoAvif from "./bruno.avif";
 
+import hero from "./hero.png";
+import heroAvif from "./hero.avif";
+
 export {
   Emason, EmasonWebp, EmasonAvif,
   Helena, HelenaWebp, HelenaAvif,
@@ -63,4 +66,5 @@ export {
   Matheous, MatheousWebp, MatheousAvif,
   Hosea, wiltord, EmersonAgency,
   bruno, brunoWebp, brunoAvif,
+  hero, heroAvif,
 };

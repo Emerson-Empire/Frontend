@@ -2,7 +2,7 @@ import { type FC } from "react";
  
 // Static SVG of the globe (orbits + pixels + node markers).
 // Adjust the import path / asset URL to match your bundler setup.
-import globeSvgUrl from "../../assets/Globe.svg";
+import globeSvgUrl from "../../../assets/Globe.svg";
  
 // Brand logos to scroll across the two ribbon bands.
 // Swap the text entries for actual logo components / images as needed.
@@ -42,16 +42,16 @@ type GlobalNetworkProps = {
 };
  
 const LogoChip: FC<{ label: string }> = ({ label }) => (
-  <div className="inline-flex min-w-[220px] items-center justify-center whitespace-nowrap rounded-full border border-slate-200 bg-white px-6 py-4 text-[13px] font-semibold uppercase tracking-[0.18em] text-slate-950 shadow-sm">
+  <div className="inline-flex justify-center items-center bg-white shadow-sm px-6 py-4 border border-slate-200 rounded-full min-w-[220px] font-semibold text-[13px] text-slate-950 uppercase tracking-[0.18em] whitespace-nowrap">
     {label}
   </div>
 );
  
 const LogoBand: FC<{ reverse?: boolean }> = ({ reverse = false }) => (
-  <div className="pointer-events-auto w-full overflow-hidden rounded-[28px] border border-slate-200 bg-white/85 py-5 shadow-[0_30px_80px_-50px_rgba(15,23,42,0.18)] backdrop-blur-md">
-    <div className="relative overflow-hidden px-2">
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-white/0" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-white/0" />
+  <div className="bg-white/85 shadow-[0_30px_80px_-50px_rgba(15,23,42,0.18)] backdrop-blur-md py-5 border border-slate-200 rounded-[28px] w-full overflow-hidden pointer-events-auto">
+    <div className="relative px-2 overflow-hidden">
+      <div className="absolute inset-y-0 left-0 w-16 pointer-events-none bg-gradient-to-r from-white to-white/0" />
+      <div className="absolute inset-y-0 right-0 w-16 pointer-events-none bg-gradient-to-l from-white to-white/0" />
       <div
         className={`flex items-center gap-6 whitespace-nowrap px-5 ${
           reverse ? "animate-marquee-reverse" : "animate-marquee"
@@ -75,25 +75,25 @@ const GlobalNetwork: FC<GlobalNetworkProps> = ({ onNodeClick }) => {
   };
  
   return (
-    <section className="relative w-full overflow-hidden bg-slate-50 py-12">
+    <section className="relative w-full py-12 overflow-hidden bg-slate-50">
       <div
-        className="relative mx-auto w-full"
+        className="relative w-full mx-auto"
         style={{ aspectRatio: "1356 / 1543", maxWidth: "1356px" }}
       >
         {/* Globe SVG — base layer */}
         <img
           src={globeSvgUrl}
           alt="Global Network — The Emerson Empire"
-          className="absolute inset-0 h-full w-full select-none"
+          className="absolute inset-0 w-full h-full select-none"
           draggable={false}
         />
  
         {/* Heading badge — sits in the upper portion of the globe */}
         <div
-          className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
+          className="absolute z-20 -translate-x-1/2 -translate-y-1/2 left-1/2"
           style={{ top: "27%" }}
         >
-          <div className="rounded-md bg-slate-950 px-7 py-3 text-[13px] font-bold uppercase tracking-[0.14em] text-white shadow-[0_10px_30px_-10px_rgba(15,23,42,0.55)] whitespace-nowrap">
+          <div className="bg-slate-950 shadow-[0_10px_30px_-10px_rgba(15,23,42,0.55)] px-7 py-3 rounded-md font-bold text-[13px] text-white uppercase tracking-[0.14em] whitespace-nowrap">
             GLOBAL NETWORK - THE EMERSON EMPIRE
           </div>
         </div>
@@ -119,7 +119,7 @@ const GlobalNetwork: FC<GlobalNetworkProps> = ({ onNodeClick }) => {
             type="button"
             onClick={() => handleNodeClick(node.id)}
             aria-label={node.label}
-            className="globe-hit-area absolute z-30 -translate-x-1/2 -translate-y-1/2 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            className="absolute z-30 -translate-x-1/2 -translate-y-1/2 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 globe-hit-area"
             style={{
               left: `${node.xPct}%`,
               top: `${node.yPct}%`,
