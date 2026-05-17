@@ -17,6 +17,7 @@ interface FormState {
   urgency: string;
   intentDescription: string;
   trackInterest: string;
+  serviceInterest: string;
 }
 
 const INITIAL: FormState = {
@@ -29,6 +30,7 @@ const INITIAL: FormState = {
   urgency: '',
   intentDescription: '',
   trackInterest: '',
+  serviceInterest: '',
 };
 
 const DIVISION_LABELS: Record<Exclude<Division, ''>, string> = {
@@ -52,7 +54,7 @@ const CTA: React.FC = () => {
 
   const isAgency = division === 'agency';
   const canSubmit = isAgency
-    ? !!(form.firstName && form.lastName && form.email && form.urgency && form.intentDescription)
+    ? !!(form.firstName && form.lastName && form.email && form.serviceInterest && form.urgency && form.intentDescription)
     : !!(form.fullName && form.email);
 
   const handleSubmit = async () => {
@@ -69,6 +71,7 @@ const CTA: React.FC = () => {
         email: form.email,
         phone: form.phone || null,
         message: form.message || null,
+        serviceInterest: form.serviceInterest || null,
         urgency: form.urgency || null,
         intentDescription: form.intentDescription || null,
         trackInterest: form.trackInterest || null,
@@ -254,6 +257,23 @@ const CTA: React.FC = () => {
                   <div className="flex flex-col">
                     <label htmlFor="email" className={labelClass}>Email <span aria-hidden="true">*</span></label>
                     <input id="email" name="email"  type="email" placeholder="Email Address" autoComplete="email" required aria-required="true" value={form.email} onChange={handleChange} className={fieldClass} />
+                  </div>
+                  <div className="flex flex-col">
+                    <label htmlFor="serviceInterest" className={labelClass}>Service Interest <span aria-hidden="true">*</span></label>
+                    <select
+                      id="serviceInterest"
+                      name="serviceInterest"
+                      required
+                      aria-required="true"
+                      value={form.serviceInterest}
+                      onChange={handleChange}
+                      className={`${fieldClass} cursor-pointer`}
+                    >
+                      <option value="" disabled>What are you interested in?</option>
+                      <option value="insurance">Insurance</option>
+                      <option value="tax">Tax</option>
+                      <option value="both">Both</option>
+                    </select>
                   </div>
                   <div className="flex flex-col">
                     <label htmlFor="urgency" className={labelClass}>Urgency <span aria-hidden="true">*</span></label>
