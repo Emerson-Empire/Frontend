@@ -21,9 +21,9 @@ import Agency from "./Agency .png";
 import AgencyWebp from "./Agency.webp";
 import AgencyAvif from "./Agency.avif";
 
-import Step1 from "./step-1.jpg";
-import Step2 from "./step-2.jpg";
-import Step3 from "./step-3.jpg";
+import Step1 from "./step-1.png";
+import Step2 from "./step-2.webp";
+import Step3 from "./step-3.webp";
 
 import Vincent from "./vincent.jpeg";
 import VincentWebp from "./vincent.webp";

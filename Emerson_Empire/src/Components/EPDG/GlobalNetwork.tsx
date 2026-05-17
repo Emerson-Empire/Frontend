@@ -1,157 +1,159 @@
-import type { FC } from "react";
-
-const NETWORK_NODES = [
+import { type FC } from "react";
+ 
+// Static SVG of the globe (orbits + pixels + node markers).
+// Adjust the import path / asset URL to match your bundler setup.
+import globeSvgUrl from "../../assets/Globe.svg";
+ 
+// Brand logos to scroll across the two ribbon bands.
+// Swap the text entries for actual logo components / images as needed.
+const BRAND_LOGOS: string[] = [
   "Logoipsum",
-  "Brand Standard",
-  "Creative Agency",
-  "Tech Solutions",
-  "Global Partners",
-  "Market Leaders",
+  "Logoipsum Brand",
+  "Logoipsum",
+  "Logoipsum Brand",
+  "Logoipsum",
+  "Logoipsum Brand",
+  "Logoipsum",
+  "Logoipsum Brand",
 ];
-
-const GlobalNetwork: FC = () => {
-  const containerSize = 500;
-  const radius = 150;
-  const centerX = containerSize / 2;
-  const centerY = containerSize / 2;
-
-  // Calculate positions for nodes in a circle
-  const nodePositions = NETWORK_NODES.map((_, idx) => {
-    const angle = (idx / NETWORK_NODES.length) * Math.PI * 2 - Math.PI / 2;
-    return {
-      x: centerX + radius * Math.cos(angle),
-      y: centerY + radius * Math.sin(angle),
-      label: NETWORK_NODES[idx],
-    };
-  });
-
+ 
+// Clickable network nodes — coordinates as % of the SVG (1356 × 1543).
+type NetworkNode = {
+  id: string;
+  xPct: number;
+  yPct: number;
+  label: string;
+};
+ 
+const NETWORK_NODES: NetworkNode[] = [
+  { id: "us-west", xPct: 21, yPct: 13, label: "US West" },
+  { id: "us-east", xPct: 48, yPct: 7, label: "US East" },
+  { id: "europe", xPct: 72, yPct: 12, label: "Europe" },
+  { id: "africa", xPct: 78, yPct: 25, label: "Africa" },
+  { id: "asia", xPct: 18, yPct: 31, label: "Asia" },
+  { id: "latam", xPct: 22, yPct: 36, label: "Latin America" },
+  { id: "oceania", xPct: 68, yPct: 35, label: "Oceania" },
+  { id: "middle-east", xPct: 79, yPct: 32, label: "Middle East" },
+  { id: "antarctica", xPct: 52, yPct: 40, label: "Antarctica" },
+];
+ 
+type GlobalNetworkProps = {
+  onNodeClick?: (nodeId: string) => void;
+};
+ 
+const LogoChip: FC<{ label: string }> = ({ label }) => (
+  <div className="inline-flex min-w-[220px] items-center justify-center whitespace-nowrap rounded-full border border-slate-200 bg-white px-6 py-4 text-[13px] font-semibold uppercase tracking-[0.18em] text-slate-950 shadow-sm">
+    {label}
+  </div>
+);
+ 
+const LogoBand: FC<{ reverse?: boolean }> = ({ reverse = false }) => (
+  <div className="pointer-events-auto w-full overflow-hidden rounded-[28px] border border-slate-200 bg-white/85 py-5 shadow-[0_30px_80px_-50px_rgba(15,23,42,0.18)] backdrop-blur-md">
+    <div className="relative overflow-hidden px-2">
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-white/0" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-white/0" />
+      <div
+        className={`flex items-center gap-6 whitespace-nowrap px-5 ${
+          reverse ? "animate-marquee-reverse" : "animate-marquee"
+        }`}
+      >
+        {BRAND_LOGOS.concat(BRAND_LOGOS).map((label, idx) => (
+          <LogoChip key={`${label}-${idx}`} label={label} />
+        ))}
+      </div>
+    </div>
+  </div>
+);
+ 
+const GlobalNetwork: FC<GlobalNetworkProps> = ({ onNodeClick }) => {
+  const handleNodeClick = (nodeId: string): void => {
+    if (onNodeClick) onNodeClick(nodeId);
+    else if (typeof window !== "undefined") {
+       
+      console.log("Clicked node:", nodeId);
+    }
+  };
+ 
   return (
-    <section className="bg-white py-16">
-      <div className="max-w-screen-xl mx-auto px-6 sm:px-8">
-        <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50 shadow-[0_60px_120px_-60px_rgba(15,23,42,0.2)]">
-          <div className="p-12 sm:p-16 flex flex-col items-center justify-center min-h-[600px]">
-            {/* SVG Network Visualization */}
-            <div className="mb-8 relative">
-              <svg width={containerSize} height={containerSize} className="drop-shadow-sm">
-                {/* Animated grid background */}
-                <defs>
-                  <pattern id="dots" x="50" y="50" width="100" height="100" patternUnits="userSpaceOnUse">
-                    <circle cx="50" cy="50" r="2" fill="rgba(203, 213, 225, 0.3)" />
-                  </pattern>
-                  <filter id="glow">
-                    <feGaussianBlur stdDeviation="3" result="coloredBlur" />
-                    <feMerge>
-                      <feMergeNode in="coloredBlur" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
-                </defs>
-
-                {/* Dot grid background */}
-                <rect width={containerSize} height={containerSize} fill="url(#dots)" />
-
-                {/* Center circle */}
-                <circle
-                  cx={centerX}
-                  cy={centerY}
-                  r="50"
-                  fill="rgba(15, 23, 42, 0.05)"
-                  stroke="rgba(15, 23, 42, 0.1)"
-                  strokeWidth="2"
-                />
-
-                {/* Connection lines from center to nodes */}
-                {nodePositions.map((node, idx) => (
-                  <line
-                    key={`line-${idx}`}
-                    x1={centerX}
-                    y1={centerY}
-                    x2={node.x}
-                    y2={node.y}
-                    stroke="rgba(59, 130, 246, 0.2)"
-                    strokeWidth="2"
-                    strokeDasharray="5,5"
-                  />
-                ))}
-
-                {/* Circular orbit line */}
-                <circle
-                  cx={centerX}
-                  cy={centerY}
-                  r={radius}
-                  fill="none"
-                  stroke="rgba(148, 163, 184, 0.15)"
-                  strokeWidth="1"
-                  strokeDasharray="8,4"
-                />
-
-                {/* Decorative circular elements */}
-                {[0.3, 0.6, 1].map((scale, idx) => (
-                  <circle
-                    key={`orbit-${idx}`}
-                    cx={centerX}
-                    cy={centerY}
-                    r={radius * scale}
-                    fill="none"
-                    stroke="rgba(203, 213, 225, 0.1)"
-                    strokeWidth="1"
-                  />
-                ))}
-
-                {/* Nodes with glowing effect */}
-                {nodePositions.map((node, idx) => (
-                  <g key={`node-${idx}`}>
-                    <circle
-                      cx={node.x}
-                      cy={node.y}
-                      r="14"
-                      fill="rgba(59, 130, 246, 0.15)"
-                      stroke="rgba(59, 130, 246, 0.6)"
-                      strokeWidth="2"
-                      filter="url(#glow)"
-                    />
-                    <circle
-                      cx={node.x}
-                      cy={node.y}
-                      r="6"
-                      fill="rgb(59, 130, 246)"
-                    />
-                  </g>
-                ))}
-              </svg>
-            </div>
-
-            {/* Center Content */}
-            <div className="text-center max-w-2xl">
-              <div className="mb-4 inline-block">
-                <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white font-bold text-xl shadow-lg">
-                  EE
-                </div>
-              </div>
-              <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-950 leading-tight mb-4">
-                Global Network — The Emerson Empire
-              </h2>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-                Connected with industry leaders, global partners, and innovative brands. Our network spans across continents, delivering excellence through collaboration and strategic partnerships.
-              </p>
-
-              {/* Node Labels */}
-              <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-4">
-                {NETWORK_NODES.map((node, idx) => (
-                  <div
-                    key={`label-${idx}`}
-                    className="flex items-center justify-center px-4 py-2 rounded-full border border-slate-200 bg-white/70 backdrop-blur-sm shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
-                  >
-                    <span className="text-sm font-semibold text-slate-700">{node}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+    <section className="relative w-full overflow-hidden bg-slate-50 py-12">
+      <div
+        className="relative mx-auto w-full"
+        style={{ aspectRatio: "1356 / 1543", maxWidth: "1356px" }}
+      >
+        {/* Globe SVG — base layer */}
+        <img
+          src={globeSvgUrl}
+          alt="Global Network — The Emerson Empire"
+          className="absolute inset-0 h-full w-full select-none"
+          draggable={false}
+        />
+ 
+        {/* Heading badge — sits in the upper portion of the globe */}
+        <div
+          className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
+          style={{ top: "27%" }}
+        >
+          <div className="rounded-md bg-slate-950 px-7 py-3 text-[13px] font-bold uppercase tracking-[0.14em] text-white shadow-[0_10px_30px_-10px_rgba(15,23,42,0.55)] whitespace-nowrap">
+            GLOBAL NETWORK - THE EMERSON EMPIRE
           </div>
         </div>
+ 
+        {/* Logo bands — cross the lower half of the globe */}
+        <div
+          className="absolute left-0 right-0 z-10 px-4 sm:px-8"
+          style={{ top: "60%" }}
+        >
+          <LogoBand />
+        </div>
+        <div
+          className="absolute left-0 right-0 z-10 px-4 sm:px-8"
+          style={{ top: "80%" }}
+        >
+          <LogoBand reverse />
+        </div>
+ 
+        {/* Clickable hit areas overlaid on each network node */}
+        {NETWORK_NODES.map((node) => (
+          <button
+            key={node.id}
+            type="button"
+            onClick={() => handleNodeClick(node.id)}
+            aria-label={node.label}
+            className="globe-hit-area absolute z-30 -translate-x-1/2 -translate-y-1/2 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            style={{
+              left: `${node.xPct}%`,
+              top: `${node.yPct}%`,
+              width: "44px",
+              height: "44px",
+            }}
+          />
+        ))}
       </div>
+ 
+      <style>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes marqueeReverse {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+        .animate-marquee { animation: marquee 40s linear infinite; }
+        .animate-marquee-reverse { animation: marqueeReverse 40s linear infinite; }
+ 
+        .globe-hit-area {
+          cursor: pointer;
+          background: transparent;
+          border: none;
+          transition: background 150ms ease-out;
+        }
+        .globe-hit-area:hover {
+          background: rgba(59, 130, 246, 0.15);
+        }
+      `}</style>
     </section>
   );
 };
-
+ 
 export default GlobalNetwork;
