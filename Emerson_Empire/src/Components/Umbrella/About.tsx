@@ -63,7 +63,7 @@ const About: React.FC = () => (
     </div>
 
     {/* ── TWO COLUMN SECTION ── */}
-    <div className="flex lg:flex-row flex-col bg-white mt-[96px] p-3">
+    <div className="flex flex-col p-3 mt-24 bg-white lg:flex-row">
 
       {/* LEFT */}
       <div className="relative shadow-[#4B1E91] shadow-md rounded-2xl lg:w-1/2 h-72 lg:h-auto min-h-105 overflow-hidden">
