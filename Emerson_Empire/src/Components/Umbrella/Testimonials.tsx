@@ -36,7 +36,7 @@ const SLIDES = [
 ];
 
 const StatBox: React.FC<{ value: string; label: string }> = ({ value, label }) => (
-  <div className="bg-white shadow-sm px-4 py-3 border border-[#12022A]/12 rounded-xl text-center">
+  <div className="bg-white shadow-sm px-4 py-3 border border-[#12022A]/12 rounded-xl w-[50%] text-center">
     <p className="font-bold text-[#12022A] text-[20px] leading-none">{value}</p>
     <p className="mt-1.5 text-[#12022A]/55 text-[11px] whitespace-pre-line">
       {label}
@@ -59,7 +59,7 @@ const Testimonials: React.FC = () => {
   const slide = SLIDES[current];
 
   return (
-    <section id="testimony" className="bg-white px-6 sm:px-10 lg:px-16 py-20 overflow-hidden">
+    <section id="testimony" className="px-6 py-20 overflow-hidden bg-white sm:px-10 lg:px-16">
 
       {/* TITLE */}
       <h2 className="mb-14 font-bold text-[#12022A] text-[26px] sm:text-[40px] text-center uppercase tracking-[0.15em]">
@@ -74,7 +74,7 @@ const Testimonials: React.FC = () => {
           <img
             src={EpdgBottom}
             alt="EPDG"
-            className="w-24 h-24 object-contain"
+            className="object-contain w-24 h-24"
           />
 
           {EPDG_STATS.map(s => (
@@ -105,7 +105,7 @@ const Testimonials: React.FC = () => {
                 <img
                   src={slide.src}
                   alt={slide.alt}
-                  className="w-full h-full object-cover object-top"
+                  className="object-cover object-top w-full h-full"
                   loading="lazy"
                   decoding="async"
                 />
@@ -114,12 +114,12 @@ const Testimonials: React.FC = () => {
           </AnimatePresence>
 
           {/* DOTS */}
-          <div className="bottom-3 left-1/2 absolute flex gap-2 -translate-x-1/2">
+          <div className="absolute flex gap-2 -translate-x-1/2 bottom-3 left-1/2">
             {SLIDES.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
-                className="flex justify-center items-center w-5 h-5"
+                className="flex items-center justify-center w-5 h-5"
               >
                 <span
                   className={`h-2 w-5 rounded-full transition-all duration-300 ${
@@ -138,7 +138,7 @@ const Testimonials: React.FC = () => {
           <img
             src={AgencyBottom}
             alt="Agency"
-            className="w-24 h-24 object-contain"
+            className="object-contain w-24 h-24"
           />
 
           {AGENCY_STATS.map(s => (

@@ -28,7 +28,8 @@ const HomePage: React.FC = () => {
 
       <Navbar />
 
-      <main id="main-content">
+      <main id="main-content"  >
+        
         <Hero />
         {/* Heavy content delayed */}
       <Suspense fallback={<div>Loading...</div>}>

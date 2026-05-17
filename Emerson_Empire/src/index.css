@@ -13,11 +13,20 @@ html {
 /* ── Global typography ── */
 body {
   font-family: 'Inter', sans-serif;
+  /* Content text: 18px on phones → 24px on large screens */
+  font-size: clamp(1.125rem, 1.5vw + 0.5rem, 1.5rem);
+  line-height: 1.75;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
 }
+
+/* ── Fluid heading scale ── */
+h1 { font-size: clamp(2rem,    6vw + 0.5rem, 4rem);    }
+h2 { font-size: clamp(1.6rem,  4.5vw + 0.5rem, 3.5rem); }
+h3 { font-size: clamp(1.25rem, 3vw + 0.5rem, 2.25rem);  }
+h4 { font-size: clamp(1rem,    2vw + 0.5rem, 1.5rem);   }
 
 /* ── Utility classes (kept for backwards compat) ── */
 .heading {
@@ -33,4 +42,19 @@ h1, h2, h3, h4, h5, h6 {
 .nav {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
+}
+
+/* ── Mobile safety net for large arbitrary Tailwind px sizes ──
+   Keeps very large desktop values readable on small screens.
+   Elements with small explicit classes (text-[11px], text-[13px] etc.)
+   are unaffected because Tailwind class specificity wins. */
+@media (max-width: 639px) {
+  .text-\[24px\]  { font-size: 1.125rem !important; } /* 18px */
+  .text-\[32px\]  { font-size: 1.25rem  !important; } /* 20px */
+  .text-\[40px\]  { font-size: 1.5rem   !important; } /* 24px */
+  .text-\[48px\]  { font-size: 1.75rem  !important; } /* 28px */
+  .text-\[52px\]  { font-size: 1.875rem !important; } /* 30px */
+  .text-\[56px\]  { font-size: 2rem     !important; } /* 32px */
+  .text-\[60px\]  { font-size: 2.125rem !important; } /* 34px */
+  .text-\[64px\]  { font-size: 2.25rem  !important; } /* 36px */
 }
