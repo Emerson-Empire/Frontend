@@ -136,24 +136,24 @@ const DivisionCard: React.FC<DivisionCardProps> = ({
 )}
     {/* TEXT PANEL */}
     <div className="flex flex-col flex-1 px-7 py-7">
-      <h3 className="mb-3 font-bold text-[#12022A] text-[36px] sm:text-[36px] uppercase leading-tight heading">
+      <h3 className="mb-3 font-bold text-[#12022A] text-2xl sm:text-3xl uppercase leading-tight">
         {title}
       </h3>
 
       <div className="bg-[#C9A84C] mb-4 w-10 h-0.5" />
 
       {tagline && (
-        <div className="mb-5 text-[#12022A]/70 text-[20px] leading-[1.9]">
+        <div className="mb-5 text-[#12022A]/70 text-[15px] sm:text-base leading-relaxed">
           {tagline}
         </div>
       )}
 
-      <p className="mb-3 font-bold text-[#12022A] text-[28px]">
+      <p className="mb-3 font-bold text-[#12022A] text-lg sm:text-xl">
         {sectionLabel}
       </p>
 
       {description && (
-        <p className="mb-5 text-[#12022A]/60 text-[20px] leading-[1.85]">
+        <p className="mb-5 text-[#12022A]/60 text-[15px] sm:text-base leading-relaxed">
           {description}
         </p>
       )}
@@ -168,11 +168,11 @@ const DivisionCard: React.FC<DivisionCardProps> = ({
                 <Checkmark />
 
                 <div>
-                  <p className="font-bold text-[#12022A] text-[20px] leading-snug">
+                  <p className="font-bold text-[#12022A] text-[15px] sm:text-base leading-snug">
                     {f.title}
                   </p>
 
-                  <p className="mt-0.5 text-[#12022A]/60 text-[20px] leading-[1.75]">
+                  <p className="mt-0.5 text-[#12022A]/60 text-[15px] sm:text-base leading-relaxed">
                     {f.description}
                   </p>
                 </div>
@@ -235,7 +235,8 @@ const AGENCY_FEATURES: RichFeature[] = [
 ];
 
 const Divisions: React.FC = () => (
-  <section className="w-full px-4 m-auto bg-white sm:px-8 md:px-16py-20">
+  <section className="bg-white py-20 px-6 sm:px-10 lg:px-16 w-full">
+    <div className="max-w-7xl mx-auto">
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -243,11 +244,11 @@ const Divisions: React.FC = () => (
       transition={{ duration: 0.6 }}
       className="text-center mb-14"
     >
-      <h2 className="mb-4 font-bold text-[#12022A] text-[36px] sm:text-[44px] leading-[1.1] tracking-tight heading">
+      <h2 className="mb-4 font-bold text-[#12022A] text-3xl sm:text-4xl leading-tight tracking-tight">
         Decide where you grow.
       </h2>
 
-      <p className="mx-auto max-w-xl text-[#12022A]/55 text-[15px] leading-[1.85]">
+      <p className="mx-auto max-w-xl text-[#12022A]/55 text-[15px] sm:text-base leading-relaxed">
         Your ambition deserves a clear direction.
         Whether you are mastering a new craft or
         securing your legacy, we provide the path.
@@ -316,6 +317,7 @@ const Divisions: React.FC = () => (
         ctaVariant="purple"
         ctaFullWidth
       />
+    </div>
     </div>
   </section>
 );

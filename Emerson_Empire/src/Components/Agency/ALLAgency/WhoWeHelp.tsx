@@ -70,7 +70,7 @@ const WhoWeHelp: React.FC = () => {
             Our Core Services
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-black leading-tight">
-            Financial Education &amp;<br />Tax Preparation Services
+            Financial Education &amp; Tax Preparation Services
           </h2>
         </div>
 
@@ -107,12 +107,12 @@ const WhoWeHelp: React.FC = () => {
             </div>
 
             <div className="p-8">
-              <h3 className="text-xl font-bold text-black mb-3">{current.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-6">{current.description}</p>
+              <h3 className="text-2xl sm:text-[28px] font-bold text-black mb-3">{current.title}</h3>
+              <p className="text-gray-600 text-[15px] sm:text-base leading-relaxed mb-6">{current.description}</p>
 
               <ul className="space-y-3 mb-8">
                 {current.points.map((pt) => (
-                  <li key={pt} className="flex items-start gap-3 text-sm text-gray-700">
+                  <li key={pt} className="flex items-start gap-3 text-[15px] sm:text-base text-gray-700">
                     <span className="mt-0.5 w-4 h-4 shrink-0 rounded-full bg-[#C9A84C]/20 flex items-center justify-center">
                       <svg className="w-2.5 h-2.5 text-[#C9A84C]" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />

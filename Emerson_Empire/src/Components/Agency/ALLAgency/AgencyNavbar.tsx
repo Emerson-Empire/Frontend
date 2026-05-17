@@ -18,24 +18,24 @@ const AgencyNavbar: React.FC = () => {
       className="top-0 z-50 fixed bg-[#12022A] border-[#C9A84C]/20 border-b w-full"
     >
       {/* ── Main bar ── */}
-      <div className="flex items-center justify-between w-full h-16 sm:h-20 px-4 sm:px-10 lg:px-16 mx-auto max-w-7xl">
+      <div className="flex items-center justify-between w-full h-16 px-4 mx-auto sm:px-10 lg:px-16 max-w-7xl sm:h-20">
 
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2 shrink-0 group active:scale-95 transition-transform duration-200">
+        <a href="/" className="flex items-center gap-2 transition-transform duration-200 group active:scale-95 shrink-0">
           <img
             src={Agency}
             alt="The Emerson Agency Logo"
             width={44}
             height={44}
-            className="object-contain w-9 h-9 sm:w-11 sm:h-11 group-hover:scale-105 transition-transform duration-200"
+            className="object-contain transition-transform duration-200 w-9 sm:w-11 h-9 sm:h-11 group-hover:scale-105"
           />
-          <p className="font-bold text-[#C9A84C] text-[12px] sm:text-[16px] leading-tight group-hover:opacity-80 transition-opacity duration-200">
+          <p className="group-hover:opacity-80 font-bold text-[#C9A84C] text-[12px] sm:text-[16px] leading-tight transition-opacity duration-200">
             THE <br /><span className="text-[#E8C97A]">EMERSON</span> AGENCY
           </p>
         </a>
 
         {/* Desktop nav links */}
-        <ul className="hidden md:flex items-center gap-6 lg:gap-8 m-0 p-0 list-none">
+        <ul className="items-center hidden gap-6 p-0 m-0 list-none md:flex lg:gap-8">
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
               <a
@@ -60,26 +60,26 @@ const AgencyNavbar: React.FC = () => {
 
         {/* Hamburger */}
         <button
-          className="md:hidden flex flex-col justify-center items-center gap-[5px] w-10 h-10 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C]"
+          className="md:hidden flex flex-col justify-center items-center gap-1.25 shadow-md shadow-white rounded-b-3xl focus-visible:outline-none focus-visible:ring-[#C9A84C] focus-visible:ring-2 w-10 h-10 shrink-0"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
         >
-          <span className={`block w-6 h-0.5 bg-[#C9A84C] transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-[#C9A84C] transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-1.75' : ''}`} />
           <span className={`block w-6 h-0.5 bg-[#C9A84C] transition-all duration-300 ${menuOpen ? 'opacity-0 scale-x-0' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-[#C9A84C] transition-all duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-[#C9A84C] transition-all duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-1.75' : ''}`} />
         </button>
       </div>
 
       {/* ── Mobile dropdown ── */}
       {menuOpen && (
-        <div className="md:hidden flex flex-col bg-[#12022A] border-t border-[#C9A84C]/15 px-4 pb-5 max-h-[calc(100vh-4rem)] overflow-y-auto">
+        <div className="md:hidden flex flex-col bg-[#12022A] px-4 pb-5 border-[#C9A84C]/15 border-t max-h-[calc(100vh-4rem)] overflow-y-auto">
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="py-3 border-b border-[#C9A84C]/10 font-medium text-[12px] text-white/60 hover:text-[#C9A84C] uppercase tracking-[0.2em] transition-colors duration-200"
+              className="py-3 border-[#C9A84C]/10 border-b font-medium text-[12px] text-white/60 hover:text-[#C9A84C] uppercase tracking-[0.2em] transition-colors duration-200"
             >
               {link.label}
             </a>
@@ -87,7 +87,7 @@ const AgencyNavbar: React.FC = () => {
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="mt-4 inline-flex justify-center bg-[#C9A84C] hover:bg-[#E8C97A] px-5 py-3 rounded-sm font-bold text-[#12022A] text-[12px] uppercase tracking-[0.2em] transition-colors duration-200"
+            className="inline-flex justify-center bg-[#C9A84C] hover:bg-[#E8C97A] mt-4 px-5 py-3 rounded-sm font-bold text-[#12022A] text-[12px] uppercase tracking-[0.2em] transition-colors duration-200"
           >
             Contact Us
           </a>

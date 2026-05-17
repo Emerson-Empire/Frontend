@@ -27,7 +27,7 @@ const ProfessionalDevelopment: React.FC = () => {
 
    
 <EPDGNavbar/>
-      <main id="main-content">
+      <main id="main-content" className="mt-25">
      <EPDGHero/>
         {/* Heavy content delayed */}
       <Suspense fallback={<div>Loading...</div>}>

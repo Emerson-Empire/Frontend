@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
 
           {/* Headline */}
           <h1
-            className="mb-6 font-black text-[#12022A] text-[42px] sm:text-[54px] lg:text-[60px] leading-[1.05] tracking-tight"
+            className="mb-6 font-black text-[#12022A] text-main-heading leading-[1.05] tracking-tight"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             Your bridge from ambition to actual impact.

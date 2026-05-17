@@ -15,8 +15,8 @@ const EPDGNavbar: React.FC = () => {
   return (
     <nav
       aria-label="Main navigation"
-      className="top-0 z-50 fixed bg-[#07101f] border-white/10 border-b w-full"
-    >
+      className="top-0 z-50 fixed bg-[#12022A] mb-2 border-[#C9A84C]/20 border-b w-full h-25"
+   >
       {/* ── Main bar ── */}
       <div className="flex items-center justify-between w-full h-16 px-4 mx-auto sm:px-10 lg:px-16 max-w-7xl sm:h-20">
 
@@ -73,21 +73,21 @@ const EPDGNavbar: React.FC = () => {
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
         >
-          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-1.75' : ''}`} />
           <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'opacity-0 scale-x-0' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-1.75' : ''}`} />
         </button>
       </div>
 
       {/* ── Mobile dropdown ── */}
       {menuOpen && (
-        <div className="md:hidden flex flex-col bg-[#07101f] px-4 pb-5 border-white/10 border-t max-h-[calc(100vh-4rem)] overflow-y-auto">
+        <div className="md:hidden flex flex-col bg-[#12022A] px-4 pb-5 border-[#C9A84C]/15 border-t max-h-[calc(100vh-4rem)] overflow-y-auto">
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="py-3 border-white/8 border-b font-medium text-[12px] text-slate-400 hover:text-white uppercase tracking-[0.2em] transition-colors duration-200"
+              className="py-3 border-[#C9A84C]/10 border-b font-medium text-[12px] text-white/60 hover:text-[#C9A84C] uppercase tracking-[0.2em] transition-colors duration-200"
             >
               {link.label}
             </a>

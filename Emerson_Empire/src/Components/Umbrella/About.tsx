@@ -126,7 +126,7 @@ const About: React.FC = () => (
     </div>
 
     {/* ── VALUES ── */}
-    <div className="px-6 pt-16 pb-20 bg-white sm:px-10 lg:px-16">
+    <div className="px-6 pt-6 pb-20 bg-white sm:px-10 lg:px-16">
       <h2 className="mb-12 font-bold text-[#12022A] text-[48px] text-center uppercase tracking-[0.12em] heading">
         Our Commitment and Values
       </h2>
