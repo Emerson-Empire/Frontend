@@ -108,66 +108,11 @@ const CTA: React.FC = () => {
           </p>
         </div>
 
-        {/* Division selector */}
-        <div className="flex flex-col gap-4 sm:flex-row mb-14">
-          {/* EPDG */}
-          <button
-            type="button"
-            onClick={() => { setDivision('epdg'); setForm(INITIAL); setError(''); }}
-            aria-pressed={division === 'epdg'}
-            aria-label="Select Emerson Professional Development Group"
-            className={`flex-1 flex items-center gap-4 px-5 py-4 border-2 rounded-xl text-left transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#12022A] ${
-              division === 'epdg'
-                ? 'border-[#12022A] bg-[#12022A]/5'
-                : 'border-gray-200 hover:border-gray-400'
-            }`}
-          >
-            <img
-              src={EpdgBottom}
-              alt="EPDG"
-              width={48}
-              height={48}
-              loading="lazy"
-              decoding="async"
-              className="object-contain w-12 h-12 shrink-0"
-            />
-            <p className="font-bold text-[#12022A] text-[11px] uppercase leading-snug tracking-[0.5px]">
-              The Emerson Professional<br />Development Group
-            </p>
-          </button>
+        {/* Two-column: text (left) | buttons + form (right) */}
+        <div className="grid items-start grid-cols-1 gap-10 lg:gap-20 lg:grid-cols-2">
 
-          {/* Agency */}
-          <button
-            type="button"
-            onClick={() => { setDivision('agency'); setForm(INITIAL); setError(''); }}
-            aria-pressed={division === 'agency'}
-            aria-label="Select The Emerson Agency"
-            className={`flex-1 flex items-center gap-4 px-5 py-4 border-2 rounded-xl text-left transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#12022A] ${
-              division === 'agency'
-                ? 'border-[#12022A] bg-[#12022A]/5'
-                : 'border-gray-200 hover:border-gray-400'
-            }`}
-          >
-            <img
-              src={AgencyBottom}
-              alt="Emerson Agency"
-              width={48}
-              height={48}
-              loading="lazy"
-              decoding="async"
-              className="object-contain w-12 h-12 shrink-0"
-            />
-            <p className="font-bold text-[#12022A] text-[11px] uppercase leading-snug tracking-[0.5px]">
-              The Emerson<br />Agency
-            </p>
-          </button>
-        </div>
-
-        {/* Two-column: text | form */}
-        <div className="grid items-start grid-cols-1 gap-12 lg:gap-20 lg:grid-cols-2">
-
-          {/* Left text — changes based on selected division */}
-          <div>
+          {/* Left text — order 2 on mobile (shows below form), order 1 on desktop */}
+          <div className="order-2 lg:order-1">
             {division === 'agency' ? (
               <>
                 <h3 className="mb-5 font-bold text-[#12022A] text-[30px] sm:text-[56px] leading-[1.15]">
@@ -198,7 +143,41 @@ const CTA: React.FC = () => {
             )}
           </div>
 
-          {/* Right: form */}
+          {/* Right: division buttons + form — order 1 on mobile (shows first) */}
+          <div className="order-1 lg:order-2 flex flex-col gap-6">
+
+            {/* Division selector buttons */}
+            <div className="flex flex-col sm:flex-row gap-3">
+              <button
+                type="button"
+                onClick={() => { setDivision('epdg'); setForm(INITIAL); setError(''); }}
+                aria-pressed={division === 'epdg'}
+                aria-label="Select Emerson Professional Development Group"
+                className={`flex-1 flex items-center gap-3 px-4 py-4 border-2 rounded-xl text-left transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#12022A] ${
+                  division === 'epdg' ? 'border-[#12022A] bg-[#12022A]/5' : 'border-gray-200 hover:border-gray-400'
+                }`}
+              >
+                <img src={EpdgBottom} alt="EPDG" width={40} height={40} loading="lazy" decoding="async" className="object-contain w-10 h-10 shrink-0" />
+                <p className="font-bold text-[#12022A] text-[11px] uppercase leading-snug tracking-[0.5px]">
+                  The Emerson Professional<br />Development Group
+                </p>
+              </button>
+              <button
+                type="button"
+                onClick={() => { setDivision('agency'); setForm(INITIAL); setError(''); }}
+                aria-pressed={division === 'agency'}
+                aria-label="Select The Emerson Agency"
+                className={`flex-1 flex items-center gap-3 px-4 py-4 border-2 rounded-xl text-left transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#12022A] ${
+                  division === 'agency' ? 'border-[#12022A] bg-[#12022A]/5' : 'border-gray-200 hover:border-gray-400'
+                }`}
+              >
+                <img src={AgencyBottom} alt="Emerson Agency" width={40} height={40} loading="lazy" decoding="async" className="object-contain w-10 h-10 shrink-0" />
+                <p className="font-bold text-[#12022A] text-[11px] uppercase leading-snug tracking-[0.5px]">
+                  The Emerson<br />Agency
+                </p>
+              </button>
+            </div>
+
           {submitted ? (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -374,7 +353,8 @@ const CTA: React.FC = () => {
               </button>
             </div>
           )}
-        </div>
+          </div>{/* end right column */}
+        </div>{/* end two-column grid */}
 
       </div>
     </section>
