@@ -15,7 +15,7 @@ const Hero: FC = () => {
           loop
           playsInline
           poster={poster}
-          className="w-full h-full object-cover object-center"
+          className="object-cover object-center w-full h-full"
         >
           <source src="/videos/hero-epdg.mp4" type="video/mp4" />
           {/* Fallback: poster image is shown if video fails to load */}
