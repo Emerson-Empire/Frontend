@@ -26,7 +26,16 @@ const TEAM: TeamMember[] = [
     id: 2,
     name: 'Majembe Vincent',
     Title: 'Head of Web Development',
-    skills: ['React', 'TypeScript', 'Architecture', 'Project Management', 'Team Direction'],
+skills: [
+  'Scalable System Architecture',
+  'Business Process Automation',
+  'Full-Stack Product Engineering',
+  'Technical Product Leadership',
+  'Digital Operations Systems',
+  'Cross-Functional Team Execution',
+  'SaaS Infrastructure Design',
+  'Workflow Optimization'
+],
     description: 'Vincent leads the overall website development process, coordinating technical direction across the web development teams.',
     image: Vincent, imageWebp: VincentWebp, imageAvif: VincentAvif,
   },
@@ -34,7 +43,7 @@ const TEAM: TeamMember[] = [
     id: 3,
     name: 'Mohamed Malik',
     Title: 'Web Development Team Lead',
-    skills: ['Frontend', 'React', 'Team Coordination', 'Agile', 'Collaboration'],
+    skills: ['Backend', 'system Architecture', 'Team Coordination', 'Collaboration'],
     description: 'Mohamed Malik supports team organization, assignment coordination, and development progress across the web development group.',
     image: Malik, imageWebp: MalikWebp, imageAvif: MalikAvif,
   },
@@ -84,18 +93,18 @@ const EmpireTeamTrusted: React.FC = () => {
   const member = TEAM[index];
 
   return (
-    <section id="team" className="bg-white px-6 sm:px-10 lg:px-16 py-20">
-      <div className="flex lg:flex-row flex-col items-start gap-14 mx-auto max-w-7xl">
+    <section id="team" className="px-6 py-20 bg-white sm:px-10 lg:px-16">
+      <div className="flex flex-col items-start mx-auto lg:flex-row gap-14 max-w-7xl">
 
         {/* ── LEFT: Text + logos ── */}
-        <div className="lg:pt-4 w-full lg:w-1/2">
-          <p className="mb-4 font-semibold text-[#C9A84C] text-[10px] uppercase tracking-[4px]">
+        <div className="w-full lg:pt-4 lg:w-1/2">
+          <p className="mb-4 font-semibold text-[#C9A84C] text-[20px] uppercase tracking-[4px]">
             Our Team of Experts
           </p>
-          <h2 className="mb-6 font-bold text-[#12022A] text-[36px] sm:text-[44px] leading-[1.1] tracking-tight heading">
+          <h2 className="mb-6 font-bold text-[#12022A] text-[56px] leading-[1.1] tracking-tight heading">
             The minds behind<br />the mission.
           </h2>
-          <p className="mb-10 max-w-md text-[#12022A]/55 text-[14px] leading-[1.9]">
+          <p className="mb-10 max-w-md text-[#12022A]/55 text-[24px] leading-[1.9]">
             We are a collective of specialists driving real change. By merging technical expertise with a mission-first mindset,{' '}
             <strong className="font-semibold text-[#12022A]/80">
               our team builds the infrastructure for your professional and financial success.
@@ -107,8 +116,8 @@ const EmpireTeamTrusted: React.FC = () => {
             Trusted by
           </p>
           <div className="relative overflow-hidden">
-            <div className="left-0 z-10 absolute inset-y-0 bg-linear-to-r from-white to-transparent w-12 pointer-events-none" />
-            <div className="right-0 z-10 absolute inset-y-0 bg-linear-to-l from-white to-transparent w-12 pointer-events-none" />
+            <div className="absolute inset-y-0 left-0 z-10 w-12 pointer-events-none bg-linear-to-r from-white to-transparent" />
+            <div className="absolute inset-y-0 right-0 z-10 w-12 pointer-events-none bg-linear-to-l from-white to-transparent" />
             <motion.div
               className="flex items-center gap-12"
               animate={{ x: ['0%', '-50%'] }}
@@ -152,7 +161,7 @@ const EmpireTeamTrusted: React.FC = () => {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: direction * -60, opacity: 0 }}
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="w-full h-80 sm:h-96 overflow-hidden"
+                className="w-full overflow-hidden h-80 sm:h-96"
               >
                 {member.image ? (
                   <picture>
@@ -165,7 +174,7 @@ const EmpireTeamTrusted: React.FC = () => {
                       height={400}
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-full object-cover object-top"
+                      className="object-contain object-top w-full h-full rounded-2xl"
                     />
                   </picture>
                 ) : (
@@ -203,7 +212,7 @@ const EmpireTeamTrusted: React.FC = () => {
                   <picture>
                     {member.imageAvif && <source srcSet={member.imageAvif} type="image/avif" />}
                     {member.imageWebp && <source srcSet={member.imageWebp} type="image/webp" />}
-                    <img src={member.image} alt={member.name} width={56} height={56} loading="lazy" decoding="async" className="w-full h-full object-cover object-top" />
+                    <img src={member.image} alt={member.name} width={56} height={56} loading="lazy" decoding="async" className="object-cover object-top w-full h-full" />
                   </picture>
                 ) : (
                   <div className="flex justify-center items-center bg-[#1E0A4A] w-full h-full">

@@ -38,7 +38,7 @@ const About: React.FC = () => (
   <section id="about">
 
     {/* ── HERO ── */}
-    <div className="relative bg-[#12022A] px-6 sm:px-10 lg:px-16 py-24 overflow-hidden">
+    <div className="relative bg-[#12022A] px-6 sm:px-10 lg:px-16 py-24">
       {/* <picture>
         <source srcSet={empireAvif} type="image/avif" />
         <source srcSet={empireWebp} type="image/webp" />
@@ -46,24 +46,24 @@ const About: React.FC = () => (
           src={empire}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 opacity-15 w-full h-full object-cover pointer-events-none select-none"
+          className="absolute inset-0 object-cover w-full h-full pointer-events-none select-none opacity-15"
         />
       </picture> */}
 
       <div className="absolute inset-0 bg-[#12022A]/70 pointer-events-none" />
 
-      <div className="relative mx-auto max-w-7xl">
-        <p className="mb-6 font-semibold text-[#C9A84C] text-[10px] uppercase tracking-[4px]">
+      <div className="relative mx-auto max-w-7xl h-[vh-75] text-center">
+        <p className="mb-6 font-semibold text-[#C9A84C] text-[24px] uppercase tracking-[4px]">
           About The Emerson Empire
         </p>
-        <h2 className="max-w-3xl font-bold text-[44px] text-white sm:text-[60px] lg:text-[72px] uppercase leading-none tracking-tight heading">
+        <h2 className="max-w-3xl font-bold text-[44px] text-white sm:text-[64px] lg:text-[72px] uppercase leading-none tracking-tight heading">
           Built to Bridge Your Professional Gap.
         </h2>
       </div>
     </div>
 
     {/* ── TWO COLUMN SECTION ── */}
-    <div className="flex lg:flex-row flex-col bg-white p-3">
+    <div className="flex lg:flex-row flex-col bg-white mt-[96px] p-3">
 
       {/* LEFT */}
       <div className="relative shadow-[#4B1E91] shadow-md rounded-2xl lg:w-1/2 h-72 lg:h-auto min-h-105 overflow-hidden">
@@ -72,11 +72,11 @@ const About: React.FC = () => (
         <img
           src={Frame}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 object-cover w-full h-full"
         />
 
         {/* FLOATING IMAGE */}
-     <div className="bottom-0 left-1/2 z-20 absolute w-[60%] h-[20%] sm:h-[20%] overflow-hidden -translate-x-1/2">
+     <div className="bottom-0 left-1/2 z-30 absolute w-[60%] h-[20%] sm:h-[20%] -translate-x-1/2 translate-y-8">
   <picture>
     <source srcSet={empireAvif} type="image/avif" />
     <source srcSet={empireWebp} type="image/webp" />
@@ -84,7 +84,7 @@ const About: React.FC = () => (
     <img
       src={empire}
       alt="Empire"
-      className="rounded-2xl w-full h-full object-contain"
+      className="object-contain w-full h-full rounded-2xl"
     />
   </picture>
 </div>
@@ -93,20 +93,20 @@ const About: React.FC = () => (
       {/* RIGHT */}
       <div className="flex flex-col justify-center px-8 lg:px-14 py-14 lg:w-1/2">
 
-        <h3 className="mb-5 font-bold text-[#12022A] text-[32px] sm:text-[38px] leading-tight heading">
+        <h3 className="mb-5 font-bold text-[#12022A] text-[32px] sm:text-[56px] leading-tight heading">
           What we do.
         </h3>
 
-        <p className="mb-4 text-[#12022A]/60 text-[14px] leading-[1.9]">
+        <p className="mb-4 text-[#12022A]/60 text-[24px] leading-[1.9]">
           We take people who are ready to work and give them a place to prove it.
           We help students learn by doing and businesses get results.
         </p>
 
-        <p className="mb-10 text-[#12022A]/55 text-[14px] leading-[1.9]">
+        <p className="mb-10 text-[#12022A]/55 text-[24px] leading-[1.9]">
           We handle complex parts of business and career building so people can grow faster.
         </p>
 
-        <h3 className="mb-5 font-bold text-[#12022A] text-[26px] sm:text-[30px]">
+        <h3 className="mb-5 font-bold text-[#12022A] text-[56px]">
           Our Services.
         </h3>
 
@@ -114,7 +114,7 @@ const About: React.FC = () => (
           {SERVICES.map((s) => (
             <div key={s.title}>
               <p className="font-bold text-[#12022A] text-[14px]">{s.title}</p>
-              <p className="text-[#12022A]/55 text-[13px] leading-[1.8]">
+              <p className="text-[#12022A]/55 text-[24px] leading-[1.8]">
                 {s.body}
               </p>
             </div>
@@ -126,12 +126,12 @@ const About: React.FC = () => (
     </div>
 
     {/* ── VALUES ── */}
-    <div className="bg-white px-6 sm:px-10 lg:px-16 pt-16 pb-20">
-      <h2 className="mb-12 font-bold text-[#12022A] text-[28px] sm:text-[36px] lg:text-[42px] text-center uppercase tracking-[0.12em] heading">
+    <div className="px-6 pt-16 pb-20 bg-white sm:px-10 lg:px-16">
+      <h2 className="mb-12 font-bold text-[#12022A] text-[48px] text-center uppercase tracking-[0.12em] heading">
         Our Commitment and Values
       </h2>
 
-      <div className="gap-5 grid sm:grid-cols-2 lg:grid-cols-3 mx-auto max-w-7xl">
+      <div className="grid gap-5 mx-auto sm:grid-cols-2 lg:grid-cols-3 max-w-7xl">
         {values.map((value, i) => {
           const Icon = value.icon;
           return (
@@ -140,17 +140,22 @@ const About: React.FC = () => (
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="bg-[#4B1E91] p-6 rounded-2xl"
+              className="bg-[#4B1E91] shadow-black shadow-md p-2 rounded-2xl"
             >
+              
               <div className="flex items-center gap-3 mb-3">
-                <Icon size={28} className="text-[#C9A84C]" />
-                <h3 className="font-bold text-[15px] text-white uppercase tracking-[0.12em]">
+                <Icon size={100} className="text-[#C9A84C]" />
+                
+                <div className="flex flex-col justify-center">
+                  <h3 className="font-bold text-[15px] text-white uppercase tracking-[0.12em]">
                   {value.title}
                 </h3>
-              </div>
-              <p className="text-[#F5F0E8]/75 text-[13px] leading-[1.8]">
+           
+              <p className="text-[#F5F0E8]/75 text-[13px] leading-[1.8] tex-center">
                 {value.description}
               </p>
+                 </div>
+                </div>
             </motion.div>
           );
         })}

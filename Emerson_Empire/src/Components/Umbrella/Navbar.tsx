@@ -13,11 +13,11 @@ const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav aria-label="Main navigation" className="top-0 z-50 fixed bg-[#12022A] border-[#C9A84C]/20 border-b w-full">
-      <div className="flex justify-between items-center mx-auto px-6 sm:px-10 lg:px-16 w-full max-w-7xl h-16">
+    <nav aria-label="Main navigation" className="top-0 z-50 fixed bg-[#12022A] border-[#C9A84C]/20 border-b w-full h-24">
+      <div className="flex items-center justify-between w-full h-16 px-6 mx-auto sm:px-10 lg:px-16 max-w-7xl">
 
         {/* Logo */}
-       <a href="/" className="group flex items-center active:scale-95 transition-transform duration-200 shrink-0">
+       <a href="/" className="flex items-center transition-transform duration-200 group active:scale-95 shrink-0">
   <picture>
     <source srcSet={EmasonAvif} type="image/avif" />
     <source srcSet={EmasonWebp} type="image/webp" />
@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
       alt="Emerson Empire Logo"
       width={48}
       height={48}
-      className="w-12 h-12 object-contain group-hover:scale-x-125 transition-transform duration-200"
+      className="object-contain w-12 h-12 transition-transform duration-200 group-hover:scale-x-125"
     />
   </picture>
   <p className="group-hover:opacity-80 ml-2 font-bold text-[#C9A84C] text-[18px] transition-opacity duration-200">
@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
 </a>
 
         {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8 m-0 p-0 list-none">
+        <ul className="items-center hidden gap-8 p-0 m-0 list-none md:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
               <a

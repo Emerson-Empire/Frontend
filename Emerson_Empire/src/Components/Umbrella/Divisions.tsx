@@ -90,10 +90,10 @@ const DivisionCard: React.FC<DivisionCardProps> = ({
     whileInView={{ opacity: 1, x: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.6 }}
-    className="flex flex-col bg-white shadow-black shadow-md rounded-2xl overflow-hidden"
+    className="flex flex-col overflow-hidden bg-white shadow-md shadow-black rounded-2xl"
   >
     {/* FIRST IMAGE */}
-    <div className="p-6 pb-4 w-full">
+    <div className="w-full p-6 pb-4">
       <div className="shadow-[#4B1E91] shadow-md rounded-2xl overflow-hidden">
         <picture>
           {bgSrcWebp && (
@@ -111,7 +111,7 @@ const DivisionCard: React.FC<DivisionCardProps> = ({
             height={imgHeight}
             loading="lazy"
             decoding="async"
-            className="m-2 rounded-md w-full h-auto object-cover"
+            className="object-cover w-full h-auto m-2 rounded-md"
           />
         </picture>
       </div>
@@ -119,7 +119,7 @@ const DivisionCard: React.FC<DivisionCardProps> = ({
 
     {/* SECOND IMAGE */}
    {bottomImgSrc && (
- <div className="z-20 relative flex justify-center -mt-28 px-6 pb-6">
+ <div className="relative z-20 flex justify-center px-6 pb-6 -mt-28">
     <div className="rounded-2xl w-[35%] sm:w-[30%] overflow-hidden">
       <img
         src={bottomImgSrc}
@@ -129,31 +129,31 @@ const DivisionCard: React.FC<DivisionCardProps> = ({
         height={bottomImgHeight}
         loading="lazy"
         decoding="async"
-        className="w-full h-50 object-contain"
+        className="object-contain w-full h-50"
       />
     </div>
   </div>
 )}
     {/* TEXT PANEL */}
     <div className="flex flex-col flex-1 px-7 py-7">
-      <h3 className="mb-3 font-bold text-[#12022A] text-[22px] sm:text-[26px] uppercase leading-tight heading">
+      <h3 className="mb-3 font-bold text-[#12022A] text-[36px] sm:text-[36px] uppercase leading-tight heading">
         {title}
       </h3>
 
       <div className="bg-[#C9A84C] mb-4 w-10 h-0.5" />
 
       {tagline && (
-        <div className="mb-5 text-[#12022A]/70 text-[13px] leading-[1.9]">
+        <div className="mb-5 text-[#12022A]/70 text-[20px] leading-[1.9]">
           {tagline}
         </div>
       )}
 
-      <p className="mb-3 font-bold text-[#12022A] text-[15px]">
+      <p className="mb-3 font-bold text-[#12022A] text-[28px]">
         {sectionLabel}
       </p>
 
       {description && (
-        <p className="mb-5 text-[#12022A]/60 text-[13px] leading-[1.85]">
+        <p className="mb-5 text-[#12022A]/60 text-[20px] leading-[1.85]">
           {description}
         </p>
       )}
@@ -168,11 +168,11 @@ const DivisionCard: React.FC<DivisionCardProps> = ({
                 <Checkmark />
 
                 <div>
-                  <p className="font-bold text-[#12022A] text-[13px] leading-snug">
+                  <p className="font-bold text-[#12022A] text-[20px] leading-snug">
                     {f.title}
                   </p>
 
-                  <p className="mt-0.5 text-[#12022A]/60 text-[12px] leading-[1.75]">
+                  <p className="mt-0.5 text-[#12022A]/60 text-[20px] leading-[1.75]">
                     {f.description}
                   </p>
                 </div>
@@ -235,13 +235,13 @@ const AGENCY_FEATURES: RichFeature[] = [
 ];
 
 const Divisions: React.FC = () => (
-  <section className="bg-white px-6 sm:px-10 lg:px-16 py-20">
+  <section className="w-full px-4 m-auto bg-white sm:px-8 md:px-16py-20">
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="mb-14 text-center"
+      className="text-center mb-14"
     >
       <h2 className="mb-4 font-bold text-[#12022A] text-[36px] sm:text-[44px] leading-[1.1] tracking-tight heading">
         Decide where you grow.
@@ -254,7 +254,7 @@ const Divisions: React.FC = () => (
       </p>
     </motion.div>
 
-    <div className="gap-6 grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-7xl">
+    <div className="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-2">
       <DivisionCard
         side="left"
         bgSrc={EmersonStudents}

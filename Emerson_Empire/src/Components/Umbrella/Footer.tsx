@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
         <div className="gap-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr]">
 
           {/* Brand column */}
-          <div>
+          <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
             {/* EE text logo */}
             <div className="flex items-center gap-3 mb-5">
               <div className="flex justify-center items-center bg-[#C9A84C] rounded-sm w-9 h-9 shrink-0">
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
             </p>
 
             {/* Social icons */}
-            <div className="flex gap-2.5">
+            <div className="flex gap-2.5 justify-center sm:justify-start">
               {/* Instagram */}
               <a href="#" aria-label="Instagram" className="flex justify-center items-center bg-white/8 hover:bg-[#C9A84C]/20 border border-white/10 hover:border-[#C9A84C]/30 rounded-md w-9 h-9 transition-colors duration-200">
                 <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/60">
@@ -73,9 +73,9 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Navigate */}
-          <div>
+          <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
             <p className="mb-5 font-bold text-[11px] text-white uppercase tracking-[0.2em]">Navigate</p>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-3 items-center sm:items-start">
               {NAVIGATE.map(l => (
                 <li key={l.label}>
                   <a href={l.href} className="text-[13px] text-white/45 hover:text-[#C9A84C] tracking-wide transition-colors duration-200">
@@ -87,9 +87,9 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Services */}
-          <div>
+          <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
             <p className="mb-5 font-bold text-[11px] text-white uppercase tracking-[0.2em]">Services</p>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-3 items-center sm:items-start">
               {SERVICES.map(l => (
                 <li key={l.label}>
                   <a href={l.href} className="text-[13px] text-white/45 hover:text-[#C9A84C] tracking-wide transition-colors duration-200">
@@ -101,9 +101,9 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
             <p className="mb-5 font-bold text-[11px] text-white uppercase tracking-[0.2em]">Contact</p>
-            <ul className="flex flex-col gap-4">
+            <ul className="flex flex-col gap-4 items-center sm:items-start">
               <li className="flex items-start gap-2.5">
                 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -134,7 +134,7 @@ const Footer: React.FC = () => {
 
       {/* ── Bottom bar ── */}
       <div className="border-white/8 border-t">
-        <div className="flex sm:flex-row flex-col justify-between items-center gap-3 mx-auto px-6 sm:px-10 lg:px-16 py-5 max-w-7xl">
+        <div className="flex sm:flex-row flex-col justify-between items-center gap-3 mx-auto px-6 sm:px-10 lg:px-16 py-5 max-w-7xl text-center sm:text-left">
           <p className="text-[11px] text-white/30 tracking-wide">
             © {year} The Emerson Empire. All rights reserved.
           </p>

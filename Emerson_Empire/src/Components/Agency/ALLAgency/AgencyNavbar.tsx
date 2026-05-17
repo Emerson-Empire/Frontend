@@ -13,7 +13,7 @@ const AgencyNavbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav aria-label="Main navigation" className="top-0 z-50 fixed bg-[#12022A] border-[#C9A84C]/20 border-b w-full">
+    <nav aria-label="Main navigation" className="top-0 z-50 fixed bg-[#12022A] border-[#C9A84C]/20 border-b w-full h-24">
       <div className="flex items-center justify-between w-full h-16 px-6 mx-auto sm:px-10 lg:px-16 max-w-7xl">
 
         {/* Logo */}

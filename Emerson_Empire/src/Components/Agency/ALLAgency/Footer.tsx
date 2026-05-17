@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
       <div className="grid grid-cols-1 gap-12 mx-auto md:grid-cols-3 max-w-7xl">
 
         {/* ── Col 1: Brand ── */}
-        <div className="md:col-span-1">
+        <div className="flex flex-col items-center text-center md:items-start md:col-span-1 md:text-left">
           <div className="flex items-center gap-3 mb-4">
             <img src={Agency} alt="The Emerson Agency logo" className="object-contain w-16 h-16" />
             <div>
@@ -24,8 +24,7 @@ const Footer: React.FC = () => {
               <p className="text-xs italic text-white/50">Where your financial chaos finally meets its solution.</p>
             </div>
           </div>
-
-          <p className="mt-4 text-sm leading-relaxed text-white/60">
+          <p className="max-w-xs mt-4 text-sm leading-relaxed text-white/60">
             THE EMERSON AGENCY LLC provides high-impact tax preparation, insurance education,
             and business operations consulting.{" "}
             <span className="font-bold text-white">WE ARE PART OF THE EMERSON EMPIRE</span>, a global
@@ -35,7 +34,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* ── Col 2: Navigate ── */}
-        <div>
+        <div className="flex flex-col items-center text-center md:items-start md:text-left">
           <h4 className="mb-6 font-bold text-[#C9A84C] text-sm uppercase tracking-[0.2em]">
             Navigate
           </h4>
@@ -58,7 +57,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* ── Col 3: Contact ── */}
-        <div>
+        <div className="flex flex-col items-center text-center md:items-start md:text-left">
           <h4 className="mb-6 font-bold text-[#C9A84C] text-sm uppercase tracking-[0.2em]">
             Contact
           </h4>
@@ -131,7 +130,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom bar */}
-      <div className="flex sm:flex-row flex-col justify-between items-center gap-4 mx-auto mt-12 pt-6 border-[#C9A84C]/15 border-t max-w-7xl text-white/40 text-xs">
+      <div className="flex sm:flex-row flex-col justify-between items-center gap-4 mx-auto mt-12 pt-6 border-[#C9A84C]/15 border-t max-w-7xl text-white/40 text-xs text-center">
         <p>© 2026 The Emerson Empire. All rights reserved.</p>
         <div className="flex gap-6">
           <a href="#" className="transition-colors duration-200 hover:text-white/70">Privacy Policy</a>

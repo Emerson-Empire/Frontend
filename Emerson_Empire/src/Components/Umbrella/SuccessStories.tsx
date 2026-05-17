@@ -90,14 +90,14 @@ const StoryCard = ({ story, active }: any) => (
     transition={{ duration: 0.3 }}
   >
     <div className="flex items-center gap-3 mb-4">
-      <div className="border border-white/10 rounded-xl w-14 h-14 overflow-hidden">
+      <div className="overflow-hidden border border-white/10 rounded-xl w-14 h-14">
         <picture>
           {story.srcAvif && <source srcSet={story.srcAvif} type="image/avif" />}
           {story.srcWebp && <source srcSet={story.srcWebp} type="image/webp" />}
           <img
             src={story.src}
             alt={story.name}
-            className="w-full h-full object-cover object-top"
+            className="object-cover object-top w-full h-full"
             decoding="async"
             loading="lazy"
           />
@@ -105,7 +105,7 @@ const StoryCard = ({ story, active }: any) => (
       </div>
 
       <div>
-        <p className="font-bold text-white text-sm">{story.name}</p>
+        <p className="text-sm font-bold text-white">{story.name}</p>
         <p className="text-[#C9A84C] text-xs">{story.role}</p>
       </div>
 
@@ -114,7 +114,7 @@ const StoryCard = ({ story, active }: any) => (
       </div>
     </div>
 
-    <p className="text-white/70 text-sm leading-relaxed">
+    <p className="text-sm leading-relaxed text-white/70">
       "{story.quote}"
     </p>
   </motion.div>
@@ -152,24 +152,24 @@ const SuccessStories: React.FC = () => {
   }, [active]);
 
   return (
-    <section className="bg-white py-20">
+    <section className="py-20 bg-white">
 
-      <div className="mx-auto mb-10 px-6 sm:px-10 lg:px-16 max-w-7xl">
-        <h2 className="font-bold text-[#12022A] text-[32px] sm:text-[42px]">
+      <div className="px-6 mx-auto mb-10 sm:px-10 lg:px-16 max-w-7xl">
+        <h2 className="font-bold text-[#12022A] text-[56px]">
           Stories of real progress.
         </h2>
-        <p className="mt-3 max-w-xl text-[#12022A]/60 text-sm">
+        <p className="mt-3 max-w-xl text-[#12022A]/60 text-[24px]">
           Real people, real outcomes.
         </p>
       </div>
 
       <div
         ref={containerRef}
-        className="flex gap-5 px-6 sm:px-10 lg:px-16 overflow-x-auto scroll-smooth snap-mandatory snap-x"
+        className="flex gap-5 px-6 overflow-x-auto sm:px-10 lg:px-16 scroll-smooth snap-mandatory snap-x"
         style={{ scrollbarWidth: 'none' }}
       >
         {STORIES.map((story, i) => (
-          <div key={story.id} onClick={() => setActive(i)} className="shadow-black shadow-md rounded-md cursor-pointer">
+          <div key={story.id} onClick={() => setActive(i)} className="rounded-md cursor-pointer">
             <StoryCard story={story} active={i === active} />
           </div>
         ))}

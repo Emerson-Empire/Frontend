@@ -14,7 +14,7 @@ const  EPDGNavbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav aria-label="Main navigation" className="top-0 z-50 fixed bg-[#12022A] border-[#C9A84C]/20 border-b w-full">
+    <nav aria-label="Main navigation" className="top-0 z-50 fixed bg-[#12022A] border-[#C9A84C]/20 border-b w-full h-24">
       <div className="flex items-center justify-between w-full h-16 px-6 mx-auto sm:px-10 lg:px-16 max-w-7xl">
 
         {/* Logo */}
@@ -114,7 +114,7 @@ const  EPDGNavbar: React.FC = () => {
           </a>
           <a
             href="#contact"
-            className="inline-flex justify-center border border-[#C9A84C] hover:bg-[#C9A84C] mt-3 px-5 py-3 rounded-sm font-bold text-[#C9A84C] hover:text-[#12022A] text-[11px] uppercase tracking-[0.2em] transition-colors duration-200"
+            className="inline-flex justify-center hover:bg-[#C9A84C] mt-3 px-5 py-3 border border-[#C9A84C] rounded-sm font-bold text-[#C9A84C] text-[11px] hover:text-[#12022A] uppercase tracking-[0.2em] transition-colors duration-200"
           >
             Create Account
           </a>
