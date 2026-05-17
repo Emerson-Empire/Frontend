@@ -70,83 +70,83 @@ const Mobile: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F5F5F5] text-black md:hidden">
+    <div className="md:hidden bg-[#F5F5F5] min-h-screen text-black">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-[#F5F5F5]/95 backdrop-blur border-b border-gray-200">
-        <div className="flex items-center justify-between px-5 py-4">
+      <header className="top-0 z-50 sticky bg-[#F5F5F5]/95 backdrop-blur border-gray-200 border-b">
+        <div className="flex justify-between items-center px-5 py-4">
           {/* Logo */}
-          <div className="w-12 h-12 rounded-full border-2 border-gray-400 flex items-center justify-center text-sm font-bold bg-white">
+          <div className="flex justify-center items-center bg-white border-2 border-gray-400 rounded-full w-12 h-12 font-bold text-sm">
             LOGO
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="px-5 py-6 space-y-8 pb-32">
+      <main className="space-y-8 px-5 py-6 pb-32">
         {/* Hero Section */}
-        <section className="bg-white border border-gray-200 rounded-3xl p-5">
+        <section className="bg-white p-5 border border-gray-200 rounded-3xl">
           <div className="space-y-5">
-            <div className="bg-gray-200 w-24 h-8 rounded-xl" />
+            <div className="bg-gray-200 rounded-xl w-24 h-8" />
 
             <div>
-              <h1 className="text-3xl font-bold leading-tight">
+              <h1 className="font-bold text-3xl leading-tight">
                 Build Your Future
                 <br />
                 with Global Experience
               </h1>
 
-              <p className="text-gray-500 mt-4 text-sm leading-relaxed">
+              <p className="mt-4 text-gray-500 text-sm leading-relaxed">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               </p>
             </div>
 
             {/* Hero Image Placeholder */}
-            <div className="bg-gray-200 h-56 rounded-3xl" />
+            <div className="bg-gray-200 rounded-3xl h-56" />
 
             {/* CTA Buttons */}
             <div className="flex gap-3">
-              <button className="flex-1 bg-black text-white rounded-2xl py-4 text-sm font-medium">
+              <button className="flex-1 bg-black py-4 rounded-2xl font-medium text-white text-sm">
                 Primary CTA
               </button>
 
-              <button className="flex-1 border border-gray-300 rounded-2xl py-4 text-sm font-medium bg-white">
+              <button className="flex-1 bg-white py-4 border border-gray-300 rounded-2xl font-medium text-sm">
                 Secondary CTA
               </button>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-gray-100 rounded-2xl p-4">
-                <h3 className="text-3xl font-bold">+100</h3>
+            <div className="gap-4 grid grid-cols-2">
+              <div className="bg-gray-100 p-4 rounded-2xl">
+                <h3 className="font-bold text-3xl">+100</h3>
 
-                <div className="bg-gray-300 h-2 rounded-full mt-3 w-16" />
+                <div className="bg-gray-300 mt-3 rounded-full w-16 h-2" />
               </div>
 
-              <div className="bg-gray-100 rounded-2xl p-4">
-                <h3 className="text-3xl font-bold">+20</h3>
+              <div className="bg-gray-100 p-4 rounded-2xl">
+                <h3 className="font-bold text-3xl">+20</h3>
 
-                <div className="bg-gray-300 h-2 rounded-full mt-3 w-16" />
+                <div className="bg-gray-300 mt-3 rounded-full w-16 h-2" />
               </div>
             </div>
           </div>
         </section>
 
         {/* Feature Cards */}
-        <section className="grid grid-cols-1 gap-4">
+        <section className="gap-4 grid grid-cols-1">
           {[1, 2].map((item) => (
             <div
               key={item}
-              className="bg-white border border-gray-200 rounded-3xl p-4"
+              className="bg-white p-4 border border-gray-200 rounded-3xl"
             >
-              <div className="bg-gray-200 h-36 rounded-2xl mb-4" />
+              <div className="bg-gray-200 mb-4 rounded-2xl h-36" />
 
-              <h3 className="text-xl font-bold mb-2">Lorem Ipsum Feature</h3>
+              <h3 className="mb-2 font-bold text-xl">Lorem Ipsum Feature</h3>
 
-              <p className="text-sm text-gray-500 leading-relaxed mb-4">
+              <p className="mb-4 text-gray-500 text-sm leading-relaxed">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               </p>
 
-              <button className="bg-gray-200 rounded-xl px-5 py-3 text-sm font-medium">
+              <button className="bg-gray-200 px-5 py-3 rounded-xl font-medium text-sm">
                 Learn More
               </button>
             </div>
@@ -155,8 +155,8 @@ const Mobile: React.FC = () => {
 
         {/* How It Works */}
         <section>
-          <div className="flex items-center justify-between mb-5">
-            <h2 className="text-3xl font-bold">How it works</h2>
+          <div className="flex justify-between items-center mb-5">
+            <h2 className="font-bold text-3xl">How it works</h2>
 
             <button className="flex items-center gap-1 text-sm">
               View all
@@ -165,21 +165,21 @@ const Mobile: React.FC = () => {
           </div>
 
           {/* Swipeable Cards */}
-          <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
+          <div className="flex gap-4 pb-2 overflow-x-auto snap-mandatory snap-x">
             {[1, 2, 3].map((item) => (
               <div
                 key={item}
-                className="min-w-[260px] bg-white border border-gray-200 rounded-3xl p-5 flex-shrink-0 snap-start"
+                className="flex-shrink-0 bg-white p-5 border border-gray-200 rounded-3xl min-w-[260px] snap-start"
               >
-                <div className="w-12 h-12 rounded-2xl bg-gray-200 flex items-center justify-center font-bold mb-5">
+                <div className="flex justify-center items-center bg-gray-200 mb-5 rounded-2xl w-12 h-12 font-bold">
                   0{item}
                 </div>
 
-                <div className="bg-gray-200 h-32 rounded-2xl mb-5" />
+                <div className="bg-gray-200 mb-5 rounded-2xl h-32" />
 
-                <h3 className="text-xl font-bold mb-3">Step {item}</h3>
+                <h3 className="mb-3 font-bold text-xl">Step {item}</h3>
 
-                <p className="text-sm text-gray-500 leading-relaxed">
+                <p className="text-gray-500 text-sm leading-relaxed">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
               </div>
@@ -189,8 +189,8 @@ const Mobile: React.FC = () => {
 
         {/* Roadmap */}
         <section>
-          <div className="flex items-center justify-between mb-5">
-            <h2 className="text-3xl font-bold">Your Roadmap</h2>
+          <div className="flex justify-between items-center mb-5">
+            <h2 className="font-bold text-3xl">Your Roadmap</h2>
 
             <button className="flex items-center gap-1 text-sm">
               View all
@@ -198,32 +198,32 @@ const Mobile: React.FC = () => {
             </button>
           </div>
 
-          <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
+          <div className="flex gap-4 pb-2 overflow-x-auto snap-mandatory snap-x">
             {roadmapSteps.map((step) => (
               <div
                 key={step.id}
-                className="min-w-[220px] bg-white border border-gray-200 rounded-3xl p-5 flex-shrink-0 snap-start"
+                className="flex-shrink-0 bg-white p-5 border border-gray-200 rounded-3xl min-w-[220px] snap-start"
               >
-                <div className="w-10 h-10 rounded-xl bg-gray-200 flex items-center justify-center font-bold mb-5">
+                <div className="flex justify-center items-center bg-gray-200 mb-5 rounded-xl w-10 h-10 font-bold">
                   {step.id}
                 </div>
 
                 {/* Fake Progress Circle */}
-                <div className="w-24 h-24 rounded-full border-4 border-gray-400 flex items-center justify-center mx-auto mb-5">
+                <div className="flex justify-center items-center mx-auto mb-5 border-4 border-gray-400 rounded-full w-24 h-24">
                   <span className="font-bold">{step.progress}</span>
                 </div>
 
-                <h3 className="text-lg font-bold text-center mb-3">
+                <h3 className="mb-3 font-bold text-lg text-center">
                   {step.title}
                 </h3>
 
                 <div className="space-y-2 mb-5">
-                  <div className="bg-gray-200 h-2 rounded-full" />
-                  <div className="bg-gray-200 h-2 rounded-full w-5/6" />
-                  <div className="bg-gray-200 h-2 rounded-full w-4/6" />
+                  <div className="bg-gray-200 rounded-full h-2" />
+                  <div className="bg-gray-200 rounded-full w-5/6 h-2" />
+                  <div className="bg-gray-200 rounded-full w-4/6 h-2" />
                 </div>
 
-                <div className="bg-gray-100 rounded-xl py-3 flex items-center justify-center gap-2 text-sm">
+                <div className="flex justify-center items-center gap-2 bg-gray-100 py-3 rounded-xl text-sm">
                   <CheckCircle2 size={16} />
                   {step.status}
                 </div>
@@ -234,8 +234,8 @@ const Mobile: React.FC = () => {
 
         {/* Current Tasks */}
         <section>
-          <div className="flex items-center justify-between mb-5">
-            <h2 className="text-3xl font-bold">Current Tasks</h2>
+          <div className="flex justify-between items-center mb-5">
+            <h2 className="font-bold text-3xl">Current Tasks</h2>
 
             <button className="flex items-center gap-1 text-sm">
               View all
@@ -252,11 +252,11 @@ const Mobile: React.FC = () => {
             ].map((task, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-2xl p-4"
+                className="bg-white p-4 border border-gray-200 rounded-2xl"
               >
-                <div className="flex items-center justify-between">
+                <div className="flex justify-between items-center">
                   <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full border-2 border-gray-400" />
+                    <div className="border-2 border-gray-400 rounded-full w-6 h-6" />
 
                     <span className="font-medium">{task}</span>
                   </div>
@@ -264,8 +264,8 @@ const Mobile: React.FC = () => {
                   <ChevronRight size={18} />
                 </div>
 
-                <div className="mt-4 h-2 bg-gray-200 rounded-full overflow-hidden">
-                  <div className="w-1/2 h-full bg-gray-500 rounded-full" />
+                <div className="bg-gray-200 mt-4 rounded-full h-2 overflow-hidden">
+                  <div className="bg-gray-500 rounded-full w-1/2 h-full" />
                 </div>
               </div>
             ))}
@@ -274,8 +274,8 @@ const Mobile: React.FC = () => {
 
         {/* Success Stories */}
         <section>
-          <div className="flex items-center justify-between mb-5">
-            <h2 className="text-3xl font-bold">Success Stories</h2>
+          <div className="flex justify-between items-center mb-5">
+            <h2 className="font-bold text-3xl">Success Stories</h2>
 
             <button className="flex items-center gap-1 text-sm">
               View all
@@ -283,21 +283,21 @@ const Mobile: React.FC = () => {
             </button>
           </div>
 
-          <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
+          <div className="flex gap-4 pb-2 overflow-x-auto snap-mandatory snap-x">
             {successStories.map((item) => (
               <div
                 key={item}
-                className="min-w-[260px] bg-white border border-gray-200 rounded-3xl p-4 flex-shrink-0 snap-start"
+                className="flex-shrink-0 bg-white p-4 border border-gray-200 rounded-3xl min-w-[260px] snap-start"
               >
-                <div className="bg-gray-200 h-40 rounded-2xl mb-4" />
+                <div className="bg-gray-200 mb-4 rounded-2xl h-40" />
 
                 <div className="space-y-2">
-                  <div className="bg-gray-300 h-4 rounded w-full" />
-                  <div className="bg-gray-300 h-4 rounded w-5/6" />
-                  <div className="bg-gray-300 h-4 rounded w-4/6" />
+                  <div className="bg-gray-300 rounded w-full h-4" />
+                  <div className="bg-gray-300 rounded w-5/6 h-4" />
+                  <div className="bg-gray-300 rounded w-4/6 h-4" />
                 </div>
 
-                <p className="text-sm text-gray-500 mt-5">- Intern Name</p>
+                <p className="mt-5 text-gray-500 text-sm">- Intern Name</p>
               </div>
             ))}
           </div>
@@ -305,7 +305,7 @@ const Mobile: React.FC = () => {
       </main>
 
       {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 z-50">
+      <nav className="bottom-0 left-0 z-50 fixed bg-white border-gray-200 border-t w-full">
         <div className="flex justify-around items-center px-2 py-3">
           {navigationItems.map((item) => {
             const Icon = item.icon;
@@ -324,7 +324,7 @@ const Mobile: React.FC = () => {
                   px-4
                   rounded-2xl
                   transition-all
-                  min-w-[70px]
+                  min-w-17.5
                   ${
                     activeNav === item.label
                       ? "bg-black text-white"
@@ -334,7 +334,7 @@ const Mobile: React.FC = () => {
               >
                 <Icon size={20} />
 
-                <span className="text-xs font-medium">{item.label}</span>
+                <span className="font-medium text-xs">{item.label}</span>
               </button>
             );
           })}

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Emason, EmasonWebp, EmasonAvif, EmersonAgency } from '../../assets';
+import axios from 'axios';
+
+import EpdgBottom from '../../assets/LOG 3.webp';
+import AgencyBottom from '../../assets/LOG 1.webp';
 
 type Division = 'epdg' | 'agency' | '';
 
@@ -13,22 +16,47 @@ interface FormState {
 
 const INITIAL: FormState = { firstName: '', email: '', phone: '', message: '' };
 
+const DIVISION_LABELS: Record<Exclude<Division, ''>, string> = {
+  epdg: 'The Emerson Professional Development Group',
+  agency: 'The Emerson Agency',
+};
+
 const CTA: React.FC = () => {
   const [division, setDivision] = useState<Division>('');
   const [form, setForm] = useState<FormState>(INITIAL);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string>('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    if (error) setError('');
   };
 
   const handleSubmit = async () => {
     if (!form.firstName || !form.email) return;
+
     setLoading(true);
-    await new Promise(res => setTimeout(res, 1200));
-    setLoading(false);
-    setSubmitted(true);
+    setError('');
+
+    try {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/leads`, {
+        firstName: form.firstName,
+        email: form.email,
+        phone: form.phone || null,
+        message: form.message || null,
+        division: division || null,
+        divisionLabel: division ? DIVISION_LABELS[division] : null,
+      });
+
+      setSubmitted(true);
+    } catch (err) {
+      setError('Something went wrong. Please try again or email us directly.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const fieldClass =
@@ -53,7 +81,7 @@ const CTA: React.FC = () => {
         </div>
 
         {/* Division selector */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-14">
+        <div className="flex sm:flex-row flex-col gap-4 mb-14">
           {/* EPDG */}
           <button
             type="button"
@@ -66,12 +94,16 @@ const CTA: React.FC = () => {
                 : 'border-gray-200 hover:border-gray-400'
             }`}
           >
-            <picture>
-              <source srcSet={EmasonAvif} type="image/avif" />
-              <source srcSet={EmasonWebp} type="image/webp" />
-              <img src={Emason} alt="EPDG" width={48} height={48} loading="lazy" decoding="async" className="w-12 h-12 object-contain shrink-0" />
-            </picture>
-            <p className="font-bold text-[#12022A] text-[11px] uppercase tracking-[0.5px] leading-snug">
+            <img
+              src={EpdgBottom}
+              alt="EPDG"
+              width={48}
+              height={48}
+              loading="lazy"
+              decoding="async"
+              className="w-12 h-12 object-contain shrink-0"
+            />
+            <p className="font-bold text-[#12022A] text-[11px] uppercase leading-snug tracking-[0.5px]">
               The Emerson Professional<br />Development Group
             </p>
           </button>
@@ -88,15 +120,23 @@ const CTA: React.FC = () => {
                 : 'border-gray-200 hover:border-gray-400'
             }`}
           >
-            <img src={EmersonAgency} alt="Emerson Agency" width={48} height={48} loading="lazy" decoding="async" className="w-12 h-12 object-contain shrink-0" />
-            <p className="font-bold text-[#12022A] text-[11px] uppercase tracking-[0.5px] leading-snug">
+            <img
+              src={AgencyBottom}
+              alt="Emerson Agency"
+              width={48}
+              height={48}
+              loading="lazy"
+              decoding="async"
+              className="w-12 h-12 object-contain shrink-0"
+            />
+            <p className="font-bold text-[#12022A] text-[11px] uppercase leading-snug tracking-[0.5px]">
               The Emerson<br />Agency
             </p>
           </button>
         </div>
 
         {/* Two-column: text | form */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div className="items-start gap-12 lg:gap-20 grid grid-cols-1 lg:grid-cols-2">
 
           {/* Left text */}
           <div>
@@ -105,8 +145,9 @@ const CTA: React.FC = () => {
             </h3>
             <p className="text-[#12022A]/55 text-[14px] leading-[1.9]">
               Stop wondering if you are ready and start proving it.{' '}
-              <strong className="text-[#12022A]/80 font-semibold">
-                Send us a message to learn more about our internship tracks and how we can help you build a portfolio that actually gets you hired.
+              <strong className="font-semibold text-[#12022A]/80">
+                Send us a message to learn more about our internship tracks and
+                how we can help you build a portfolio that actually gets you hired.
               </strong>
             </p>
           </div>
@@ -116,48 +157,113 @@ const CTA: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="flex flex-col items-center justify-center gap-5 py-12 text-center"
+              className="flex flex-col justify-center items-center gap-5 py-12 text-center"
             >
-              <div className="flex justify-center items-center w-14 h-14 rounded-full bg-[#12022A]/8 border border-[#12022A]/15">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#12022A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <div className="flex justify-center items-center bg-[#12022A]/8 border border-[#12022A]/15 rounded-full w-14 h-14">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#12022A"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
               </div>
-              <h4 className="font-bold text-[#12022A] text-[22px] heading">Message Received</h4>
-              <p className="text-[#12022A]/50 text-[14px] leading-[1.8] max-w-xs">
+              <h4 className="font-bold text-[#12022A] text-[22px] heading">
+                Message Received
+              </h4>
+              <p className="max-w-xs text-[#12022A]/50 text-[14px] leading-[1.8]">
                 Thank you, {form.firstName}. We'll be in touch within 24 hours.
               </p>
               <button
-                onClick={() => { setSubmitted(false); setForm(INITIAL); setDivision(''); }}
-                className="text-[#12022A] text-[11px] uppercase tracking-[3px] hover:underline underline-offset-4"
+                onClick={() => {
+                  setSubmitted(false);
+                  setForm(INITIAL);
+                  setDivision('');
+                }}
+                className="text-[#12022A] text-[11px] hover:underline underline-offset-4 uppercase tracking-[3px]"
               >
                 Send another message
               </button>
             </motion.div>
           ) : (
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 shadow-[#4B1E91] shadow-md p-6 rounded-md">
               <div className="flex flex-col">
-                <label htmlFor="firstName" className={labelClass}>First Name: <span aria-hidden="true">*</span></label>
-                <input id="firstName" name="firstName" autoComplete="given-name" required aria-required="true" value={form.firstName} onChange={handleChange} className={fieldClass} />
+                <label htmlFor="firstName" className={labelClass}>
+                  First Name: <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="firstName"
+                  name="firstName"
+                  autoComplete="given-name"
+                  required
+                  aria-required="true"
+                  value={form.firstName}
+                  onChange={handleChange}
+                  className={fieldClass}
+                />
               </div>
               <div className="flex flex-col">
-                <label htmlFor="email" className={labelClass}>Email: <span aria-hidden="true">*</span></label>
-                <input id="email" name="email" type="email" autoComplete="email" required aria-required="true" value={form.email} onChange={handleChange} className={fieldClass} />
+                <label htmlFor="email" className={labelClass}>
+                  Email: <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  aria-required="true"
+                  value={form.email}
+                  onChange={handleChange}
+                  className={fieldClass}
+                />
               </div>
               <div className="flex flex-col">
-                <label htmlFor="phone" className={labelClass}>Phone Number:</label>
-                <input id="phone" name="phone" type="tel" autoComplete="tel" value={form.phone} onChange={handleChange} className={fieldClass} />
+                <label htmlFor="phone" className={labelClass}>
+                  Phone Number:
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  autoComplete="tel"
+                  value={form.phone}
+                  onChange={handleChange}
+                  className={fieldClass}
+                />
               </div>
               <div className="flex flex-col">
-                <label htmlFor="message" className={labelClass}>Send us a message:</label>
-                <textarea id="message" name="message" value={form.message} onChange={handleChange} rows={4} className={`${fieldClass} resize-none`} />
+                <label htmlFor="message" className={labelClass}>
+                  Send us a message:
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  rows={4}
+                  className={`${fieldClass} resize-none`}
+                />
               </div>
+
+              {/* Error banner */}
+              {error && (
+                <p role="alert" className="text-[12px] text-red-600 leading-snug">
+                  {error}
+                </p>
+              )}
+
               <button
                 type="submit"
                 onClick={handleSubmit}
                 disabled={loading || !form.firstName || !form.email}
                 aria-disabled={loading || !form.firstName || !form.email}
-                className="w-full mt-1 bg-[#12022A] hover:bg-[#1E0A4A] disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold text-[12px] uppercase tracking-[3px] py-4 rounded-md transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#12022A]"
+                className="bg-[#12022A] hover:bg-[#1E0A4A] disabled:opacity-40 mt-1 py-4 rounded-md focus-visible:outline-none focus-visible:ring-[#12022A] focus-visible:ring-2 focus-visible:ring-offset-2 w-full font-bold text-[12px] text-white uppercase tracking-[3px] transition-colors duration-200 disabled:cursor-not-allowed"
               >
                 {loading ? 'Sending…' : 'Apply Now'}
               </button>

@@ -3,10 +3,10 @@ import { Emason, EmasonWebp, EmasonAvif } from '../../assets';
 
 const NAV_LINKS = [
   { label: 'HOME',     href: '/' },
-  { label: 'Your Path', href: '/agency' },
+  { label: 'Your Path', href:'#choose' },
   { label: 'Our Team', href: '#team' },
-  { label: 'About Us', href: '#About' },
-  { label: 'Reviews',  href: '#Testimony' },
+  { label: 'About Us', href: '#about' },
+  { label: 'Reviews',  href: '#testimony' },
 ];
 
 const Navbar: React.FC = () => {
@@ -17,13 +17,22 @@ const Navbar: React.FC = () => {
       <div className="flex justify-between items-center mx-auto px-6 sm:px-10 lg:px-16 w-full max-w-7xl h-16">
 
         {/* Logo */}
-        <a href="/" className="flex items-center shrink-0">
-          <picture>
-            <source srcSet={EmasonAvif} type="image/avif" />
-            <source srcSet={EmasonWebp} type="image/webp" />
-            <img src={Emason} alt="Emerson Empire Logo" width={48} height={48} className="w-12 h-12 object-contain" />
-          </picture>
-        </a>
+       <a href="/" className="group flex items-center active:scale-95 transition-transform duration-200 shrink-0">
+  <picture>
+    <source srcSet={EmasonAvif} type="image/avif" />
+    <source srcSet={EmasonWebp} type="image/webp" />
+    <img
+      src={Emason}
+      alt="Emerson Empire Logo"
+      width={48}
+      height={48}
+      className="w-12 h-12 object-contain group-hover:scale-x-125 transition-transform duration-200"
+    />
+  </picture>
+  <p className="group-hover:opacity-80 ml-2 font-bold text-[#C9A84C] text-[18px] transition-opacity duration-200">
+    THE <br/><span className="text-[#E8C97A]">EMERSON</span> EMPIRE
+  </p>
+</a>
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8 m-0 p-0 list-none">
@@ -53,7 +62,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col justify-center items-center gap-1.5 shadow-md shadow-white p-2 rounded-b-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] w-11 h-11"
+          className="md:hidden flex flex-col justify-center items-center gap-1.5 shadow-md shadow-white p-2 rounded-b-3xl focus-visible:outline-none focus-visible:ring-[#C9A84C] focus-visible:ring-2 w-11 h-11"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
