@@ -22,11 +22,11 @@ const Footer: React.FC = () => {
     <footer className="bg-[#0D0118] text-white">
 
       {/* ── Main content ── */}
-      <div className="mx-auto px-6 sm:px-10 lg:px-16 pt-14 pb-10 max-w-7xl">
+      <div className="px-6 pb-10 mx-auto sm:px-10 lg:px-16 pt-14 max-w-7xl">
         <div className="gap-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr]">
 
           {/* Brand column */}
-          <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+          <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
             {/* EE text logo */}
             <div className="flex items-center gap-3 mb-5">
               <div className="flex justify-center items-center bg-[#C9A84C] rounded-sm w-9 h-9 shrink-0">
@@ -45,9 +45,9 @@ const Footer: React.FC = () => {
             </p>
 
             {/* Social icons */}
-            <div className="flex gap-2.5 justify-center sm:justify-start">
+            <div className="flex justify-center sm:justify-start gap-2.5">
               {/* Instagram */}
-              <a href="#" aria-label="Instagram" className="flex justify-center items-center bg-white/8 hover:bg-[#C9A84C]/20 border border-white/10 hover:border-[#C9A84C]/30 rounded-md w-9 h-9 transition-colors duration-200">
+              <a href="https://www.instagram.com/theemersonempire/" aria-label="Instagram" className="flex justify-center items-center bg-white/8 hover:bg-[#C9A84C]/20 border border-white/10 hover:border-[#C9A84C]/30 rounded-md w-9 h-9 transition-colors duration-200">
                 <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/60">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                   <circle cx="12" cy="12" r="4" />
@@ -55,15 +55,27 @@ const Footer: React.FC = () => {
                 </svg>
               </a>
               {/* LinkedIn */}
-              <a href="#" aria-label="LinkedIn" className="flex justify-center items-center bg-white/8 hover:bg-[#C9A84C]/20 border border-white/10 hover:border-[#C9A84C]/30 rounded-md w-9 h-9 transition-colors duration-200">
+              <a href="https://www.linkedin.com/company/the-emerson-empire/?viewAsMember=true LinkedIn" aria-label="LinkedIn" className="flex justify-center items-center bg-white/8 hover:bg-[#C9A84C]/20 border border-white/10 hover:border-[#C9A84C]/30 rounded-md w-9 h-9 transition-colors duration-200">
                 <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/60">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                   <rect x="2" y="9" width="4" height="12" />
                   <circle cx="4" cy="4" r="2" />
                 </svg>
               </a>
+              {/* TikTok */}
+              <a href="https://www.tiktok.com/@theemersonempire" aria-label="TikTok" className="flex justify-center items-center bg-white/8 hover:bg-[#C9A84C]/20 border border-white/10 hover:border-[#C9A84C]/30 rounded-md w-9 h-9 transition-colors duration-200">
+                <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" className="text-white/60">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+                </svg>
+              </a>
+              {/* Facebook */}
+              <a href="https://www.facebook.com/theemersonempire" aria-label="Facebook" className="flex justify-center items-center bg-white/8 hover:bg-[#C9A84C]/20 border border-white/10 hover:border-[#C9A84C]/30 rounded-md w-9 h-9 transition-colors duration-200">
+                <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/60">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </a>
               {/* Email */}
-              <a href="mailto:mail@emersonempire.com" aria-label="Email" className="flex justify-center items-center bg-white/8 hover:bg-[#C9A84C]/20 border border-white/10 hover:border-[#C9A84C]/30 rounded-md w-9 h-9 transition-colors duration-200">
+              <a href="mailto:admin@theemersonempire.info" aria-label="Email" className="flex justify-center items-center bg-white/8 hover:bg-[#C9A84C]/20 border border-white/10 hover:border-[#C9A84C]/30 rounded-md w-9 h-9 transition-colors duration-200">
                 <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/60">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                   <polyline points="22,6 12,13 2,6" />
@@ -73,9 +85,9 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Navigate */}
-          <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+          <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
             <p className="mb-5 font-bold text-[11px] text-white uppercase tracking-[0.2em]">Navigate</p>
-            <ul className="flex flex-col gap-3 items-center sm:items-start">
+            <ul className="flex flex-col items-center gap-3 sm:items-start">
               {NAVIGATE.map(l => (
                 <li key={l.label}>
                   <a href={l.href} className="text-[13px] text-white/45 hover:text-[#C9A84C] tracking-wide transition-colors duration-200">
@@ -87,9 +99,9 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Services */}
-          <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+          <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
             <p className="mb-5 font-bold text-[11px] text-white uppercase tracking-[0.2em]">Services</p>
-            <ul className="flex flex-col gap-3 items-center sm:items-start">
+            <ul className="flex flex-col items-center gap-3 sm:items-start">
               {SERVICES.map(l => (
                 <li key={l.label}>
                   <a href={l.href} className="text-[13px] text-white/45 hover:text-[#C9A84C] tracking-wide transition-colors duration-200">
@@ -101,9 +113,9 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Contact */}
-          <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+          <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
             <p className="mb-5 font-bold text-[11px] text-white uppercase tracking-[0.2em]">Contact</p>
-            <ul className="flex flex-col gap-4 items-center sm:items-start">
+            <ul className="flex flex-col items-center gap-4 sm:items-start">
               <li className="flex items-start gap-2.5">
                 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -133,8 +145,8 @@ const Footer: React.FC = () => {
       </div>
 
       {/* ── Bottom bar ── */}
-      <div className="border-white/8 border-t">
-        <div className="flex sm:flex-row flex-col justify-between items-center gap-3 mx-auto px-6 sm:px-10 lg:px-16 py-5 max-w-7xl text-center sm:text-left">
+      <div className="border-t border-white/8">
+        <div className="flex flex-col items-center justify-between gap-3 px-6 py-5 mx-auto text-center sm:flex-row sm:px-10 lg:px-16 max-w-7xl sm:text-left">
           <p className="text-[11px] text-white/30 tracking-wide">
             © {year} The Emerson Empire. All rights reserved.
           </p>
