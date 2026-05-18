@@ -51,7 +51,7 @@ const TrustedBy: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="bg-[#4B1E91] shadow-2xl mb-10 rounded-md font-medium text-[#C9A84C] text-[28px] text-xs text-center uppercase tracking-widest"
+        className="bg-[#4B1E91] shadow-2xl mb-10 rounded-md font-medium text-[#C9A84C] text-[18px] text-center uppercase tracking-widest"
       >
         Trusted by leading companies
       </motion.p>
@@ -59,9 +59,9 @@ const TrustedBy: React.FC = () => {
       {/* ✅ Marquee track */}
       <div className="relative">
         {/* Left fade */}
-        <div className="left-0 z-10 absolute inset-y-0 from-[#12022A] to-transparent w-24 pointer-events-none" />
+        <div className="left-0 z-10 absolute inset-y-0 bg-gradient-to-r from-[#12022A] to-transparent w-24 pointer-events-none" />
         {/* Right fade */}
-        <div className="right-0 z-10 absolute inset-y-0 from-[#12022A] to-transparent w-24 pointer-events-none" />
+        <div className="right-0 z-10 absolute inset-y-0 bg-gradient-to-l from-[#12022A] to-transparent w-24 pointer-events-none" />
 
         <motion.div
           className="flex items-center gap-14"

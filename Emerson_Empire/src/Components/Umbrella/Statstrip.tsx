@@ -1,4 +1,5 @@
 import React from 'react';
+import CountUp from '../shared/CountUp';
 
 interface Stat {
   label: string;
@@ -88,7 +89,9 @@ const StatCard: React.FC<{ stat: Stat }> = ({ stat }) => (
       </span>
       <div className="flex items-baseline gap-2">
         <span className="font-semibold text-white text-2xl leading-none">
-          {stat.prefix}{stat.value}{stat.suffix}
+          {typeof stat.value === 'number'
+            ? <CountUp value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
+            : <>{stat.prefix}{stat.value}{stat.suffix}</>}
         </span>
         {stat.trend && <TrendBadge trend={stat.trend} />}
       </div>

@@ -1,9 +1,10 @@
 import React from "react";
 import { hero } from "../../../assets";
+import CountUp from '../../shared/CountUp';
 
 const AgencyHero: React.FC = () => {
   return (
-    <section className="w-full px-4 pt-16 sm:px-6 lg:px-10">
+    <section className="w-full px-6 pt-16 sm:px-10 lg:px-16">
       <div
         className="relative flex items-center p-6 overflow-hidden bg-center bg-no-repeat bg-cover sm:p-10 lg:p-16 rounded-2xl min-h-130"
         style={{ backgroundImage: `url(${hero})` }}
@@ -51,7 +52,12 @@ const AgencyHero: React.FC = () => {
             { value: "+50",  label: "Tax Returns Completed" },
           ].map(({ value, label }) => (
             <div key={label}>
-              <p className="text-2xl font-bold text-white sm:text-3xl">{value}</p>
+              <p className="text-2xl font-bold text-white sm:text-3xl">
+              {(() => {
+                const m = value.match(/^([^0-9]*)([0-9]+)([^0-9]*)$/);
+                return m ? <CountUp value={parseInt(m[2])} prefix={m[1]} suffix={m[3]} /> : value;
+              })()}
+            </p>
               <p className="mt-1 text-white/50 text-xs uppercase tracking-[0.15em]">{label}</p>
             </div>
           ))}

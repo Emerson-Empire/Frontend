@@ -92,8 +92,8 @@ const CTA: React.FC = () => {
   };
 
   const fieldClass =
-    'w-full border border-gray-200 rounded-md px-4 py-3 text-[#12022A] text-[13px] outline-none focus:border-[#12022A]/50 transition-colors duration-200 bg-white';
-  const labelClass = 'text-[#12022A]/55 text-[12px] mb-1 block';
+    'w-full border border-gray-200 rounded-md px-4 py-3 text-[#12022A] text-base outline-none focus:border-[#12022A]/50 transition-colors duration-200 bg-white';
+  const labelClass = 'text-[#12022A]/55 text-[13px] mb-1 block';
 
   return (
     <section id="contact" className="px-6 py-20 bg-white sm:px-10 lg:px-16">

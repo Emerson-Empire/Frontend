@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import CountUp from '../shared/CountUp';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Emason, EmasonWebp, EmasonAvif,
@@ -29,12 +30,19 @@ const SLIDES = [
   { src: wiltord,  alt: 'Emerson Empire professional' },
 ];
 
-const StatBox: React.FC<{ value: string; label: string }> = ({ value, label }) => (
-  <div className="bg-white border border-gray-200 rounded-xl shadow-sm px-4 py-3 text-center">
-    <p className="font-bold text-[#12022A] text-[22px] leading-none">{value}</p>
-    <p className="mt-1 text-[#12022A]/55 text-[11px] leading-snug">{label}</p>
-  </div>
-);
+const StatBox: React.FC<{ value: string; label: string }> = ({ value, label }) => {
+  const match = value.match(/^([^0-9]*)([0-9]+)([^0-9]*)$/);
+  return (
+    <div className="bg-white border border-gray-200 rounded-xl shadow-sm px-4 py-3 text-center">
+      <p className="font-bold text-[#12022A] text-[22px] leading-none">
+        {match
+          ? <CountUp value={parseInt(match[2])} prefix={match[1]} suffix={match[3]} />
+          : value}
+      </p>
+      <p className="mt-1 text-[#12022A]/55 text-[11px] leading-snug">{label}</p>
+    </div>
+  );
+};
 
 const StatsSlider: React.FC = () => {
   const [current, setCurrent] = useState(0);

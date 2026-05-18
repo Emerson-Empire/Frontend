@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import CountUp from '../shared/CountUp';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Matheous, MatheousWebp, MatheousAvif,
@@ -35,14 +36,19 @@ const SLIDES = [
   },
 ];
 
-const StatBox: React.FC<{ value: string; label: string }> = ({ value, label }) => (
-  <div className="bg-white shadow-sm px-4 py-3 border border-[#12022A]/12 rounded-xl w-[50%] text-center">
-    <p className="font-bold text-[#12022A] text-[20px] leading-none">{value}</p>
-    <p className="mt-1.5 text-[#12022A]/55 text-[11px] whitespace-pre-line">
-      {label}
-    </p>
-  </div>
-);
+const StatBox: React.FC<{ value: string; label: string }> = ({ value, label }) => {
+  const m = value.match(/^([^0-9]*)([0-9]+)([^0-9]*)$/);
+  return (
+    <div className="bg-white shadow-sm px-4 py-3 border border-[#12022A]/12 rounded-xl w-[50%] text-center">
+      <p className="font-bold text-[#12022A] text-[20px] leading-none">
+        {m ? <CountUp value={parseInt(m[2])} prefix={m[1]} suffix={m[3]} /> : value}
+      </p>
+      <p className="mt-1.5 text-[#12022A]/55 text-[11px] whitespace-pre-line">
+        {label}
+      </p>
+    </div>
+  );
+};
 
 const Testimonials: React.FC = () => {
   const [current, setCurrent] = useState(0);

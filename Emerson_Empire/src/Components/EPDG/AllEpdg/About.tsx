@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import logo from "../../../assets/EPDG_LOGO.webp";
+import CountUp from '../../shared/CountUp';
 
 const About: FC = () => {
   return (
@@ -29,7 +30,12 @@ const About: FC = () => {
             { value: "95%",  label: "Success Rate", desc: "Of graduates report career advancement within 6 months of completion." },
           ].map((stat, index) => (
             <div key={index} className="bg-white shadow-[0_24px_70px_-45px_rgba(15,32,73,0.2)] p-6 border border-slate-200 rounded-[28px]">
-              <p className="mb-3 text-4xl font-extrabold text-slate-950">{stat.value}</p>
+              <p className="mb-3 text-4xl font-extrabold text-slate-950">
+                {(() => {
+                  const m = stat.value.match(/^([^0-9]*)([0-9]+)([^0-9]*)$/);
+                  return m ? <CountUp value={parseInt(m[2])} prefix={m[1]} suffix={m[3]} /> : stat.value;
+                })()}
+              </p>
               <p className="mb-3 text-slate-500 text-xs uppercase tracking-[0.22em]">{stat.label}</p>
               <p className="text-sm leading-relaxed text-slate-600">{stat.desc}</p>
             </div>

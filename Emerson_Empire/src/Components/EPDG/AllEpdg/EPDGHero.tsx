@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import poster from "../../../assets/H1.png";
+import CountUp from '../../shared/CountUp';
 
 const Hero: FC = () => {
   return (
@@ -66,7 +67,7 @@ const Hero: FC = () => {
           <div className="grid gap-5">
             <div className="gap-4 grid bg-white/10 shadow-2xl shadow-slate-950/20 backdrop-blur-xl p-6 border border-white/20 rounded-[18px]">
               <div className="text-slate-200 text-xs uppercase tracking-[0.24em]">Remote Internship</div>
-              <div className="text-5xl font-black text-white">+100</div>
+              <div className="text-5xl font-black text-white"><CountUp value={100} prefix="+" /></div>
               <p className="text-[12px] text-slate-100 leading-relaxed">
                 Remote internships with global certification of success
               </p>
@@ -74,7 +75,7 @@ const Hero: FC = () => {
 
             <div className="gap-4 grid bg-white/10 shadow-2xl shadow-slate-950/20 backdrop-blur-xl p-6 border border-white/20 rounded-[18px]">
               <div className="text-slate-200 text-xs uppercase tracking-[0.24em]">Advisory Tracks</div>
-              <div className="text-5xl font-black text-white">+20</div>
+              <div className="text-5xl font-black text-white"><CountUp value={20} prefix="+" /></div>
               <p className="text-[12px] text-slate-100 leading-relaxed">
                 Tools and advisory tracks to scale your leadership to achieve international salaries
               </p>

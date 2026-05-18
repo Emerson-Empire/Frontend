@@ -151,7 +151,7 @@ const About: React.FC = () => (
                   {value.title}
                 </h3>
            
-              <p className="text-[#F5F0E8]/75 text-[13px] leading-[1.8] tex-center">
+              <p className="text-[#F5F0E8]/75 text-[13px] leading-[1.8] text-center">
                 {value.description}
               </p>
                  </div>

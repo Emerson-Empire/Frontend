@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helena, HelenaAvif, HelenaWebp } from '../../assets';
+import CountUp from '../shared/CountUp';
 
 const Hero: React.FC = () => {
   return (
@@ -94,7 +95,7 @@ const Hero: React.FC = () => {
                   className="font-black text-[#12022A] text-[24px] leading-none"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
-                  +20
+                  <CountUp value={20} prefix="+" />
                 </span>
                 <span
                   className="text-[#12022A]/55 text-[11px] leading-tight tracking-wide"
@@ -108,7 +109,7 @@ const Hero: React.FC = () => {
                   className="font-black text-[#12022A] text-[24px] leading-none"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
-                  +100
+                  <CountUp value={100} prefix="+" />
                 </span>
                 <span
                   className="text-[#12022A]/55 text-[11px] leading-tight tracking-wide"
