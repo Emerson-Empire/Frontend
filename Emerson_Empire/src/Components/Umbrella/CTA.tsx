@@ -64,20 +64,24 @@ const CTA: React.FC = () => {
     setError('');
 
     try {
-      await axios.post(`${import.meta.env.VITE_API_URL}/api/leads`, {
-        firstName: form.firstName || null,
-        lastName: form.lastName || null,
-        fullName: form.fullName || null,
-        email: form.email,
-        phone: form.phone || null,
-        message: form.message || null,
-        serviceInterest: form.serviceInterest || null,
-        urgency: form.urgency || null,
-        intentDescription: form.intentDescription || null,
-        trackInterest: form.trackInterest || null,
-        division: division || null,
-        divisionLabel: division ? DIVISION_LABELS[division] : null,
-      });
+      await axios.post(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-consultation-email`,
+        {
+          firstName: form.firstName || null,
+          lastName: form.lastName || null,
+          fullName: form.fullName || null,
+          email: form.email,
+          phone: form.phone || null,
+          message: form.message || null,
+          serviceInterest: form.serviceInterest || null,
+          urgency: form.urgency || null,
+          intentDescription: form.intentDescription || null,
+          trackInterest: form.trackInterest || null,
+          division: division || null,
+          divisionLabel: division ? DIVISION_LABELS[division] : null,
+        },
+        { headers: { apikey: import.meta.env.VITE_SUPABASE_ANON_KEY } }
+      );
 
       setSubmitted(true);
     } catch (err) {
