@@ -3,7 +3,8 @@ import { Helmet } from "react-helmet-async";
 
 type UserType = "Intern" | "Company" | "Admin";
 
-const EMPIRE_URL = import.meta.env.VITE_EMPIRE_URL ?? "http://localhost:5173";
+// Set VITE_EMPIRE_URL in Netlify env vars — no localhost fallback
+const EMPIRE_URL = import.meta.env.VITE_EMPIRE_URL || "";
 
 const USER_TYPES: { value: UserType; label: string; icon: string }[] = [
   { value: "Intern",  label: "Intern",  icon: "🎓" },
@@ -45,12 +46,21 @@ const Login: React.FC = () => {
 
         {/* Left branding panel — desktop only */}
         <div className="hidden lg:flex flex-col justify-between bg-[#12022A] p-12 border-white/5 border-r w-[45%]">
-          <a href={EMPIRE_URL} className="group flex items-center gap-3">
-            <div className="flex justify-center items-center bg-[#4B1E91] rounded-xl w-10 h-10 font-black text-white text-lg">E</div>
-            <span className="font-bold text-[13px] text-white uppercase leading-tight tracking-wide">
-              <span className="text-slate-400">Emerson</span><br />Professional
-            </span>
-          </a>
+          {EMPIRE_URL ? (
+            <a href={EMPIRE_URL} className="group flex items-center gap-3">
+              <div className="flex justify-center items-center bg-[#4B1E91] rounded-xl w-10 h-10 font-black text-white text-lg">E</div>
+              <span className="font-bold text-[13px] text-white uppercase leading-tight tracking-wide">
+                <span className="text-slate-400">Emerson</span><br />Professional
+              </span>
+            </a>
+          ) : (
+            <div className="flex items-center gap-3">
+              <div className="flex justify-center items-center bg-[#4B1E91] rounded-xl w-10 h-10 font-black text-white text-lg">E</div>
+              <span className="font-bold text-[13px] text-white uppercase leading-tight tracking-wide">
+                <span className="text-slate-400">Emerson</span><br />Professional
+              </span>
+            </div>
+          )}
 
           <div>
             <blockquote className="mb-6 font-medium text-slate-300 text-xl leading-relaxed">
@@ -75,12 +85,12 @@ const Login: React.FC = () => {
           <div className="w-full max-w-md">
 
             {/* Mobile logo */}
-            <a href={EMPIRE_URL} className="lg:hidden flex justify-center items-center gap-3 mb-10">
+            <div className="lg:hidden flex justify-center items-center gap-3 mb-10">
               <div className="flex justify-center items-center bg-[#4B1E91] rounded-xl w-10 h-10 font-black text-white text-lg">E</div>
               <span className="font-bold text-[13px] text-white uppercase leading-tight tracking-wide">
                 <span className="text-slate-400">Emerson</span><br />Professional
               </span>
-            </a>
+            </div>
 
             <h1 className="mb-1 font-black text-white text-3xl tracking-tight">Welcome back</h1>
             <p className="mb-8 text-[14px] text-slate-400">Sign in to continue to your account</p>
@@ -173,12 +183,15 @@ const Login: React.FC = () => {
               </a>
             </p>
 
-            <p className="mt-4 text-[12px] text-slate-600 text-center">
-              ←{" "}
-              <a href={EMPIRE_URL} className="text-slate-500 hover:text-white transition">
-                Back to Emerson Empire
-              </a>
-            </p>
+            {EMPIRE_URL && (
+              <p className="mt-4 text-[12px] text-slate-600 text-center">
+                ←{" "}
+                <a href={EMPIRE_URL} className="text-slate-500 hover:text-white transition">
+                  Back to Emerson Empire
+                </a>
+              </p>
+            )}
+
           </div>
         </div>
       </div>

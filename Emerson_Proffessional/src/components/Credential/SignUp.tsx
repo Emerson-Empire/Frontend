@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import axios from "axios";
 
 type UserType = "Intern" | "Company";
 
-const EMPIRE_URL = import.meta.env.VITE_EMPIRE_URL ?? "http://localhost:5173";
+// Back-link resolved at build time — set VITE_EMPIRE_URL in Netlify env vars
+const EMPIRE_URL = import.meta.env.VITE_EMPIRE_URL || "";
 
 const SignUp: React.FC = () => {
   const [userType, setUserType] = useState<UserType>("Intern");
@@ -18,6 +18,7 @@ const SignUp: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handle = (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -25,39 +26,67 @@ const SignUp: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
+
     if (form.password !== form.confirmPassword) {
       setError("Passwords do not match.");
       return;
     }
+
+    const apiUrl = import.meta.env.VITE_API_URL;
+    if (!apiUrl) {
+      // No backend configured yet — show success stub
+      setSuccess(true);
+      return;
+    }
+
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/signup", {
-        userType,
-        userRole: userType,
-        ...form,
+      const res = await fetch(`${apiUrl}/api/signup`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userType, userRole: userType, ...form }),
       });
-      console.log(res.data);
-    } catch {
+      if (!res.ok) throw new Error(`${res.status}`);
+      setSuccess(true);
+    } catch (err) {
       setError("Signup failed. Please try again.");
+      console.error(err);
     } finally {
       setLoading(false);
     }
   };
+
+  if (success) {
+    return (
+      <div className="flex justify-center items-center bg-[#0a011a] min-h-screen">
+        <div className="p-10 rounded-2xl w-full max-w-md text-center">
+          <div className="flex justify-center items-center bg-emerald-500/10 mx-auto mb-6 rounded-full w-16 h-16 text-3xl">✓</div>
+          <h2 className="mb-3 font-black text-white text-2xl">Account created!</h2>
+          <p className="mb-8 text-slate-400 text-[14px]">Your account has been registered. You can now sign in.</p>
+          <a href="/" className="inline-block bg-[#4B1E91] hover:bg-[#3a1570] px-8 py-3.5 rounded-xl font-bold text-white text-[13px] uppercase tracking-wider transition">
+            Go to Sign In
+          </a>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex min-h-screen bg-[#0a011a]">
 
       {/* Left branding panel */}
       <div className="hidden lg:flex flex-col justify-between w-[45%] bg-[#12022A] p-12 border-r border-white/5">
-        <a href={EMPIRE_URL} className="flex items-center gap-3">
-          <div className="flex justify-center items-center bg-[#4B1E91] rounded-xl w-10 h-10 font-black text-white text-lg">E</div>
-          <span className="font-bold text-white text-[13px] leading-tight tracking-wide uppercase">
-            <span className="text-slate-400">Emerson</span><br />Professional
-          </span>
-        </a>
+        {EMPIRE_URL && (
+          <a href={EMPIRE_URL} className="flex items-center gap-3">
+            <div className="flex justify-center items-center bg-[#4B1E91] rounded-xl w-10 h-10 font-black text-white text-lg">E</div>
+            <span className="font-bold text-white text-[13px] leading-tight tracking-wide uppercase">
+              <span className="text-slate-400">Emerson</span><br />Professional
+            </span>
+          </a>
+        )}
 
         <div>
-          <p className="mb-4 text-3xl font-black leading-tight text-white">
+          <p className="mb-4 font-black text-white text-3xl leading-tight">
             Join the Global<br />
             <span className="text-[#C9A84C]">Professional Network.</span>
           </p>
@@ -69,7 +98,7 @@ const SignUp: React.FC = () => {
         <ul className="space-y-3">
           {["Verified portfolio building program", "Access to 50+ country network", "Remote-first career ecosystem"].map((f) => (
             <li key={f} className="flex items-center gap-3">
-              <span className="shrink-0 bg-[#C9A84C]/20 rounded-full w-1.5 h-1.5" />
+              <span className="flex-shrink-0 bg-[#C9A84C]/20 rounded-full w-1.5 h-1.5" />
               <span className="text-slate-400 text-[13px]">{f}</span>
             </li>
           ))}
@@ -77,22 +106,24 @@ const SignUp: React.FC = () => {
       </div>
 
       {/* Right form panel */}
-      <div className="flex items-center justify-center flex-1 px-5 py-12">
+      <div className="flex flex-1 justify-center items-center px-5 py-12">
         <div className="w-full max-w-md">
 
           {/* Mobile logo */}
-          <a href={EMPIRE_URL} className="flex items-center justify-center gap-3 mb-10 lg:hidden">
-            <div className="flex justify-center items-center bg-[#4B1E91] rounded-xl w-10 h-10 font-black text-white text-lg">E</div>
-            <span className="font-bold text-white text-[13px] leading-tight tracking-wide uppercase">
-              <span className="text-slate-400">Emerson</span><br />Professional
-            </span>
-          </a>
+          {EMPIRE_URL && (
+            <a href={EMPIRE_URL} className="flex justify-center items-center gap-3 mb-10 lg:hidden">
+              <div className="flex justify-center items-center bg-[#4B1E91] rounded-xl w-10 h-10 font-black text-white text-lg">E</div>
+              <span className="font-bold text-white text-[13px] leading-tight tracking-wide uppercase">
+                <span className="text-slate-400">Emerson</span><br />Professional
+              </span>
+            </a>
+          )}
 
-          <h1 className="mb-1 text-3xl font-black tracking-tight text-white">Create account</h1>
+          <h1 className="mb-1 font-black text-white text-3xl tracking-tight">Create account</h1>
           <p className="mb-8 text-slate-400 text-[14px]">Join the Emerson Professional platform</p>
 
           {/* Account type toggle */}
-          <div className="flex gap-1 p-1 mb-6 border bg-white/5 border-white/10 rounded-xl">
+          <div className="flex bg-white/5 mb-6 p-1 border border-white/10 rounded-xl gap-1">
             {(["Intern", "Company"] as UserType[]).map((t) => (
               <button key={t} type="button" onClick={() => { setUserType(t); setError(""); }}
                 className={`flex-1 py-2.5 rounded-lg font-semibold text-[12px] uppercase tracking-wider transition-all ${
@@ -105,7 +136,7 @@ const SignUp: React.FC = () => {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             {userType === "Intern" ? (
-              <div className="grid grid-cols-2 gap-4">
+              <div className="gap-4 grid grid-cols-2">
                 <div>
                   <label className="block mb-1.5 font-medium text-slate-400 text-[12px] uppercase tracking-wider">First name</label>
                   <input name="firstName" type="text" required autoComplete="given-name" placeholder="Jane" onChange={handle}
@@ -140,7 +171,7 @@ const SignUp: React.FC = () => {
                   placeholder="Min. 8 characters" onChange={handle}
                   className="bg-white/5 px-4 py-3 pr-16 border border-white/10 focus:border-purple-500 rounded-xl w-full text-white text-[14px] placeholder-slate-600 focus:outline-none transition" />
                 <button type="button" onClick={() => setShowPassword(!showPassword)}
-                  className="absolute text-sm transition -translate-y-1/2 top-1/2 right-4 text-slate-500 hover:text-slate-300">
+                  className="top-1/2 right-4 absolute text-slate-500 hover:text-slate-300 -translate-y-1/2 text-sm transition">
                   {showPassword ? "Hide" : "Show"}
                 </button>
               </div>
@@ -171,13 +202,14 @@ const SignUp: React.FC = () => {
 
           <p className="mt-6 text-slate-500 text-[13px] text-center">
             Already have an account?{" "}
-            <a href="/" className="font-semibold text-purple-400 transition hover:text-purple-300">Sign in</a>
+            <a href="/" className="font-semibold text-purple-400 hover:text-purple-300 transition">Sign in</a>
           </p>
 
-          <p className="mt-4 text-slate-600 text-[12px] text-center">
-            ←{" "}
-            <a href={EMPIRE_URL} className="transition text-slate-500 hover:text-white">Back to Emerson Empire</a>
-          </p>
+          {EMPIRE_URL && (
+            <p className="mt-4 text-slate-600 text-[12px] text-center">
+              ← <a href={EMPIRE_URL} className="text-slate-500 hover:text-white transition">Back to Emerson Empire</a>
+            </p>
+          )}
         </div>
       </div>
     </div>
