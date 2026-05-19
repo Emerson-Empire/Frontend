@@ -15,10 +15,10 @@ const EPDGNavbar: React.FC = () => {
   return (
     <nav
       aria-label="Main navigation"
-      className="top-0 z-50 fixed bg-[#12022A] mb-2 border-[#C9A84C]/20 border-b w-full h-25"
+      className="top-0 z-50 fixed justify-center bg-[#12022A] mb-2 border-[#C9A84C]/20 border-b w-full h-25"
    >
       {/* ── Main bar ── */}
-      <div className="flex justify-between items-center mx-auto px-4 sm:px-10 lg:px-16 w-full max-w-7xl h-16 sm:h-20">
+      <div className="flex justify-between items-center mx-auto w-full max-w-7xl h-16 sm:h-20 text-center">
 
         {/* Logo */}
         <a href="/" className="group flex items-center gap-2 active:scale-95 transition-transform duration-200 shrink-0">
@@ -40,7 +40,7 @@ const EPDGNavbar: React.FC = () => {
             <li key={link.label}>
               <a
                 href={link.href}
-                className={`text-[11px] font-semibold uppercase tracking-[0.15em] transition-colors duration-200 ${
+                className={`text-[15px] font-semibold uppercase tracking-[0.15em] transition-colors duration-200 ${
                   link.label === 'HOME' ? 'text-white' : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -54,13 +54,13 @@ const EPDGNavbar: React.FC = () => {
         <div className="hidden md:flex items-center gap-2 shrink-0">
           <a
             href="#contact"
-            className="inline-flex items-center px-4 py-2 border border-slate-600 hover:border-white rounded-md font-semibold text-[11px] text-slate-300 hover:text-white uppercase tracking-[0.15em] transition-colors duration-200"
+            className="inline-flex items-center px-4 py-2 border border-slate-600 hover:border-white rounded-md font-semibold text-[15px] text-slate-300 hover:text-white uppercase tracking-[0.15em] transition-colors duration-200"
           >
             Log In
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center bg-white hover:bg-slate-200 px-4 py-2 rounded-md font-bold text-[#081331] text-[11px] uppercase tracking-[0.15em] transition-colors duration-200"
+            className="inline-flex items-center bg-white hover:bg-slate-200 px-4 py-2 rounded-md font-bold text-[#081331] text-[15px] uppercase tracking-[0.15em] transition-colors duration-200"
           >
             Create Account
           </a>
