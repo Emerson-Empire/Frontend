@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import {  form, Step2, Step3, study, Welcome } from "../../../assets";
+import {  form,study, Welcome } from "../../../assets";
 
 const STEPS = [
   {
