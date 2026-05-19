@@ -51,9 +51,11 @@ import brunoAvif from "./bruno.avif";
 
 import hero from "./hero.png";
 import heroAvif from "./hero.avif";
-
+import study from "./study.jpeg"
+import form from "./foem.jpeg";
+import Welcome from "./EmersonEmpire (2).png"
 export {
-  Emason, EmasonWebp, EmasonAvif,
+  Emason, EmasonWebp, EmasonAvif,study,form,Welcome,
   Helena, HelenaWebp, HelenaAvif,
   Majvin, Campaign,
   Helena2, Helena2Webp, Helena2Avif,

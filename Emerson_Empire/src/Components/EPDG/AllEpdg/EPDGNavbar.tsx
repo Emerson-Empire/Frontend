@@ -18,16 +18,16 @@ const EPDGNavbar: React.FC = () => {
       className="top-0 z-50 fixed bg-[#12022A] mb-2 border-[#C9A84C]/20 border-b w-full h-25"
    >
       {/* ── Main bar ── */}
-      <div className="flex items-center justify-between w-full h-16 px-4 mx-auto sm:px-10 lg:px-16 max-w-7xl sm:h-20">
+      <div className="flex justify-between items-center mx-auto px-4 sm:px-10 lg:px-16 w-full max-w-7xl h-16 sm:h-20">
 
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2 transition-transform duration-200 group active:scale-95 shrink-0">
+        <a href="/" className="group flex items-center gap-2 active:scale-95 transition-transform duration-200 shrink-0">
           <img
             src={epdgLogo}
             alt="EPDG — Emerson Professional Development Group"
             width={44}
             height={44}
-            className="object-contain transition-transform duration-200 w-9 sm:w-11 h-9 sm:h-11 group-hover:scale-105"
+            className="w-9 sm:w-11 h-9 sm:h-11 object-contain group-hover:scale-105 transition-transform duration-200"
           />
           <p className="group-hover:opacity-80 font-bold text-[12px] text-white sm:text-[15px] leading-tight transition-opacity duration-200">
             <span className="text-slate-300">EMERSON</span><br />PROFESSIONAL
@@ -35,7 +35,7 @@ const EPDGNavbar: React.FC = () => {
         </a>
 
         {/* Desktop nav links */}
-        <ul className="items-center hidden gap-5 p-0 m-0 list-none md:flex lg:gap-7">
+        <ul className="hidden md:flex items-center gap-5 lg:gap-7 m-0 p-0 list-none">
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
               <a
@@ -51,7 +51,7 @@ const EPDGNavbar: React.FC = () => {
         </ul>
 
         {/* Desktop action buttons */}
-        <div className="items-center hidden gap-2 md:flex shrink-0">
+        <div className="hidden md:flex items-center gap-2 shrink-0">
           <a
             href="#contact"
             className="inline-flex items-center px-4 py-2 border border-slate-600 hover:border-white rounded-md font-semibold text-[11px] text-slate-300 hover:text-white uppercase tracking-[0.15em] transition-colors duration-200"
