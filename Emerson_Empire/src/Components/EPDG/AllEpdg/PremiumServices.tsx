@@ -38,25 +38,25 @@ const SERVICES = [
 const PremiumServices: FC = () => {
   return (
     <section className="py-0 overflow-hidden">
-      <div className="flex flex-col lg:flex-row min-h-[560px]">
+      <div className="flex lg:flex-row flex-col min-h-140">
 
         {/* ── Left: dark panel ── */}
-        <div className="bg-[#08142e] lg:w-1/2 px-10 py-16 lg:px-14 flex flex-col justify-center">
-          <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight mb-12">
+        <div className="flex flex-col justify-center bg-[#12022A] px-10 lg:px-14 py-16 rounded-xl lg:w-1/2">
+          <h2 className="mb-12 font-black text-[36px] text-white sm:text-4xl leading-tight">
             EPDG Premium<br />
             <span className="text-slate-300">Ecosystem Services</span>
           </h2>
 
           <div className="flex flex-col gap-8">
             {SERVICES.map((svc) => (
-              <div key={svc.title} className="flex gap-5 items-start">
+              <div key={svc.title} className="flex items-start gap-5">
                 {/* Icon badge */}
-                <div className="shrink-0 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white">
+                <div className="flex justify-center items-center bg-white/10 border border-white/20 rounded-full w-10 h-10 text-white shrink-0">
                   {svc.icon}
                 </div>
                 <div>
-                  <p className="text-white font-bold text-sm mb-1">{svc.title}</p>
-                  <p className="text-slate-400 text-xs leading-relaxed">{svc.desc}</p>
+                  <p className="mb-1 font-bold text-[28px] text-white">{svc.title}</p>
+                  <p className="text-[20px] text-slate-400 leading-relaxed">{svc.desc}</p>
                 </div>
               </div>
             ))}
@@ -64,32 +64,32 @@ const PremiumServices: FC = () => {
         </div>
 
         {/* ── Right: mockup panel ── */}
-        <div className="bg-slate-100 lg:w-1/2 relative flex flex-col items-center justify-center px-10 py-16 gap-8">
+        <div className="relative flex flex-col justify-center items-center gap-8 bg-slate-100 px-10 py-16 lg:w-1/2">
 
           {/* Device mockup */}
           <div className="relative w-full max-w-sm">
             {/* Screen frame */}
-            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-200">
+            <div className="bg-white shadow-2xl border border-slate-200 rounded-2xl overflow-hidden">
               {/* Titlebar */}
-              <div className="bg-slate-800 px-4 py-2 flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full bg-red-400" />
-                <span className="w-3 h-3 rounded-full bg-yellow-400" />
-                <span className="w-3 h-3 rounded-full bg-green-400" />
-                <div className="ml-3 flex-1 bg-slate-700 rounded h-4" />
+              <div className="flex items-center gap-2 bg-slate-800 px-4 py-2">
+                <span className="bg-red-400 rounded-full w-3 h-3" />
+                <span className="bg-yellow-400 rounded-full w-3 h-3" />
+                <span className="bg-green-400 rounded-full w-3 h-3" />
+                <div className="flex-1 bg-slate-700 ml-3 rounded h-4" />
               </div>
               {/* Screen content */}
               <div className="relative h-48 overflow-hidden">
-                <img src={img} alt="EPDG Platform" className="w-full h-full object-cover" />
+                <img src={img} alt="EPDG Platform" className="w-full h-full object-cover hover:scale-110" />
                 <div className="absolute inset-0 bg-[#08142e]/30" />
                 {/* Overlay stat card */}
-                <div className="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-sm rounded-xl p-3 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#08142e] flex items-center justify-center shrink-0">
+                <div className="right-3 bottom-3 left-3 absolute flex items-center gap-3 bg-white/90 backdrop-blur-sm p-3 rounded-xl">
+                  <div className="flex justify-center items-center bg-[#08142e] rounded-full w-8 h-8 shrink-0">
                     <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2} className="w-4 h-4">
                       <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold text-slate-800 uppercase tracking-widest">ATS Format</p>
+                    <p className="font-bold text-[10px] text-slate-800 uppercase tracking-widest">ATS Format</p>
                     <p className="text-[10px] text-slate-500">Optimized to achieve business success</p>
                   </div>
                 </div>
@@ -97,14 +97,14 @@ const PremiumServices: FC = () => {
             </div>
 
             {/* Bottom stand */}
-            <div className="mx-auto w-24 h-3 bg-slate-300 rounded-b-lg mt-0" />
-            <div className="mx-auto w-36 h-2 bg-slate-200 rounded-lg" />
+            <div className="bg-slate-300 mx-auto mt-0 rounded-b-lg w-24 h-3" />
+            <div className="bg-slate-200 mx-auto rounded-lg w-36 h-2" />
           </div>
 
           {/* CTA */}
           <a
             href="#contact"
-            className="inline-flex items-center justify-center bg-[#C9A84C] hover:bg-[#E8C97A] text-[#081331] text-[11px] font-black uppercase tracking-[0.2em] px-10 py-4 rounded-sm transition-colors duration-200 shadow-lg"
+            className="inline-flex justify-center items-center bg-[#C9A84C] hover:bg-[#E8C97A] shadow-lg px-10 py-4 rounded-sm font-black text-[#081331] text-[11px] uppercase tracking-[0.2em] transition-colors duration-200"
           >
             Get This Service
           </a>
