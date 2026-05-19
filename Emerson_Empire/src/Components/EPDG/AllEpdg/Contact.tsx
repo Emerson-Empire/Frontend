@@ -65,23 +65,23 @@ const Contact: FC = () => {
   const labelClass = "text-[#12022A]/55 text-[13px] mb-1 block";
 
   return (
-    <section id="contact" className="px-6 py-20 bg-white sm:px-10 lg:px-16">
-      <div className="max-w-5xl mx-auto">
+    <section id="contact" className="bg-white py-20 w-full">
+      <div className="mx-auto px-4 w-full">
 
         {/* Eyebrow + Heading */}
-        <div className="mb-10 text-center">
-          <p className="mb-3 font-semibold text-[#12022A]/45 text-[24px] uppercase tracking-[4px]">
+        <div className="bg-[#12022A] mb-10 px-9 w-full text-center">
+          <p className="mb-3 p-2 font-semibold text-[24px] text-white uppercase tracking-[4px]">
             Let's Connect
           </p>
-          <h2 className="mb-4 font-bold text-[#12022A] text-[56px] uppercase tracking-tight heading">
+          <h2 className="mb-4 font-bold text-[56px] text-white uppercase tracking-tight heading">
             We Want to Talk to You
           </h2>
-          <p className="text-[#12022A]/50 text-[32px] leading-[1.8]">
+          <p className="text-[20px] text-white leading-[1.8]">
             Fill out the form and we'll be in touch<br className="hidden sm:block" /> within 24 hours.
           </p>
         </div>
 
-        <div className="grid items-start grid-cols-1 gap-10 lg:gap-20 lg:grid-cols-2">
+        <div className="items-start gap-10 lg:gap-20 grid grid-cols-1 lg:grid-cols-2 shadow-[#4B1E91] shadow-sm p-4 rounded-md w-full">
 
           {/* Left text */}
           <div className="order-2 lg:order-1">
@@ -103,7 +103,7 @@ const Contact: FC = () => {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center justify-center gap-5 py-12 text-center"
+                className="flex flex-col justify-center items-center gap-5 py-12 text-center"
               >
                 <div className="flex justify-center items-center bg-[#12022A]/8 border border-[#12022A]/15 rounded-full w-14 h-14">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#12022A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -122,7 +122,7 @@ const Contact: FC = () => {
                 </button>
               </motion.div>
             ) : (
-              <div className="flex flex-col gap-4 p-6 rounded-md">
+              <div className="flex flex-col gap-4 p-6 rounded-md text-[15px]">
                 <div className="flex flex-col">
                   <label htmlFor="fullName" className={labelClass}>Full Name <span aria-hidden="true">*</span></label>
                   <input id="fullName" name="fullName" autoComplete="name" placeholder="Full Name" required aria-required="true" value={form.fullName} onChange={handleChange} className={fieldClass} />

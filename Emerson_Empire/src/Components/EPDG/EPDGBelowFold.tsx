@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from './AllEpdg/Footer';
 import GlobalNetwork from './AllEpdg/GlobalNetwork';
 import Reviews from './AllEpdg/Reviews';
-import SuccessStories from './AllEpdg/SuccessStories';
+// import SuccessStories from './AllEpdg/SuccessStories';
 import PremiumServices from './AllEpdg/PremiumServices';
 import About from './AllEpdg/About';
 import Contact from './AllEpdg/Contact';
@@ -16,7 +16,7 @@ const EPDGBelowFold: React.FC = () => {
   
   <WhoWeHelp/>
   <Howitworks/>
-  <SuccessStories/>
+  {/* <SuccessStories/> */}
   <Reviews/>
   <PremiumServices/>
   <GlobalNetwork/>
