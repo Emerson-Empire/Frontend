@@ -3,16 +3,16 @@ import Global3d from "./Global3d";
 // // Globe SVG
 // import globeSvgUrl from "../../../assets/Globe.svg";
 
-const BRAND_LOGOS: string[] = [
-  "Logoipsum",
-  "Logoipsum Brand",
-  "Logoipsum",
-  "Logoipsum Brand",
-  "Logoipsum",
-  "Logoipsum Brand",
-  "Logoipsum",
-  "Logoipsum Brand",
-];
+// const BRAND_LOGOS: string[] = [
+//   "Logoipsum",
+//   "Logoipsum Brand",
+//   "Logoipsum",
+//   "Logoipsum Brand",
+//   "Logoipsum",
+//   "Logoipsum Brand",
+//   "Logoipsum",
+//   "Logoipsum Brand",
+// ];
 
 type NetworkNode = {
   id: string;
@@ -37,31 +37,31 @@ type GlobalNetworkProps = {
   onNodeClick?: (nodeId: string) => void;
 };
 
-const LogoChip: FC<{ label: string }> = ({ label }) => (
-  <div className="inline-flex justify-center items-center bg-white shadow-sm px-6 py-4 border border-slate-200 rounded-full min-w-[220px] font-semibold text-[13px] text-slate-950 uppercase tracking-[0.18em] whitespace-nowrap">
-    {label}
-  </div>
-);
+// const LogoChip: FC<{ label: string }> = ({ label }) => (
+//   <div className="inline-flex justify-center items-center bg-white shadow-sm px-6 py-4 border border-slate-200 rounded-full min-w-55 font-semibold text-[13px] text-slate-950 uppercase tracking-[0.18em] whitespace-nowrap">
+//     {label}
+//   </div>
+// );
 
-const LogoBand: FC<{ reverse?: boolean }> = ({ reverse = false }) => (
-  <div className="bg-white/85 shadow-[0_30px_80px_-50px_rgba(15,23,42,0.18)] backdrop-blur-md py-5 border border-slate-200 rounded-[28px] w-full overflow-hidden pointer-events-auto">
-    <div className="relative px-2 overflow-hidden">
-      <div className="left-0 z-10 absolute inset-y-0 bg-gradient-to-r from-white to-transparent w-16 pointer-events-none" />
+// const LogoBand: FC<{ reverse?: boolean }> = ({ reverse = false }) => (
+//   <div className="bg-white/85 shadow-[0_30px_80px_-50px_rgba(15,23,42,0.18)] backdrop-blur-md py-5 border border-slate-200 rounded-[28px] w-full overflow-hidden pointer-events-auto">
+//     <div className="relative px-2 overflow-hidden">
+//       <div className="left-0 z-10 absolute inset-y-0 bg-linear-to-r from-white to-transparent w-16 pointer-events-none" />
 
-      <div className="right-0 z-10 absolute inset-y-0 bg-gradient-to-l from-white to-transparent w-16 pointer-events-none" />
+//       <div className="right-0 z-10 absolute inset-y-0 bg-linear-to-l from-white to-transparent w-16 pointer-events-none" />
 
-      <div
-        className={`flex items-center gap-6 whitespace-nowrap px-5 ${
-          reverse ? "animate-marquee-reverse" : "animate-marquee"
-        }`}
-      >
-        {BRAND_LOGOS.concat(BRAND_LOGOS).map((label, idx) => (
-          <LogoChip key={`${label}-${idx}`} label={label} />
-        ))}
-      </div>
-    </div>
-  </div>
-);
+//       <div
+//         className={`flex items-center gap-6 whitespace-nowrap px-5 ${
+//           reverse ? "animate-marquee-reverse" : "animate-marquee"
+//         }`}
+//       >
+//         {BRAND_LOGOS.concat(BRAND_LOGOS).map((label, idx) => (
+//           <LogoChip key={`${label}-${idx}`} label={label} />
+//         ))}
+//       </div>
+//     </div>
+//   </div>
+// );
 
 const GlobalNetwork: FC<GlobalNetworkProps> = ({ onNodeClick }) => {
   const handleNodeClick = (nodeId: string): void => {
@@ -73,16 +73,16 @@ const GlobalNetwork: FC<GlobalNetworkProps> = ({ onNodeClick }) => {
   };
 
   return (
-    <section className="relative bg-slate-950 w-full overflow-hidden h-[380px] sm:h-[440px] md:h-[500px] lg:h-[540px] xl:h-[580px]">
+    <section className="relative bg-slate-950 w-full h-95 sm:h-110 md:h-135 lg:h-145 xl:h-145 overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 opacity-30">
-        <div className="top-[-20%] left-[-10%] absolute bg-blue-500 blur-3xl rounded-full w-[600px] h-[600px] animate-blob" />
+        <div className="top-[-20%] left-[-10%] absolute bg-blue-500 blur-3xl rounded-full w-150 h-150 animate-blob" />
 
-        <div className="right-[-10%] bottom-[-20%] absolute bg-purple-500 blur-3xl rounded-full w-[600px] h-[600px] animate-blob animation-delay-2000" />
+        <div className="right-[-10%] bottom-[-20%] absolute bg-purple-500 blur-3xl rounded-full w-150 h-150 animate-blob animation-delay-2000" />
       </div>
 
       {/* Grid Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-position[60px_60px]" />
 
       <div className="z-10 relative w-full h-full">
      
@@ -131,7 +131,7 @@ const GlobalNetwork: FC<GlobalNetworkProps> = ({ onNodeClick }) => {
           >
             <span className="absolute inset-0 bg-blue-500 rounded-full" />
 
-            <span className="absolute inset-[-8px] opacity-60 border border-blue-400 rounded-full" />
+            <span className="absolute inset-2 opacity-60 border border-blue-400 rounded-full" />
           </button>
         ))}
       </div>
