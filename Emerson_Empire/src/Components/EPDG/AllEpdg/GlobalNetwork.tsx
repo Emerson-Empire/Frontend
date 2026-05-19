@@ -73,7 +73,7 @@ const GlobalNetwork: FC<GlobalNetworkProps> = ({ onNodeClick }) => {
   };
 
   return (
-    <section className="relative bg-slate-950 py-16 w-full overflow-hidden">
+    <section className="relative bg-slate-950 w-full overflow-hidden h-[380px] sm:h-[440px] md:h-[500px] lg:h-[540px] xl:h-[580px]">
       {/* Animated Background */}
       <div className="absolute inset-0 opacity-30">
         <div className="top-[-20%] left-[-10%] absolute bg-blue-500 blur-3xl rounded-full w-[600px] h-[600px] animate-blob" />
@@ -84,35 +84,22 @@ const GlobalNetwork: FC<GlobalNetworkProps> = ({ onNodeClick }) => {
       {/* Grid Overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
-      <div
-        className="z-10 relative mx-auto w-full"
-        style={{
-          aspectRatio: "1356 / 1543",
-          maxWidth: "1356px",
-        }}
-      >
-        {/* Globe */}
-        {/* <img
-          src={globeSvgUrl}
-          alt="Global Network — The Emerson Empire"
-          className="absolute inset-0 w-full h-full animate-globe-float select-none"
-          draggable={false}
-        /> */}
+      <div className="z-10 relative w-full h-full">
+     
         <div className="absolute inset-0">
   <Global3d/>
 </div>
 
         {/* Heading */}
         <div
-          className="left-1/2 z-20 absolute -translate-x-1/2 -translate-y-1/2"
-          style={{ top: "27%" }}
+          className="top-8 left-1/2 z-20 absolute -translate-x-1/2"
         >
           <div className="bg-slate-950/90 shadow-[0_10px_30px_-10px_rgba(15,23,42,0.55)] backdrop-blur-md px-7 py-3 border border-white/10 rounded-md font-bold text-[13px] text-white uppercase tracking-[0.14em] whitespace-nowrap">
             GLOBAL NETWORK - THE EMERSON EMPIRE
           </div>
         </div>
 
-        {/* Logo Bands */}
+        {/* Logo Bands
         <div
           className="right-0 left-0 z-10 absolute px-4 sm:px-8"
           style={{ top: "60%" }}
@@ -125,7 +112,7 @@ const GlobalNetwork: FC<GlobalNetworkProps> = ({ onNodeClick }) => {
           style={{ top: "80%" }}
         >
           <LogoBand reverse />
-        </div>
+        </div> */}
 
         {/* Network Nodes */}
         {NETWORK_NODES.map((node) => (

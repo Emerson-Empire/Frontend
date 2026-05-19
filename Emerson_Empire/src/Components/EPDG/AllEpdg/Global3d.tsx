@@ -2,9 +2,7 @@ import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Sphere, OrbitControls, useTexture, Stars } from "@react-three/drei";
 import * as THREE from "three";
-
-const EARTH_TEXTURE =
-  "https://cdn.jsdelivr.net/npm/three-globe@2.31.2/example/img/earth-blue-marble.jpg";
+import earthTextureUrl from "../../../assets/earth-texture.jpg";
 
 const CITIES = [
   { lat: 40.7, lon: -74.0 },   // New York
@@ -68,7 +66,7 @@ function PulsingDot({
 
 function EarthGlobe() {
   const groupRef = useRef<THREE.Group>(null);
-  const texture = useTexture(EARTH_TEXTURE);
+  const texture = useTexture(earthTextureUrl);
 
   useFrame(() => {
     if (groupRef.current) {
