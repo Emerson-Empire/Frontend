@@ -53,25 +53,25 @@ const Reviews: FC = () => {
   const person = PEOPLE[active];
 
   return (
-    <section id="reviews" className="py-20 overflow-hidden bg-gray-50">
-      <div className="px-6 mx-auto sm:px-8 max-w-screen-7xl">
+    <section id="reviews" className="bg-gray-50 py-20 overflow-hidden">
+      <div className="mx-auto px-6 sm:px-8 max-w-screen-7xl">
 
         {/* Header */}
-        <div className="max-w-2xl mx-auto mb-16 text-center">
-          <h2 className="text-5xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-6xl">
+        <div className="bg-[#12022A] mb-14 rounded-2xl text-center">
+          <h2 className="font-extrabold text-[56px] text-white sm:text-6xl leading-tight tracking-tight">
             Our track record of success
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-500 sm:text-lg">
+          <p className="mt-4 text-slate-500 text-base sm:text-lg leading-relaxed">
             From internship programs to global professional development
           </p>
         </div>
 
         {/* Carousel */}
-        <div className="relative max-w-5xl mx-auto mb-10">
-          <div className="absolute inset-x-0 -translate-y-1/2 rounded-full pointer-events-none top-1/2 bg-slate-200/40 blur-3xl h-95" />
+        <div className="relative mx-auto mb-10 max-w-5xl">
+          <div className="top-1/2 absolute inset-x-0 bg-slate-200/40 blur-3xl rounded-full h-95 -translate-y-1/2 pointer-events-none" />
 
           {/* Cards — C-arc: active at far right, others curve left & down */}
-          <div className="relative flex items-end justify-center min-h-95">
+          <div className="relative flex justify-center items-end min-h-95">
             {PEOPLE.map((p, idx) => {
               // slot 0 = active, slot 1,2,3 = next in sequence
               const slot = (idx - active + total) % total;
@@ -82,7 +82,7 @@ const Reviews: FC = () => {
                 <div
                   key={p.name}
                   onClick={() => setActive(idx)}
-                  className="absolute bottom-0 overflow-hidden transition-all duration-500 ease-out cursor-pointer rounded-3xl w-50 h-95"
+                  className="bottom-0 absolute rounded-3xl w-50 h-95 overflow-hidden transition-all duration-500 ease-out cursor-pointer"
                   style={{
                     transform,
                     zIndex: ARC_SLOTS.length - slot,
@@ -92,24 +92,24 @@ const Reviews: FC = () => {
                       : "0 20px 50px -30px rgba(15,32,73,0.15)",
                   }}
                 >
-                  <img src={p.image} alt={p.name} className="object-cover w-full h-full" />
+                  <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
                 </div>
               );
             })}
           </div>
 
           {/* Arrows — below the arc */}
-          <div className="relative z-20 flex justify-center gap-4 mt-6">
+          <div className="z-20 relative flex justify-center gap-4 mt-6">
             <button
               onClick={prev}
-              className="grid w-12 h-12 text-white transition rounded-full shadow-lg place-items-center bg-slate-950 hover:bg-slate-700"
+              className="place-items-center grid bg-slate-950 hover:bg-slate-700 shadow-lg rounded-full w-12 h-12 text-white transition"
               type="button" aria-label="Previous"
             >
               &larr;
             </button>
             <button
               onClick={next}
-              className="grid w-12 h-12 text-white transition rounded-full shadow-lg place-items-center bg-slate-950 hover:bg-slate-700"
+              className="place-items-center grid bg-slate-950 hover:bg-slate-700 shadow-lg rounded-full w-12 h-12 text-white transition"
               type="button" aria-label="Next"
             >
               &rarr;
@@ -119,12 +119,12 @@ const Reviews: FC = () => {
 
         {/* Name + title */}
         <div className="mb-4 text-center">
-          <p className="text-2xl font-black text-slate-950">{person.name}</p>
-          <p className="mt-1 text-sm text-slate-500">{person.title}</p>
+          <p className="font-black text-slate-950 text-2xl">{person.name}</p>
+          <p className="mt-1 text-slate-500 text-sm">{person.title}</p>
         </div>
 
         {/* Quote */}
-        <p className="max-w-2xl mx-auto mb-10 text-sm leading-relaxed text-center text-slate-600 sm:text-base">
+        <p className="mx-auto mb-10 max-w-2xl text-slate-600 text-sm sm:text-base text-center leading-relaxed">
           {person.quote}
         </p>
 

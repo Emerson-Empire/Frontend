@@ -36,8 +36,8 @@ export default function SuccessStories() {
 
         {/* ── Header ── */}
         <div className="bg-[#12022A] mb-14 rounded-2xl text-center">
-          <p className="mb-3 font-bold text-[#0f5f5f] text-[20px] uppercase tracking-[0.25em]">
-            Success Stories
+          <p className="mb-3 font-bold text-[#0f5f5f] text-[15px] uppercase tracking-[0.25em]">
+            ----Success Stories---
           </p>
           <h2 className="p-2.5 font-black text-[36px] text-white sm:text-5xl leading-tight">
             From Our Community

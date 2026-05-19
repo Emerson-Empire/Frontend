@@ -32,7 +32,7 @@ const Howitworks: FC = () => {
 
         {/* Header */}
         <div className="mb-14 rounded-md w-full text-center P-10">
-          <h2 className="mb-4 font-black text-slate-950">
+          <h2 className="mb-4 font-black text-[36px] text-slate-950">
             How it works....
           </h2>
           <p className="mx-auto max-w-2xl text-[20px] text-slate-500 leading-relaxed">

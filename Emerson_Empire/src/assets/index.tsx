@@ -59,7 +59,7 @@ import meeting from './meetings.png';
 import Adaobi from "./Adaobi Celestina Oramife .png"
 import Jonathan from "./jonathan.jpeg"
 import Khaishawn from "./Khaishawn.jpeg"
-import Hosea2 from "./Hosea.jpeg"
+import Hosea2 from "./Hosea.png"
 
 export {
   Emason, EmasonWebp, EmasonAvif,study,Jonathan,Hosea2,Khaishawn,form,Welcome,development,meeting,Adaobi,
