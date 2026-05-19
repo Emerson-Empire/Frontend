@@ -7,10 +7,10 @@ import {
   User,
   ChevronRight,
   CheckCircle2,
-  Menu,
+  // Menu,
 } from "lucide-react";
 
-import { useGlobalStore } from "../store/global";
+// import { useGlobalStore } from "../store/global";
 
 const roadmapSteps = [
   {
@@ -44,7 +44,7 @@ const successStories = [1, 2, 3];
 const Mobile: React.FC = () => {
   const [activeNav, setActiveNav] = useState("Home");
 
-  const { user } = useGlobalStore();
+  // const { user } = useGlobalStore();
 
   const navigationItems = [
     {
@@ -169,7 +169,7 @@ const Mobile: React.FC = () => {
             {[1, 2, 3].map((item) => (
               <div
                 key={item}
-                className="flex-shrink-0 bg-white p-5 border border-gray-200 rounded-3xl min-w-[260px] snap-start"
+                className="bg-white p-5 border border-gray-200 rounded-3xl min-w-65 snap-start shrink-0"
               >
                 <div className="flex justify-center items-center bg-gray-200 mb-5 rounded-2xl w-12 h-12 font-bold">
                   0{item}
@@ -202,7 +202,7 @@ const Mobile: React.FC = () => {
             {roadmapSteps.map((step) => (
               <div
                 key={step.id}
-                className="flex-shrink-0 bg-white p-5 border border-gray-200 rounded-3xl min-w-[220px] snap-start"
+                className="bg-white p-5 border border-gray-200 rounded-3xl min-w-55 snap-start shrink-0"
               >
                 <div className="flex justify-center items-center bg-gray-200 mb-5 rounded-xl w-10 h-10 font-bold">
                   {step.id}
@@ -287,7 +287,7 @@ const Mobile: React.FC = () => {
             {successStories.map((item) => (
               <div
                 key={item}
-                className="flex-shrink-0 bg-white p-4 border border-gray-200 rounded-3xl min-w-[260px] snap-start"
+                className="bg-white p-4 border border-gray-200 rounded-3xl min-w-65 snap-start shrink-0"
               >
                 <div className="bg-gray-200 mb-4 rounded-2xl h-40" />
 

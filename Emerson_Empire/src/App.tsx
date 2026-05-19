@@ -2,6 +2,7 @@ import './App.css'
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './Components/MainRender/EmpireLanding';
+import Discovery from './Components/MainRender/Discovery';
 
 // Other pages are lazy — they benefit from code splitting since they're never
 // visited on the same session as the home page.
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/agency" element={<Agency />} />
           <Route path="/epdg" element={<ProfessionalDevelopment />} />
+          <Route path="/discovery" element={<Discovery />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

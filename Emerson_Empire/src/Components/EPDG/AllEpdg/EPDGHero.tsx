@@ -2,11 +2,13 @@ import type { FC } from "react";
 import { useEffect, useRef } from "react";
 import poster from "../../../assets/H1.png";
 import CountUp from '../../shared/CountUp';
+import { useNavigate } from "react-router-dom";
 
 const Hero: FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
+ 
+  const navigate =useNavigate()
+ useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
     video.src = "/videos/hero-epdg.mp4";
@@ -75,7 +77,7 @@ const Hero: FC = () => {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              <button className="bg-[#4B1E91] hover:bg-white/10 px-4 sm:px-5 py-2.5 sm:py-3 border border-white/30 rounded-lg font-semibold text-[10px] text-white sm:text-[11px] uppercase tracking-[0.18em] transition cursor-pointer">
+              <button  onClick={() =>navigate('/discovery')} className="bg-[#4B1E91] hover:bg-white/10 px-4 sm:px-5 py-2.5 sm:py-3 border border-white/30 rounded-lg font-semibold text-[10px] text-white sm:text-[11px] uppercase tracking-[0.18em] transition cursor-pointer">
                 Build My Global Portfolio
               </button>
               <button className="bg-white hover:bg-white/10 px-4 sm:px-5 py-2.5 sm:py-3 border border-white/30 rounded-lg font-semibold text-[#0f2049] text-[10px] sm:text-[11px] hover:text-white uppercase tracking-[0.18em] transition cursor-pointer">
