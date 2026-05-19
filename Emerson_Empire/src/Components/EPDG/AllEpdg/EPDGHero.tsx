@@ -1,27 +1,48 @@
 import type { FC } from "react";
+import { useEffect, useRef } from "react";
 import poster from "../../../assets/H1.png";
 import CountUp from '../../shared/CountUp';
 
 const Hero: FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.src = "/videos/hero-epdg.mp4";
+    video.load();
+    video.play().catch(() => {});
+  }, []);
+
   return (
     <section
       id="program"
-      className="relative shadow-[#4B1E91] shadow-md m-3 sm:m-6 pt-5 border border-white/20 rounded-[28px] overflow-hidden text-white"
+      className="relative shadow-[#4B1E91] shadow-md sm:m-6 mx-1 mt-3 -mb-20 pt-5 border border-white/20 rounded-[28px] overflow-hidden text-white"
     >
       {/* ── Video background ── */}
       <div className="absolute inset-0">
+        {/* High-priority img is the real LCP element — browser detects & fetches it immediately */}
+      <img
+  src={poster}
+  alt=""
+  aria-hidden="true"
+  fetchPriority="high"
+  decoding="async"
+  className="absolute inset-0 w-full h-full object-center object-cover"
+/>
         <video
-          autoPlay
+          ref={videoRef}
           muted
           loop
           playsInline
-          poster={poster}
-          className="m-1 w-full h-full object-center object-cover shaow-md"
+          preload="metadata"
+          className="absolute inset-0 opacity-0 w-full h-full object-center object-cover transition-opacity duration-700"
+          onCanPlay={(e) => { (e.currentTarget as HTMLVideoElement).style.opacity = '1'; }}
         >
-          <source src="/videos/hero-epdg.mp4" type="video/mp4" />
+          {/* src injected after mount — keeps video bytes off the critical path */}
         </video>
 
-        {/* Dark overlay so text stays readable over the video */}
+        {/* Dark overlay so text stays readable */}
         <div className="absolute inset-0 bg-[#07101f]/60" />
       </div>
 

@@ -1,33 +1,33 @@
 import type { FC } from "react";
 import { useState } from "react";
-import { Vincent, Malik, Hosea, Matheous } from "../../../assets";
+import { Malik, wiltord, lidi, sales } from "../../../assets";
 
 const PEOPLE = [
   {
-    name: "Javier Valdez",
+    name: "Wiltord Kamdem",
     title: "Web Dev Intern",
-    image: Vincent,
+    image: wiltord,
     quote:
       "I sent dozens of CVs and got zero replies because I had 'no experience.' EPDG ended that cycle. Their remote internship with portfolio building gave me real campaigns to show, not just theory. I stopped feeling like an impostor and started earning in USD. If you're tired of being ignored, this is your way out.",
   },
   {
-    name: "Mali",
+    name: "Malik Muhammad",
     title: "Growth Intern",
     image: Malik,
     quote:
       "EPDG gave me a framework I couldn't find anywhere else. Within weeks I had a portfolio that actually reflected my skills. I went from being ignored to getting real interviews with global companies.",
   },
   {
-    name: "Hosea",
-    title: "Remote Associate",
-    image: Hosea,
+    name: "Rogers Otkhanje",
+    title: "Sales an Marketig",
+    image: sales,
     quote:
-      "The leadership development track changed how I see my career. I stopped thinking locally and started positioning myself for international roles. The results spoke for themselves.",
+      "The marketing and sales development track changed how I see my career. I stopped thinking locally and started positioning myself for international markets, global clients, and bigger opportunities. The results spoke for themselves.",
   },
   {
-    name: "Matheus",
+    name: "Lidi Nehmen",
     title: "Leadership Fellow",
-    image: Matheous,
+    image: lidi,
     quote:
       "This program is the real deal. The advisory tracks and mentorship helped me break my income ceiling. I now lead a remote team across three time zones and it started here.",
   },
@@ -119,12 +119,12 @@ const Reviews: FC = () => {
 
         {/* Name + title */}
         <div className="mb-4 text-center">
-          <p className="font-black text-slate-950 text-2xl">{person.name}</p>
-          <p className="mt-1 text-slate-500 text-sm">{person.title}</p>
+          <p className="font-black text-[28px] text-slate-950">{person.name}</p>
+          <p className="mt-1 text-[20px] text-slate-500">{person.title}</p>
         </div>
 
         {/* Quote */}
-        <p className="mx-auto mb-10 max-w-2xl text-slate-600 text-sm sm:text-base text-center leading-relaxed">
+        <p className="mx-auto mb-10 max-w-2xl text-[20px] text-slate-600 text-center leading-relaxed">
           {person.quote}
         </p>
 
@@ -132,13 +132,13 @@ const Reviews: FC = () => {
         <div className="flex flex-wrap justify-center gap-4">
           <a
             href="#contact"
-            className="inline-flex justify-center items-center bg-[#081331] hover:bg-[#0f2049] px-8 py-4 rounded-lg font-bold text-[11px] text-white uppercase tracking-[0.2em] transition-colors duration-200"
+            className="inline-flex justify-center items-center bg-[#4B1E91] hover:bg-white hover:shadow-md px-8 py-4 rounded-lg font-bold text-[11px] text-white hover:text-slate-700 uppercase tracking-[0.2em] hover:scale-110 transition-colors duration-200"
           >
             Start Building My Portfolio
           </a>
           <a
             href="#program"
-            className="inline-flex justify-center items-center px-8 py-4 border-2 border-slate-300 hover:border-slate-400 rounded-lg font-bold text-[11px] text-slate-700 uppercase tracking-[0.2em] transition-colors duration-200"
+            className="inline-flex justify-center items-center hover:bg-[#4B1E91] px-8 py-4 border-2 border-slate-300 hover:border-slate-400 rounded-lg font-bold text-[11px] text-slate-700 hover:text-white uppercase tracking-[0.2em] hover:scale-110 transition-colors duration-200"
           >
             Scale to Global Leadership
           </a>

@@ -73,7 +73,7 @@ const GlobalNetwork: FC<GlobalNetworkProps> = ({ onNodeClick }) => {
   };
 
   return (
-    <section className="relative bg-slate-950 w-full h-95 sm:h-110 md:h-135 lg:h-145 xl:h-145 overflow-hidden">
+    <section className="relative bg-slate-950 mt-7 rounded-md w-full h-95 sm:h-110 md:h-135 lg:h-145 xl:h-145 overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 opacity-30">
         <div className="top-[-20%] left-[-10%] absolute bg-blue-500 blur-3xl rounded-full w-150 h-150 animate-blob" />
@@ -99,20 +99,7 @@ const GlobalNetwork: FC<GlobalNetworkProps> = ({ onNodeClick }) => {
           </div>
         </div>
 
-        {/* Logo Bands
-        <div
-          className="right-0 left-0 z-10 absolute px-4 sm:px-8"
-          style={{ top: "60%" }}
-        >
-          <LogoBand />
-        </div>
-
-        <div
-          className="right-0 left-0 z-10 absolute px-4 sm:px-8"
-          style={{ top: "80%" }}
-        >
-          <LogoBand reverse />
-        </div> */}
+   
 
         {/* Network Nodes */}
         {NETWORK_NODES.map((node) => (

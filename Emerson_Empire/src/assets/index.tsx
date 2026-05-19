@@ -60,9 +60,11 @@ import Adaobi from "./Adaobi Celestina Oramife .png"
 import Jonathan from "./jonathan.jpeg"
 import Khaishawn from "./Khaishawn.jpeg"
 import Hosea2 from "./Hosea.png"
+import lidi from "./lidi.png";
+import sales from "./sales.png";
 
 export {
-  Emason, EmasonWebp, EmasonAvif,study,Jonathan,Hosea2,Khaishawn,form,Welcome,development,meeting,Adaobi,
+  Emason, EmasonWebp, sales,EmasonAvif,lidi,study,Jonathan,Hosea2,Khaishawn,form,Welcome,development,meeting,Adaobi,
   Helena, HelenaWebp, HelenaAvif,
   Majvin, Campaign,
   Helena2, Helena2Webp, Helena2Avif,

@@ -4,17 +4,17 @@ import CountUp from '../../shared/CountUp';
 
 const About: FC = () => {
   return (
-    <section id="about-us" className="py-16 text-white bg-slate-50">
-      <div className="items-start gap-12 grid xl:grid-cols-[1.1fr_0.9fr] mx-auto px-6 sm:px-8 max-w-screen-7xl">
-        <div className="bg-[#08142e] shadow-[0_40px_120px_-70px_rgba(0,0,0,0.7)] p-10 border border-white/10 rounded-[20px]">
-          <p className="mb-6 font-bold text-slate-300 text-4xl tracking-[0.32em]">About Us</p>
+    <section id="about-us" className="bg-slate-50 py-16 text-white">
+      <div className="items-start gap-12 grid xl:grid-cols-[1.1fr_0.9fr] mx-auto px-2 max-w-screen-7xl">
+        <div className="bg-[#12022A] shadow-[0_40px_120px_-70px_rgba(0,0,0,0.7)] p-10 border border-white/10 rounded-[20px] w-full">
+          <p className="mb-6 font-bold text-[40px] text-slate-300 tracking-[0.32em]">About Us</p>
           <div className="flex justify-center mb-6">
-            <img src={logo} alt="Brand Logo" className="object-contain w-28 h-28" />
+            <img src={logo} alt="Brand Logo" className="w-28 h-28 object-contain" />
           </div>
-          <h2 className="mb-6 text-3xl font-black leading-tight text-white">
+          <h2 className="mb-6 font-black text-white text-3xl leading-tight">
             Building the Next Generation of Global Leaders.
           </h2>
-          <p className="mb-8 text-sm leading-relaxed text-slate-300">
+          <p className="mb-8 text-[20px] text-slate-300 text-sm leading-relaxed">
             Part of the prestigious The Emerson Empire, EPDG is the definitive accelerator for ambitious talent. We specialize in elite leadership development for remote professionals and a specialized remote internship with portfolio building program. Our mission is clear: transforming academic knowledge into verifiable global success and six-figure career trajectories.
           </p>
           <button className="flex justify-center bg-white hover:bg-slate-300 shadow-lg shadow-slate-950/10 mx-auto px-11 py-5 rounded-lg font-bold text-[#081331] text-[11px] uppercase tracking-[0.18em] transition cursor-pointer">
@@ -22,7 +22,7 @@ const About: FC = () => {
           </button>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="gap-5 grid sm:grid-cols-2">
           {[
             { value: "+100", label: "Interns", desc: "Remote interns placed in global roles with verified portfolio results." },
             { value: "+20",  label: "Programs", desc: "Specialized tracks covering leadership, tech, business, and finance." },
@@ -30,14 +30,14 @@ const About: FC = () => {
             { value: "95%",  label: "Success Rate", desc: "Of graduates report career advancement within 6 months of completion." },
           ].map((stat, index) => (
             <div key={index} className="bg-white shadow-[0_24px_70px_-45px_rgba(15,32,73,0.2)] p-6 border border-slate-200 rounded-[28px]">
-              <p className="mb-3 text-4xl font-extrabold text-slate-950">
+              <p className="mb-3 font-extrabold text-slate-950 text-4xl">
                 {(() => {
                   const m = stat.value.match(/^([^0-9]*)([0-9]+)([^0-9]*)$/);
                   return m ? <CountUp value={parseInt(m[2])} prefix={m[1]} suffix={m[3]} /> : stat.value;
                 })()}
               </p>
               <p className="mb-3 text-slate-500 text-xs uppercase tracking-[0.22em]">{stat.label}</p>
-              <p className="text-sm leading-relaxed text-slate-600">{stat.desc}</p>
+              <p className="text-[18px] text-slate-600 leading-relaxed">{stat.desc}</p>
             </div>
           ))}
         </div>
