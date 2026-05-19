@@ -27,11 +27,11 @@ const STEPS = [
 
 const Howitworks: FC = () => {
   return (
-    <section className="bg-white px-6 sm:px-10 lg:px-16 py-20">
-      <div className="mx-auto max-w-screen-7xl">
+    <section className="bg-white shadow-sm m-auto px-4 py-10 rounded-md w-[95%]">
+      <div className="mx-auto w-full max-w-screen-7xl">
 
         {/* Header */}
-        <div className="mb-14 text-center">
+        <div className="mb-14 rounded-md w-full text-center P-10">
           <h2 className="mb-4 font-black text-slate-950">
             How it works....
           </h2>
@@ -58,14 +58,14 @@ const Howitworks: FC = () => {
 
               {/* Number + title */}
               <div className="flex items-start gap-4">
-                <span className="font-black text-slate-200 text-5xl leading-none select-none">
+                <span className="opacity-70 font-black text-[#4B1E91] text-5xl leading-none select-none">
                   {step.number}
                 </span>
                 <div>
                   <h3 className="mb-2 font-black text-slate-950 text-lg">
                     {step.title}
                   </h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">
+                  <p className="text-[20px] text-slate-500 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -78,13 +78,13 @@ const Howitworks: FC = () => {
         <div className="flex flex-wrap justify-center gap-4">
           <a
             href="#contact"
-            className="inline-flex justify-center items-center bg-[#081331] hover:bg-[#0f2049] px-8 py-4 rounded-lg font-bold text-[11px] text-white uppercase tracking-[0.2em] transition-colors duration-200"
+            className="inline-flex justify-center items-center bg-[#12022A] hover:bg-[#4B1E91] px-8 py-4 rounded-lg font-bold text-[11px] text-white uppercase tracking-[0.2em] hover:scale-110 transition-colors duration-200"
           >
             Create an account
           </a>
           <a
             href="#program"
-            className="inline-flex justify-center items-center px-8 py-4 border-2 border-slate-300 hover:border-slate-400 rounded-lg font-bold text-[11px] text-slate-700 uppercase tracking-[0.2em] transition-colors duration-200"
+            className="inline-flex justify-center items-center hover:bg-[#4B1E91] px-8 py-4 border-2 border-slate-300 hover:border-slate-400 rounded-lg font-bold text-[11px] text-slate-700 hover:text-white uppercase tracking-[0.2em] hover:scale-110 transition-colors duration-200"
           >
             Learn More
           </a>

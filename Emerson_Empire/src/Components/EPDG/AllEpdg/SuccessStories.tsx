@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
-import { Vincent, Malik, Hosea, Matheous, Helena } from "../../../assets";
+import {   Matheous, Adaobi, Jonathan, Khaishawn, Hosea2 } from "../../../assets";
 
 const CARDS = [
-  { name: "Javier Valdez", title: "Web Dev Intern",       image: Vincent  },
-  { name: "Jane Doe",      title: "UI Designer",          image: Helena   },
-  { name: "Mali",          title: "Growth Intern",        image: Malik    },
-  { name: "Hosea",         title: "Remote Associate",     image: Hosea    },
+  { name: "Adaobi Elestina Oramife", title: "Sales & Business Development", image: Adaobi  },
+  { name: "Jonathan",      title: "Web Developer ",image:Jonathan   },
+  { name: "Khaishawn",          title: "Social Media",        image: Khaishawn  },
+  { name: "Hosea",         title: "Web Developer",     image: Hosea2    },
   { name: "Matheus",       title: "Leadership Fellow",    image: Matheous },
 ];
 
@@ -31,21 +31,21 @@ export default function SuccessStories() {
   }));
 
   return (
-    <section className="py-20 bg-slate-50 overflow-hidden">
-      <div className="max-w-screen-xl mx-auto px-4">
+    <section className="bg-slate-50 py-20 overflow-hidden">
+      <div className="shadow-md mx-1 px-4 py-2 max-w-screen-7xl">
 
         {/* ── Header ── */}
-        <div className="text-center mb-14">
-          <p className="text-[#0f5f5f] text-[11px] font-bold uppercase tracking-[0.25em] mb-3">
+        <div className="bg-[#12022A] mb-14 rounded-2xl text-center">
+          <p className="mb-3 font-bold text-[#0f5f5f] text-[20px] uppercase tracking-[0.25em]">
             Success Stories
           </p>
-          <h2 className="text-4xl sm:text-5xl font-black text-slate-950 leading-tight">
+          <h2 className="p-2.5 font-black text-[36px] text-white sm:text-5xl leading-tight">
             From Our Community
           </h2>
         </div>
 
         {/* ── Carousel row ── */}
-        <div className="relative flex items-center justify-center gap-0">
+        <div className="relative flex justify-center items-center gap-0">
 
           {slots.map(({ offset, card }) => {
             const isCenter = offset === 0;
@@ -54,7 +54,7 @@ export default function SuccessStories() {
               <div
                 key={card.name + offset}
                 onClick={() => !isCenter && (offset === -1 ? prev() : next())}
-                className="relative flex-shrink-0 transition-all duration-500 ease-out"
+                className="relative transition-all duration-500 ease-out shrink-0"
                 style={{
                   width:   isCenter ? 260 : 200,
                   height:  isCenter ? 340 : 280,
@@ -70,7 +70,7 @@ export default function SuccessStories() {
               >
                 {/* Card body */}
                 <div
-                  className={`w-full h-full rounded-[24px] overflow-hidden relative transition-all duration-500
+                  className={`w-full h-full rounded-3xl overflow-hidden relative transition-all duration-500
                     ${isCenter
                       ? "bg-[#0d3d3d] shadow-[0_40px_80px_-30px_rgba(13,61,61,0.45)]"
                       : "bg-slate-200 opacity-70"
@@ -79,13 +79,13 @@ export default function SuccessStories() {
                   <img
                     src={card.image}
                     alt={card.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover hover:scale-110"
                     style={{ opacity: isCenter ? 0.92 : 0.6 }}
                   />
 
                   {/* Gradient overlay on center card */}
                   {isCenter && (
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0d3d3d]/80 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-[#0d3d3d]/80 via-transparent to-transparent" />
                   )}
                 </div>
               </div>
@@ -94,9 +94,9 @@ export default function SuccessStories() {
         </div>
 
         {/* ── Active card info ── */}
-        <div className="text-center mt-8">
-          <p className="text-xl font-black text-slate-950">{CARDS[active].name}</p>
-          <p className="text-sm text-slate-500 mt-1">{CARDS[active].title}</p>
+        <div className="mt-8 text-center">
+          <p className="font-black text-slate-950 text-xl">{CARDS[active].name}</p>
+          <p className="mt-1 text-slate-500 text-sm">{CARDS[active].title}</p>
         </div>
 
         {/* ── Dot indicators ── */}
@@ -120,7 +120,7 @@ export default function SuccessStories() {
           <button
             onClick={prev}
             aria-label="Previous"
-            className="w-14 h-14 rounded-full border-2 border-slate-200 bg-white hover:bg-[#0d3d3d] hover:border-[#0d3d3d] hover:text-white text-slate-700 grid place-items-center shadow-md transition-all duration-200 text-lg font-bold"
+            className="place-items-center grid bg-white hover:bg-[#0d3d3d] shadow-md border-2 border-slate-200 hover:border-[#0d3d3d] rounded-full w-14 h-14 font-bold text-slate-700 hover:text-white text-lg transition-all duration-200"
           >
             ←
           </button>
@@ -129,7 +129,7 @@ export default function SuccessStories() {
           <button
             onClick={next}
             aria-label="Next"
-            className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#0d3d3d] shadow-md hover:scale-110 transition-transform duration-200"
+            className="shadow-md border-[#0d3d3d] border-2 rounded-full w-14 h-14 overflow-hidden hover:scale-110 transition-transform duration-200"
           >
             <img
               src={CARDS[wrap(active + 1, total)].image}

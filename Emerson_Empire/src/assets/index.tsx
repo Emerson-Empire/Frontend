@@ -56,8 +56,13 @@ import form from "./foem.jpeg";
 import Welcome from "./EmersonEmpire (2).png"
 import development from "./develpment.png";
 import meeting from './meetings.png';
+import Adaobi from "./Adaobi Celestina Oramife .png"
+import Jonathan from "./jonathan.jpeg"
+import Khaishawn from "./Khaishawn.jpeg"
+import Hosea2 from "./Hosea.jpeg"
+
 export {
-  Emason, EmasonWebp, EmasonAvif,study,form,Welcome,development,meeting,
+  Emason, EmasonWebp, EmasonAvif,study,Jonathan,Hosea2,Khaishawn,form,Welcome,development,meeting,Adaobi,
   Helena, HelenaWebp, HelenaAvif,
   Majvin, Campaign,
   Helena2, Helena2Webp, Helena2Avif,
@@ -70,5 +75,5 @@ export {
   Matheous, MatheousWebp, MatheousAvif,
   Hosea, wiltord, EmersonAgency,
   bruno, brunoWebp, brunoAvif,
-  hero, heroAvif,
+  hero, heroAvif
 };
