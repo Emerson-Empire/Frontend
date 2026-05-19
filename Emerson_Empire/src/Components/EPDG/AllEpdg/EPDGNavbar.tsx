@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import epdgLogo from '../../../assets/EPDG_LOGO.webp';
 
+const PRO_URL = import.meta.env.VITE_PRO_APP_URL ?? 'http://localhost:5174';
+
 const NAV_LINKS = [
   { label: 'HOME',         href: '/' },
   { label: 'Program',      href: '#program' },
@@ -53,13 +55,13 @@ const EPDGNavbar: React.FC = () => {
         {/* Desktop action buttons */}
         <div className="hidden md:flex items-center gap-2 shrink-0">
           <a
-            href="#contact"
+            href={`${PRO_URL}/`}
             className="inline-flex items-center px-4 py-2 border border-slate-600 hover:border-white rounded-md font-semibold text-[15px] text-slate-300 hover:text-white uppercase tracking-[0.15em] transition-colors duration-200"
           >
             Log In
           </a>
           <a
-            href="#contact"
+            href={`${PRO_URL}/Signup`}
             className="inline-flex items-center bg-white hover:bg-slate-200 px-4 py-2 rounded-md font-bold text-[#081331] text-[15px] uppercase tracking-[0.15em] transition-colors duration-200"
           >
             Create Account
@@ -94,14 +96,14 @@ const EPDGNavbar: React.FC = () => {
           ))}
           <div className="flex flex-col gap-3 mt-4">
             <a
-              href="#contact"
+              href={`${PRO_URL}/`}
               onClick={() => setMenuOpen(false)}
               className="inline-flex justify-center px-5 py-3 border border-slate-600 hover:border-white rounded-md font-semibold text-[12px] text-slate-300 hover:text-white uppercase tracking-[0.15em] transition-colors duration-200"
             >
               Log In
             </a>
             <a
-              href="#contact"
+              href={`${PRO_URL}/Signup`}
               onClick={() => setMenuOpen(false)}
               className="inline-flex justify-center bg-white hover:bg-slate-200 px-5 py-3 rounded-md font-bold text-[#081331] text-[12px] uppercase tracking-[0.15em] transition-colors duration-200"
             >

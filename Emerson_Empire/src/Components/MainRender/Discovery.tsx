@@ -51,7 +51,7 @@ const SKILL_FILTERS = ["All", "Tech", "Marketing", "Sales", "Finance", "Design",
 const LOCATION_FILTERS = ["All Regions", "Africa", "Europe", "Americas", "Middle East", "Asia-Pacific"];
 
 const NAV_LINKS = [
-  { label: "Home",      href: "/" },
+  { label: "Home",      href: "/discovery" },
   { label: "Programs",  href: "/#program" },
   { label: "About",     href: "/#about-us" },
   { label: "Reviews",   href: "/#reviews" },
@@ -65,10 +65,12 @@ const TalentCardItem: React.FC<{ card: TalentCard }> = ({ card }) => (
       <img
         src={card.image}
         alt={card.name}
-        className="rounded-xl w-14 h-14 object-cover object-top shrink-0"
-      />
+        className="object-cover object-top rounded-xl w-14 h-14 shrink-0"
+      /> <p className="group-hover:opacity-80 font-bold text-[12px] text-white sm:text-[15px] leading-tight transition-opacity duration-200">
+            <span className="text-slate-300">EMERSON</span><br />PROFESSIONAL
+          </p>
       <div className="flex-1 min-w-0">
-        <div className="flex justify-between items-start gap-2">
+        <div className="flex items-start justify-between gap-2">
           <p className="font-bold text-[15px] text-slate-950 truncate leading-snug">{card.name}</p>
           <span className={`shrink-0 inline-block w-2 h-2 mt-1.5 rounded-full ${card.available ? "bg-emerald-400" : "bg-slate-300"}`} />
         </div>
@@ -117,7 +119,7 @@ const CompanyCardItem: React.FC<{ card: CompanyCard }> = ({ card }) => (
       ))}
     </div>
 
-    <div className="flex justify-between items-center mb-5">
+    <div className="flex items-center justify-between mb-5">
       <span className="text-[12px] text-slate-400">Open roles</span>
       <span className="font-bold text-[#4B1E91] text-[18px]">{card.openRoles}</span>
     </div>
@@ -158,17 +160,20 @@ const Discovery: React.FC = () => {
     <div className="bg-[#F8F8FA] min-h-screen font-sans">
 
       {/* ── Navbar ───────────────────────────────────────────────────────────── */}
-      <nav aria-label="Main navigation" className="top-0 z-50 fixed bg-[#12022A] border-[#C9A84C]/20 border-b w-full">
-        <div className="flex justify-between items-center mx-auto px-4 sm:px-10 lg:px-16 w-full max-w-7xl h-16 sm:h-20">
+     <nav
+      aria-label="Main navigation"
+      className="top-0 z-50 fixed justify-center bg-[#12022A] mb-2 border-[#C9A84C]/20 border-b w-full h-25"
+   >
+        <div className="flex items-center justify-between w-full h-16 px-4 mx-auto sm:px-10 lg:px-16 max-w-7xl sm:h-20">
 
           {/* Logo */}
-          <a href="/" className="group flex items-center gap-3 shrink-0">
+          <a href="/" className="flex items-center gap-3 group shrink-0">
             <img
               src={epdgLogo}
               alt="EPDG"
               width={44}
               height={44}
-              className="w-10 sm:w-12 h-10 sm:h-12 object-contain group-hover:scale-105 transition-transform duration-200"
+              className="object-contain w-10 h-10 transition-transform duration-200 sm:w-12 sm:h-12 group-hover:scale-105"
             />
             <span className="hidden sm:block font-bold text-[13px] text-white leading-tight tracking-wide">
               <span className="text-slate-300">EMERSON</span>
@@ -177,7 +182,7 @@ const Discovery: React.FC = () => {
           </a>
 
           {/* Desktop links */}
-          <ul className="hidden md:flex items-center gap-6 m-0 p-0 list-none">
+          <ul className="items-center hidden gap-6 p-0 m-0 list-none md:flex">
             {NAV_LINKS.map((link) => (
               <li key={link.label}>
                 <a href={link.href} className="font-semibold text-[13px] text-slate-400 hover:text-white uppercase tracking-widest transition-colors duration-200">
@@ -188,7 +193,7 @@ const Discovery: React.FC = () => {
           </ul>
 
           {/* Auth buttons */}
-          <div className="hidden md:flex items-center gap-2 shrink-0">
+          <div className="items-center hidden gap-2 md:flex shrink-0">
             <a href="#" className="inline-flex items-center px-4 py-2 border border-slate-600 hover:border-white rounded-lg font-semibold text-[13px] text-slate-300 hover:text-white uppercase tracking-wider transition-colors">
               Log In
             </a>
@@ -199,7 +204,7 @@ const Discovery: React.FC = () => {
 
           {/* Hamburger */}
           <button
-            className="md:hidden flex flex-col justify-center items-center gap-1.5 w-10 h-10 shrink-0"
+            className="md:hidden flex flex-col justify-center items-center gap-1.5 shadow-md shadow-white rounded-b-3xl w-10 h-10 shrink-0"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
@@ -229,21 +234,21 @@ const Discovery: React.FC = () => {
 
       {/* ── Hero / Search ─────────────────────────────────────────────────────── */}
       <div className="bg-[#12022A] pt-16 sm:pt-20">
-        <div className="mx-auto px-4 sm:px-10 lg:px-16 py-14 sm:py-20 max-w-7xl text-center">
+        <div className="px-4 mx-auto text-center sm:px-10 lg:px-16 py-14 sm:py-20 max-w-7xl">
           <span className="inline-block bg-[#4B1E91]/40 mb-4 px-4 py-1.5 border border-purple-500/30 rounded-full font-semibold text-[11px] text-purple-300 uppercase tracking-widest">
             Emerson Discovery
           </span>
-          <h1 className="mb-4 font-black text-white text-4xl sm:text-5xl lg:text-6xl leading-tight tracking-tight">
+          <h1 className="mb-4 text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
             Find Global Talent.<br />
             <span className="text-[#C9A84C]">Connect With Opportunity.</span>
           </h1>
-          <p className="mx-auto mb-10 max-w-xl text-slate-400 text-base sm:text-lg leading-relaxed">
+          <p className="max-w-xl mx-auto mb-10 text-base leading-relaxed text-slate-400 sm:text-lg">
             Browse verified EPDG alumni and international partner companies — built for remote-first careers.
           </p>
 
           {/* Search bar */}
-          <div className="relative mx-auto max-w-2xl">
-            <span className="top-1/2 left-4 absolute text-slate-500 -translate-y-1/2 pointer-events-none">
+          <div className="relative max-w-2xl mx-auto">
+            <span className="absolute -translate-y-1/2 pointer-events-none top-1/2 left-4 text-slate-500">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
               </svg>
@@ -260,8 +265,8 @@ const Discovery: React.FC = () => {
       </div>
 
       {/* ── Tab bar ───────────────────────────────────────────────────────────── */}
-      <div className="top-16 sm:top-20 z-40 sticky bg-white shadow-sm border-slate-200 border-b">
-        <div className="flex mx-auto px-4 sm:px-10 lg:px-16 max-w-7xl">
+      <div className="sticky z-40 bg-white border-b shadow-sm top-16 sm:top-20 border-slate-200">
+        <div className="flex px-4 mx-auto sm:px-10 lg:px-16 max-w-7xl">
           {(["talent", "company"] as Tab[]).map((t) => (
             <button
               key={t}
@@ -280,12 +285,12 @@ const Discovery: React.FC = () => {
       </div>
 
       {/* ── Main layout ───────────────────────────────────────────────────────── */}
-      <div className="mx-auto px-4 sm:px-10 lg:px-16 py-8 max-w-7xl">
+      <div className="px-4 py-8 mx-auto sm:px-10 lg:px-16 max-w-7xl">
         <div className="flex gap-8">
 
           {/* Sidebar filters */}
-          <aside className="hidden lg:flex flex-col gap-6 w-56 shrink-0">
-            <div className="bg-white shadow-sm p-5 border border-slate-100 rounded-2xl">
+          <aside className="flex-col hidden w-56 gap-6 lg:flex shrink-0">
+            <div className="p-5 bg-white border shadow-sm border-slate-100 rounded-2xl">
               <p className="mb-3 font-bold text-[12px] text-slate-950 uppercase tracking-widest">Category</p>
               <ul className="space-y-1">
                 {SKILL_FILTERS.map((f) => (
@@ -303,7 +308,7 @@ const Discovery: React.FC = () => {
               </ul>
             </div>
 
-            <div className="bg-white shadow-sm p-5 border border-slate-100 rounded-2xl">
+            <div className="p-5 bg-white border shadow-sm border-slate-100 rounded-2xl">
               <p className="mb-3 font-bold text-[12px] text-slate-950 uppercase tracking-widest">Region</p>
               <ul className="space-y-1">
                 {LOCATION_FILTERS.map((f) => (
@@ -322,7 +327,7 @@ const Discovery: React.FC = () => {
             </div>
 
             {tab === "talent" && (
-              <div className="bg-white shadow-sm p-5 border border-slate-100 rounded-2xl">
+              <div className="p-5 bg-white border shadow-sm border-slate-100 rounded-2xl">
                 <p className="mb-3 font-bold text-[12px] text-slate-950 uppercase tracking-widest">Availability</p>
                 <ul className="space-y-1">
                   {["All", "Available Now", "Unavailable"].map((f) => (
@@ -340,7 +345,7 @@ const Discovery: React.FC = () => {
           {/* Results grid */}
           <main className="flex-1 min-w-0">
             {/* Results count + sort */}
-            <div className="flex justify-between items-center mb-5">
+            <div className="flex items-center justify-between mb-5">
               <p className="text-[13px] text-slate-500">
                 Showing <span className="font-semibold text-slate-800">{tab === "talent" ? filteredTalent.length : filteredCompanies.length}</span> results
               </p>
@@ -353,23 +358,23 @@ const Discovery: React.FC = () => {
 
             {tab === "talent" ? (
               filteredTalent.length > 0 ? (
-                <div className="gap-4 grid sm:grid-cols-2 xl:grid-cols-3">
+                <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
                   {filteredTalent.map((card) => <TalentCardItem key={card.id} card={card} />)}
                 </div>
               ) : (
-                <div className="py-20 text-slate-400 text-center">
-                  <p className="font-semibold text-lg">No talent found</p>
+                <div className="py-20 text-center text-slate-400">
+                  <p className="text-lg font-semibold">No talent found</p>
                   <p className="mt-1 text-sm">Try adjusting your search or filters</p>
                 </div>
               )
             ) : (
               filteredCompanies.length > 0 ? (
-                <div className="gap-4 grid sm:grid-cols-2 xl:grid-cols-3">
+                <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
                   {filteredCompanies.map((card) => <CompanyCardItem key={card.id} card={card} />)}
                 </div>
               ) : (
-                <div className="py-20 text-slate-400 text-center">
-                  <p className="font-semibold text-lg">No companies found</p>
+                <div className="py-20 text-center text-slate-400">
+                  <p className="text-lg font-semibold">No companies found</p>
                   <p className="mt-1 text-sm">Try adjusting your search</p>
                 </div>
               )
@@ -388,8 +393,8 @@ const Discovery: React.FC = () => {
 
       {/* ── Footer strip ─────────────────────────────────────────────────────── */}
       <footer className="bg-[#12022A] mt-16 py-8 border-[#C9A84C]/10 border-t text-center">
-        <div className="flex justify-center items-center gap-3 mb-2">
-          <img src={epdgLogo} alt="EPDG" className="opacity-80 w-8 h-8 object-contain" />
+        <div className="flex items-center justify-center gap-3 mb-2">
+          <img src={epdgLogo} alt="EPDG" className="object-contain w-8 h-8 opacity-80" />
           <span className="font-bold text-[12px] text-slate-400 uppercase tracking-widest">The Emerson Empire — Discovery</span>
         </div>
         <p className="text-[11px] text-slate-600">© {new Date().getFullYear()} Emerson Professional Development Group. All rights reserved.</p>
