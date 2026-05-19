@@ -1,6 +1,5 @@
 import type { FC } from "react";
-import img1 from "../../../assets/Girl_Typing.webp";
-import img2 from "../../../assets/Man_Point.png";
+import { development, meeting } from "../../../assets";
 
 
 const WhoWeHelp: FC = () => {
@@ -11,7 +10,7 @@ const WhoWeHelp: FC = () => {
         <div className="bg-white shadow-[0_22px_80px_rgba(15,32,73,0.12)] hover:shadow-[0_30px_100px_rgba(15,32,73,0.15)] border border-slate-200 rounded-4xl overflow-hidden transition">
           <div className="relative bg-slate-100 m-1.5 p-1.5 h-72 overflow-hidden">
             <img
-              src={img1}
+              src={meeting}
               alt="Intern working remotely"
               className="rounded-md w-full h-full object-cover"
             />
@@ -36,7 +35,7 @@ const WhoWeHelp: FC = () => {
         <div className="bg-slate-950 shadow-2xl rounded-4xl overflow-hidden text-white transition">
           <div className="relative bg-slate-900 m-2 p-1.5 h-72 overflow-hidden">
             <img
-              src={img2}
+              src={development}
               alt="Professional development" 
               className="opacity-85 rounded-md w-full h-full object-cover"
             />
