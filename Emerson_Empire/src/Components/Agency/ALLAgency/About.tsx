@@ -3,7 +3,7 @@ import { Helena, Agency } from "../../../assets";
 
 const About: React.FC = () => {
   return (
-    <section className="bg-gray-50 py-20 px-6 sm:px-10 lg:px-16">
+    <section className="bg-gray-50 py-20 px-6 sm:px-10 lg:px-16" id="about">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
         {/* ── Left: photo + logo overlay ── */}

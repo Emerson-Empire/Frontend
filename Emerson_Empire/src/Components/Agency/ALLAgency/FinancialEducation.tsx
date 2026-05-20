@@ -68,7 +68,7 @@ const FinancialEducation: React.FC = () => {
   const back = () => setStep((s) => Math.max(s - 1, 0));
 
   return (
-    <section className="bg-white py-0 overflow-hidden">
+    <section className="bg-white py-0 overflow-hidden" id="tax-education">
       <div className="flex flex-col lg:flex-row min-h-[620px]">
 
         {/* ── Left panel ── */}

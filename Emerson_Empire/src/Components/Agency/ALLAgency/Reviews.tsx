@@ -40,7 +40,7 @@ const Stars = () => (
 
 const Reviews: React.FC = () => {
   return (
-    <section className="bg-white py-20 px-6 sm:px-10 lg:px-16 overflow-hidden">
+    <section className="bg-white py-20 px-6 sm:px-10 lg:px-16 overflow-hidden" id="reviews">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}

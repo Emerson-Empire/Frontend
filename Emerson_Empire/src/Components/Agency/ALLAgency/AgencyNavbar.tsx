@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Agency } from '../../../assets';
 
 const NAV_LINKS = [
-  { label: 'HOME',         href: '/' },
-  { label: 'Services',     href: '#choose' },
-  { label: 'Tax Education', href: '#team' },
+  { label: 'HOME',         href: '#hero' },
+  { label: 'Services',     href: '#services' },
+  { label: 'Tax Education', href: '#tax-education' },
   { label: 'About Us',     href: '#about' },
-  { label: 'Reviews',      href: '#testimony' },
+  { label: 'Reviews',      href: '#reviews' },
 ];
 
 const AgencyNavbar: React.FC = () => {
@@ -21,7 +21,7 @@ const AgencyNavbar: React.FC = () => {
       <div className="flex items-center justify-between w-full h-16 px-4 mx-auto sm:px-10 lg:px-16 max-w-7xl sm:h-20">
 
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2 transition-transform duration-200 group active:scale-95 shrink-0">
+        <a href="#hero" className="flex items-center gap-2 transition-transform duration-200 group active:scale-95 shrink-0">
           <img
             src={Agency}
             alt="The Emerson Agency Logo"
@@ -40,7 +40,7 @@ const AgencyNavbar: React.FC = () => {
             <li key={link.label}>
               <a
                 href={link.href}
-                className={`text-[11px] font-semibold uppercase tracking-[0.15em] transition-colors duration-200 ${
+                className={`text-[15px] font-semibold uppercase tracking-[0.15em] transition-colors duration-200 ${
                   link.label === 'HOME' ? 'text-[#C9A84C]' : 'text-white/60 hover:text-white'
                 }`}
               >

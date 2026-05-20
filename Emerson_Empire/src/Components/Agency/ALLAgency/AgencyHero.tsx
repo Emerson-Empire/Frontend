@@ -4,7 +4,7 @@ import CountUp from '../../shared/CountUp';
 
 const AgencyHero: React.FC = () => {
   return (
-    <section className="w-full px-6 pt-16 sm:px-10 lg:px-16">
+    <section className="w-full px-6 pt-16 sm:px-10 lg:px-16" id="hero">
       <div
         className="relative flex items-center p-6 overflow-hidden bg-center bg-no-repeat bg-cover sm:p-10 lg:p-16 rounded-2xl min-h-130"
         style={{ backgroundImage: `url(${hero})` }}

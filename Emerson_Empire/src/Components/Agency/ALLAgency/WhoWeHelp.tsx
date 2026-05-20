@@ -61,7 +61,7 @@ const WhoWeHelp: React.FC = () => {
   const current = SERVICES[active];
 
   return (
-    <section className="bg-gray-50 py-20 px-6 sm:px-10 lg:px-16">
+    <section className="bg-gray-50 py-20 px-6 sm:px-10 lg:px-16" id="services">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
