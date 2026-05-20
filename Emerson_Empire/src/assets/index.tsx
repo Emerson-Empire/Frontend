@@ -49,7 +49,7 @@ import bruno from "./bruno.png";
 import brunoWebp from "./bruno.webp";
 import brunoAvif from "./bruno.avif";
 
-import hero from "./hero.png";
+import hero from "./AgencyHero.png";
 import heroAvif from "./hero.avif";
 import study from "./study.jpeg"
 import form from "./foem.jpeg";
