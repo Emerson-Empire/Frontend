@@ -10,7 +10,7 @@ const AgencyHero: React.FC = () => {
         style={{ backgroundImage: `url(${hero})` }}
       >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/30" />
 
       <div className="relative z-10 w-full max-w-5xl py-10 mx-auto">
 
