@@ -135,7 +135,7 @@ const FinancialEducation: React.FC = () => {
                   <button
                     key={opt.value}
                     onClick={() => setStatus(opt.value)}
-                    className={`border-2 rounded-xl px-5 py-4 text-sm font-semibold text-left transition-all duration-200 ${
+                    className={`border-2 rounded-xl px-5 py-4 text-sm font-semibold text-left transition-all duration-200 cursor-pointer ${
                       status === opt.value
                         ? "border-[#C9A84C] bg-[#C9A84C]/10 text-[#12022A]"
                         : "border-gray-200 text-gray-600 hover:border-gray-300"
@@ -241,14 +241,14 @@ const FinancialEducation: React.FC = () => {
             <button
               onClick={back}
               disabled={step === 0}
-              className="px-6 py-2 text-sm font-semibold text-gray-500 hover:text-black disabled:opacity-30 transition-colors"
+              className="px-6 py-2 text-sm font-semibold text-gray-500 hover:text-black disabled:opacity-30 transition-colors cursor-pointer"
             >
               ← Back
             </button>
             {step < 3 && (
               <button
                 onClick={next}
-                className="bg-[#C9A84C] hover:bg-[#E8C97A] text-[#12022A] font-bold text-[11px] uppercase tracking-[0.2em] px-8 py-3 rounded-sm transition-colors duration-200"
+                className="bg-[#C9A84C] hover:bg-[#E8C97A] text-[#12022A] font-bold text-[11px] uppercase tracking-[0.2em] px-8 py-3 rounded-sm transition-colors duration-200 cursor-pointer"
               >
                 {step === 2 ? "Calculate →" : "Next →"}
               </button>
