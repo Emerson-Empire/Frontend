@@ -63,6 +63,11 @@ import Hosea2 from "./Hosea.png"
 import lidi from "./lidi.png";
 import sales from "./sales.png";
 
+import A_Step1 from "./Agency_step1.png"; 
+import A_Step2 from "./Agency_step2.webp";
+import A_Step3 from "./Agency_step3.webp";
+import A_Step4 from "./Agency_step4.png";
+
 export {
   Emason, EmasonWebp, sales,EmasonAvif,lidi,study,Jonathan,Hosea2,Khaishawn,form,Welcome,development,meeting,Adaobi,
   Helena, HelenaWebp, HelenaAvif,
@@ -77,5 +82,5 @@ export {
   Matheous, MatheousWebp, MatheousAvif,
   Hosea, wiltord, EmersonAgency,
   bruno, brunoWebp, brunoAvif,
-  hero, heroAvif
+  hero, heroAvif, A_Step1, A_Step2, A_Step3, A_Step4
 };
