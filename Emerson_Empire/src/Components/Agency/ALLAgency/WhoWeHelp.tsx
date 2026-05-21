@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Step1, Step2, Step3, Campaign } from "../../../assets";
+import { A_Step1, A_Step2, A_Step3, A_Step4 } from "../../../assets";
 
 const SERVICES = [
   {
     id: 0,
     title: "Insurance Literacy & Policy Review",
-    image: Step1,
+    image: A_Step1,
     description:
       "We demystify insurance so you can make confident decisions. From life and health to business liability — we review your current policies and identify gaps or overpayments.",
     points: [
@@ -18,7 +18,7 @@ const SERVICES = [
   {
     id: 1,
     title: "Tax Preparation for 1099 & Gig Workers",
-    image: Step2,
+    image: A_Step2,
     description:
       "Self-employment taxes are complex. We specialize in maximizing deductions for freelancers, contractors, and gig workers so you keep more of what you earn.",
     points: [
@@ -31,7 +31,7 @@ const SERVICES = [
   {
     id: 2,
     title: "Small Business Financial Consultant",
-    image: Step3,
+    image: A_Step3,
     description:
       "From startup to scaling — we provide the financial strategy and operational clarity your business needs to grow sustainably and profitably.",
     points: [
@@ -44,7 +44,7 @@ const SERVICES = [
   {
     id: 3,
     title: "Financial Literacy Workshops for Families",
-    image: Campaign,
+    image: A_Step4,
     description:
       "We believe financial education is a family affair. Our workshops help households build budgets, eliminate debt, and create generational wealth.",
     points: [
@@ -88,7 +88,7 @@ const WhoWeHelp: React.FC = () => {
                     : "border-gray-200 bg-white text-gray-600 hover:border-gray-300"
                 }`}
               >
-                <p className={`text-sm font-bold leading-snug ${active === svc.id ? "text-white" : "text-black"}`}>
+                <p className={`cursor-pointer text-sm font-bold leading-snug ${active === svc.id ? "text-white" : "text-black"}`}>
                   {svc.title}
                 </p>
               </button>
